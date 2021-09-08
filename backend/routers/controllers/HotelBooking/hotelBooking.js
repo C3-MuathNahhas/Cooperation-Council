@@ -28,22 +28,21 @@ const createHotelBooking = () => {
     });
 };
 
-const deleteHotelBooking=(req,res)=>{
+const deleteHotelBooking = (req, res) => {
+  const id = req.params.bookingId;
+  deleteOne({ id: bookingId })
+    .then(() => {
+      res.status(201).json({
+        succes: true,
+        success: "hotel booking deleted",
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        succes: false,
+        massage: "error in deleted hotelbooking",
+      });
+    });
+};
 
-    const id=req.params.bookingId
-    deleteOne({id:bookingId}).then(() => {
-        res.status(201).json({
-          succes: true,
-          success: 'hotel booking deleted',
-         
-        });
-      })
-      .catch((err) => {
-        res.status(500).json({
-          succes: false,
-          massage: "error in deleted hotelbooking",
-        });
-      })
-}
-
-module.exports={createHotelBooking};
+module.exports = { createHotelBooking ,deleteHotelBooking};
