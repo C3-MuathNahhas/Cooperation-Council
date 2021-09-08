@@ -30,7 +30,7 @@ const createHotelBooking = () => {
 
 const deleteHotelBooking = (req, res) => {
   const id = req.params.bookingId;
-  deleteOne({ id: bookingId })
+  hotelBookingModel.deleteOne({ id: bookingId })
     .then(() => {
       res.status(201).json({
         succes: true,
