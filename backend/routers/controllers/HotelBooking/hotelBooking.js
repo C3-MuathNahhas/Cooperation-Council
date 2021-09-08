@@ -2,7 +2,7 @@ const { deleteOne } = require("../../../db/models/hotelBookingSchema");
 const hotelBookingModel = require("../../../db/models/hotelBookingSchema");
 
 const createHotelBooking = () => {
-  const { location, capacity, rooms } = req.body;
+  const { location, capacity, rooms, nights, adults } = req.body;
 
   const newHotelBookig = new hotelBookingModel({
     location,
@@ -30,7 +30,8 @@ const createHotelBooking = () => {
 
 const deleteHotelBooking = (req, res) => {
   const id = req.params.bookingId;
-  hotelBookingModel.deleteOne({ id: bookingId })
+  hotelBookingModel
+    .deleteOne({ id: bookingId })
     .then(() => {
       res.status(201).json({
         succes: true,
