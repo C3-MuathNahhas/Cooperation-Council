@@ -20,8 +20,9 @@ const createHotelBooking = () => {
     .catch((err) => {
       res.status(500).json({
         succes: false,
-        success: "no availability",
-        massage: err,
+        massage: "no availability to create hotel booking",
       });
     });
 };
+
+module.exports={createHotelBooking};
