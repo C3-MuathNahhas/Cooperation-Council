@@ -45,4 +45,4 @@ const deleteHotelBooking = (req, res) => {
     });
 };
 
-module.exports = { createHotelBooking ,deleteHotelBooking};
+module.exports = { createHotelBooking, deleteHotelBooking };
