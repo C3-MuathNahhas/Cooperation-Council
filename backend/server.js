@@ -6,7 +6,7 @@ const loginRouter=require("./routers/routes/auth/login")
 
 const app = express();
 const hotelBookingRouter=require("./routers/routes/hotelBooking/hotelBooking");
-const hotelRouter=require("./routers/routes/hotel/hotle");
+const hotelRouter=require("./routers/routes/hotel/hotel");
 
 //routers
 

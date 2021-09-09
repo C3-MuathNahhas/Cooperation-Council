@@ -6,5 +6,6 @@ const {
 } = require("../../controllers/hotel/hotelController");
 
 hotelRouter.post("/createhotel", hotelcreate);
+hotelRouter.get("/gethotel", getHotels);
 
 module.exports = hotelRouter;

@@ -49,7 +49,7 @@ const getHotelsBookingsByUserId = (req, res) => {
 
   hotelBookingModel
     .find({ UsertId: id })
-    .populate("Hotel")
+    .populate("hotelId").populate("UsertId")
     .then((result) => {
       res.status(201).json({
         succes: true,
