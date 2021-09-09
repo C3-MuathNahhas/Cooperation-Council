@@ -5,8 +5,8 @@ const createHotelBooking = (req, res) => {
   const { hotelId, UsertId } = req.body;
 
   const newHotelBookig = new hotelBookingModel({
-    UsertId,
     hotelId,
+    UsertId,
   });
   newHotelBookig
     .save()
@@ -29,7 +29,7 @@ const createHotelBooking = (req, res) => {
 const deleteHotelBooking = (req, res) => {
   const id = req.params.bookingId;
   hotelBookingModel
-    .deleteOne({ id: id })
+    .deleteOne({ _id: id })
     .then(() => {
       res.status(201).json({
         succes: true,

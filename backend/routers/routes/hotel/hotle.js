@@ -3,7 +3,7 @@ const hotelRouter = express.Router();
 
 const {
     getHotels,hotelcreate
-} = require("../controllers/hotel/hotelController");
+} = require("../../controllers/hotel/hotelController");
 
 hotelRouter.post("/createhotel", hotelcreate);
 
