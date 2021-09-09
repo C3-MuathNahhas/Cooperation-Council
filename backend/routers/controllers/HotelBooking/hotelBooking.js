@@ -2,7 +2,8 @@ const { deleteOne } = require("../../../db/models/hotelBookingSchema");
 const hotelBookingModel = require("../../../db/models/hotelBookingSchema");
 
 const createHotelBooking = (req, res) => {
-  const { location, capacity, rooms, nights, adults } = req.body;
+  const { location, capacity, rooms, nights, adults } =
+    req.body;
 
   const newHotelBookig = new hotelBookingModel({
     location,
@@ -10,7 +11,8 @@ const createHotelBooking = (req, res) => {
     rooms,
     nights,
     adults,
-  }).populate("Hotel", "- _id");
+    
+  });
   newHotelBookig
     .save()
     .then((result) => {
