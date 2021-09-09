@@ -1,9 +1,9 @@
 const { deleteOne } = require("../../../db/models/hotelBookingSchema");
 const hotelBookingModel = require("../../../db/models/hotelBookingSchema");
+const mongoose = require("mongoose");
 
 const createHotelBooking = (req, res) => {
-  const { location, capacity, rooms, nights, adults } =
-    req.body;
+  const { location, capacity, rooms, nights, adults,hotelId } = req.body;
 
   const newHotelBookig = new hotelBookingModel({
     location,
@@ -11,16 +11,18 @@ const createHotelBooking = (req, res) => {
     rooms,
     nights,
     adults,
-    
+    hotelId
   });
   newHotelBookig
     .save()
     .then((result) => {
-      res.status(201).json({
-        succes: true,
-        success: "new hotel booking created",
-        result: result,
-      });
+      
+        res.status(201).json({
+          succes: true,
+          success: "new hotel booking created",
+          result: result,
+        });
+      
     })
     .catch(() => {
       res.status(500).json({

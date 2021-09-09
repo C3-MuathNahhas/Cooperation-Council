@@ -4,6 +4,7 @@ const db = require('./db/db');
 
 const app = express();
 const hotelBookingRouter=require("./routers/routes/hotelBooking");
+const hotelRouter=require("./routers/routes/hotle");
 
 //routers
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/hotelBooking",hotelBookingRouter);
+app.use("/hotel",hotelRouter);
 //app routers
 
 const PORT = process.env.PORT || 5000;
