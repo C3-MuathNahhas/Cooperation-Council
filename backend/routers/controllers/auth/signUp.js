@@ -8,6 +8,7 @@ const newUser= new signModel({
     lastName,
     
     email,
+    
     password,
     phone
 }).save().then((result)=>{
