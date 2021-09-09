@@ -29,8 +29,3 @@ const getFlightsBookingByUserId = (req, res) => {
 const creatFlightBooking = () => { }
 
 
-
-
-module.exports = {
-
-};
