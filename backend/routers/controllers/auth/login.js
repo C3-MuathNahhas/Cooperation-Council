@@ -21,9 +21,11 @@ const Login=(req,res)=>{
             }
             const SECRET=process.env.SECRET
             const options={
+
                 expiresIn: "60m",
             }
             const token=jwt.sign(payload,SECRET,options)
+         //   console.log(token)
             res.status(200)
             res.json({success:true,massage:" you logged in",token:token})
         }
