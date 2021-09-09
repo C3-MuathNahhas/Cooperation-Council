@@ -24,8 +24,8 @@ const getFlightsBookingByUserId = (req, res) => {
             }
         })
 };
-
-
 const creatFlightBooking = () => { }
+const deleteFlightBooking = () => { }
 
 
+module.exports = { creatFlightBooking, getFlightsBookingByUserId, deleteFlightBooking }
