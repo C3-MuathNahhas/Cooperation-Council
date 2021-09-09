@@ -30,7 +30,7 @@ const createHotelBooking = (req, res) => {
 
 //should select the capasity of users
 const deleteHotelBooking = (req, res) => {
-  const id = req.params.bookingId;
+  const id = req.params.bookingId; //id from route HotelBooking
   hotelBookingModel
     .deleteOne({ id: id })
     .then(() => {
@@ -43,6 +43,25 @@ const deleteHotelBooking = (req, res) => {
       res.status(500).json({
         succes: false,
         massage: "error in deleted hotelbooking",
+      });
+    });
+};
+const updateHotelBooking = (req, res) => {
+  const id = req.params.bookingId; //id from route HotelBooking
+  const { rooms, nights, adults } = req.body;
+  hotelBookingModel
+    .updateOne({ id: id }, { rooms, nights, adults }, { options: true })
+    .then((result) => {
+      res.status(201).json({
+        succes: true,
+        success: 'hotel booking updated',
+        result:result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        succes: false,
+        massage: "error in updated hotelbooking",
       });
     });
 };
