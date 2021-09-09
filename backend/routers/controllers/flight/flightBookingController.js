@@ -1,6 +1,6 @@
 const flightBookingModle = require("../../../db/models/FlightBookigSchema");
 const getFlightsBookingByUserId = (req, res) => {
-    const { userId } = req.body.params;
+    const userId = req.body.params;
     flightBookingModle.find({ userId })
         .populate("User").populate("Flight")
         .exec()
@@ -24,7 +24,30 @@ const getFlightsBookingByUserId = (req, res) => {
             }
         })
 };
-const creatFlightBooking = () => { }
+const creatFlightBooking = () => {
+
+    const newBooking = new flightBookingModle({
+        hotelId,
+        UsertId
+    })
+        .save()
+        .then((result) => {
+            console.log(result);
+
+            res.status(201)
+            res.json({ success: true, message: "new booking created" })
+
+        })
+        .catch((err) => {
+            res.status(500);
+            res.json("server error");
+        });
+};
+
+
+
+
+
 const deleteFlightBooking = () => { }
 
 
