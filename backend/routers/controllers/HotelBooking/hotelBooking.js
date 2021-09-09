@@ -2,14 +2,11 @@ const { deleteOne } = require("../../../db/models/hotelBookingSchema");
 const hotelBookingModel = require("../../../db/models/hotelBookingSchema");
 
 const createHotelBooking = (req, res) => {
-  const { location, capacity, rooms, nights, adults } = req.body;
+  const { hotelId, UsertId } = req.body;
 
   const newHotelBookig = new hotelBookingModel({
-    location,
-    capacity,
-    rooms,
-    nights,
-    adults,
+    UsertId,
+    hotelId,
   });
   newHotelBookig
     .save()
@@ -20,7 +17,7 @@ const createHotelBooking = (req, res) => {
         result: result,
       });
     })
-    .catch((err) => {
+    .catch(() => {
       res.status(500).json({
         succes: false,
         massage: "no availability to create hotel booking",
@@ -47,4 +44,28 @@ const deleteHotelBooking = (req, res) => {
     });
 };
 
-module.exports = { createHotelBooking, deleteHotelBooking };
+const getHotelsBookingsByUserId = (req, res) => {
+  const id = req.params.userId;
+
+  hotelBookingModel
+    .find({ UsertId: id }).populate("Hotel")
+    .then((result) => {
+      res.status(201).json({
+        succes: true,
+        success: "getAllHotelsBooking ",
+        result: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        succes: false,
+        massage: "error getHotelsBookingsByUserId",
+      });
+    });
+};
+
+module.exports = {
+  createHotelBooking,
+  deleteHotelBooking,
+  getHotelsBookingsByUserId,
+};

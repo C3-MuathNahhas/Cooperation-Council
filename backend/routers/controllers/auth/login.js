@@ -1,60 +1,39 @@
-const usersModel = require("../../../db/models/userSchema");
-const bcrypt = require("bcrypt");
+const loginModel = require("../../../db/models/userSchema");
 const jwt = require("jsonwebtoken");
-require("dotenv").config();
+const dotenv = require("dotenv").config();
+const bcrypt = require("bcrypt");
 
-const login = (req, res) => {
+const Login = (req, res) => {
+  const email = req.body.email.tolowercase();
   const password = req.body.password;
-  const email = req.body.email.toLowerCase();
-  usersModel
-    .findOne({ email })
-    .populate("role", "-_id -__v")
-    .exec()
-    .then(async (result) => {
-      if (!result) {
-        return res.status(404).json({
-          success: false,
-          message: `The email doesn't exist`,
-        });
-      }
-      try {
-        const valid = await bcrypt.compare(password, result.password);
-        if (!valid) {
-          return res.status(403).json({
-            success: false,
-            message: `The password you’ve entered is incorrect`,
-          });
-        }
-        const payload = {
-          userId: result._id,
-          country: result.country,
-          role: result.role,
-        };
 
+  loginModel
+    .findOne({ email: email })
+    .then((result) => {
+      if (!result) {
+        res.json("email not found ");
+      }
+      const valid = bcrypt.compareSync(password, result.password);
+      if (!valid) {
+        res.json("password error");
+      } else {
+        const payload = {
+          userId: result.userId,
+          firstName: result.firstName,
+        };
+        const SECRET = process.env.SECRET;
         const options = {
           expiresIn: "60m",
         };
-
-        // console.log(payload);
-        const token = await jwt.sign(payload, process.env.SECRET, options);
-        res.status(200).json({
-          success: true,
-          message: `Email and Password are correct`,
-          token: token,
-        });
-      } catch (error) {
-        throw new Error(error.message);
+        const token = jwt.sign(payload, SECRET, options);
+        //   console.log(token)
+        res.status(200);
+        res.json({ success: true, massage: " you logged in", token: token });
       }
     })
     .catch((err) => {
-      res.status(500).json({
-        success: false,
-        message: `Server Error`,
-        err: err,
-      });
+      throw err;
     });
 };
 
-module.exports = {
-  login,
-};
+module.exports = { Login };
