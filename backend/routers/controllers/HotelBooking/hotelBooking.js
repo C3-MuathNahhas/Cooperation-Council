@@ -20,7 +20,7 @@ const createHotelBooking = (req, res) => {
         result: result,
       });
     })
-    .catch((err) => {
+    .catch(() => {
       res.status(500).json({
         succes: false,
         massage: "no availability to create hotel booking",
