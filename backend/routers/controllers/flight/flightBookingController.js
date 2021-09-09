@@ -30,7 +30,3 @@ const creatFlightBooking = () => { }
 
 
 
-
-module.exports = {
-
-};
