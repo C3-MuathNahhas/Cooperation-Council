@@ -10,7 +10,7 @@ const createHotelBooking = (req, res) => {
     rooms,
     nights,
     adults,
-  });
+  }).populate("Hotel", "- _id");
   newHotelBookig
     .save()
     .then((result) => {
@@ -24,6 +24,28 @@ const createHotelBooking = (req, res) => {
       res.status(500).json({
         succes: false,
         massage: "no availability to create hotel booking",
+      });
+    });
+};
+const updateHotelBooking = (req, res) => {
+  const id = req.params.bookingId; //id from route HotelBooking
+  const { rooms, nights, adults } = req.body;
+  hotelBookingModel
+    .updateOne({ id: id }, { rooms, nights, adults }, { options: true })
+    .populate("Hotel", "- _id")
+    .then((result) => {
+      res.status(201).json({
+        succes: true,
+        success: "hotel booking updated",
+        result: result,
+        success: "hotel booking updated",
+        result: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        succes: false,
+        massage: "error in updated hotelbooking",
       });
     });
 };
@@ -47,4 +69,29 @@ const deleteHotelBooking = (req, res) => {
     });
 };
 
-module.exports = { createHotelBooking, deleteHotelBooking };
+const getHotelsBookingsByUserId = (req, res) => {
+  const id = req.params.userId;
+
+  hotelBookingModel
+    .find({ id: id })//from id user
+    .then((result) => {
+      res.status(201).json({
+        succes: true,
+        success: "getAllHotelsBooking ",
+        result: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        succes: false,
+        massage: "error getHotelsBookingsByUserId",
+      });
+    });
+};
+
+module.exports = {
+  createHotelBooking,
+  deleteHotelBooking,
+  updateHotelBooking,
+  getHotelsBookingsByUserId,
+};
