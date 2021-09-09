@@ -24,28 +24,6 @@ const createHotelBooking = (req, res) => {
       });
     });
 };
-const updateHotelBooking = (req, res) => {
-  const id = req.params.bookingId; //id from route HotelBooking
-  const { rooms, nights, adults } = req.body;
-  hotelBookingModel
-    .updateOne({ id: id }, { rooms, nights, adults }, { options: true })
-    .populate("Hotel", "- _id")
-    .then((result) => {
-      res.status(201).json({
-        succes: true,
-        success: "hotel booking updated",
-        result: result,
-        success: "hotel booking updated",
-        result: result,
-      });
-    })
-    .catch((err) => {
-      res.status(500).json({
-        succes: false,
-        massage: "error in updated hotelbooking",
-      });
-    });
-};
 
 //should select the capasity of users
 const deleteHotelBooking = (req, res) => {
@@ -70,7 +48,7 @@ const getHotelsBookingsByUserId = (req, res) => {
   const id = req.params.userId;
 
   hotelBookingModel
-    .find({ id: id }) //from id user
+    .find({ UsertId: id }).populate("Hotel")
     .then((result) => {
       res.status(201).json({
         succes: true,
@@ -89,6 +67,5 @@ const getHotelsBookingsByUserId = (req, res) => {
 module.exports = {
   createHotelBooking,
   deleteHotelBooking,
-  updateHotelBooking,
   getHotelsBookingsByUserId,
 };
