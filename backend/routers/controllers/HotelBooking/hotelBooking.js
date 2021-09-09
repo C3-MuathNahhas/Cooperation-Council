@@ -54,8 +54,8 @@ const updateHotelBooking = (req, res) => {
     .then((result) => {
       res.status(201).json({
         succes: true,
-        success: 'hotel booking updated',
-        result:result,
+        success: "hotel booking updated",
+        result: result,
       });
     })
     .catch((err) => {
@@ -66,4 +66,4 @@ const updateHotelBooking = (req, res) => {
     });
 };
 
-module.exports = { createHotelBooking, deleteHotelBooking };
+module.exports = { createHotelBooking, deleteHotelBooking, updateHotelBooking };
