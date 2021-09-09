@@ -45,10 +45,11 @@ const deleteHotelBooking = (req, res) => {
 };
 
 const getHotelsBookingsByUserId = (req, res) => {
-  const id = req.params.userId;
+  const id = req.params.UserId;
 
   hotelBookingModel
-    .find({ UsertId: id }).populate("Hotel")
+    .find({ UsertId: id })
+    .populate("Hotel")
     .then((result) => {
       res.status(201).json({
         succes: true,
