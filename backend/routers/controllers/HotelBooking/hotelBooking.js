@@ -47,4 +47,5 @@ const deleteHotelBooking = (req, res) => {
     });
 };
 
+
 module.exports = { createHotelBooking, deleteHotelBooking };
