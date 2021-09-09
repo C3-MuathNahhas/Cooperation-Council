@@ -5,6 +5,8 @@ const signUpRouter=require("./routers/routes/auth/signUp")
 const loginRouter=require("./routers/routes/auth/login")
 
 const app = express();
+const hotelBookingRouter=require("./routers/routes/hotelBooking");
+const hotelRouter=require("./routers/routes/hotle");
 
 //routers
 
@@ -14,6 +16,8 @@ app.use(express.json());
 //third-party middleware
 app.use(cors());
 
+app.use("/hotelBooking",hotelBookingRouter);
+app.use("/hotel",hotelRouter);
 //app routers
 app.use("/signUp",signUpRouter)
 app.use("/login",loginRouter)
