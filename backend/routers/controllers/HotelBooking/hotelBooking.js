@@ -73,7 +73,7 @@ const getHotelsBookingsByUserId = (req, res) => {
   const id = req.params.userId;
 
   hotelBookingModel
-    .find({ id: id })//from id user
+    .find({ id: id }) //from id user
     .then((result) => {
       res.status(201).json({
         succes: true,
