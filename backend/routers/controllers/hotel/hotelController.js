@@ -90,5 +90,6 @@ const hotelcreate = (req, res) => {
 };
 
 module.exports = {
-  getHotels,hotelcreate
+  getHotels,
+  hotelcreate,
 };
