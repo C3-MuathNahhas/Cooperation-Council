@@ -4,13 +4,13 @@ const db = require('./db/db');
 const signUpRouter = require("./routers/routes/auth/signUp")
 const loginRouter = require("./routers/routes/auth/login")
 
-const flightRouter=require("./routers/routes/flight")
+const flightRouter=require("./routers/routes/flight");
 
 const app = express();
 const hotelBookingRouter = require("./routers/routes/hotelBooking/hotelBooking");
 const hotelRouter = require("./routers/routes/hotel/hotel");
 
-//const flightBookingRouter = require("./routers/routes/flightBooking/flightBooking")
+const flightBookingRouter = require("./routers/routes/flightBooking/flightBooking")
 //routers
 
 //built-in middleware
@@ -25,7 +25,7 @@ app.use(cors());
 app.use("/login",loginRouter)
 app.use("/flights",flightRouter)
 
-//app.use("/flightBooking", flightBookingRouter)
+app.use("/flightBooking", flightBookingRouter)
 app.use("/hotelBooking", hotelBookingRouter);
 app.use("/hotel", hotelRouter);
 app.use("/signUp", signUpRouter);

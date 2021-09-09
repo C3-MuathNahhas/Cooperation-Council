@@ -9,4 +9,6 @@ const {
 flightBookingRouter.post("/", creatFlightBooking);
 flightBookingRouter.delete(":bookingId", deleteFlightBooking);
 flightBookingRouter.get("/allBooking/:userId", getFlightsBookingByUserId);
+
+
 module.exports = flightBookingRouter;
