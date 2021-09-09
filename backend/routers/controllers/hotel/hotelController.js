@@ -1,5 +1,7 @@
 const axios = require("axios");
+const { Mongoose } = require("mongoose");
 const hotelModle = require("../../../db/models/hotelsSchema");
+
 //example
 //  const location_id = '293986';
 //  const adults = '1';
@@ -62,6 +64,36 @@ const getHotels = (req, res) => {
     });
 };
 
+const hotelUpdate = (req, res) => {
+  const _id = req.params.id;
+  const hotelId = req.params.hotelId
+  const { capacity } = req.body;
+
+  hotelModle
+    .findByIdAndUpdate(hotelId, capacity, { new: true })
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `The Hotel with id => ${_id} not found`,
+        });
+      }
+      res.status(202).json({
+        success: true,
+        message: ` Success Hotel updated the rent capacity =${capacity}`,
+        hotel: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        // err: err,
+      });
+    });
+};
+
+
 const hotelcreate = (req, res) => {
   const { location, capacity, rooms, nights, adults } = req.body;
 
@@ -89,7 +121,9 @@ const hotelcreate = (req, res) => {
     });
 };
 
+
+
 module.exports = {
   getHotels,
-  hotelcreate,
+  hotelcreate, hotelUpdate
 };
