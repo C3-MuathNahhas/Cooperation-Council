@@ -30,8 +30,3 @@ const creatFlightBooking = () => { }
 
 
 
-
-module.exports = {
-    getFlightsBookingByUserId,
-    creatFlightBooking,
-};

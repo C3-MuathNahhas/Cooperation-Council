@@ -1,13 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./db/db');
-const signUpRouter=require("./routers/routes/auth/signUp")
-const loginRouter=require("./routers/routes/auth/login")
+const signUpRouter = require("./routers/routes/auth/signUp")
+const loginRouter = require("./routers/routes/auth/login")
 
 const app = express();
-const hotelBookingRouter=require("./routers/routes/hotelBooking/hotelBooking");
-const hotelRouter=require("./routers/routes/hotel/hotel");
-
+const hotelBookingRouter = require("./routers/routes/hotelBooking/hotelBooking");
+const hotelRouter = require("./routers/routes/hotel/hotel");
+const flightBookingRouter = require("./routers/routes/flightBooking/flightBooking")
 //routers
 
 //built-in middleware
@@ -18,10 +18,11 @@ app.use(cors());
 
 
 //app routers
-app.use("/hotelBooking",hotelBookingRouter);
-app.use("/hotel",hotelRouter);
-app.use("/signUp",signUpRouter);
-app.use("/login",loginRouter);
+app.use("/flightBooking", flightBookingRouter)
+app.use("/hotelBooking", hotelBookingRouter);
+app.use("/hotel", hotelRouter);
+app.use("/signUp", signUpRouter);
+app.use("/login", loginRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
