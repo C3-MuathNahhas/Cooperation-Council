@@ -2,8 +2,8 @@ const mongoose=require("mongoose")
 const flightSchema=new mongoose.Schema({
 distination: {type: String,required:true},
 origin: {type: String,required:true},
-date: {type:date ,default:date.now ,required:true },
-capacity:{type:number},
+date: {type:Date ,default:Date.now ,required:true },
+capacity:{type:Number},
 flightId:{type: String}
 })
 
