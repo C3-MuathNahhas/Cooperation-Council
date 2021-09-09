@@ -5,8 +5,8 @@ const signUpRouter=require("./routers/routes/auth/signUp")
 const loginRouter=require("./routers/routes/auth/login")
 
 const app = express();
-const hotelBookingRouter=require("./routers/routes/hotelBooking");
-const hotelRouter=require("./routers/routes/hotle");
+const hotelBookingRouter=require("./routers/routes/hotelBooking/hotelBooking");
+const hotelRouter=require("./routers/routes/hotel/hotel");
 
 //routers
 
@@ -16,11 +16,12 @@ app.use(express.json());
 //third-party middleware
 app.use(cors());
 
+
+//app routers
 app.use("/hotelBooking",hotelBookingRouter);
 app.use("/hotel",hotelRouter);
-//app routers
-app.use("/signUp",signUpRouter)
-app.use("/login",loginRouter)
+app.use("/signUp",signUpRouter);
+app.use("/login",loginRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
