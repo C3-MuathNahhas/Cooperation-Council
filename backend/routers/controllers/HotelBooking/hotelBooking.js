@@ -2,11 +2,11 @@ const { deleteOne } = require("../../../db/models/hotelBookingSchema");
 const hotelBookingModel = require("../../../db/models/hotelBookingSchema");
 
 const createHotelBooking = (req, res) => {
-  const { hotelId, UsertId } = req.body;
+  const { hotelId, UserId } = req.body;
 
   const newHotelBookig = new hotelBookingModel({
     hotelId,
-    UsertId,
+    UserId,
   });
   newHotelBookig
     .save()
@@ -48,8 +48,8 @@ const getHotelsBookingsByUserId = (req, res) => {
   const id = req.params.UserId;
 
   hotelBookingModel
-    .find({ UsertId: id })
-    .populate("hotelId").populate("UsertId")
+    .find({ UserId: id })
+    .populate("hotelId").populate("UserId")
     .then((result) => {
       res.status(201).json({
         succes: true,
