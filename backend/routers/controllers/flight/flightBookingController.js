@@ -19,15 +19,16 @@ const isBookingExist = (req, res, next) => {
         })
     })
 
+}
+const isFlightFit = (req, res, next) => {
+
+    //1: get flight id and last number of adults at the booking from past middleWare
+    //2:check if flight fit the new value of adults then edit the flight capacity and edit the booking adults value by next()
+
+    const { bookingId } = req.params;
 
 
 
-
-
-    // if (req.params.bookingId) { next() }
-    // else {
-    //     next(new Error('the booking is not found'))
-    // }
 }
 const updateFlightAdults = (bookingId, process, adults) => {
 
@@ -226,4 +227,5 @@ errorMiddle = (err, req, res, next) => {
 module.exports = {
     creatFlightBooking, getFlightsBookingByUserId,
     deleteFlightBooking, getAllFlightsBooking, updateFlightBooking, isBookingExist
+    , isFlightFit
 }
