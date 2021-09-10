@@ -1,12 +1,11 @@
-const { deleteOne } = require("../../../db/models/hotelBookingSchema");
 const hotelBookingModel = require("../../../db/models/hotelBookingSchema");
 
 const createHotelBooking = (req, res) => {
-  const { hotelId, UsertId } = req.body;
+  const { hotelId, userId } = req.body;
 
   const newHotelBookig = new hotelBookingModel({
     hotelId,
-    UsertId,
+    userId,
   });
   newHotelBookig
     .save()
@@ -45,11 +44,11 @@ const deleteHotelBooking = (req, res) => {
 };
 
 const getHotelsBookingsByUserId = (req, res) => {
-  const id = req.params.UserId;
+  const id = req.params.userId;
 
   hotelBookingModel
-    .find({ UsertId: id })
-    .populate("hotelId").populate("UsertId")
+    .find({ userId: id })
+    .populate("hotelId").populate("userId")
     .then((result) => {
       res.status(201).json({
         succes: true,
@@ -65,8 +64,29 @@ const getHotelsBookingsByUserId = (req, res) => {
     });
 };
 
+const getHotelBooking = (req, res) => {
+  const _id = req.params.bookingId;
+
+  hotelBookingModel
+    .find({ _id })
+    .populate("hotelId").populate("userId")
+    .then((result) => {
+      res.status(201).json({
+        succes: true,
+        success: "get Hotels Booking sucess ",
+        result: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        succes: false,
+        massage: "error getHotelBooking",
+      });
+    });
+};
+
 module.exports = {
   createHotelBooking,
   deleteHotelBooking,
-  getHotelsBookingsByUserId,
+  getHotelsBookingsByUserId, getHotelBooking
 };
