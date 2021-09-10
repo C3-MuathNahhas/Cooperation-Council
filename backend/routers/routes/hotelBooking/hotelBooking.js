@@ -5,7 +5,7 @@ const {
   createHotelBooking,
   deleteHotelBooking,
   getHotelsBookingsByUserId,getHotelBooking
-} = require("../../controllers/HotelBooking/hotelBooking");
+} = require("../../controllers/hotel/hotelBooking");
 
 hotelBookingRouter.post("/create", createHotelBooking);
 hotelBookingRouter.delete("/delete/:bookingId", deleteHotelBooking);
