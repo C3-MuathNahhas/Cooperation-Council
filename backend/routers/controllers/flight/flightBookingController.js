@@ -30,8 +30,6 @@ const isFlightFit = (req, res, next) => {
 
     const { flightId, lastValueOfAdults } = req;
 
-
-
     //1: get flight id and last number of adults at the booking from past middleWare
     //2:check if flight fit the new value of adults then edit the flight capacity and edit the booking adults value by next()
 
@@ -42,6 +40,7 @@ const isFlightFit = (req, res, next) => {
                 message: `Server Error`
             });
         } else {
+            console.log(`result.capacity : ${result.capacity}`);
 
             if (req.method === 'PUT') {
                 const { adults } = req.body;
@@ -54,9 +53,13 @@ const isFlightFit = (req, res, next) => {
 
                     if (lastValueOfAdults < adults)//more people come
                     {
-                        if (result.capacity - lastValueOfAdults >= adults) {
+                        if (result.capacity >= adults - lastValueOfAdults) {
+                            //(result.capacity - adults) + parseInt(lastValueOfAdults)
+                            console.log('lastValueOfAdults :', lastValueOfAdults, 'adults  ', adults);
                             req.body.flightId = flightId
-                            req.body.capacity = result.capacity - lastValueOfAdults + adults
+                            req.body.capacity = (result.capacity - adults) + parseInt(lastValueOfAdults)
+                            console.log(' req.body.capacity :', req.body.capacity);
+
                             next()
                         }
                         else {
@@ -66,8 +69,9 @@ const isFlightFit = (req, res, next) => {
                             })
                         }
                     } else {
+                        console.log('lastValueOfAdults ', lastValueOfAdults, 'adults  ', adults);
                         req.body.flightId = flightId
-                        req.body.capacity = result.capacity - lastValueOfAdults + adults
+                        req.body.capacity = (result.capacity - adults) + parseInt(lastValueOfAdults)
                         next()//less people come
                     }
 
@@ -75,10 +79,13 @@ const isFlightFit = (req, res, next) => {
 
         }
     }).catch((err) => {
+        console.log(err.message);
+        
         res.status(404).json({
             success: false,
             message: `Server Error`
         })
+
     })
 
 
