@@ -48,7 +48,7 @@ const creatFlightBooking = (req, res) => {
 
 const getAllFlightsBooking = (req, res) => {
     flightBookingModle.find({})
-        .populate("User").populate("Flight")
+        .populate("userId",'-_id -password -email -__v').populate("flightId",'-_id -__v')
         .exec()
         .then((result) => {
             if (!result) {
@@ -76,4 +76,4 @@ const getAllFlightsBooking = (req, res) => {
 const deleteFlightBooking = (req, res) => { }
 
 
-module.exports = { creatFlightBooking, getFlightsBookingByUserId, deleteFlightBooking }
+module.exports = { creatFlightBooking, getFlightsBookingByUserId, deleteFlightBooking ,getAllFlightsBooking}
