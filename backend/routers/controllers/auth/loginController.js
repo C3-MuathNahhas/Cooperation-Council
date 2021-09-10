@@ -4,7 +4,7 @@ const dotenv=require("dotenv").config()
 const bcrypt=require("bcrypt")
 
 const Login=(req,res)=>{
-    const email=req.body.email.tolowercase();
+    const email=req.body.email.toLowerCase();
     const password=req.body.password
 
     loginModel.findOne({email:email}).then((result)=>{
