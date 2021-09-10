@@ -24,11 +24,11 @@ const getFlightsBookingByUserId = (req, res) => {
             }
         })
 };
-const creatFlightBooking = () => {
-
+const creatFlightBooking = (req, res) => {
+    const { flightId, UserId } = req.body;
     const newBooking = new flightBookingModle({
-        hotelId,
-        UsertId
+        flightId,
+        UserId
     })
         .save()
         .then((result) => {
@@ -40,6 +40,7 @@ const creatFlightBooking = () => {
         })
         .catch((err) => {
             res.status(500);
+            console.log(err.message)
             res.json("server error");
         });
 };
@@ -48,7 +49,7 @@ const creatFlightBooking = () => {
 
 
 
-const deleteFlightBooking = () => { }
+const deleteFlightBooking = (req, res) => { }
 
 
 module.exports = { creatFlightBooking, getFlightsBookingByUserId, deleteFlightBooking }
