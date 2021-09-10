@@ -40,8 +40,7 @@ const isFlightFit = (req, res, next) => {
                 message: `Server Error`
             });
         } else {
-            console.log(`result.capacity : ${result.capacity}`);
-
+            //     console.log(`flight.capacity : ${result.capacity}`);
             if (req.method === 'PUT') {
                 const { adults } = req.body;
                 if (lastValueOfAdults == adults) {
@@ -54,11 +53,9 @@ const isFlightFit = (req, res, next) => {
                     if (lastValueOfAdults < adults)//more people come
                     {
                         if (result.capacity >= adults - lastValueOfAdults) {
-                            //(result.capacity - adults) + parseInt(lastValueOfAdults)
-                            console.log('lastValueOfAdults :', lastValueOfAdults, 'adults  ', adults);
                             req.body.flightId = flightId
                             req.body.capacity = (result.capacity - adults) + parseInt(lastValueOfAdults)
-                            console.log(' req.body.capacity :', req.body.capacity);
+                            //  console.log(' req.body.capacity :', req.body.capacity);
 
                             next()
                         }
@@ -69,7 +66,7 @@ const isFlightFit = (req, res, next) => {
                             })
                         }
                     } else {
-                        console.log('lastValueOfAdults ', lastValueOfAdults, 'adults  ', adults);
+                        //    console.log('lastValueOfAdults ', lastValueOfAdults, 'adults  ', adults);
                         req.body.flightId = flightId
                         req.body.capacity = (result.capacity - adults) + parseInt(lastValueOfAdults)
                         next()//less people come
@@ -80,7 +77,7 @@ const isFlightFit = (req, res, next) => {
         }
     }).catch((err) => {
         console.log(err.message);
-        
+
         res.status(404).json({
             success: false,
             message: `Server Error`
@@ -192,22 +189,18 @@ const deleteFlightBooking = (req, res) => {
 const updateFlightBooking = async function (req, res) {
     const { bookingId } = req.params;
     const { adults } = req.body
-    flightBookingModle.findByIdAndUpdate(bookingId, { adults }, { new: true }).then((result) => {
+    flightBookingModle.findByIdAndUpdate(bookingId, { adults }, { new: true }).populate("userId", '-_id -password -email -__v').populate("flightId", '-_id -__v').then((result) => {
         if (!result) {
             return res.status(404).json({
                 success: false,
                 message: `The Booking => ${bookingId} not found`,
             });
         } else {
-
-
-            //let a = updateFlightAdults(bookingId);
-            res.status(200).json('thanks')
-            // res.status(200).json({
-            //     success: true,
-            //     message: `Success update Booking with id => ${bookingId}`,
-            //     newBooking: result
-            // });
+            res.status(200).json({
+                success: true,
+                message: `Success update Booking with id => ${bookingId}`,
+                newBooking: result
+            });
         }
 
     })
