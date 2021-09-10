@@ -45,19 +45,31 @@ const isFlightFit = (req, res, next) => {
 
             if (req.method === 'PUT') {
                 const { adults } = req.body;
-                console.log(lastValueOfAdults < adults)
-                if (lastValueOfAdults < adults)//more people come
-                {
-                    if (result.capacity - lastValueOfAdults >= adults) {
-                        next()
+                if (lastValueOfAdults == adults) {
+                    return res.status(500).json({
+                        success: false,
+                        message: `there is no changes to edit`
+                    });
+                } else
+
+                    if (lastValueOfAdults < adults)//more people come
+                    {
+                        if (result.capacity - lastValueOfAdults >= adults) {
+                            req.body.flightId = flightId
+                            req.body.capacity = result.capacity - lastValueOfAdults + adults
+                            next()
+                        }
+                        else {
+                            res.status(500).json({
+                                success: false,
+                                message: `the flight not fit for the new adults`
+                            })
+                        }
+                    } else {
+                        req.body.flightId = flightId
+                        req.body.capacity = result.capacity - lastValueOfAdults + adults
+                        next()//less people come
                     }
-                    else {
-                        res.status(500).json({
-                            success: false,
-                            message: `the flight not fit for the new adults`
-                        })
-                    }
-                }
 
             }
 
