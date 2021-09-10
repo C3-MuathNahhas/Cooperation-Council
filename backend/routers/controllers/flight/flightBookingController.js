@@ -96,8 +96,8 @@ const deleteFlightBooking = (req, res) => {
 }
 const updateFlightBooking = (req, res) => {
     const { bookingId } = req.params;
-    const { capacity } = req.body
-    flightBookingModle.findByIdAndUpdate(bookingId, { capacity }, { new: true }).then((result) => {
+    const { adults } = req.body
+    flightBookingModle.findByIdAndUpdate(bookingId, { adults }, { new: true }).then((result) => {
         if (!result) {
             return res.status(404).json({
                 success: false,
