@@ -26,10 +26,10 @@ const getFlightsBookingByUserId = (req, res) => {
         })
 };
 const creatFlightBooking = (req, res) => {
-    const { flightId, UserId } = req.body;
+    const { flightId, userId } = req.body;
     const newBooking = new flightBookingModle({
         flightId,
-        UserId
+        userId
     })
         .save()
         .then((result) => {

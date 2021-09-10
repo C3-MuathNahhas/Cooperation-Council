@@ -9,5 +9,5 @@ const {
 
 hotelBookingRouter.post("/create", createHotelBooking);
 hotelBookingRouter.delete("/delete/:bookingId", deleteHotelBooking);
-hotelBookingRouter.get("/allBooking/:UserId", getHotelsBookingsByUserId);
+hotelBookingRouter.get("/allBooking/:userId", getHotelsBookingsByUserId);
 module.exports = hotelBookingRouter;
