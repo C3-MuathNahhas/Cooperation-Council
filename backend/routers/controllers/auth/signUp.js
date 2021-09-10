@@ -22,4 +22,17 @@ const createNewUser = (req, res) => {
       res.json("server error");
     });
 };
-module.exports = { createNewUser };
+
+
+
+
+const getUsers=(req,res)=>{
+  signModel.find({}).then((result)=>{
+    res.status(201)
+    res.json({success:true,massage:"getAllUser",result:result})
+  }).catch((err)=>{
+    res.status(500)
+    res.json({success:false,massage:"nothing User"})
+  })
+}
+module.exports = { createNewUser,getUsers };
