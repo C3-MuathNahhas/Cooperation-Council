@@ -15,7 +15,6 @@ const isBookingExist = (req, res, next) => {
       } else {
         req.flightId = result.flightId;
         req.lastValueOfAdults = result.adults;
-
         next();
       }
     })
@@ -107,8 +106,58 @@ const getFlightsBookingByUserId = (req, res) => {
       }
     });
 };
-// middleware presave 
-//this.capacity=
+const deleteFlightBooking = (req, res) => {
+  const { bookingId } = req.params;
+  flightBookingModle
+    .findByIdAndDelete(bookingId)
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `The Booking => ${bookingId} not found`,
+        });
+      }
+      res.status(200).json({
+        success: true,
+        message: `Success Delete Booking with id => ${bookingId}`,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+      });
+    });
+};
+const updateFlightBooking = async function (req, res) {
+  const { bookingId } = req.params;
+  const { adults } = req.body;
+  flightBookingModle
+    .findByIdAndUpdate(bookingId, { adults }, { new: true })
+    .populate("userId", "-_id -password -email -__v")
+    .populate("flightId", "-_id -__v")
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `The Booking => ${bookingId} not found`,
+        });
+      } else {
+        res.status(200).json({
+          success: true,
+          message: `Success update Booking with id => ${bookingId}`,
+          newBooking: result,
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+      });
+    });
+};
+
 const creatFlightBooking = (req, res) => {
   const { flightId, userId } = req.body;
   const newBooking = new flightBookingModle({
@@ -117,10 +166,7 @@ const creatFlightBooking = (req, res) => {
   })
     .save()
     .then((result) => {
-      
-      
       console.log(result);
-
       res.status(201);
       res.json({ success: true, message: "new booking created" });
     })
@@ -153,4 +199,22 @@ const getAllFlightsBooking = (req, res) => {
     });
 };
 
-module.exports={getFlightsBookingByUserId}
+errorMiddle = (err, req, res, next) => {
+  res.status(err.status);
+  res.json({
+    error: {
+      status: err.status,
+      message: err.message,
+    },
+  });
+};
+
+module.exports = {
+  getFlightsBookingByUserId
+  , isBookingExist
+  , isFlightFit
+  , creatFlightBooking
+  , getAllFlightsBooking
+  , deleteFlightBooking
+  , updateFlightBooking
+}
