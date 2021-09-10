@@ -107,6 +107,8 @@ const getFlightsBookingByUserId = (req, res) => {
       }
     });
 };
+// middleware presave 
+//this.capacity=
 const creatFlightBooking = (req, res) => {
   const { flightId, userId } = req.body;
   const newBooking = new flightBookingModle({
@@ -115,6 +117,8 @@ const creatFlightBooking = (req, res) => {
   })
     .save()
     .then((result) => {
+      
+      
       console.log(result);
 
       res.status(201);
