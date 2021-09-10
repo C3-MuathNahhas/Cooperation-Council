@@ -26,8 +26,7 @@ app.use("/hotelBooking", hotelBookingRouter);
 app.use("/hotel", hotelRouter);
 app.use("/signUp", signUpRouter);
 
-
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-	console.log(`Server On ${PORT}`);
+  console.log(`Server On ${PORT}`);
 });
