@@ -6,11 +6,14 @@ const FlightBookigSchema = mongoose.Schema({
     ref: "Flight",
     required: true,
   },
-  UserId: {
+  userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     required: true,
   },
+
+  adults: { type: Number }
 });
+
 
 module.exports = mongoose.model("FlightBookig", FlightBookigSchema);
