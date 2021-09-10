@@ -73,8 +73,30 @@ const getAllFlightsBooking = (req, res) => {
 };
 
 const deleteFlightBooking = (req, res) => {
-    const {bookingId} = req.params;
+    const { bookingId } = req.params;
     flightBookingModle.findByIdAndDelete(bookingId).then((result) => {
+        if (!result) {
+            return res.status(404).json({
+                success: false,
+                message: `The Booking => ${bookingId} not found`,
+            });
+        }
+        res.status(200).json({
+            success: true,
+            message: `Success Delete Booking with id => ${bookingId}`,
+        });
+    })
+        .catch((err) => {
+            res.status(500).json({
+                success: false,
+                message: `Server Error`,
+            });
+        });
+
+}
+const updateFlightBooking = (req, res) => {
+    const { bookingId } = req.params;
+    flightBookingModle.findByIdAndUpdate(bookingId,{capacity:4},{ new: true }).then((result) => {
         if (!result) {
             return res.status(404).json({
                 success: false,
