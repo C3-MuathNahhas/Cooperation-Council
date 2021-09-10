@@ -4,10 +4,12 @@ const hotelBookingRouter = express.Router();
 const {
   createHotelBooking,
   deleteHotelBooking,
-  getHotelsBookingsByUserId,
-} = require("../../controllers/HotelBooking/hotelBooking");
+  getHotelsBookingsByUserId,getHotelBooking
+} = require("../../controllers/hotel/hotelBookingController");
 
-hotelBookingRouter.post("/create", createHotelBooking);
+hotelBookingRouter.post("/", createHotelBooking);
 hotelBookingRouter.delete("/delete/:bookingId", deleteHotelBooking);
 hotelBookingRouter.get("/allBooking/:userId", getHotelsBookingsByUserId);
+hotelBookingRouter.get("/:bookingId",getHotelBooking)
+
 module.exports = hotelBookingRouter;
