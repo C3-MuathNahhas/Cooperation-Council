@@ -1,22 +1,22 @@
 const newFlightModel = require("../../../db/models/flightSchema");
 const createNewFlight = (req, res) => {
-  const { distination, origin, date } = req.body;
+  const { origin, destination, date } = req.body;
   const newFlight = new newFlightModel({
-    distination,
-    origin,
-    date,
+    destination: destination,
+    origin: origin,
+    date: date,
     capacity: 5,
-  })
+  });
+  newFlight
     .save()
     .then((result) => {
       console.log(result);
 
-      res.status(201);
-      res.json({ success: true, message: "new flight  created" });
+      res.status(201).json({ success: true, message: "new flight  created" });
     })
     .catch((err) => {
-      res.status(500);
-      res.json("server error");
+      console.log(err);
+      res.status(500).json("server error");
     });
 };
 // // search
