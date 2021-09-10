@@ -11,7 +11,13 @@ const isBookingExist = (req, res, next) => {
                 success: false,
                 message: `there is No flight booking with this id`
             });
-        } else { next() }
+        } else {
+            
+            req.flightId = result.flightId
+            req.lastValueOfAdults = result.adults
+
+            next()
+        }
     }).catch((err) => {
         res.status(404).json({
             success: false,
@@ -21,12 +27,30 @@ const isBookingExist = (req, res, next) => {
 
 }
 const isFlightFit = (req, res, next) => {
+    const { flightId, lastValueOfAdults } = req;
+
+
 
     //1: get flight id and last number of adults at the booking from past middleWare
     //2:check if flight fit the new value of adults then edit the flight capacity and edit the booking adults value by next()
-    console.log('flight check');
 
-    next()
+    newFlightModel.findOne({ _id: flightId }).then((result) => {
+        if (!result) {
+            return res.status(404).json({
+                success: false,
+                message: `Server Error`
+            });
+        } else {
+           console.log(result);
+           
+            next()
+        }
+    }).catch((err) => {
+        res.status(404).json({
+            success: false,
+            message: `Server Error`
+        })
+    })
 
 
 
