@@ -4,27 +4,20 @@ const newFlightModel = require("../../../db/models/flightSchema")
 
 const isBookingExist = (req, res, next) => {
     const { bookingId } = req.params;
-    //   if( flightBookingModle.findOne({ _id:bookingId }) ) 
-
 
     flightBookingModle.findOne({ _id: bookingId }).then((result) => {
         if (!result) {
             return res.status(404).json({
                 success: false,
-                message: `there is No flight booking with this id`,
-
+                message: `there is No flight booking with this id`
             });
-
-
-        } else {
-            next()
-
-        }
-    }
-
-
-
-    )
+        } else { next() }
+    }).catch((err) => {
+        res.status(404).json({
+            success: false,
+            message: `there is No flight booking with this id`
+        })
+    })
 
 
 
