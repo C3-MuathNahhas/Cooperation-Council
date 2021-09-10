@@ -7,7 +7,7 @@ const {
 } = require("../../controllers/flight/flightBookingController");
 
 flightBookingRouter.post("/", creatFlightBooking);
-flightBookingRouter.delete(":bookingId", deleteFlightBooking);
+flightBookingRouter.delete("/:bookingId", deleteFlightBooking);
 flightBookingRouter.get("/allBooking/:userId", getFlightsBookingByUserId);
 flightBookingRouter.get("/allBooking/", getAllFlightsBooking);
 

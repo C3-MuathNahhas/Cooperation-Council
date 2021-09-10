@@ -47,8 +47,9 @@ const creatFlightBooking = (req, res) => {
 };
 
 const getAllFlightsBooking = (req, res) => {
+
     flightBookingModle.find({})
-        .populate("userId",'-_id -password -email -__v').populate("flightId",'-_id -__v')
+        .populate("userId", '-_id -password -email -__v').populate("flightId", '-_id -__v')
         .exec()
         .then((result) => {
             if (!result) {
@@ -62,7 +63,7 @@ const getAllFlightsBooking = (req, res) => {
                     {
                         success: true,
                         message: `all flights bookings for all users`,
-                        flights: result
+                        flightsBookings: result
 
                     }
 
@@ -71,9 +72,28 @@ const getAllFlightsBooking = (req, res) => {
         })
 };
 
+const deleteFlightBooking = (req, res) => {
+    const {bookingId} = req.params;
+    flightBookingModle.findByIdAndDelete(bookingId).then((result) => {
+        if (!result) {
+            return res.status(404).json({
+                success: false,
+                message: `The Booking => ${bookingId} not found`,
+            });
+        }
+        res.status(200).json({
+            success: true,
+            message: `Success Delete Booking with id => ${bookingId}`,
+        });
+    })
+        .catch((err) => {
+            res.status(500).json({
+                success: false,
+                message: `Server Error`,
+            });
+        });
+
+}
 
 
-const deleteFlightBooking = (req, res) => { }
-
-
-module.exports = { creatFlightBooking, getFlightsBookingByUserId, deleteFlightBooking ,getAllFlightsBooking}
+module.exports = { creatFlightBooking, getFlightsBookingByUserId, deleteFlightBooking, getAllFlightsBooking }
