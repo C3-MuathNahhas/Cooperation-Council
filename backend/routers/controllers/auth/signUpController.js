@@ -37,3 +37,4 @@ const getUsers = (req, res) => {
 };
 
 module.exports = { createNewUser ,getUsers};
+
