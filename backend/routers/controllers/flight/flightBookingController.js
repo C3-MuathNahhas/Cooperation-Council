@@ -96,7 +96,8 @@ const deleteFlightBooking = (req, res) => {
 }
 const updateFlightBooking = (req, res) => {
     const { bookingId } = req.params;
-    flightBookingModle.findByIdAndUpdate(bookingId,{capacity:4},{ new: true }).then((result) => {
+    const { capacity } = req.body
+    flightBookingModle.findByIdAndUpdate(bookingId, { capacity }, { new: true }).then((result) => {
         if (!result) {
             return res.status(404).json({
                 success: false,
@@ -105,7 +106,8 @@ const updateFlightBooking = (req, res) => {
         }
         res.status(200).json({
             success: true,
-            message: `Success Delete Booking with id => ${bookingId}`,
+            message: `Success update Booking with id => ${bookingId}`,
+            newBooking: result
         });
     })
         .catch((err) => {
@@ -118,4 +120,7 @@ const updateFlightBooking = (req, res) => {
 }
 
 
-module.exports = { creatFlightBooking, getFlightsBookingByUserId, deleteFlightBooking, getAllFlightsBooking }
+module.exports = {
+    creatFlightBooking, getFlightsBookingByUserId,
+    deleteFlightBooking, getAllFlightsBooking, updateFlightBooking
+}

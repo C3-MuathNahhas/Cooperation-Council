@@ -1,7 +1,4 @@
-
- const newFlightModel=require("../../../db/models/flightSchema")
- 
-
+const newFlightModel=require("../../../db/models/flightSchema")
 const createNewFlight = (req,res) => {
   const { distination, origin, date} = req.body;
   const newFlight = new newFlightModel({
