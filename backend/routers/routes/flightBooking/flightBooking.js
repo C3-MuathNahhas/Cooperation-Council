@@ -3,7 +3,7 @@ const flightBookingRouter = express.Router();
 
 const {
   getFlightsBookingByUserId,
-  creatFlightBooking, deleteFlightBooking
+  creatFlightBooking, deleteFlightBooking,
 } = require("../../controllers/flight/flightBookingController");
 
 flightBookingRouter.post("/", creatFlightBooking);

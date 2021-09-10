@@ -1,4 +1,5 @@
 const flightBookingModle = require("../../../db/models/FlightBookigSchema");
+
 const getFlightsBookingByUserId = (req, res) => {
     const { userId } = req.body.params;
     flightBookingModle.find({ userId })
