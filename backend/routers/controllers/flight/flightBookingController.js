@@ -1,4 +1,67 @@
 const flightBookingModle = require("../../../db/models/FlightBookigSchema");
+const newFlightModel = require("../../../db/models/flightSchema")
+
+
+isExist = (req, res, next) => {
+    if (req.body.user) { next() }
+    else {
+        next(new Error('the booking is not found'))
+    }
+}
+const updateFlightAdults = (bookingId, process, adults) => {
+
+
+    let isExist =
+        newFlightModel
+            .find({ _id: bookingId })
+
+            .then((result) => {
+                if (result)
+                    next()
+                else return false
+
+            })
+            .catch((err) => {
+                return err.message
+            });
+
+
+    console.log('isExist : : : ', isExist);
+
+    return isExist;
+
+    // newFlightModel.findByIdAndUpdate(bookingId, {
+    //     adults
+
+
+    // }, { new: true }).then((result) => {
+    //     if (!result) {
+    //         return res.status(404).json({
+    //             success: false,
+    //             message: `The Booking => ${bookingId} not found`,
+    //         });
+    //     }
+    //     res.status(200).json({
+    //         success: true,
+    //         message: `Success update Booking with id => ${bookingId}`,
+    //         newBooking: result
+    //     });
+    // })
+    //     .catch((err) => {
+    //         res.status(500).json({
+    //             success: false,
+    //             message: `Server Error`,
+    //         });
+    //     });
+
+
+
+
+
+
+}
+
+
 
 const getFlightsBookingByUserId = (req, res) => {
     const userId = req.body.params;
@@ -94,7 +157,7 @@ const deleteFlightBooking = (req, res) => {
         });
 
 }
-const updateFlightBooking = (req, res) => {
+const updateFlightBooking = async function (req, res) {
     const { bookingId } = req.params;
     const { adults } = req.body
     flightBookingModle.findByIdAndUpdate(bookingId, { adults }, { new: true }).then((result) => {
@@ -103,12 +166,18 @@ const updateFlightBooking = (req, res) => {
                 success: false,
                 message: `The Booking => ${bookingId} not found`,
             });
+        } else {
+
+
+            let a = updateFlightAdults(bookingId);
+            res.status(200).json(a)
+            // res.status(200).json({
+            //     success: true,
+            //     message: `Success update Booking with id => ${bookingId}`,
+            //     newBooking: result
+            // });
         }
-        res.status(200).json({
-            success: true,
-            message: `Success update Booking with id => ${bookingId}`,
-            newBooking: result
-        });
+
     })
         .catch((err) => {
             res.status(500).json({
@@ -119,6 +188,16 @@ const updateFlightBooking = (req, res) => {
 
 }
 
+
+errorMiddle = (err, req, res, next) => {
+    res.status(err.status);
+    res.json({
+        error: {
+            status: err.status,
+            message: err.message,
+        }
+    })
+}
 
 module.exports = {
     creatFlightBooking, getFlightsBookingByUserId,
