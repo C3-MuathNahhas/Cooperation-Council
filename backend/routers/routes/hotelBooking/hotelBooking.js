@@ -7,8 +7,9 @@ const {
   getHotelsBookingsByUserId,getHotelBooking
 } = require("../../controllers/hotel/hotelBooking");
 
-hotelBookingRouter.post("/create", createHotelBooking);
+hotelBookingRouter.post("/", createHotelBooking);
 hotelBookingRouter.delete("/delete/:bookingId", deleteHotelBooking);
 hotelBookingRouter.get("/allBooking/:userId", getHotelsBookingsByUserId);
-hotelBookingRouter.get("/:bookingId")
+hotelBookingRouter.get("/:bookingId",getHotelBooking)
+
 module.exports = hotelBookingRouter;

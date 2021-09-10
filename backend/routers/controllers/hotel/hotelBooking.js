@@ -68,7 +68,7 @@ const getHotelBooking = (req, res) => {
   const _id = req.params.bookingId;
 
   hotelBookingModel
-    .find({ _id})
+    .find({ _id })
     .populate("hotelId").populate("userId")
     .then((result) => {
       res.status(201).json({
@@ -88,5 +88,5 @@ const getHotelBooking = (req, res) => {
 module.exports = {
   createHotelBooking,
   deleteHotelBooking,
-  getHotelsBookingsByUserId,getHotelBooking
+  getHotelsBookingsByUserId, getHotelBooking
 };
