@@ -89,5 +89,5 @@ const getHotelBooking = (req, res) => {
 module.exports = {
   createHotelBooking,
   deleteHotelBooking,
-  getHotelsBookingsByUserId,
+  getHotelsBookingsByUserId,getHotelBooking
 };
