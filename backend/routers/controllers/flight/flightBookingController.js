@@ -2,12 +2,6 @@ const flightBookingModle = require("../../../db/models/FlightBookigSchema");
 const newFlightModel = require("../../../db/models/flightSchema")
 
 
-isExist = (req, res, next) => {
-    if (req.body.user) { next() }
-    else {
-        next(new Error('the booking is not found'))
-    }
-}
 const updateFlightAdults = (bookingId, process, adults) => {
 
 
