@@ -12,7 +12,7 @@ const isBookingExist = (req, res, next) => {
                 message: `there is No flight booking with this id`
             });
         } else {
-            
+
             req.flightId = result.flightId
             req.lastValueOfAdults = result.adults
 
@@ -27,6 +27,7 @@ const isBookingExist = (req, res, next) => {
 
 }
 const isFlightFit = (req, res, next) => {
+
     const { flightId, lastValueOfAdults } = req;
 
 
@@ -41,9 +42,25 @@ const isFlightFit = (req, res, next) => {
                 message: `Server Error`
             });
         } else {
-           console.log(result);
-           
-            next()
+
+            if (req.method === 'PUT') {
+                const { adults } = req.body;
+                console.log(lastValueOfAdults < adults)
+                if (lastValueOfAdults < adults)//more people come
+                {
+                    if (result.capacity - lastValueOfAdults >= adults) {
+                        next()
+                    }
+                    else {
+                        res.status(500).json({
+                            success: false,
+                            message: `the flight not fit for the new adults`
+                        })
+                    }
+                }
+
+            }
+
         }
     }).catch((err) => {
         res.status(404).json({
