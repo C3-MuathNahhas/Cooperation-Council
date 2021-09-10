@@ -22,4 +22,5 @@ const createNewUser = (req, res) => {
       res.json("server error");
     });
 };
+
 module.exports = { createNewUser };
