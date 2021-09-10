@@ -1,19 +1,18 @@
-const newFlightModel = require("../../../db/models/flightSchema")
+const newFlightModel = require("../../../db/models/flightSchema");
 const createNewFlight = (req, res) => {
   const { distination, origin, date } = req.body;
   const newFlight = new newFlightModel({
     distination,
     origin,
     date,
-    capacity: 5
+    capacity: 5,
   })
     .save()
     .then((result) => {
       console.log(result);
 
-      res.status(201)
-      res.json({ success: true, message: "new flight  created" })
-
+      res.status(201);
+      res.json({ success: true, message: "new flight  created" });
     })
     .catch((err) => {
       res.status(500);
@@ -644,8 +643,6 @@ const createNewFlight = (req, res) => {
 // // ]
 // ​
 
-
-
 //const test_data = [];
 
 const test_data = [
@@ -657,7 +654,6 @@ const test_data = [
     date: "12-26-2021",
     data: [
       {
-
         flight_name: "Flydubai",
         stops: "Direct",
         price: {
@@ -665,56 +661,79 @@ const test_data = [
         },
       },
       {
-
         flight_name: "Air Arabia",
         stops: "Direct",
         price: {
           total: 1238,
         },
       },
-
-    ]
-  }
-]
+    ],
+  },
+  {
+    status: "success",
+    from: "DXB",
+    to: "AMM",
+    currency: "AED",
+    date: "11-26-2021",
+    data: [
+      {
+        flight_name: "Flydubai2",
+        stops: "Direct",
+        price: {
+          total: 1155,
+        },
+      },
+      {
+        flight_name: "Air Arabia2",
+        stops: "Direct",
+        price: {
+          total: 1238,
+        },
+      },
+    ],
+  },
+];
 const getFlights = (req, res) => {
-
   // const x=8;
   const { origin, destination, date } = req.body;
+
   const result = [];
-  test_data.filter((elem, i) => {
-    return (elem.date === date && elem.to === destination && elem.origin === origin)
-  })[0].data.forEach((element, index) => {
-    result.push({
-      flight_name: element.flight_name,
-      price: element.price,
-      stops: element.stops
-    })
+  try {
+    const first_result = test_data.filter((elem, i) => {
+      return (
+        elem.date === date && elem.to === destination && elem.from === origin
+      );
+    })[0];
 
-    res.json(result)
-
-  });
-
-
+    first_result.data.forEach((element, index) => {
+      result.push({
+        flight_name: element.flight_name,
+        price: element.price,
+        stops: element.stops,
+      });
+    });
+    res.status(200).json(result);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 };
 
-
-
 const updateFlightCapacity = (req, res, next) => {
-
   //get the new capacity wich comming from flightBookingRoute and update the flight with the new vlaue
   const { flightId, capacity } = req.body;
   //console.log(`   booking.capacity ${capacity}`);
 
-  if (capacity && flightId || capacity == 0 && flightId) {
-    newFlightModel.findOneAndUpdate({ _id: flightId }, { capacity }, { new: true }).then((result) => {
-      if (!result) {
-        return res.status(404).json({
-          success: false,
-          message: `ServerError`,
-        });
-      }
-  
-    })
+  if ((capacity && flightId) || (capacity == 0 && flightId)) {
+    newFlightModel
+      .findOneAndUpdate({ _id: flightId }, { capacity }, { new: true })
+      .then((result) => {
+        if (!result) {
+          return res.status(404).json({
+            success: false,
+            message: `ServerError`,
+          });
+        }
+      })
       .catch((err) => {
         res.status(500).json({
           success: false,
@@ -722,14 +741,14 @@ const updateFlightCapacity = (req, res, next) => {
         });
       });
 
-     // console.log(`flight : ${result}`);
-    
-    next()
+    // console.log(`flight : ${result}`);
+
+    next();
   } else {
     res.status(404).json({
       success: false,
       message: `Server Error`,
     });
   }
-}
+};
 module.exports = { createNewFlight, getFlights, updateFlightCapacity };
