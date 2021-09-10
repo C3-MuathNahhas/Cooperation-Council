@@ -20,7 +20,6 @@ app.use(cors());
 
 app.use("/login", loginRouter)
 app.use("/flights", flightRouter)
-
 app.use("/flightBooking", flightBookingRouter)
 app.use("/hotelBooking", hotelBookingRouter);
 app.use("/hotel", hotelRouter);
