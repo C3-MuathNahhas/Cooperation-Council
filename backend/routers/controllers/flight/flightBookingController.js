@@ -91,60 +91,6 @@ const isFlightFit = (req, res, next) => {
 
 
 }
-const updateFlightAdults = (bookingId, process, adults) => {
-
-
-    let isExist =
-        newFlightModel
-            .find({ _id: bookingId })
-
-            .then((result) => {
-                if (result)
-                    next()
-                else return false
-
-            })
-            .catch((err) => {
-                return err.message
-            });
-
-
-    console.log('isExist : : : ', isExist);
-
-    return isExist;
-
-    // newFlightModel.findByIdAndUpdate(bookingId, {
-    //     adults
-
-
-    // }, { new: true }).then((result) => {
-    //     if (!result) {
-    //         return res.status(404).json({
-    //             success: false,
-    //             message: `The Booking => ${bookingId} not found`,
-    //         });
-    //     }
-    //     res.status(200).json({
-    //         success: true,
-    //         message: `Success update Booking with id => ${bookingId}`,
-    //         newBooking: result
-    //     });
-    // })
-    //     .catch((err) => {
-    //         res.status(500).json({
-    //             success: false,
-    //             message: `Server Error`,
-    //         });
-    //     });
-
-
-
-
-
-
-}
-
-
 
 const getFlightsBookingByUserId = (req, res) => {
     const userId = req.body.params;
