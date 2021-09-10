@@ -3,14 +3,14 @@ const flightBookingRouter = express.Router();
 
 const {
   getFlightsBookingByUserId,
-  creatFlightBooking, deleteFlightBooking, getAllFlightsBooking,updateFlightBooking
+  creatFlightBooking, deleteFlightBooking, getAllFlightsBooking,updateFlightBooking,isBookingExist
 } = require("../../controllers/flight/flightBookingController");
 
 flightBookingRouter.post("/", creatFlightBooking);
 flightBookingRouter.delete("/:bookingId", deleteFlightBooking);
 flightBookingRouter.get("/allBooking/:userId", getFlightsBookingByUserId);
 flightBookingRouter.get("/allBooking/", getAllFlightsBooking);
-flightBookingRouter.put("/:bookingId", updateFlightBooking);
+flightBookingRouter.put("/:bookingId",isBookingExist, updateFlightBooking);
 
 
 

@@ -2,6 +2,40 @@ const flightBookingModle = require("../../../db/models/FlightBookigSchema");
 const newFlightModel = require("../../../db/models/flightSchema")
 
 
+const isBookingExist = (req, res, next) => {
+    const { bookingId } = req.params;
+    //   if( flightBookingModle.findOne({ _id:bookingId }) ) 
+
+
+    flightBookingModle.findOne({ _id: bookingId }).then((result) => {
+        if (!result) {
+            return res.status(404).json({
+                success: false,
+                message: `there is No flight booking with this id`,
+
+            });
+
+
+        } else {
+            next()
+
+        }
+    }
+
+
+
+    )
+
+
+
+
+
+
+    // if (req.params.bookingId) { next() }
+    // else {
+    //     next(new Error('the booking is not found'))
+    // }
+}
 const updateFlightAdults = (bookingId, process, adults) => {
 
 
@@ -59,6 +93,9 @@ const updateFlightAdults = (bookingId, process, adults) => {
 
 const getFlightsBookingByUserId = (req, res) => {
     const userId = req.body.params;
+
+
+
     flightBookingModle.find({ userId })
         .populate("User").populate("Flight")
         .exec()
@@ -163,8 +200,8 @@ const updateFlightBooking = async function (req, res) {
         } else {
 
 
-            let a = updateFlightAdults(bookingId);
-            res.status(200).json(a)
+            //let a = updateFlightAdults(bookingId);
+            res.status(200).json('thanks')
             // res.status(200).json({
             //     success: true,
             //     message: `Success update Booking with id => ${bookingId}`,
@@ -195,5 +232,5 @@ errorMiddle = (err, req, res, next) => {
 
 module.exports = {
     creatFlightBooking, getFlightsBookingByUserId,
-    deleteFlightBooking, getAllFlightsBooking, updateFlightBooking
+    deleteFlightBooking, getAllFlightsBooking, updateFlightBooking, isBookingExist
 }
