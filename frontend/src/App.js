@@ -5,7 +5,7 @@ import { Home } from "./components/Home/Home";
 const App = () => {
   return (
     <div className="App">
-      <Route path="/home" component="Home" />
+      <Route path="/home" component={Home} />
     </div>
   );
 };
