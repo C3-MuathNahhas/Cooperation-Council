@@ -5,6 +5,9 @@ export const Home=()=>{
 
 
     return(<div>
-        
+
+        <select>
+            
+        </select>
     </div>)
 }
