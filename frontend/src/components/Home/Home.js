@@ -35,19 +35,20 @@ export const Home = () => {
     });
   return (
     <div>
-      <input type="date" />
-      <input type="date" />
-
+      
       <select>
         {flight &&
           flight.map((element, index) => {
             return (
-              <div key={index}>
-                <option>hello</option>
-              </div>
+              
+                <option>{element.name}</option>
+              
             );
           })}
-      </select>
+      </select><br/><br/>
+
+      <input type="date" /><br/><br/>
+      <input type="date" /><br/><br/>
     </div>
   );
 };
