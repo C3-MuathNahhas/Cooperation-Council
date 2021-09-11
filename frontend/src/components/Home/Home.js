@@ -3,26 +3,42 @@ import axios from "axios";
 
 export const Home = () => {
   const [flight, setflight] = useState();
-  axios.get("http://localhost:5000/flights/search").then((result) => {
-    console.log(result);
-    setflight(result);
-  });
+
+  var options = {
+    method: "GET",
+    url: "https://travel-advisor.p.rapidapi.com/hotels/list",
+    params: {
+      location_id: "293919",
+      adults: "1",
+      rooms: "1",
+      nights: "2",
+      offset: "0",
+      currency: "USD",
+      order: "asc",
+      limit: "30",
+      sort: "recommended",
+      lang: "en_US",
+    },
+    headers: {
+      "x-rapidapi-host": "travel-advisor.p.rapidapi.com",
+      "x-rapidapi-key": "8445521e28mshff86c1ecb0006e7p1c6694jsnf4eefd40292a",
+    },
+  };
+
+  axios
+    .request(options)
+    .then(function (response) {
+      setflight(response.data.data);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
   return (
     <div>
-      <select>
-        {flight &&
-          flight.map((element, index) => {
-            return (
-              <div key={index}>
-                <option>flight.from</option>
-                <option>flight.to</option>
-              </div>
-            );
-          })}
-      </select>
-      <div>
-        <input type="date" value="date from" />
-      </div>
+      <input type="date" />
+      <input type="date" />
+
+      <select></select>
     </div>
   );
 };
