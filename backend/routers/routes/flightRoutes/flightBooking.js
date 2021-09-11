@@ -16,7 +16,7 @@ const {
 
 flightBookingRouter.post("/", creatFlightBooking);
 flightBookingRouter.delete("/:bookingId", deleteFlightBooking);
-flightBookingRouter.get("/allBooking/:userId", getFlightsBookingByUserId);
+flightBookingRouter.get("/allBooking/:userId",isBookingExist,updateFlightCapacity, getFlightsBookingByUserId);
 flightBookingRouter.get("/allBooking/", getAllFlightsBooking);
 flightBookingRouter.put("/:bookingId", isBookingExist, isFlightFit, updateFlightCapacity, updateFlightBooking);
 
