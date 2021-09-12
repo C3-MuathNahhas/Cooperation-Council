@@ -656,19 +656,17 @@ const test_data = [
       {
         flight_name: "Flydubai",
         stops: "Direct",
-        price: {
-          total: 1155,
-        },
+        price:  1238,
       },
       {
         flight_name: "Air Arabia",
         stops: "Direct",
-        price: {
-          total: 1238,
-        },
+        price:  1238,
+        
       },
     ],
   },
+  /*
   {
     status: "success",
     from: "DXB",
@@ -692,6 +690,7 @@ const test_data = [
       },
     ],
   },
+  */
 ];
 const getFlights = (req, res) => {
   const { origin, destination, date } = req.body;
