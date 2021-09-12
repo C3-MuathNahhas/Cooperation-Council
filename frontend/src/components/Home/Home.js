@@ -60,12 +60,14 @@ export const Home = () => {
           
       {flight &&
         flight.map((element, index) => {
+            console.log(element)
           return (
             
-                <tr>
+            <tr>
               <td>{element.flight_name}</td>
-              <td>{element.flight_name}</td>
-              <td>{element.flight_name}</td>
+              <td>{element.stops}</td>
+              <td>{element.price.total}$</td>
+              
               <td><input type="button" data-book-id={element._id} onClick={booking} value="Book" /></td>
               </tr>
               
