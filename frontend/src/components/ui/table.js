@@ -94,6 +94,7 @@ const columns = [
     selector: (row) => row.year,
     sortable: true,
   },
+  
 ];
 
 const data_flights = [];
@@ -131,6 +132,7 @@ function Table() {
       </button>
     );
   }, [selectedRows]);
+  
   return (
     <DataTable
       title="Desserts"
