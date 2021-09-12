@@ -104,6 +104,7 @@ function Table() {
 
   const handleRowSelected = React.useCallback((state) => {
     setSelectedRows(state.selectedRows);
+    
   }, []);
 
   const contextActions = React.useMemo(() => {
@@ -115,7 +116,7 @@ function Table() {
         )
       ) {
         console.log(selectedRows);
-        history.push("/button");
+        //history.push("/button");
       }
     };
 
@@ -124,7 +125,7 @@ function Table() {
         key="book"
         onClick={bookHandler}
         style={{ backgroundColor: "rgb(227,242,253)" }}
-        icon
+        icon="true"
       >
         BOOK
       </button>
