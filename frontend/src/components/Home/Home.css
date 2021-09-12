@@ -1,6 +1,6 @@
 home{
     display: grid;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 table {

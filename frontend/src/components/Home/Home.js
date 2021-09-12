@@ -34,22 +34,15 @@ export const Home = () => {
     <>
       <div className="home">
         <input type="text" onChange={dist} />
-        <br />
-        <br />
+       
         <input type="text" onChange={origo} />
-        <br />
-        <br />
+        
         <input type="date" onChange={dd} />
-        <br />
-        <br />
+       
         <button type="button" onClick={click}>
           Search
         </button>
-        <br />
-        <br />
-
-        <br />
-        <br />
+       
       </div>
       <div>
         <table style={{ border: "1" }}>
