@@ -15,12 +15,6 @@ const isBookingExist = (req, res, next) => {
       } else {
         req.body.flightId = result.flightId;
         if (req.method === 'DELETE') {
-          //req.token.userId
-
-          console.log("result.userId", result.userId, 'req.token.userId', req.token.userId);
-
-          console.log((result.userId !== req.token.userId));
-
           if (result.userId != req.token.userId) {
             return res.status(403).json({
               success: false,
