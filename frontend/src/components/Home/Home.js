@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../Home/home.css";
 
-export const Home = ({setvalue}) => {
-  const [flight, setflight] = useState();
+export const Home = ({ setvalue }) => {
   const [origin, setorigin] = useState();
   const [destination, setdestination] = useState();
   const [date, setdate] = useState();

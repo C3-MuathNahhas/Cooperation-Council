@@ -1,26 +1,8 @@
-import React, { useContext } from "react";
+import React,{useContext} from "react";
 import DataTable from "react-data-table-component";
 import { Route, Redirect, useHistory } from "react-router-dom";
 import { UserContext } from "../../App";
-
-// const columns = [
-//   {
-//     id: "id",
-//     selector: (row) => row.id,
-//     sortable: true,
-//   },
-//   {
-//     title: "title",
-//     selector: (row) => row.title,
-//     sortable: true,
-//   },
-//   {
-//     year: "year",
-//     selector: (row) => row.year,
-//     sortable: true,
-//   },
-// ];
-
+import "../ui/Table.css"
 const test_data = [
   {
     id: 1,
@@ -95,41 +77,40 @@ const columns = [
     sortable: true,
   },
 ];
-
-const data_flights = [];
+const array=[]
 function Table() {
-  const newUser = useContext(UserContext);
+  const flight=useContext(UserContext);
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
-
   const handleRowSelected = React.useCallback((state) => {
     setSelectedRows(state.selectedRows);
   }, []);
-
   const contextActions = React.useMemo(() => {
-    const bookHandler = () => {
+    const bookHandler = async () => {
       if (
         window.confirm(
           `Are you sure you want to book:\r ${selectedRows.map((r) => r.id)}?`
         )
       ) {
+         await array.push(flight);
+        console.log(array);
         console.log(selectedRows);
-        //history.push("/button");
+        history.push("/hotel");
       }
     };
-
     return (
+      <div className="table">
       <button
         key="book"
         onClick={bookHandler}
         style={{ backgroundColor: "rgb(227,242,253)" }}
-        icon
+        
       >
         BOOK
       </button>
+      </div>
     );
   }, [selectedRows]);
-
   return (
     <DataTable
       title="Desserts"
@@ -145,5 +126,4 @@ function Table() {
     />
   );
 }
-
 export default Table;
