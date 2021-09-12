@@ -651,7 +651,7 @@ const test_data = [
     from: "DXB",
     to: "AMM",
     currency: "AED",
-    date: "12-26-2021",
+    date: "2021-11-26",
     data: [
       {
         flight_name: "Flydubai",
