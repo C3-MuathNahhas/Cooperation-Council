@@ -31,57 +31,61 @@ export const Home = () => {
   };
   const booking = () => {};
   return (
-    <div className="Home">
-      <input type="text" onChange={dist} />
-      <br />
-      <br />
-      <input type="text" onChange={origo} />
-      <br />
-      <br />
-      <input type="date" onChange={dd} />
-      <br />
-      <br />
-      <button type="button" onClick={click}>
-        Search
-      </button>
-      <br />
-      <br />
+    <>
+      <div className="home">
+        <input type="text" onChange={dist} />
+        <br />
+        <br />
+        <input type="text" onChange={origo} />
+        <br />
+        <br />
+        <input type="date" onChange={dd} />
+        <br />
+        <br />
+        <button type="button" onClick={click}>
+          Search
+        </button>
+        <br />
+        <br />
 
-      <br />
-      <br />
-      <table style={{ border: "1" }}>
-        <thead>
-          <tr>
-            <th>flightName</th>
-            <th>Stop</th>
-            <th>Price</th>
-            <th>Book</th>
-          </tr>
-        </thead>
-        {flight &&
-          flight.map((element, index) => {
-            console.log(element);
-            return (
-              <tbody>
-                <tr key={index}>
-                  <td>{element.flight_name}</td>
-                  <td>{element.stops}</td>
-                  <td>{element.price.total}$</td>
+        <br />
+        <br />
+      </div>
+      <div>
+        <table style={{ border: "1" }}>
+          <thead>
+            <tr>
+              <th>flightName</th>
+              <th>Stop</th>
+              <th>Price</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          {flight &&
+            flight.map((element, index) => {
+              console.log(element);
+              return (
+                <tbody>
+                  <tr key={index}>
+                    <td>{element.flight_name}</td>
+                    <td>{element.stops}</td>
+                    <td>{element.price.total}$</td>
 
-                  <td>
-                    <button
-                      type="button"
-                      data-book-id={element._id}
-                      onClick={booking}
-                    >
-                      Book
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            );
-          })}
-      </table>
-    </div>
+                    <td>
+                      <button
+                        type="button"
+                        data-book-id={element._id}
+                        onClick={booking}
+                      >
+                        Book
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              );
+            })}
+        </table>
+      </div>
+    </>
   );
 };
