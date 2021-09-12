@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import  "../Home/home.css"
 
 export const Home = () => {
   const [flight, setflight] = useState();
@@ -60,13 +61,14 @@ export const Home = () => {
       {flight &&
         flight.map((element, index) => {
           return (
-            
+            <tbody>
                 <tr>
               <td>{element.flight_name}</td>
               <td>{element.flight_name}</td>
               <td>{element.flight_name}</td>
               <td><input type="button" data-book-id={element._id} onClick={booking} value="Book" /></td>
               </tr>
+              </tbody>
             
           );
         })}
