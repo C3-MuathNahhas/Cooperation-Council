@@ -36,15 +36,15 @@ const isBookingExist = (req, res, next) => {
 const isFlightFit = (req, res, next) => {
 
   console.log('token', req.token);
-  console.log('hello');
+  let adults;
   let { flightId, lastValueOfAdults } = req;
   if (req.method === "POST") {
-    flightId,
-      lastValueOfAdults = req.body;
-
+    flightId = req.body.flightId;
+    adults = req.body.adults;
+    lastValueOfAdults = 0
   }
 
-
+  //console.log('flightId: ', flightId, "userId: ", userId);
 
   //1: get flight id and last number of adults at the booking from past middleWare
   //2:check if flight fit the new value of adults then edit the flight capacity and edit the booking adults value by next()
@@ -59,8 +59,12 @@ const isFlightFit = (req, res, next) => {
         });
       } else {
         //     console.log(`flight.capacity : ${result.capacity}`);
-        if (req.method === "PUT") {
-          const { adults } = req.body;
+        if (true) {
+
+          if (req.method === "PUT")
+            adults = req.body.adults;
+
+
           if (lastValueOfAdults == adults) {
             return res.status(500).json({
               success: false,
