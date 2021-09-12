@@ -2,6 +2,7 @@ import React,{useState,createContext} from "react";
 import { Route } from "react-router-dom";
 import { Home } from "./components/Home/Home";
 import Table from "./components/ui/Table";
+import Test from "./components/test";
 export const UserContext = createContext();
 const App = () => {
 	const[value,setvalue]=useState();
@@ -11,6 +12,7 @@ const App = () => {
 	  <UserContext.Provider value={value}>
       <Table ></Table>
 	  </UserContext.Provider >
+	  {/* <Test ></Test> */}
     </div>
   );
 };
