@@ -59,6 +59,7 @@ const SignUp =()=>{
               password,
             })
             .then((result) => {
+          //    console.log(result)
               setStatus(
                 <div className="success">
                   the user has been added successfully
