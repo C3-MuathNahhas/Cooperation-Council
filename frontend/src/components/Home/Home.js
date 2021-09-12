@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "../Home/home.css";
 
@@ -6,7 +7,7 @@ export const Home = ({ setvalue }) => {
   const [origin, setorigin] = useState();
   const [destination, setdestination] = useState();
   const [date, setdate] = useState();
-
+  const history = useHistory();
   const dist = (e) => {
     setorigin(e.target.value);
   };
@@ -26,6 +27,8 @@ export const Home = ({ setvalue }) => {
       .then((result) => {
         //console.log(result)
         setvalue(result.data);
+        history.push("/flightTable")
+        
       });
   };
 

@@ -8,10 +8,12 @@ const App = () => {
   const [value, setvalue] = useState();
   return (
     <div className="App">
+		<switch>
       <Route path="/home" render={() => <Home setvalue={setvalue} />} />
       <UserContext.Provider value={value}>
-        <Table></Table>
+        <Route path="/flightTable" component={Table}/>
       </UserContext.Provider>
+	  </switch>
     </div>
   );
 };
