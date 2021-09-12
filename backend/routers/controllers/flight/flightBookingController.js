@@ -15,6 +15,7 @@ const isBookingExist = (req, res, next) => {
       } else {
         req.flightId = result.flightId;
         req.lastValueOfAdults = result.adults;
+
         next();
       }
     })

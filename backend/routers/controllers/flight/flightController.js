@@ -720,8 +720,12 @@ const getFlights = (req, res) => {
 
 const updateFlightCapacity = (req, res, next) => {
   //get the new capacity wich comming from flightBookingRoute and update the flight with the new vlaue
-  const { flightId, capacity } = req.body;
+  if (req.method === 'PUT')
+    const { flightId, capacity } = req.body;
   //console.log(`   booking.capacity ${capacity}`);
+  if (req.method === 'delete')
+    const { flightId, capacity } = req;
+
 
   if ((capacity && flightId) || (capacity == 0 && flightId)) {
     newFlightModel
