@@ -1,7 +1,7 @@
 import React from "react";
 import DataTable from "react-data-table-component";
 import { Route, Redirect, useHistory } from "react-router-dom";
-​
+
 // const columns = [
 //   {
 //     id: "id",
@@ -19,7 +19,7 @@ import { Route, Redirect, useHistory } from "react-router-dom";
 //     sortable: true,
 //   },
 // ];
-​
+
 const test_data = [
   {
     id: 1,
@@ -94,15 +94,15 @@ const columns = [
     sortable: true,
   },
 ];
-​
+
 function Table() {
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
-​
+
   const handleRowSelected = React.useCallback((state) => {
     setSelectedRows(state.selectedRows);
   }, []);
-​
+
   const contextActions = React.useMemo(() => {
     const bookHandler = () => {
       if (
@@ -114,7 +114,7 @@ function Table() {
         history.push("/button");
       }
     };
-​
+
     return (
       <button
         key="book"
@@ -141,5 +141,5 @@ function Table() {
     />
   );
 }
-​
+
 export default Table;
