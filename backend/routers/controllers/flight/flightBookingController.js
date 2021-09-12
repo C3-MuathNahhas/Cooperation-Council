@@ -34,8 +34,12 @@ const isBookingExist = (req, res, next) => {
     });
 };
 const isFlightFit = (req, res, next) => {
+  console.log('token', req.token);
+  console.log('hello');
+
+  res.json(req.token)
+
   const { flightId, lastValueOfAdults } = req;
-console.log('token', req.token);
 
   //1: get flight id and last number of adults at the booking from past middleWare
   //2:check if flight fit the new value of adults then edit the flight capacity and edit the booking adults value by next()
@@ -170,17 +174,18 @@ const updateFlightBooking = async function (req, res) {
 const creatFlightBooking = (req, res) => {
   const { flightId, userId, adults } = req.body;
   const newBooking = new flightBookingModle({
-    flightId,userId, adults
+    flightId, userId, adults
   })
     .save()
     .then((result) => {
       console.log(result.populate("userId", "-_id -password -email -__v"));
       res.status(201);
-      res.json({ success: true, message: "new booking created" ,   flightsBooking: result
-    
-    });
+      res.json({
+        success: true, message: "new booking created", flightsBooking: result
 
-      
+      });
+
+
     })
     .catch((err) => {
       res.status(500);
