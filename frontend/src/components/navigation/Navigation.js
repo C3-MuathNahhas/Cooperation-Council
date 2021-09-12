@@ -8,7 +8,14 @@ const Navigation=()=>{
     const user=useContext(userContext)
     return(
       <div>
-  
+           {!user.token?  <div className="nav">
+            <Link to={`${url}/signUp`} >signUp</Link>
+            <Link to={`${url}/login`}>Login</Link>
+          </div>:<div className="nav">
+          <Link to={`${url}/home`}>home</Link>
+         
+        </div>
+}
       </div>
     )
 }
