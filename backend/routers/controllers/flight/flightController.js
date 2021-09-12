@@ -722,16 +722,19 @@ const updateFlightCapacity = (req, res, next) => {
   //get the new capacity wich comming from flightBookingRoute and update the flight with the new vlaue
 
   const { flightId, capacity } = req.body;
-  if (req.method === 'delete')
-    capacity = {
+
+  console.log({ flightId, capacity });
+  let newCapacity = { capacity }
+  if (req.method === 'DELETE')
+    newCapacity = {
       $inc: {
-        capacity: capacity
+        capacity
       }
     }
-
+  console.log({ flightId, capacity });
   if ((capacity && flightId) || (capacity == 0 && flightId)) {
     newFlightModel
-      .findOneAndUpdate({ _id: flightId }, { capacity }
+      .findOneAndUpdate({ _id: flightId }, newCapacity
         , { new: true })
       .then((result) => {
         if (!result) {
