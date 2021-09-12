@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import  "../Home/home.css"
+import "../Home/home.css";
 
 export const Home = () => {
   const [flight, setflight] = useState();
@@ -29,9 +29,7 @@ export const Home = () => {
         setflight(result.data);
       });
   };
-  const booking = () => {
-   
-  };
+  const booking = () => {};
   return (
     <div className="Home">
       <input type="text" onChange={dist} />
@@ -43,38 +41,47 @@ export const Home = () => {
       <input type="date" onChange={dd} />
       <br />
       <br />
-      <input type="button" onClick={click} value="Search" />
+      <button type="button" onClick={click}>
+        Search
+      </button>
       <br />
       <br />
 
       <br />
       <br />
-      <table style={{border:"1"}}>
-      
+      <table style={{ border: "1" }}>
+        <thead>
           <tr>
-          <th>flightName</th>
-          <th>Stop</th>
-          <th>Price</th>
-          <th>Book</th>
+            <th>flightName</th>
+            <th>Stop</th>
+            <th>Price</th>
+            <th>Book</th>
           </tr>
-          
-      {flight &&
-        flight.map((element, index) => {
-            console.log(element)
-          return (
-            
-            <tr>
-              <td>{element.flight_name}</td>
-              <td>{element.stops}</td>
-              <td>{element.price.total}$</td>
-              
-              <td><input type="button" data-book-id={element._id} onClick={booking} value="Book" /></td>
-              </tr>
-              
-            
-          );
-        })}
-        </table>
+        </thead>
+        {flight &&
+          flight.map((element, index) => {
+            console.log(element);
+            return (
+              <tbody>
+                <tr key={index}>
+                  <td>{element.flight_name}</td>
+                  <td>{element.stops}</td>
+                  <td>{element.price.total}$</td>
+
+                  <td>
+                    <button
+                      type="button"
+                      data-book-id={element._id}
+                      onClick={booking}
+                    >
+                      Book
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            );
+          })}
+      </table>
     </div>
   );
 };
