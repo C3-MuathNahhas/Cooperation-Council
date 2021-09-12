@@ -651,24 +651,22 @@ const test_data = [
     from: "DXB",
     to: "AMM",
     currency: "AED",
-    date: "12-26-2021",
+    date: "2021-11-26",
     data: [
       {
         flight_name: "Flydubai",
         stops: "Direct",
-        price: {
-          total: 1155,
-        },
+        price:  1238,
       },
       {
         flight_name: "Air Arabia",
         stops: "Direct",
-        price: {
-          total: 1238,
-        },
+        price:  1238,
+        
       },
     ],
   },
+  /*
   {
     status: "success",
     from: "DXB",
@@ -692,12 +690,13 @@ const test_data = [
       },
     ],
   },
+  */
 ];
 const getFlights = (req, res) => {
-  // const x=8;
   const { origin, destination, date } = req.body;
 
   const result = [];
+
   try {
     const first_result = test_data.filter((elem, i) => {
       return (
