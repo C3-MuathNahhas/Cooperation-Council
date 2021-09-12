@@ -7,7 +7,7 @@ export const Home = () => {
   const [orig, setorig] = useState();
   const [dat, setdat] = useState();
 
-  axios.get("http//:localhost:5000/flights/search", {});
+  
   const dist = (e) => {
     setdis(e.target.value);
   };
@@ -19,22 +19,15 @@ export const Home = () => {
   };
   const click = () => {
     axios
-      .post("http//:localhost:5000/flights/search", { dis, orig, dat })
+      .post("http://localhost:5000/flights/search", { dis, orig, dat })
       .then((result) => {
+          console.log(result)
         setflight(result);
       });
   };
   return (
     <div>
-      {flight &&
-        flight.map((element, index) => {
-          return (
-            <div key={index}>
-              <h1>{element.flight_name}</h1>
-            </div>
-          );
-        })}
-
+      
       <input type="text" onChange={dist} />
       <br />
       <br />
@@ -53,6 +46,14 @@ export const Home = () => {
       <input type="date" />
       <br />
       <br />
+      {flight &&
+        flight.map((element, index) => {
+          return (
+            <div key={index}>
+              <h1>{element.flight_name}</h1>
+            </div>
+          );
+        })}
     </div>
   );
 };
