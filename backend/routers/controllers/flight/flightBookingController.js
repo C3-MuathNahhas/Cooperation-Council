@@ -13,16 +13,38 @@ const isBookingExist = (req, res, next) => {
           message: `there is No flight booking with this id`,
         });
       } else {
-        console.log('req.method', req.method);
         req.body.flightId = result.flightId;
         if (req.method === 'DELETE') {
-          req.body.capacity = result.adults
+          //req.token.userId
+
+          console.log("result.userId", result.userId, 'req.token.userId', req.token.userId);
+
+          console.log((result.userId !== req.token.userId));
+
+          if (result.userId != req.token.userId) {
+            return res.status(403).json({
+              success: false,
+              message: `The Booking => ${bookingId} is not related for this account you dont have the auth to delete`,
+            });
+          } else { //have the auth
+            req.body.capacity = result.adults
+            next();
+          }
+
         }
         else { //PUT
-          req.lastValueOfAdults = result.adults;
+          if (result.userId != req.token.userId) {
+            return res.status(403).json({
+              success: false,
+              message: `The Booking => ${bookingId} is not related for this account you dont have the auth to change`,
+            });
+          } else { //have the auth
+            req.lastValueOfAdults = result.adults;
+            next();
+          }
         }
 
-        next();
+
       }
     })
     .catch((err) => {
