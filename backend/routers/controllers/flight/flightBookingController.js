@@ -14,12 +14,11 @@ const isBookingExist = (req, res, next) => {
         });
       } else {
         console.log('req.method', req.method);
+        req.body.flightId = result.flightId;
         if (req.method === 'DELETE') {
           req.body.capacity = result.adults
-          req.body.flightId = result.flightId;
         }
         else { //PUT
-          req.flightId = result.flightId;
           req.lastValueOfAdults = result.adults;
         }
 
@@ -35,9 +34,9 @@ const isBookingExist = (req, res, next) => {
 };
 const isFlightFit = (req, res, next) => {
   let adults = req.body.adults;
-  let { flightId, lastValueOfAdults } = req;
+  let flightId = req.body.flightId;
+  let { lastValueOfAdults } = req;
   if (req.method === "POST") {
-    flightId = req.body.flightId;
     lastValueOfAdults = 0
   }
 
