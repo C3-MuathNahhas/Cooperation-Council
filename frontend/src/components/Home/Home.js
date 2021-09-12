@@ -21,7 +21,7 @@ export const Home = () => {
     axios
       .post("http://localhost:5000/flights/search", { dis, orig, dat })
       .then((result) => {
-          console.log(result)
+          //console.log(result)
         setflight(result);
       });
   };
