@@ -35,7 +35,7 @@ const isBookingExist = (req, res, next) => {
 };
 const isFlightFit = (req, res, next) => {
 
-  console.log('token', req.token);
+
   let adults;
   let { flightId, lastValueOfAdults } = req;
   if (req.method === "POST") {
@@ -181,7 +181,8 @@ const updateFlightBooking = async function (req, res) {
 };
 
 const creatFlightBooking = (req, res) => {
-  const { flightId, userId, adults } = req.body;
+  const userId = req.token.userId
+  const { flightId, adults } = req.body;
   const newBooking = new flightBookingModle({
     flightId, userId, adults
   })
