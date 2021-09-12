@@ -94,7 +94,6 @@ const columns = [
     selector: (row) => row.year,
     sortable: true,
   },
-  
 ];
 
 const data_flights = [];
@@ -105,12 +104,10 @@ function Table() {
 
   const handleRowSelected = React.useCallback((state) => {
     setSelectedRows(state.selectedRows);
-    
   }, []);
 
   const contextActions = React.useMemo(() => {
     const bookHandler = () => {
-      console.log("hi");
       if (
         window.confirm(
           `Are you sure you want to book:\r ${selectedRows.map((r) => r.id)}?`
@@ -126,13 +123,13 @@ function Table() {
         key="book"
         onClick={bookHandler}
         style={{ backgroundColor: "rgb(227,242,253)" }}
-        icon="true"
+        icon
       >
         BOOK
       </button>
     );
   }, [selectedRows]);
-  
+
   return (
     <DataTable
       title="Desserts"
