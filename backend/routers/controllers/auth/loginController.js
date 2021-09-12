@@ -4,13 +4,16 @@ const dotenv = require("dotenv").config();
 const bcrypt = require("bcrypt");
 
 const Login = (req, res) => {
-  const email = req.body.email.tolowercase();
+  console.log(req.body.email)
+  const email = req.body.email.toLowerCase()
+  
   const password = req.body.password;
 
   loginModel
     .findOne({ email: email })
     .then((result) => {
       if (!result) {
+        console.log("emailnotfound")
         res.json("email not found ");
       }
       const valid = bcrypt.compareSync(password, result.password);
