@@ -705,7 +705,7 @@ const getFlights = (req, res) => {
       return (
         elem.date === date&& elem.to === destination && elem.from === origin
       );
-      
+     
     })[0];
     
     first_result.data.forEach((element, index) => {
