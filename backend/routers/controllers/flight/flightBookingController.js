@@ -173,9 +173,9 @@ const creatFlightBooking = (req, res) => {
   })
     .save()
     .then((result) => {
-      console.log(result);
+      console.log(result.populate("userId", "-_id -password -email -__v"));
       res.status(201);
-      res.json({ success: true, message: "new booking created" ,   flightsBookings: result
+      res.json({ success: true, message: "new booking created" ,   flightsBooking: result
     
     });
 
