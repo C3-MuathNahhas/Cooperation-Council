@@ -22,14 +22,13 @@ export const Home = () => {
       .post("http://localhost:5000/flights/search", { origin, destination, date })
       .then((result) => {
           //console.log(result)
-        setflight(result);
+        setflight(result.data);
       });
   };
   return (
     <div>
       
       <input type="text" onChange={dist} />
-      
       <br />
       <br />
       <input type="text" onChange={origo} />
