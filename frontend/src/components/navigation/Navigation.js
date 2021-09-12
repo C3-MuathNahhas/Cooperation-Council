@@ -8,7 +8,7 @@ const Navigation=()=>{
     const user=useContext(userContext)
     return(
       <div>
-    
+  
       </div>
     )
 }
