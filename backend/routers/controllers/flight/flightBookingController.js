@@ -13,8 +13,15 @@ const isBookingExist = (req, res, next) => {
           message: `there is No flight booking with this id`,
         });
       } else {
-        req.flightId = result.flightId;
-        req.lastValueOfAdults = result.adults;
+
+        if (req.method === 'delete') {
+          req.body.capacity = result.adults
+          req.body.flightId = result.flightId;
+        }
+        else { //PUT
+          req.flightId = result.flightId;
+          req.lastValueOfAdults = result.adults;
+        }
 
         next();
       }
