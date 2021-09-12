@@ -1,7 +1,7 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import DataTable from "react-data-table-component";
 import { Route, Redirect, useHistory } from "react-router-dom";
-import {UserContext} from "../../App"
+import { UserContext } from "../../App";
 
 // const columns = [
 //   {
@@ -96,11 +96,9 @@ const columns = [
   },
 ];
 
-const data_flights=[
- 
-]
+const data_flights = [];
 function Table() {
-  const newUser=useContext(UserContext);
+  const newUser = useContext(UserContext);
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
 
@@ -122,7 +120,6 @@ function Table() {
     };
 
     return (
-      
       <button
         key="book"
         onClick={bookHandler}
@@ -131,10 +128,6 @@ function Table() {
       >
         BOOK
       </button>
-
-     
-      
-      
     );
   }, [selectedRows]);
   return (
