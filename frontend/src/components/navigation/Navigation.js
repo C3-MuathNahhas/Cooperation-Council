@@ -1,7 +1,5 @@
 import React,{useContext} from "react";
 import { Link,useRouteMatch } from "react-router-dom";
-import SignUp from "../auth/SignUp";
-
 import { userContext } from "../../App";
 const Navigation=()=>{
     let {path,url}=useRouteMatch()
@@ -9,6 +7,8 @@ const Navigation=()=>{
     return(
       <div>
            {!user.token?  <div className="nav">
+             <h2> traveleo </h2> 
+                          
             <Link to={`${url}/signUp`} >signUp</Link>
             <Link to={`${url}/login`}>Login</Link>
           </div>:<div className="nav">
