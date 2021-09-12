@@ -10,7 +10,7 @@ const App = () => {
     <div className="App">
       <Route path="/home" render={() => <Home setvalue={setvalue} />} />
 	  <UserContext.Provider value={value}>
-      <Table ></Table>
+      <Table></Table>
 	  </UserContext.Provider >
 	  {/* <Test ></Test> */}
     </div>
