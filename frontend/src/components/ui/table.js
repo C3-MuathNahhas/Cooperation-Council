@@ -3,6 +3,7 @@ import DataTable from "react-data-table-component";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../App";
 import "../ui/Table.css";
+import axios from "axios";
 import swal from "sweetalert";
 
 const columns = [
@@ -69,7 +70,7 @@ function Table() {
   }, [history, selectedRows]);
   return (
     <DataTable
-      title="Desserts"
+      title="FlightBooking"
       columns={columns}
       data={flight}
       selectableRows
