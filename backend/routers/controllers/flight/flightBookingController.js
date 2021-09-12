@@ -169,14 +169,17 @@ const updateFlightBooking = async function (req, res) {
 const creatFlightBooking = (req, res) => {
   const { flightId, userId, adults } = req.body;
   const newBooking = new flightBookingModle({
-    flightId,
-    userId, adults
+    flightId,userId, adults
   })
     .save()
     .then((result) => {
       console.log(result);
       res.status(201);
-      res.json({ success: true, message: "new booking created" });
+      res.json({ success: true, message: "new booking created" ,   flightsBookings: result
+    
+    });
+
+      
     })
     .catch((err) => {
       res.status(500);
