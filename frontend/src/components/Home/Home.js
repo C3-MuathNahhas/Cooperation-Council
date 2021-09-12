@@ -29,6 +29,7 @@ export const Home = () => {
     <div>
       
       <input type="text" onChange={dist} />
+      
       <br />
       <br />
       <input type="text" onChange={origo} />
