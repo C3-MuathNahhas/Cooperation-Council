@@ -694,20 +694,17 @@ const test_data = [
   },
 ];
 const getFlights = (req, res) => {
-
   const { origin, destination, date } = req.body;
- 
 
   const result = [];
-  
+
   try {
     const first_result = test_data.filter((elem, i) => {
       return (
-        elem.date === date&& elem.to === destination && elem.from === origin
+        elem.date === date && elem.to === destination && elem.from === origin
       );
-     
     })[0];
-    
+
     first_result.data.forEach((element, index) => {
       result.push({
         flight_name: element.flight_name,
