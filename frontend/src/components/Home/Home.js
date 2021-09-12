@@ -3,23 +3,23 @@ import axios from "axios";
 
 export const Home = () => {
   const [flight, setflight] = useState();
-  const [dis, setdis] = useState();
-  const [orig, setorig] = useState();
-  const [dat, setdat] = useState();
+  const [origin, setorigin] = useState();
+  const [destination, setdestination] = useState();
+  const [date, setdate] = useState();
 
   
   const dist = (e) => {
-    setdis(e.target.value);
+    setorigin(e.target.value);
   };
   const origo = (r) => {
-    setorig(r.target.value);
+    setdestination(r.target.value);
   };
   const dd = (f) => {
-    setdat(f.target.value);
+    setdate(f.target.value);
   };
   const click = () => {
     axios
-      .post("http://localhost:5000/flights/search", { dis, orig, dat })
+      .post("http://localhost:5000/flights/search", { origin, destination, date })
       .then((result) => {
           //console.log(result)
         setflight(result);
