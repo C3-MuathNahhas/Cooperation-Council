@@ -723,7 +723,6 @@ const updateFlightCapacity = (req, res, next) => {
 
   const { flightId, capacity } = req.body;
 
-  console.log({ flightId, capacity });
   let newCapacity = { capacity }
   if (req.method === 'DELETE')
     newCapacity = {
@@ -731,7 +730,8 @@ const updateFlightCapacity = (req, res, next) => {
         capacity
       }
     }
-  console.log({ flightId, capacity });
+
+    
   if ((capacity && flightId) || (capacity == 0 && flightId)) {
     newFlightModel
       .findOneAndUpdate({ _id: flightId }, newCapacity
@@ -750,8 +750,6 @@ const updateFlightCapacity = (req, res, next) => {
           message: `Server Error`,
         });
       });
-
-    // console.log(`flight : ${result}`);
 
     next();
   } else {
