@@ -7,7 +7,6 @@ export const Home = () => {
   const [destination, setdestination] = useState();
   const [date, setdate] = useState();
 
-  
   const dist = (e) => {
     setorigin(e.target.value);
   };
@@ -19,15 +18,18 @@ export const Home = () => {
   };
   const click = () => {
     axios
-      .post("http://localhost:5000/flights/search", { origin, destination, date })
+      .post("http://localhost:5000/flights/search", {
+        origin,
+        destination,
+        date,
+      })
       .then((result) => {
-          //console.log(result)
+        //console.log(result)
         setflight(result.data);
       });
   };
   return (
     <div>
-      
       <input type="text" onChange={dist} />
       <br />
       <br />
@@ -37,13 +39,10 @@ export const Home = () => {
       <input type="date" onChange={dd} />
       <br />
       <br />
-      <input type="button" onClick={click} value="click" />
+      <input type="button" onClick={click} value="Search" />
       <br />
       <br />
-      <input type="date" />
-      <br />
-      <br />
-      <input type="date" />
+
       <br />
       <br />
       {flight &&
