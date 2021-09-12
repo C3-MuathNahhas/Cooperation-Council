@@ -13,8 +13,16 @@ const isBookingExist = (req, res, next) => {
           message: `there is No flight booking with this id`,
         });
       } else {
-        req.flightId = result.flightId;
-        req.lastValueOfAdults = result.adults;
+        console.log('req.method', req.method);
+        if (req.method === 'DELETE') {
+          req.body.capacity = result.adults
+          req.body.flightId = result.flightId;
+        }
+        else { //PUT
+          req.flightId = result.flightId;
+          req.lastValueOfAdults = result.adults;
+        }
+
         next();
       }
     })
@@ -159,10 +167,10 @@ const updateFlightBooking = async function (req, res) {
 };
 
 const creatFlightBooking = (req, res) => {
-  const { flightId, userId } = req.body;
+  const { flightId, userId, adults } = req.body;
   const newBooking = new flightBookingModle({
     flightId,
-    userId,
+    userId, adults
   })
     .save()
     .then((result) => {
