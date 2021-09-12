@@ -28,6 +28,9 @@ export const Home = () => {
         setflight(result.data);
       });
   };
+  const booking = () => {
+   
+  };
   return (
     <div>
       <input type="text" onChange={dist} />
@@ -45,14 +48,24 @@ export const Home = () => {
 
       <br />
       <br />
+      <table style={{border:"1"}}>
+          <th>flightName</th>
+          <th>Stop</th>
+          <th>Price</th>
+          <th>Book</th>
       {flight &&
         flight.map((element, index) => {
           return (
             <div key={index}>
-              <h1>{element.flight_name}</h1>
+              <tr>{element.flight_name}</tr>
+              <tr>{element.flight_name}</tr>
+              <tr>{element.flight_name}</tr>
+              <tr><input type="button" onClick={booking} value="Book" /></tr>
+
             </div>
           );
         })}
+        </table>
     </div>
   );
 };
