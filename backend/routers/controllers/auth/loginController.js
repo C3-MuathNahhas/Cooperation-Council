@@ -18,9 +18,12 @@ const Login = (req, res) => {
         res.json("password error");
       } else {
         const payload = {
-          userId: result.userId,
-          firstName: result.firstName,
+      
+          userId: result._id,
+          email: result.email,
         };
+        console.log('payload',payload);
+
         const SECRET = process.env.SECRET;
         const options = {
           expiresIn: "60m",
