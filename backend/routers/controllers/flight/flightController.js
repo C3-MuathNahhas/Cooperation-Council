@@ -719,12 +719,22 @@ const getFlights = (req, res) => {
 
 const updateFlightCapacity = (req, res, next) => {
   //get the new capacity wich comming from flightBookingRoute and update the flight with the new vlaue
-  const { flightId, capacity } = req.body;
-  //console.log(`   booking.capacity ${capacity}`);
 
+  const { flightId, capacity } = req.body;
+
+  let newCapacity = { capacity }
+  if (req.method === 'DELETE')
+    newCapacity = {
+      $inc: {
+        capacity
+      }
+    }
+
+    
   if ((capacity && flightId) || (capacity == 0 && flightId)) {
     newFlightModel
-      .findOneAndUpdate({ _id: flightId }, { capacity }, { new: true })
+      .findOneAndUpdate({ _id: flightId }, newCapacity
+        , { new: true })
       .then((result) => {
         if (!result) {
           return res.status(404).json({
@@ -739,8 +749,6 @@ const updateFlightCapacity = (req, res, next) => {
           message: `Server Error`,
         });
       });
-
-    // console.log(`flight : ${result}`);
 
     next();
   } else {

@@ -9,6 +9,7 @@
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
     "jsonwebtoken": "^8.5.1",
+    "link": "^0.1.5",
     "react": "^17.0.2",
     "react-data-table-component": "^7.0.1",
     "react-dom": "^17.0.2",

@@ -13,9 +13,32 @@ const isBookingExist = (req, res, next) => {
           message: `there is No flight booking with this id`,
         });
       } else {
-        req.flightId = result.flightId;
-        req.lastValueOfAdults = result.adults;
-        next();
+        req.body.flightId = result.flightId;
+        if (req.method === 'DELETE') {
+          if (result.userId != req.token.userId) {
+            return res.status(403).json({
+              success: false,
+              message: `The Booking => ${bookingId} is not related for this account you dont have the auth to delete`,
+            });
+          } else { //have the auth
+            req.body.capacity = result.adults
+            next();
+          }
+
+        }
+        else { //PUT
+          if (result.userId != req.token.userId) {
+            return res.status(403).json({
+              success: false,
+              message: `The Booking => ${bookingId} is not related for this account you dont have the auth to change`,
+            });
+          } else { //have the auth
+            req.lastValueOfAdults = result.adults;
+            next();
+          }
+        }
+
+
       }
     })
     .catch((err) => {
@@ -26,7 +49,12 @@ const isBookingExist = (req, res, next) => {
     });
 };
 const isFlightFit = (req, res, next) => {
-  const { flightId, lastValueOfAdults } = req;
+  let adults = req.body.adults;
+  let flightId = req.body.flightId;
+  let { lastValueOfAdults } = req;
+  if (req.method === "POST") {
+    lastValueOfAdults = 0
+  }
 
   //1: get flight id and last number of adults at the booking from past middleWare
   //2:check if flight fit the new value of adults then edit the flight capacity and edit the booking adults value by next()
@@ -40,22 +68,16 @@ const isFlightFit = (req, res, next) => {
           message: `Server Error`,
         });
       } else {
-        //     console.log(`flight.capacity : ${result.capacity}`);
-        if (req.method === "PUT") {
-          const { adults } = req.body;
+        if (true) {
           if (lastValueOfAdults == adults) {
             return res.status(500).json({
               success: false,
               message: `there is no changes to edit`,
             });
           } else if (lastValueOfAdults < adults) {
-            //more people come
-            if (result.capacity >= adults - lastValueOfAdults) {
+            if (result.capacity >= adults - lastValueOfAdults) {   //more people come
               req.body.flightId = flightId;
-              req.body.capacity =
-                result.capacity - adults + parseInt(lastValueOfAdults);
-              //  console.log(' req.body.capacity :', req.body.capacity);
-
+              req.body.capacity = result.capacity - adults + parseInt(lastValueOfAdults);
               next();
             } else {
               res.status(500).json({
@@ -64,10 +86,8 @@ const isFlightFit = (req, res, next) => {
               });
             }
           } else {
-            //    console.log('lastValueOfAdults ', lastValueOfAdults, 'adults  ', adults);
             req.body.flightId = flightId;
-            req.body.capacity =
-              result.capacity - adults + parseInt(lastValueOfAdults);
+            req.body.capacity = result.capacity - adults + parseInt(lastValueOfAdults);
             next(); //less people come
           }
         }
@@ -84,7 +104,7 @@ const isFlightFit = (req, res, next) => {
 };
 
 const getFlightsBookingByUserId = (req, res) => {
-  const userId = req.body.params;
+  const {userId} = req.params;
 
   flightBookingModle
     .find({ userId })
@@ -159,16 +179,21 @@ const updateFlightBooking = async function (req, res) {
 };
 
 const creatFlightBooking = (req, res) => {
-  const { flightId, userId } = req.body;
+  const userId = req.token.userId
+  const { flightId, adults } = req.body;
   const newBooking = new flightBookingModle({
-    flightId,
-    userId,
+    flightId, userId, adults
   })
     .save()
     .then((result) => {
-      console.log(result);
+      console.log(result.populate("userId", "-_id -password -email -__v"));
       res.status(201);
-      res.json({ success: true, message: "new booking created" });
+      res.json({
+        success: true, message: "new booking created", flightsBooking: result
+
+      });
+
+
     })
     .catch((err) => {
       res.status(500);
