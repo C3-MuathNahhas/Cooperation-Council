@@ -32,7 +32,7 @@ export const Home = () => {
    
   };
   return (
-    <div>
+    <div className="Home">
       <input type="text" onChange={dist} />
       <br />
       <br />
@@ -49,20 +49,25 @@ export const Home = () => {
       <br />
       <br />
       <table style={{border:"1"}}>
+      <thead>
+          <tr>
           <th>flightName</th>
           <th>Stop</th>
           <th>Price</th>
           <th>Book</th>
+          </tr>
+          </thead>
       {flight &&
         flight.map((element, index) => {
           return (
-            <div key={index}>
-              <tr>{element.flight_name}</tr>
-              <tr>{element.flight_name}</tr>
-              <tr>{element.flight_name}</tr>
-              <tr><input type="button" onClick={booking} value="Book" /></tr>
-
-            </div>
+            
+                <tr>
+              <td>{element.flight_name}</td>
+              <td>{element.flight_name}</td>
+              <td>{element.flight_name}</td>
+              <td><input type="button" data-book-id={element._id} onClick={booking} value="Book" /></td>
+              </tr>
+            
           );
         })}
         </table>
