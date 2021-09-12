@@ -1,6 +1,7 @@
-import React from "react";
+import React,{useContext} from "react";
 import DataTable from "react-data-table-component";
 import { Route, Redirect, useHistory } from "react-router-dom";
+import {UserContext} from "../../App"
 
 // const columns = [
 //   {
@@ -95,7 +96,11 @@ const columns = [
   },
 ];
 
+const data_flights=[
+ 
+]
 function Table() {
+  const newUser=useContext(UserContext);
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
 
@@ -105,6 +110,7 @@ function Table() {
 
   const contextActions = React.useMemo(() => {
     const bookHandler = () => {
+      console.log("hi");
       if (
         window.confirm(
           `Are you sure you want to book:\r ${selectedRows.map((r) => r.id)}?`
@@ -116,6 +122,7 @@ function Table() {
     };
 
     return (
+      
       <button
         key="book"
         onClick={bookHandler}
@@ -124,6 +131,10 @@ function Table() {
       >
         BOOK
       </button>
+
+     
+      
+      
     );
   }, [selectedRows]);
   return (

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../Home/home.css";
 
-export const Home = () => {
+export const Home = ({setvalue}) => {
   const [flight, setflight] = useState();
   const [origin, setorigin] = useState();
   const [destination, setdestination] = useState();
@@ -26,7 +26,7 @@ export const Home = () => {
       })
       .then((result) => {
         //console.log(result)
-        setflight(result.data);
+        setvalue(result.data);
       });
   };
 
