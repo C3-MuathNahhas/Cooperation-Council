@@ -2,6 +2,7 @@ import React,{useState,createContext} from 'react';
 import { Route,useRouteMatch} from 'react-router-dom';
 import Login from './components/auth/Login';
 import SignUp from "./components/auth/SignUp";
+import Navigation from "../src/components/navigation/";
 
 export const userContext=createContext();
 
@@ -13,8 +14,10 @@ const App = () => {
 	<div className="App">
 		
     <userContext.Provider value={state}>
-	<Route path="/signup"component={SignUp} />
+		<Navigation/>
+	<Route path={`${path}/signUp`}component={SignUp} />
 	<Route path= {`${path}/login`}component={Login}/>
+	
 	</userContext.Provider>
 
 	
