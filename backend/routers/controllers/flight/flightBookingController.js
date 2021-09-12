@@ -34,17 +34,12 @@ const isBookingExist = (req, res, next) => {
     });
 };
 const isFlightFit = (req, res, next) => {
-
-
-  let adults;
+  let adults = req.body.adults;
   let { flightId, lastValueOfAdults } = req;
   if (req.method === "POST") {
     flightId = req.body.flightId;
-    adults = req.body.adults;
     lastValueOfAdults = 0
   }
-
-  //console.log('flightId: ', flightId, "userId: ", userId);
 
   //1: get flight id and last number of adults at the booking from past middleWare
   //2:check if flight fit the new value of adults then edit the flight capacity and edit the booking adults value by next()
@@ -58,26 +53,16 @@ const isFlightFit = (req, res, next) => {
           message: `Server Error`,
         });
       } else {
-        //     console.log(`flight.capacity : ${result.capacity}`);
         if (true) {
-
-          if (req.method === "PUT")
-            adults = req.body.adults;
-
-
           if (lastValueOfAdults == adults) {
             return res.status(500).json({
               success: false,
               message: `there is no changes to edit`,
             });
           } else if (lastValueOfAdults < adults) {
-            //more people come
-            if (result.capacity >= adults - lastValueOfAdults) {
+            if (result.capacity >= adults - lastValueOfAdults) {   //more people come
               req.body.flightId = flightId;
-              req.body.capacity =
-                result.capacity - adults + parseInt(lastValueOfAdults);
-              //  console.log(' req.body.capacity :', req.body.capacity);
-
+              req.body.capacity = result.capacity - adults + parseInt(lastValueOfAdults);
               next();
             } else {
               res.status(500).json({
@@ -86,10 +71,8 @@ const isFlightFit = (req, res, next) => {
               });
             }
           } else {
-            //    console.log('lastValueOfAdults ', lastValueOfAdults, 'adults  ', adults);
             req.body.flightId = flightId;
-            req.body.capacity =
-              result.capacity - adults + parseInt(lastValueOfAdults);
+            req.body.capacity = result.capacity - adults + parseInt(lastValueOfAdults);
             next(); //less people come
           }
         }

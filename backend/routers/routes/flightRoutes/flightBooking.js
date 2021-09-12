@@ -20,6 +20,6 @@ flightBookingRouter.post("/",Authentication,isFlightFit,updateFlightCapacity, cr
 flightBookingRouter.delete("/:bookingId", isBookingExist, updateFlightCapacity, deleteFlightBooking);
 flightBookingRouter.get("/allBooking/:userId", getFlightsBookingByUserId);
 flightBookingRouter.get("/allBooking/", getAllFlightsBooking);
-flightBookingRouter.put("/:bookingId", isBookingExist, isFlightFit, updateFlightCapacity, updateFlightBooking);
+flightBookingRouter.put("/:bookingId",Authentication, isBookingExist, isFlightFit, updateFlightCapacity, updateFlightBooking);
 
 module.exports = flightBookingRouter;
