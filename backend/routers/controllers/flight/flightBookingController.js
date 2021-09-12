@@ -35,6 +35,7 @@ const isBookingExist = (req, res, next) => {
 };
 const isFlightFit = (req, res, next) => {
   const { flightId, lastValueOfAdults } = req;
+console.log('token', req.token);
 
   //1: get flight id and last number of adults at the booking from past middleWare
   //2:check if flight fit the new value of adults then edit the flight capacity and edit the booking adults value by next()
