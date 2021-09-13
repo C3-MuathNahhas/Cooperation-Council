@@ -12,3 +12,4 @@ flightRouter.post("/",createNewFlight)
  flightRouter.get("/search",getFlights)
 
 module.exports = flightRouter;
+    
