@@ -1,13 +1,14 @@
-const express = require('express');
-const cors = require('cors');
-const db = require('./db/db');
-const signUpRouter = require("./routers/routes/auth/signUp")
-const loginRouter = require("./routers/routes/auth/login")
+const express = require("express");
+const cors = require("cors");
+const db = require("./db/db");
+const signUpRouter = require("./routers/routes/auth/signUp");
+const loginRouter = require("./routers/routes/auth/login");
 const flightRouter = require("./routers/routes/flightRoutes/flight");
 const app = express();
 const hotelBookingRouter = require("./routers/routes/hotel/hotelBooking");
 const hotelRouter = require("./routers/routes/hotel/hotel");
-const flightBookingRouter = require("./routers/routes/flightRoutes/flightBooking")
+const flightBookingRouter = require("./routers/routes/flightRoutes/flightBooking");
+
 //routers
 
 //built-in middleware
