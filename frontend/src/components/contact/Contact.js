@@ -10,6 +10,14 @@ const Contact = () => {
         </div>
 
         
+        <h2>Guest services</h2>
+
+        <h2>
+         
+          <img src="https://www.flymango.com/upload/contacts/call-center.png" />{" "}
+          Mango Call Centre:
+        </h2>
+        
       </div>
     </div>
   );
