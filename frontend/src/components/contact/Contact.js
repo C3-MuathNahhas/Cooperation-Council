@@ -17,6 +17,10 @@ const Contact = () => {
           <img src="https://www.flymango.com/upload/contacts/call-center.png" />{" "}
           Mango Call Centre:
         </h2>
+        <p> Jordan : 786 560 1234 </p>
+        <p> International : JoB: +2666 022 6154 </p>
+        <p className="email"> Enquiries : traveleo@booking.com </p>
+
         
       </div>
     </div>
