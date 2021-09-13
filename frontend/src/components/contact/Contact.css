@@ -58,6 +58,15 @@
    height:10px;
   }
   
+  .contactFooter{
+    width: 100%;
+    background-color:#150050 ;
+   height:170px;
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+  }
+  
+  
  
  
    
