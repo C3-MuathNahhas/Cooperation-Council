@@ -104,7 +104,7 @@ const isFlightFit = (req, res, next) => {
 };
 
 const getFlightsBookingByUserId = (req, res) => {
-  const {userId} = req.token.userId;
+  const {userId} = req.token.userId;//ok
 
   flightBookingModle
     .find({ userId })
