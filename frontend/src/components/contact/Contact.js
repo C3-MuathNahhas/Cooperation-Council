@@ -106,6 +106,7 @@ const Contact = () => {
           <h3>BEE certificate</h3>
           <h3>cookie policy</h3>
           <h3>Travel communities</h3>
+          <h3>Unique places to stay</h3>
           </div>
 
     </div>
