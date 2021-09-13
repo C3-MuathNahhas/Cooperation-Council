@@ -19,7 +19,10 @@ const App = () => {
   const state = { token, setToken };
 
   return (
+
+
     <div className="App">
+
       <Switch>
         <userContext.Provider value={state}>
           <Navigation />
@@ -30,6 +33,7 @@ const App = () => {
             render={() => <Home setvalue={setvalues} />}
           />
           {console.log(values)}
+
           <Route
             path={`${path}/Table`}
             render={() => <Table value={values} state={state} />}
