@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import DataTable from "react-data-table-component";
 import { useHistory } from "react-router-dom";
-import { UserContext } from "../../App";
 import "../ui/Table.css";
 import axios from "axios";
 import swal from "sweetalert";
@@ -22,11 +21,16 @@ const columns = [
     selector: (row) => row.stops,
     sortable: true,
   },
+  {
+    name: "ADULT",
+    selector: (row) => row.stops,
+    sortable: true,
+  },
 ];
 
-function Table() {
-  const flight = useContext(UserContext);
-
+function Table({value}) {
+  const flight = value;
+console.log(flight)
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
   const handleRowSelected = React.useCallback((state) => {
@@ -53,7 +57,8 @@ function Table() {
           }
         })
       ) {
-        history.push("/flightTable");
+        //history.push("/flightTable");
+        
       }
     };
     return (
@@ -67,7 +72,7 @@ function Table() {
         </button>
       </div>
     );
-  }, [history, selectedRows]);
+  }, [selectedRows]);
   return (
     <DataTable
       title="FlightBooking"
@@ -80,6 +85,7 @@ function Table() {
       contextActions={contextActions}
       onSelectedRowsChange={handleRowSelected}
       pointerOnHover
+      
     />
   );
 }
