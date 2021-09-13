@@ -28,8 +28,7 @@ function Weather() {
     <div className="weather_div">
       <div className="weather_select">
         <select onChange={changeHandler}>
-          {/* <option>{cityist}</option> */}
-          {/* <option>Kozáni</option> */}
+          
 
           {cityist.map((ui, i) => {
             return `<option>${ui}</option>`;
