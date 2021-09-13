@@ -73,6 +73,10 @@ const Contact = () => {
         <div className="img_2">
           <img src="https://www.flymango.com/upload/Responsive/Content/Other%20Images/i_TMS_1.jpg" />
         </div>
+        <h3>
+          <img src="https://www.flymango.com/upload/contacts/phone.png" />
+          Mango Reception:
+        </h3>
 
 
           </div>
