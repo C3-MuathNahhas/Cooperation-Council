@@ -1,7 +1,7 @@
 import React, { useState, createContext } from "react";
 import { Route,useRouteMatch } from "react-router-dom";
 import { Home } from "./components/Home/Home";
-import Table from "./components/ui/Table";
+import Table from "./components/ui/table";
 import Login from './components/auth/Login';
 import SignUp from "./components/auth/SignUp";
 import Navigation from "../src/components/navigation/Navigation";
