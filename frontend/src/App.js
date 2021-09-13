@@ -21,7 +21,10 @@ const App = () => {
 
   return (
     <div className="App">
-		<UpdateFlightBooking/>
+		<Route
+            path={`${path}/Update`}
+            render={() => <UpdateFlightBooking value={values} state={state} />}
+          />
       <Switch>
         <userContext.Provider value={state}>
           <Navigation />

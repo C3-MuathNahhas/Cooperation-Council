@@ -17,6 +17,7 @@ const Navigation = () => {
         <div className="nav">
           <Link to={`${url}/home`}>home</Link>
           <Link to={`${url}/Table`}>Table</Link>
+          <Link to={`${url}/Update`}>update</Link>
         </div>
       )}
     </div>

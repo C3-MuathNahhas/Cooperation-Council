@@ -2,17 +2,23 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-export const UpdateFlightBooking = () => {
-  const [adult, setadult] = useState();
+export const UpdateFlightBooking = ({ state }) => {
+  const [adults, setadults] = useState();
   const history = useHistory();
+
   const update = (e) => {
-    setadult(e.target.value);
+    setadults(e.target.value);
   };
   const click = () => {
+    console.log(state.token);
     axios
-      .put("http://localhost:5000/flightBooking/613f7bbd7a7d0b4d7448f1b7", {
-        adult,
-      })
+      .put(
+        "http://localhost:5000/flightBooking/613f7edaf90b6876dca142ff",
+        {
+          adults,
+        },
+        { headers: { Authorization: `Bearer ${state.token}` } }
+      )
       .then((result) => {
         console.log(result);
       })
