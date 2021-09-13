@@ -21,7 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(160, 227, 229, 0.842);
+  background-size: inherit;
   font-family: Impact;
 }
 
@@ -44,7 +44,6 @@ div {
   align-items: center;
   border: 1px 1px black;
 }
-
 
 .description {
   display: flex;
@@ -75,4 +74,14 @@ button {
   border-radius: 5px;
   background-color: #021110;
   font-family: Impact;
+}
+
+.dateInput {
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+  font-family: Impact;
+  
 }

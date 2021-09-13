@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "../Home/Home.css";
-
 export const Home = ({ setvalue }) => {
   const destenations = ["Jordan", "USA", "UEA", "AUE"];
   const origins = ["Jordan", "USA", "UEA", "AUE"];
@@ -61,14 +60,12 @@ export const Home = ({ setvalue }) => {
             </select>
           </div>
         </div>
-        <br />
 
-        <div className="bigContainer">
-          {/* 
-          <h1>{origin}</h1> */}
-
-        </div>
-        <input  type="date" onChange={dd} />
+        <h1>Date</h1>
+        <label>from</label>
+        <input className='dateInput' type="date" onChange={dd} />
+        <label>to</label>
+        <input className='dateInput' type="date" onChange={dd} />
 
         <button type="button" onClick={click}>
           Search
