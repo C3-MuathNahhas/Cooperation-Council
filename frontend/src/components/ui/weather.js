@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../ui/weather.css";
+import cityist from "../cities_list";
 
 function Weather() {
+  console.log(cityist);
   const [icon, setIcon] = useState("amman");
   const [description, setDescription] = useState();
   const [temperature, setTemperature] = useState();
@@ -26,8 +28,12 @@ function Weather() {
     <div className="weather_div">
       <div className="weather_select">
         <select onChange={changeHandler}>
-          <option>amman</option>
-          <option>Tirebolu</option>
+          {/* <option>{cityist}</option> */}
+          {/* <option>Kozáni</option> */}
+
+          {cityist.map((ui, i) => {
+            return `<option>${ui}</option>`;
+          })}
         </select>
       </div>
 
