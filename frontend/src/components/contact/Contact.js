@@ -53,6 +53,19 @@ const Contact = () => {
   Mango Refunds:
 </h2>
 
+   
+<p>Jordan :786 560 1234</p>
+        <p className="email">guestRefunds@traveleo.com</p>
+
+        <h2>
+          
+          <img
+            className="bag"
+            src="https://www.flymango.com/upload/contacts/Mango%20-%20Baggage%20Icon-01.png"
+          />
+          Mango National Baggage Line:
+        </h2>
+
       </div>
     </div>
   );
