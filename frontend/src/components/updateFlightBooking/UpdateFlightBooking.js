@@ -14,7 +14,10 @@ export const UpdateFlightBooking = () => {
         adult,
       })
       .then((result) => {
-        //console.log(result)
+        console.log(result);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
