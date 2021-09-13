@@ -40,14 +40,7 @@ export const Home = ({ setvalue }) => {
         <div id="container">
           <nav>
             <ul>
-              <li  ><a href="#" onChange={org}>Origen</a>
-                <ul>
-                  <li><a href="#">Jordan</a></li>
-                  <li><a href="#">Pariss</a></li>
-                  <li><a href="#">USA</a></li>
-                </ul>
-              </li>
-              <li><a href="#" onChange={dist}>Destination </a>
+              <li><a href="#" onChange={org}>Origin </a>
                 <ul>
                   <li><a href="#">Jordan</a></li>
                   <li><a href="#">Pariss</a></li>
@@ -58,15 +51,27 @@ export const Home = ({ setvalue }) => {
                   </li>
                 </ul>
               </li>
-
-
             </ul>
           </nav>
 
 
         </div>
         <input type="text" onChange={dist} />
+        <nav>
+          <ul>
+            <li><a href="#" onChange={dist}>Destination </a>
+              <ul>
+                <li><a href="#">Jordan</a></li>
+                <li><a href="#">Pariss</a></li>
+                <li><a href="#">USA</a>
+                  <ul>
 
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
         <input type="text" onChange={org} />
 
         <input type="date" onChange={dd} />
