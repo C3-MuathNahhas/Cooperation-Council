@@ -25,7 +25,10 @@ const Contact = () => {
           <img src="https://www.flymango.com/upload/contacts/guest-care.png" />
           Mango Guest Care:
         </h2>
-        
+        <p> Jordan :786 560 1234 </p>
+        <p className="email">Enquiries : guest@traveleo.com</p>
+
+
       </div>
     </div>
   );
