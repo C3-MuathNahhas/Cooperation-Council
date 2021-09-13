@@ -54,7 +54,7 @@ function Cities() {
     },
     {
       image:
-        "https://cnn-arabic-images.cnn.io/cloudinary/image/upload/w_1920,h_1080,c_fill,q_auto/cnnarabic/2020/07/13/images/159720.jpg",
+        "https://www.flydubai.com/ar/media/Sharm-El-Sheikh-1920x720_tcm9-162670.jpg",
       caption: `<div>
                   شرم الشيخ
                 `,
@@ -95,49 +95,6 @@ function Cities() {
     },
   ];
 
-  const data_2 = [
-    {
-      image:
-        "https://cnn-arabic-images.cnn.io/cloudinary/image/upload/w_1920,h_1080,c_fill,q_auto/cnnarabic/2020/07/13/images/159720.jpg",
-      caption: `<div>
-                  شرم الشيخ
-                `,
-    },
-    {
-      image:
-        "https://www.bayut.jo/blog/wp-content/uploads/2015/05/%D8%AA%D8%B9%D8%B1%D9%81-%D8%B9%D9%84%D9%89-%D8%A3%D9%81%D8%B6%D9%84-%D9%81%D9%86%D8%A7%D8%AF%D9%82-%D8%A7%D9%84%D8%B9%D9%82%D8%A8%D8%A9.jpg",
-      caption: "العقبة",
-    },
-    {
-      image:
-        "https://tourflag.com/wp-content/uploads/%D8%B5%D8%AE%D9%88%D8%B1-%D8%A7%D9%84%D8%B7%D9%8A%D9%88%D8%B1-%D8%A8%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%B1%D9%88%D8%B4%D8%A9.jpg",
-      caption: "بيروت",
-    },
-    {
-      image: "http://static.menara.ma/content/uploads/2019/11/tanger.jpg",
-      caption: "طنجة",
-    },
-    {
-      image:
-        "https://www.urtrips.com/wp-content/uploads/2018/08/Alexanderia-Corniche.jpg",
-      caption: "الاسكندرية",
-    },
-    {
-      image:
-        "https://mosafir24.com/wp-content/uploads/2020/08/%D8%A7%D9%84%D8%AF%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A-%D8%A7%D9%84%D8%B4%D8%A7%D9%85%D9%84-%D9%84%D8%A3%D9%87%D9%85-%D8%A7%D9%84%D9%85%D8%B2%D8%A7%D8%B1%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D9%85%D8%AF%D9%86-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A%D8%A9-%D9%81%D9%8A-%D8%AA%D9%88%D9%86%D8%B3-scaled.jpg",
-      caption: "تونس",
-    },
-
-    {
-      image: "https://www.azdo.ly/wp-content/uploads/2020/04/tripoli-libya.jpg",
-      caption: "طرابلس ",
-    },
-    {
-      image:
-        "https://scontent.ffjr1-4.fna.fbcdn.net/v/t31.18172-8/p720x720/27500851_10156487889558968_6174329973944459914_o.jpg?_nc_cat=107&ccb=1-5&_nc_sid=730e14&_nc_ohc=DL4bHZvaeQkAX-9YAEy&_nc_ht=scontent.ffjr1-4.fna&oh=ce965e9ae0aaac727a25815158048722&oe=6162B106",
-      caption: "الجزائر",
-    },
-  ];
   const captionStyle = {
     fontSize: "2em",
     fontWeight: "bold",
