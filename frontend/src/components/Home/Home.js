@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import "../Home/home.css";
+import "../Home/Home.css";
 
 export const Home = ({ setvalue }) => {
   const [origin, setorigin] = useState();
