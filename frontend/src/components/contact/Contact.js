@@ -78,6 +78,11 @@ const Contact = () => {
           Mango Reception:
         </h3>
         <p>Jordan :786 560 1234</p>
+        <h3>
+          
+          <img src="https://www.flymango.com/upload/contacts/address.png" />{" "}
+          Physical Address
+        </h3>
 
 
           </div>
