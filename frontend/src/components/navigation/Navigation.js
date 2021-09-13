@@ -7,11 +7,14 @@ const Navigation=()=>{
     return(
       <div>
            {!user.token?  <div className="nav">
-             <h2> traveleo </h2> 
-                          
-            <Link to={`${url}/signUp`} >signUp</Link>
-            <Link to={`${url}/login`}>Login</Link>
+             
+             <label class="log"> traveleo</label>
+             <Link to={`${url}/contact`}>Contact</Link>
+            <Link to={`${url}/signUp`}className="sign" >signUp</Link>
+            <Link to={`${url}/login`} className="log">Login</Link>
+            
           </div>:<div className="nav">
+          
           <Link to={`${url}/home`}>home</Link>
          
         </div>
