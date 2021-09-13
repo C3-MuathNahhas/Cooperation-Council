@@ -80,13 +80,18 @@ const Contact = () => {
         <p>Jordan :786 560 1234</p>
         <h3>
           
-          <img src="https://www.flymango.com/upload/contacts/address.png" />{" "}
+          <img src="https://www.flymango.com/upload/contacts/address.png" />
           Physical Address
         </h3>
         <p>
           Mezzanine LevelDomestic Departure TerminalOR alia International
           Airport1627
         </p>
+        <h3>
+          
+          <img src="https://www.flymango.com/upload/contacts/postal.png" />
+          Postal Address:
+        </h3>
 
 
           </div>
