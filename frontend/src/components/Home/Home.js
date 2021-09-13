@@ -3,8 +3,15 @@ import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "../Home/Home.css";
 export const Home = ({ setvalue }) => {
-  const destenations = ["Jordan", "USA", "UEA", "AUE"];
-  const origins = ["Jordan", "USA", "UEA", "AUE"];
+  const destenations = ["San Francisco", "Amman", "Tripoli", "Plockton", "Carthage"];
+  const origins = ["San Francisco", "Amman", "Tripoli", "Plockton", "Carthage"];
+  /*
+  "San Francisco":San Francisco International Airport (FlySFO) :"California"
+  "Amman":Queen Alia International Airport (QAIA) :"Jordan"
+  "Tripoli":"Tripoli International Airport"  (IATA) :"Turkey"
+  "Plockton":"Plockton Airfield"  :"United Kingdom"
+  "Carthage":"Tunis–Carthage International Airport"(TUN):"Tunis"
+ */
 
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState();
