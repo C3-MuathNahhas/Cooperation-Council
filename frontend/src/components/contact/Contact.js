@@ -104,6 +104,7 @@ const Contact = () => {
           <br />
           <div className="contactFooter">
           <h3>BEE certificate</h3>
+          <h3>cookie policy</h3>
           </div>
 
     </div>
