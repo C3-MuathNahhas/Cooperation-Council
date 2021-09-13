@@ -21,6 +21,10 @@ const Contact = () => {
         <p> International : JoB: +2666 022 6154 </p>
         <p className="email"> Enquiries : traveleo@booking.com </p>
 
+        <h2>
+          <img src="https://www.flymango.com/upload/contacts/guest-care.png" />
+          Mango Guest Care:
+        </h2>
         
       </div>
     </div>
