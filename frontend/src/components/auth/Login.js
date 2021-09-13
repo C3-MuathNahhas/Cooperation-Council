@@ -9,7 +9,7 @@ const Login = () => {
   const newUser = useContext(userContext);
   const[err,setErr]=useState();
   return (
-    <div className="log">
+    <div className="login">
       <h2>login</h2>
       <input
         type="email"
