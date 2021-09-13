@@ -1,9 +1,10 @@
 import React, { useState} from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory,useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "../Home/Home.css";
 
 export const Home = ({ setvalue }) => {
+    let { path, url } = useRouteMatch();
   const [origin, setorigin] = useState();
   const [destination, setdestination] = useState();
   const [date, setdate] = useState();
@@ -27,12 +28,14 @@ export const Home = ({ setvalue }) => {
       .then((result) => {
         //console.log(result)
         setvalue(result.data);
-        history.push("/flightTable")
+        history.push(`${path}/Table` )
         
       });
   };
 
   return (
+      <>
+      
     <div className="homed">
       <input type="text" onChange={dist} />
 
@@ -44,5 +47,6 @@ export const Home = ({ setvalue }) => {
         Search
       </button>
     </div>
+    </>
   );
 };
