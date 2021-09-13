@@ -9,7 +9,7 @@ export const Home = ({ setvalue }) => {
 
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState();
-  const [destination, setdestination] = useState();
+  const [destination, setDestination] = useState();
   const [date, setdate] = useState();
   const history = useHistory();
 
@@ -24,7 +24,7 @@ export const Home = ({ setvalue }) => {
         date,
       })
       .then((result) => {
-        //console.log(result)
+        console.log(result)
         setvalue(result.data);
         history.push(`${path}/Table`)
 
@@ -39,7 +39,7 @@ export const Home = ({ setvalue }) => {
       <div className="home">
         <div className="bigContainer">
           <div id="container">
-            <label for="origin">origin</label>
+            <h1>origin</h1>
             <select id="origin" name="origin" onChange={(r) => { setOrigin(r.target.value) }} required>
               {
                 destenations.map((item) => {
@@ -49,15 +49,26 @@ export const Home = ({ setvalue }) => {
 
             </select>
           </div>
+          <div id="container">
+            <h1>destination</h1>
+            <select id="destination" name="destination" onChange={(r) => { setDestination(r.target.value) }} required>
+              {
+                origins.map((item) => {
+                  return <option value={item}>{item}</option>
+                })
+              }
 
-
+            </select>
+          </div>
         </div>
+        <br />
+
         <div className="bigContainer">
-
-          <h1>{origin}</h1>
+          {/* 
+          <h1>{origin}</h1> */}
 
         </div>
-        <input type="date" onChange={dd} />
+        <input  type="date" onChange={dd} />
 
         <button type="button" onClick={click}>
           Search
