@@ -65,6 +65,9 @@ const Contact = () => {
           />
           Mango National Baggage Line:
         </h2>
+        <p>Jordan :786 560 1234</p>
+
+
 
       </div>
     </div>
