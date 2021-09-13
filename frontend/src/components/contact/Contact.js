@@ -92,6 +92,7 @@ const Contact = () => {
           <img src="https://www.flymango.com/upload/contacts/postal.png" />
           Postal Address:
         </h3>
+        <p> P.O. Box 5553 OR AliaInternational Airport 1627 </p>
 
 
           </div>
