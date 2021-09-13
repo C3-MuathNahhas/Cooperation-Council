@@ -9,6 +9,6 @@ const flightRouter = express.Router();
 
 flightRouter.post("/",createNewFlight)
 
- flightRouter.get("/search",getFlights)
+ flightRouter.post("/search",getFlights)
 
 module.exports = flightRouter;

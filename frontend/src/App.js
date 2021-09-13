@@ -1,14 +1,17 @@
-import React,{useState,createContext} from 'react';
-import { Route,useRouteMatch} from 'react-router-dom';
+import React, { useState, createContext } from "react";
+import { Route,useRouteMatch } from "react-router-dom";
+import { Home } from "./components/Home/Home";
+import Table from "./components/ui/Table";
 import Login from './components/auth/Login';
 import SignUp from "./components/auth/SignUp";
 import Navigation from "../src/components/navigation/Navigation";
 import "./App.css";
 import Contact from './components/Contact';
 export const userContext=createContext();
-
+export const UserContext = createContext();
 const App = () => {
-	let {path,url}=useRouteMatch()
+  const [value, setvalue] = useState();
+  let {path,url}=useRouteMatch()
 	const[token,setToken]=useState()
 	const state={token,setToken}
 	return (
@@ -19,14 +22,13 @@ const App = () => {
 	<Route path={`${path}/signUp`}component={SignUp} />
 	<Route path= {`${path}/login`}component={Login}/>
 	<Route path={`${path}/contact`}component={Contact} />
+
 	</userContext.Provider>
 
-	
-	
 
-	</div>
-	)
-}
-
+	  </div>
+	
+  );
+};
 
 export default App;
