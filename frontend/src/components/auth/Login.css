@@ -1,0 +1,13 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    width:40%;
+    margin-left: 30%;
+    margin-top: 5px;
+  }
+  .login button{
+    background-color: goldenrod;
+  }
+  
+  

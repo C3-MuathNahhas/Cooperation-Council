@@ -19,10 +19,9 @@ app.use(cors());
 
 //app routers
 
-app.use("/login", loginRouter);
-app.use("/flights", flightRouter);
-
-app.use("/flightBooking", flightBookingRouter);
+app.use("/login", loginRouter)
+app.use("/flights", flightRouter)
+app.use("/flightBooking", flightBookingRouter)
 app.use("/hotelBooking", hotelBookingRouter);
 app.use("/hotel", hotelRouter);
 app.use("/signUp", signUpRouter);

@@ -1,22 +1,22 @@
 const newFlightModel = require("../../../db/models/flightSchema");
 const createNewFlight = (req, res) => {
-  const { distination, origin, date } = req.body;
+  const { origin, destination, date } = req.body;
   const newFlight = new newFlightModel({
-    distination,
-    origin,
-    date,
+    destination: destination,
+    origin: origin,
+    date: date,
     capacity: 5,
-  })
+  });
+  newFlight
     .save()
     .then((result) => {
       console.log(result);
 
-      res.status(201);
-      res.json({ success: true, message: "new flight  created" });
+      res.status(201).json({ success: true, message: "new flight  created" });
     })
     .catch((err) => {
-      res.status(500);
-      res.json("server error");
+      console.log(err);
+      res.status(500).json("server error");
     });
 };
 // // search
@@ -651,24 +651,22 @@ const test_data = [
     from: "DXB",
     to: "AMM",
     currency: "AED",
-    date: "12-26-2021",
+    date: "2021-11-26",
     data: [
       {
         flight_name: "Flydubai",
         stops: "Direct",
-        price: {
-          total: 1155,
-        },
+        price:  1238,
       },
       {
         flight_name: "Air Arabia",
         stops: "Direct",
-        price: {
-          total: 1238,
-        },
+        price:  1238,
+        
       },
     ],
   },
+  /*
   {
     status: "success",
     from: "DXB",
@@ -692,12 +690,13 @@ const test_data = [
       },
     ],
   },
+  */
 ];
 const getFlights = (req, res) => {
-  // const x=8;
   const { origin, destination, date } = req.body;
 
   const result = [];
+
   try {
     const first_result = test_data.filter((elem, i) => {
       return (
@@ -720,12 +719,22 @@ const getFlights = (req, res) => {
 
 const updateFlightCapacity = (req, res, next) => {
   //get the new capacity wich comming from flightBookingRoute and update the flight with the new vlaue
-  const { flightId, capacity } = req.body;
-  //console.log(`   booking.capacity ${capacity}`);
 
+  const { flightId, capacity } = req.body;
+
+  let newCapacity = { capacity }
+  if (req.method === 'DELETE')
+    newCapacity = {
+      $inc: {
+        capacity
+      }
+    }
+
+    
   if ((capacity && flightId) || (capacity == 0 && flightId)) {
     newFlightModel
-      .findOneAndUpdate({ _id: flightId }, { capacity }, { new: true })
+      .findOneAndUpdate({ _id: flightId }, newCapacity
+        , { new: true })
       .then((result) => {
         if (!result) {
           return res.status(404).json({
@@ -740,8 +749,6 @@ const updateFlightCapacity = (req, res, next) => {
           message: `Server Error`,
         });
       });
-
-    // console.log(`flight : ${result}`);
 
     next();
   } else {
