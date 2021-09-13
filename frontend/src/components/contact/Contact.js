@@ -27,8 +27,11 @@ const Contact = () => {
         </h2>
         <p> Jordan :786 560 1234 </p>
         <p className="email">Enquiries : guest@traveleo.com</p>
-
-
+        <h2>
+          <img src="https://www.flymango.com/upload/contacts/group.png" /> Mango
+          Group Bookings:
+        </h2>
+ 
       </div>
     </div>
   );
