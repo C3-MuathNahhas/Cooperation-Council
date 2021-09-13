@@ -4,13 +4,14 @@ import axios from "axios";
 import "../Home/Home.css";
 
 export const Home = ({ setvalue }) => {
+  let destenations = ["Jordan", "USA", "UEA", "AUE"]
   let { path, url } = useRouteMatch();
-  const [origin, setorigin] = useState();
+  const [origin, setOrigin] = useState();
   const [destination, setdestination] = useState();
   const [date, setdate] = useState();
   const history = useHistory();
   const dist = (e) => {
-    setorigin(e.target.value);
+    setOrigin(e.target.value);
   };
   const org = (r) => {
     setdestination(r.target.value);
@@ -33,47 +34,35 @@ export const Home = ({ setvalue }) => {
       });
   };
 
+
+
   return (
     <>
       <h1>just pick up your treavel with Travaleo</h1>
       <div className="home">
-        <div id="container">
-          <nav>
-            <ul>
-              <li><a href="#" onChange={org}>Origin </a>
-                <ul>
-                  <li><a href="#">Jordan</a></li>
-                  <li><a href="#">Pariss</a></li>
-                  <li><a href="#">USA</a>
-                    <ul>
+        <div className="bigContainer">
+          <div id="container">
+            <label for="origin">origin</label>
 
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
+            <select id="origin" name="origin" onChange={(r) => { setOrigin(r.target.value) }} required>
 
+              {
+                destenations.map((item) => {
+                  return <option value={item}>{item}</option>
+                })
+              }
+
+            </select>
+          </div>
+
+          <input type="text" onChange={dist} />
 
         </div>
-        <input type="text" onChange={dist} />
-        <nav>
-          <ul>
-            <li><a href="#" onChange={dist}>Destination </a>
-              <ul>
-                <li><a href="#">Jordan</a></li>
-                <li><a href="#">Pariss</a></li>
-                <li><a href="#">USA</a>
-                  <ul>
+        <div className="bigContainer">
 
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-        <input type="text" onChange={org} />
+          <h1>{origin}</h1>
 
+        </div>
         <input type="date" onChange={dd} />
 
         <button type="button" onClick={click}>

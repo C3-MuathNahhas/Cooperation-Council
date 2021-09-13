@@ -2,7 +2,7 @@ const newFlightModel = require("../../../db/models/flightSchema");
 const createNewFlight = (req, res) => {
   const { origin, destination, date } = req.body;
   const newFlight = new newFlightModel({
-    destination: destination,
+     destination: destination,
     origin: origin,
     date: date,
     capacity: 5,

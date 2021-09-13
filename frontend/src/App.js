@@ -1,5 +1,5 @@
 import React, { useState, createContext } from "react";
-import { Route, useRouteMatch, Switch ,useHistory} from "react-router-dom";
+import { Route, useRouteMatch, Switch, useHistory } from "react-router-dom";
 import { Home } from "./components/Home/Home";
 import Table from "./components/ui/table";
 import Login from "./components/auth/Login";
@@ -12,11 +12,11 @@ const App = () => {
   let { path, url } = useRouteMatch();
   const [token, setToken] = useState();
   const state = { token, setToken };
- 
+
   return (
-	
+
     <div className="App">
-		
+
       <Switch>
         <userContext.Provider value={state}>
           <Navigation />
@@ -26,12 +26,12 @@ const App = () => {
             path={`${path}/home`}
             render={() => <Home setvalue={setvalues} />}
           />
-		  {console.log(values)}
-		  <Route  path={`${path}/Table`} render={() => <Table value={values} />} />
+          {console.log(values)}
+          <Route path={`${path}/Table`} render={() => <Table value={values} />} />
         </userContext.Provider>
-		
-            
-          
+
+
+
       </Switch>
     </div>
   );

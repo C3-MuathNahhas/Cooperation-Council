@@ -26,7 +26,10 @@ h3 a {
   color: #fff;
 }
 
-
+.bigContainer{
+    display: flex;
+    flex-direction:row;
+}
 
 nav ul {
   padding: 0;
@@ -36,6 +39,7 @@ nav ul {
 }
 
 nav ul li {
+    border-radius: 5px;
   display: inline-block;
   background-color: #0d1310;
 }
@@ -47,10 +51,6 @@ nav a {
   font-size: 20px;
   line-height: 60px;
   text-decoration: none;
-}
-
-nav a:hover {
-  background-color: #2e1d1d;
 }
 
 /* Hide Dropdowns by Default */
