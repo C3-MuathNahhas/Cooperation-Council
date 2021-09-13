@@ -1,10 +1,10 @@
-import React, { useState} from "react";
-import { useHistory,useRouteMatch } from "react-router-dom";
+import React, { useState } from "react";
+import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "../Home/Home.css";
 
 export const Home = ({ setvalue }) => {
-    let { path, url } = useRouteMatch();
+  let { path, url } = useRouteMatch();
   const [origin, setorigin] = useState();
   const [destination, setdestination] = useState();
   const [date, setdate] = useState();
@@ -12,7 +12,7 @@ export const Home = ({ setvalue }) => {
   const dist = (e) => {
     setorigin(e.target.value);
   };
-  const origo = (r) => {
+  const org = (r) => {
     setdestination(r.target.value);
   };
   const dd = (f) => {
@@ -28,25 +28,53 @@ export const Home = ({ setvalue }) => {
       .then((result) => {
         //console.log(result)
         setvalue(result.data);
-        history.push(`${path}/Table` )
-        
+        history.push(`${path}/Table`)
+
       });
   };
 
   return (
-      <>
-      
-    <div className="homed">
-      <input type="text" onChange={dist} />
+    <>
+      <h1>just pick up your treavel with Travaleo</h1>
+      <div className="home">
+        <div id="container">
+          <nav>
+            <ul>
+              <li  ><a href="#" onChange={org}>Origen</a>
+                <ul>
+                  <li><a href="#">Jordan</a></li>
+                  <li><a href="#">Pariss</a></li>
+                  <li><a href="#">USA</a></li>
+                </ul>
+              </li>
+              <li><a href="#" onChange={dist}>Destination </a>
+                <ul>
+                  <li><a href="#">Jordan</a></li>
+                  <li><a href="#">Pariss</a></li>
+                  <li><a href="#">USA</a>
+                    <ul>
 
-      <input type="text" onChange={origo} />
+                    </ul>
+                  </li>
+                </ul>
+              </li>
 
-      <input type="date" onChange={dd} />
 
-      <button type="button" onClick={click}>
-        Search
-      </button>
-    </div>
+            </ul>
+          </nav>
+
+
+        </div>
+        <input type="text" onChange={dist} />
+
+        <input type="text" onChange={org} />
+
+        <input type="date" onChange={dd} />
+
+        <button type="button" onClick={click}>
+          Search
+        </button>
+      </div>
     </>
   );
 };
