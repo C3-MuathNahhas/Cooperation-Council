@@ -38,7 +38,8 @@ const Contact = () => {
           <img src="https://www.flymango.com/upload/contacts/corporate.png" />
           Mango Corporate Help Desk:
         </h2>
-        
+        <p>Jordan :786 560 1234</p>
+
       </div>
     </div>
   );
