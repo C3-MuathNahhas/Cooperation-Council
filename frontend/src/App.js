@@ -9,6 +9,7 @@ import Weather from "../src/components/ui/weather";
 import Attractions from "../src/components/ui/attractions";
 import Cities from "../src/components/ui/cities";
 import Footer from "../src/components/footer/footer";
+import { UpdateFlightBooking } from "./components/updateFlightBooking/UpdateFlightBooking";
 
 export const userContext = createContext();
 
@@ -20,6 +21,7 @@ const App = () => {
 
   return (
     <div className="App">
+		<UpdateFlightBooking/>
       <Switch>
         <userContext.Provider value={state}>
           <Navigation />
