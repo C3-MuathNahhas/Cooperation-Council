@@ -12,7 +12,7 @@ button {
   font-size: 15px;
 
   border-radius: 5px;
-  background-color: #0b726d;
+  background-color: #021110;
 }
 input {
   width: 400px;
@@ -27,3 +27,48 @@ h3 a {
 }
 
 
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li {
+  display: inline-block;
+  background-color: #0d1310;
+}
+
+nav a {
+  display: block;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 60px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #2e1d1d;
+}
+
+/* Hide Dropdowns by Default */
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 60px; /* the height of the main nav */
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+  display: inherit;
+}
+
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+  width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
