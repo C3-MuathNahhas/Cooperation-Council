@@ -45,6 +45,13 @@ const Contact = () => {
           <img src="https://www.flymango.com/upload/contacts/flight-schedule.png" />
           Mango Flight Schedule Changes:
         </h2>
+        <p>Jordan :786 560 1234</p>
+
+<h2>
+  
+  <img src="https://www.flymango.com/upload/contacts/refunds.png" />
+  Mango Refunds:
+</h2>
 
       </div>
     </div>
