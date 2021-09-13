@@ -77,6 +77,7 @@ const Contact = () => {
           <img src="https://www.flymango.com/upload/contacts/phone.png" />
           Mango Reception:
         </h3>
+        <p>Jordan :786 560 1234</p>
 
 
           </div>
