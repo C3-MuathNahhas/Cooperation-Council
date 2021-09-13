@@ -10,25 +10,23 @@ button {
   border-radius: 5px;
   color: #ffffff;
   font-size: 15px;
-
   border-radius: 5px;
   background-color: #021110;
 }
-input {
+select {
+  font-size: 15px;
   width: 400px;
   height: 30px;
   border-radius: 5px;
 }
 
-
-
 h3 a {
   color: #fff;
 }
 
-.bigContainer{
-    display: flex;
-    flex-direction:row;
+.bigContainer {
+  display: flex;
+  flex-direction: row;
 }
 
 nav ul {
@@ -39,18 +37,16 @@ nav ul {
 }
 
 nav ul li {
-    border-radius: 5px;
+  border-radius: 5px;
   display: inline-block;
   background-color: #0d1310;
 }
 
-nav a {
-  display: block;
-  padding: 0 10px;
+label {
+
   color: #fff;
   font-size: 20px;
-  line-height: 60px;
-  text-decoration: none;
+  
 }
 
 /* Hide Dropdowns by Default */

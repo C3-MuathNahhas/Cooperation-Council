@@ -4,18 +4,15 @@ import axios from "axios";
 import "../Home/Home.css";
 
 export const Home = ({ setvalue }) => {
-  let destenations = ["Jordan", "USA", "UEA", "AUE"]
+  const destenations = ["Jordan", "USA", "UEA", "AUE"];
+  const origins = ["Jordan", "USA", "UEA", "AUE"];
+
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState();
   const [destination, setdestination] = useState();
   const [date, setdate] = useState();
   const history = useHistory();
-  const dist = (e) => {
-    setOrigin(e.target.value);
-  };
-  const org = (r) => {
-    setdestination(r.target.value);
-  };
+
   const dd = (f) => {
     setdate(f.target.value);
   };
@@ -43,9 +40,7 @@ export const Home = ({ setvalue }) => {
         <div className="bigContainer">
           <div id="container">
             <label for="origin">origin</label>
-
             <select id="origin" name="origin" onChange={(r) => { setOrigin(r.target.value) }} required>
-
               {
                 destenations.map((item) => {
                   return <option value={item}>{item}</option>
@@ -55,7 +50,6 @@ export const Home = ({ setvalue }) => {
             </select>
           </div>
 
-          <input type="text" onChange={dist} />
 
         </div>
         <div className="bigContainer">
