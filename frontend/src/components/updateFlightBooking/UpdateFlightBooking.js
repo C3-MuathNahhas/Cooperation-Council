@@ -5,7 +5,7 @@ import swal from "sweetalert";
 
 export const UpdateFlightBooking = ({ state }) => {
   const [adults, setadults] = useState();
-  const [value, setvalue] = useState(" ");
+
   const history = useHistory();
 
   const update = (e) => {
@@ -23,7 +23,6 @@ export const UpdateFlightBooking = ({ state }) => {
       )
       .then((result) => {
         swal("Number of Adults was updated");
-        setvalue(" ");
       })
       .catch((err) => {
         console.log(err);
@@ -36,11 +35,13 @@ export const UpdateFlightBooking = ({ state }) => {
         <input
           type="number"
           placeholder="Enter the New Number of Adults"
-          Value={value}
           onChange={update}
-          
         />
-        <button style={{backgroundColor:"red"}} type="button" onClick={click}>
+        <button
+          style={{ backgroundColor: "red" }}
+          type="button"
+          onClick={click}
+        >
           Update
         </button>
       </div>
