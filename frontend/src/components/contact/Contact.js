@@ -96,6 +96,7 @@ const Contact = () => {
 
 
           </div>
+          <br />
 
     </div>
   );
