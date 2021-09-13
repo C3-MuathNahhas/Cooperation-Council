@@ -32,7 +32,7 @@ const App = () => {
           {console.log(values)}
           <Route
             path={`${path}/Table`}
-            render={() => <Table value={values} />}
+            render={() => <Table value={values} state={state} />}
           />
         </userContext.Provider>
       </Switch>

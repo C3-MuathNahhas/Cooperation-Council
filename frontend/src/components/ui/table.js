@@ -21,34 +21,54 @@ const columns = [
     selector: (row) => row.stops,
     sortable: true,
   },
-  {
-    name: "ADULT",
-    selector: (row) => row.stops,
-    sortable: true,
-  },
 ];
 
-function Table({value}) {
+function Table({ value, state }) {
   const flight = value;
-console.log(flight)
+  console.log(state.token);
+  const [adults, setadults] = React.useState([]);
+  const [token, settoken] = React.useState([]);
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
   const handleRowSelected = React.useCallback((state) => {
     setSelectedRows(state.selectedRows);
   }, []);
   const contextActions = React.useMemo(() => {
-    const bookHandler = () => {
+    const bookHandler = async () => {
       if (
         swal({
           title: "Are you sure?",
           text: `you want to book on:\r ${selectedRows.map(
             (r) => r.flight_name
           )}?`,
+          // eslint-disable-next-line no-dupe-keys
+          title: "Enter the Number of Adults",
           icon: "warning",
+          content: "input",
           buttons: true,
           dangerMode: false,
         }).then((willtrue) => {
           if (willtrue) {
+            setadults(parseInt(willtrue));
+            settoken(state.token);
+            axios
+              .post(
+                "http://localhost:5000/flightBooking",
+                {
+                  flightId: "613f7bbd7a7d0b4d7448f1b7",
+                  adults: adults,
+                  userId: "613a4d4cfd1dd74d24f77969",
+                },
+                { headers: { Authorization: `Bearer ${token}` } }
+              )
+              .then((reslut) => {
+                console.log(reslut.data);
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+            console.log(selectedRows);
+
             swal("thanks! Your book has been saved!", {
               icon: "success",
             });
@@ -57,8 +77,6 @@ console.log(flight)
           }
         })
       ) {
-        //history.push("/flightTable");
-        
       }
     };
     return (
@@ -74,19 +92,20 @@ console.log(flight)
     );
   }, [selectedRows]);
   return (
-    <DataTable
-      title="FlightBooking"
-      columns={columns}
-      data={flight}
-      selectableRows
-      pagination
-      selectableRowsHighlight
-      selectableRowsSingle
-      contextActions={contextActions}
-      onSelectedRowsChange={handleRowSelected}
-      pointerOnHover
-      
-    />
+    <div className="rdt_TableHead">
+      <DataTable
+        title="FlightBooking"
+        columns={columns}
+        data={flight}
+        selectableRows
+        pagination
+        selectableRowsHighlight
+        selectableRowsSingle
+        contextActions={contextActions}
+        onSelectedRowsChange={handleRowSelected}
+        pointerOnHover
+      />
+    </div>
   );
 }
 export default Table;
