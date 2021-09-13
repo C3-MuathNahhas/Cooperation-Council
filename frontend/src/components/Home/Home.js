@@ -6,12 +6,22 @@ export const Home = ({ setvalue }) => {
   const destenations = ["San Francisco", "Amman", "Tripoli", "Plockton", "Carthage"];
   const origins = ["San Francisco", "Amman", "Tripoli", "Plockton", "Carthage"];
   /*
-  "San Francisco":San Francisco International Airport (FlySFO) :"California"
+  "San Francisco":San Francisco International Airport (FlySFO)SFO :"California"
   "Amman":Queen Alia International Airport (QAIA) :"Jordan"
-  "Tripoli":"Tripoli International Airport"  (IATA) :"Turkey"
-  "Plockton":"Plockton Airfield"  :"United Kingdom"
-  "Carthage":"Tunis–Carthage International Airport"(TUN):"Tunis"
+  "Tripoli":"Tripoli International Airport"  (TIP) :"Turkey"
+  "London":"London City Airport" (LCY) :"United Kingdom"
+  "Carthage":"Carthage Airport"(TUN):"Tunis"
  */
+let des= ["QAIA","FlySFO","TIP","LCY","TUN"]
+
+  
+
+
+/*destination:"DXB"
+origin:"AMM"
+date:2021-11-26 T12:30:00.000+00:00
+capacity:5
+*/
 
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState();
