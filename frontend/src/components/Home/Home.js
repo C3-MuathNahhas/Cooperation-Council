@@ -46,7 +46,12 @@ export const Home = ({ setvalue }) => {
 
             <select id="origin" name="origin" onChange={(r) => { setOrigin(r.target.value) }} required>
 
-         
+              {
+                destenations.map((item) => {
+                  return <option value={item}>{item}</option>
+                })
+              }
+
             </select>
           </div>
 
