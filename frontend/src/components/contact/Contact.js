@@ -70,7 +70,9 @@ const Contact = () => {
         <hr className="hr" />
         <div className="midlleContact">
         <h2>Head office</h2>
-
+        <div className="img_2">
+          <img src="https://www.flymango.com/upload/Responsive/Content/Other%20Images/i_TMS_1.jpg" />
+        </div>
 
 
           </div>
