@@ -83,6 +83,10 @@ const Contact = () => {
           <img src="https://www.flymango.com/upload/contacts/address.png" />{" "}
           Physical Address
         </h3>
+        <p>
+          Mezzanine LevelDomestic Departure TerminalOR alia International
+          Airport1627
+        </p>
 
 
           </div>
