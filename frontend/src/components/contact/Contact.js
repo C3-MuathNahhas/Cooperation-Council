@@ -66,10 +66,15 @@ const Contact = () => {
           Mango National Baggage Line:
         </h2>
         <p>Jordan :786 560 1234</p>
+        </div>
         <hr className="hr" />
-   
+        <div className="midlleContact">
+        <h2>Head office</h2>
 
-      </div>
+
+
+          </div>
+
     </div>
   );
 };
