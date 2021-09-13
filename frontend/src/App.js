@@ -29,9 +29,6 @@ const App = () => {
 		  {console.log(values)}
 		  <Route  path={`${path}/Table`} render={() => <Table value={values} />} />
         </userContext.Provider>
-		
-            
-          
       </Switch>
     </div>
   );
