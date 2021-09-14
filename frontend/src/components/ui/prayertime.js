@@ -17,20 +17,34 @@ function Prayertime() {
     axios
       .get(`https://api.pray.zone/v2/times/today.json?city=amman`)
       .then((result) => {
-          console.log(result.data.results.datetime[0].times);
-          setSunrise(result.data.results.datetime[0].times);
-          setFajr(result.data.results.datetime[0].times);
-          setDhuhr(result.data.results.datetime[0].times);
-          setAsr(result.data.results.datetime[0].times);
-          setMaghrib(result.data.results.datetime[0].times);
-          setSunset(result.data.results.datetime[0].times);
-          setIsha(result.data.results.datetime[0].times);
-          sethijri(result.data.results.datetime[0].times);
+        console.log(result.data.results.datetime[0].times);
+        setSunrise(result.data.results.datetime[0].times.Sunrise);
+        setFajr(result.data.results.datetime[0].times.Fajr);
+        setDhuhr(result.data.results.datetime[0].times.Dhuhr);
+        setAsr(result.data.results.datetime[0].times.Asr);
+        setMaghrib(result.data.results.datetime[0].times.Maghrib);
+        setSunset(result.data.results.datetime[0].times.Sunset);
+        setIsha(result.data.results.datetime[0].times.Isha);
+        sethijri(result.data.results.datetime[0].date.hijri);
       });
   }, []);
   return (
     <div className="pray_div">
-      <h1>{} here</h1>
+      Imsak:{sunrise}
+      <br />
+      Sunrise:{dhuhr}
+      <br />
+      {fajr}
+      <br />
+      {asr}
+      <br />
+      {maghrib}
+      <br />
+      {sunset}
+      <br />
+      {isha}
+      <br />
+      {hijri}
     </div>
   );
 }
