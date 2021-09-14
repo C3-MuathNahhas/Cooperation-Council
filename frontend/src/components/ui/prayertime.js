@@ -47,27 +47,37 @@ function Prayertime() {
       </select>
       <br />
       <br />
-      <FaMosque />
-      Sunrise:{sunrise}
-      <br />
-      <FaMosque /> Fajr:{fajr}
-      <br />
-      <FaMosque /> Dhuhr:{dhuhr}
-      <br />
-      <FaMosque />
-      Asr:{asr}
-      <br />
-      <FaMosque />
-      Maghrib:{maghrib}
-      <br />
-      <FaMosque />
-      Sunset:{sunset}
-      <br />
-      <FaMosque />
-      Isha:{isha}
-      <br />
-      <FaMosque />
-      hijri:{hijri}
+      <div className="pray_times">
+        <FaMosque />
+        Sunrise:{sunrise}
+        <span>
+          <FaMosque /> Fajr:{fajr}
+        </span>
+        <span>
+          <FaMosque /> Dhuhr:{dhuhr}
+        </span>
+        <span>
+          <FaMosque />
+          Asr:{asr}
+        </span>
+        <span>
+          <FaMosque />
+          Maghrib:{maghrib}
+        </span>
+        <span>
+          <FaMosque />
+          Sunset:{sunset}
+        </span>
+        <span>
+          <FaMosque />
+          Isha:{isha}
+        </span>
+        <span>
+          {" "}
+          <FaMosque />
+          hijri:{hijri}
+        </span>
+      </div>
     </div>
   );
 }
