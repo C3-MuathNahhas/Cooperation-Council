@@ -101,20 +101,17 @@ let flights = [{ destination: 'TIP', origin: 'LCY', date: '2021-5-14T1:30:00.000
 ]
 
 
-const saveRandomData =() => {
+const saveRandomData = () => {
 
 
   flights.forEach(element => {
 
-    const newFlight = new newFlightModel(element);
-    newFlight
-      .save()
+    newFlightModel(element).save()
       .then((result) => {
         console.log(result);
-        })
+      })
       .catch((err) => {
         console.log(err);
-        res.status(500).json("server error");
       });
   });
 
