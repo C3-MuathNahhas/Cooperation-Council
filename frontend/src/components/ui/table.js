@@ -7,17 +7,27 @@ import swal from "sweetalert";
 
 const columns = [
   {
-    name: "flightname",
+    name: "_id",
     selector: (row) => row.flight_name,
     sortable: true,
   },
   {
-    name: "price",
+    name: "destination",
     selector: (row) => `${row.price} $`,
     sortable: true,
   },
   {
-    name: "stop",
+    name: "origin",
+    selector: (row) => row.stops,
+    sortable: true,
+  },
+  {
+    name: "date",
+    selector: (row) => row.stops,
+    sortable: true,
+  },
+  {
+    name: "origin",
     selector: (row) => row.stops,
     sortable: true,
   },
@@ -26,6 +36,7 @@ const columns = [
 function Table({ value, state }) {
   let { path, url } = useRouteMatch();
   const flight = value;
+  console.log(flight)
   const [adults, setadults] = React.useState([]);
   const [token, settoken] = React.useState([]);
   const history = useHistory();
