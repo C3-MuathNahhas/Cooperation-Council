@@ -10,7 +10,10 @@ const Modal =()=>{
     return (
      
         <div className="modal-wrapper">
+        <div className="modal-header">
+         <p>Welcome To Our Site</p>
         
+        </div>
         </div>
     )
 }
