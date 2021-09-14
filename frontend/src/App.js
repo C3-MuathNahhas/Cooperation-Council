@@ -1,11 +1,11 @@
 import React, { useState, createContext } from "react";
 
 import { Home } from "./components/Home/Home";
-import Table from "./components/ui/Table";
-import Login from './components/auth/Login';
+import Table from "./components/ui/table";
+import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import Navigation from "../src/components/navigation/Navigation";
-import About from "./components/About/About";
+import About from "./components/about/About";
 import "./App.css";
 
 import { Route, useRouteMatch, Switch, useHistory } from "react-router-dom";
@@ -15,30 +15,14 @@ import Cities from "../src/components/ui/cities";
 import Footer from "../src/components/footer/footer";
 import { UpdateFlightBooking } from "./components/updateFlightBooking/UpdateFlightBooking";
 
-
 import Contact from "./components/contact/Contact";
-export const userContext=createContext();
+export const userContext = createContext();
 const App = () => {
-
   const [value, setvalue] = useState();
-   const [values, setvalues] = useState();
-  let {path,url}=useRouteMatch()
-	const[token,setToken]=useState()
-	const state={token,setToken}
-	return (
-	<div className="App">
-		
-    <userContext.Provider value={state}>
-		<Navigation/>
-	<Route path={`${path}/signUp`}component={SignUp} />
-	<Route path= {`${path}/login`}component={Login}/>
-	<Route path={`${path}/contact`}component={Contact} />
-	<Route path={`${path}/about`}component={About} />
-
-	</userContext.Provider>
-	
- 
-
+  const [values, setvalues] = useState();
+  let { path, url } = useRouteMatch();
+  const [token, setToken] = useState();
+  const state = { token, setToken };
 
   return (
     <div className="App">

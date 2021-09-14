@@ -9,7 +9,7 @@ const options = {
 };
 
 // connecting mongoose
-mongoose.connect("mongodb://localhost:27017/Traveleo_db", options).then(
+mongoose.connect(process.env.DB_URI, options).then(
   () => {
     console.log("DB Ready To Use");
   },
