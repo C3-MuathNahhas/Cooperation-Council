@@ -132,7 +132,7 @@ function Cities() {
             thumbnailWidth="100px"
             style={{
               textAlign: "center",
-              maxWidth: "850px",
+              maxWidth: "50vw",
               maxHeight: "500px",
               margin: "40px auto",
             }}

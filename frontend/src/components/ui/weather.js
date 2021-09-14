@@ -59,6 +59,12 @@ function Weather() {
 
   return (
     <div className="weather_div">
+      <h1 style={{ fontSize: "20px" }}>
+        <span style={{ color: "rgb(19,145,210)" }}>tre</span>
+        <span style={{ color: "rgb(252,158,21)" }}>val</span>
+        <span style={{ color: "rgb(227,64,61)" }}>eo</span>
+      </h1>
+
       <p>Weather</p>
       <select className="weather_select" onChange={changeHandler}>
         <option>london</option>
@@ -80,16 +86,16 @@ function Weather() {
 
       <div className="weather_item">
         <div className="weather_item_sub">
-          <WiThermometer size={40} color="#000" />
+          <WiThermometer size={40} color="ffff" />
 
-          <h1>{`${temperature} °F`}</h1>
+          <h1 className="weather_temp">{`${temperature} °F`}</h1>
 
           <div className="weather_item_sub">
-            <WiHumidity size={40} color="#000" />
+            <WiHumidity size={40} color="ffff" />
             <h1>{humidity}%</h1>
           </div>
           <div className="weather_item_sub">
-            <WiStrongWind size={40} color="#000" />
+            <WiStrongWind size={40} color="ffff" />
             <h1>{wind} m/s</h1>
           </div>
         </div>
