@@ -22,7 +22,7 @@ export const Home = ({ setvalue }) => {
 
   const click = () => {
     axios
-      .post("http://localhost:5000/flights/", {
+      .get("http://localhost:5000/flights/", {
         origin,
         destination,
         adults,
