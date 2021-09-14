@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
-import { userContext } from "../../App";
+import userContext from "../../App"
 const Login = () => {
   let { path, url } = useRouteMatch();
   const history = useHistory();
