@@ -118,7 +118,6 @@ let flights = [{ destination: 'TIP', origin: 'LCY', date: '2021-5-14T1:30:00.000
   , { price: 111, destination: 'QAIA', origin: 'FlySFO', date: '2021-5-19T22:30:00.000+00:00', capacity: 20 }
   , { price: 784, destination: 'FlySFO', origin: 'TUN', date: '2021-6-8T16:30:00.000+00:00', capacity: 12 }
 ]
-
 const getFlights = (req, res) => {
   const { origin, destination, date } = req.body;
 
@@ -143,7 +142,6 @@ const getFlights = (req, res) => {
     res.status(500).json(err);
   }
 };
-
 const updateFlightCapacity = (req, res, next) => {
   //get the new capacity wich comming from flightBookingRoute and update the flight with the new vlaue
 
