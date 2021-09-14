@@ -4,7 +4,7 @@ import "./prayertime.css";
 import { FaMosque } from "react-icons/fa";
 
 function Prayertime() {
-  const cityNames = ["amman", "paris"];
+  const cityNames = ["amman", "dubai-ae", "riyadh-sa"];
   const [sunrise, setSunrise] = useState();
   const [fajr, setFajr] = useState();
   const [dhuhr, setDhuhr] = useState();
