@@ -89,7 +89,8 @@ const getAvailableFlights = (req, res, next) => {
 
   flightModel
     .find(
-      { date: "2021-02-16T17:30:00.000Z" }
+      { origin: "TUN" }
+    //  { date: "2021-02-16T17:30:00.000Z" }
       // {
       //   date: {
       //     $gte: "2021-02-16T17:30:00.000Z",
