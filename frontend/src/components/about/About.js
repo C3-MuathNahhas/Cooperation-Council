@@ -24,7 +24,8 @@ const About=()=>{
          <h3>Secure booking</h3>
          <p>We facilitate hundreds of thousands of transactions every day through our secure platform, and work to the highest standards to guarantee your privacy. For further details, please check our Privacy Statement.</p>
          <h3>24/7 support</h3>
-      
+         <p>Whether you’ve just booked or are already enjoying your trip, our customer experience team are on hand around the clock to answer your questions and advocate on your behalf in more than 40 languages. Make sure to check out our FAQ for travellers.</p>
+         
     </div>
     
      </div>
