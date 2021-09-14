@@ -12,3 +12,7 @@
     align-items: center;
     justify-content: space-between;
 }
+.modal-header span{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
