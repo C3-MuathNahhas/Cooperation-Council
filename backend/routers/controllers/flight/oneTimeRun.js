@@ -106,7 +106,8 @@ const saveRandomData = () => {
 
   flights.forEach(element => {
 
-    newFlightModel(element).save()
+    newFlightModel({ price: element.price, destination: element.destination,
+       origin: element.origin, date: Date.parse(element.date), capacity: element.capacity }).save()
       .then((result) => {
         console.log(result);
       })
