@@ -17,7 +17,7 @@ export const Home = ({ setvalue }) => {
   const [destination, setDestination] = useState();
   const [dateFrom, setDateFrom] = useState();
   const [adults, setadults] = useState();
-  const [dateTo, , setDateTo] = useState();
+  const [dateTo, setDateTo] = useState();
   const history = useHistory();
 
   const click = () => {
@@ -93,8 +93,8 @@ export const Home = ({ setvalue }) => {
         <input
           className="dateInput"
           type="date"
-          onChange={(r) => {
-            setDateTo(r.target.value);
+          onChange={(e) => {
+            setDateTo(e.target.value);
           }}
         />
 
