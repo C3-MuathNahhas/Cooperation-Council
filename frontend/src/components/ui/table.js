@@ -13,22 +13,22 @@ const columns = [
   },
   {
     name: "destination",
-    selector: (row) => `${row.price} $`,
+    selector: (row) => row.destination,
     sortable: true,
   },
   {
     name: "origin",
-    selector: (row) => row.stops,
+    selector: (row) => row.origin,
     sortable: true,
   },
   {
     name: "date",
-    selector: (row) => row.stops,
+    selector: (row) => row.date,
     sortable: true,
   },
   {
-    name: "origin",
-    selector: (row) => row.stops,
+    name: "capacity",
+    selector: (row) => row.capacity,
     sortable: true,
   },
 ];
