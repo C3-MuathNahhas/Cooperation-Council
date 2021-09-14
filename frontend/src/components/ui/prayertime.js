@@ -2,6 +2,9 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./prayertime.css";
 
+import { FaMosque } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 function Prayertime() {
   const cityNames = ["amman", "paris"];
   const [sunrise, setSunrise] = useState();
@@ -30,23 +33,25 @@ function Prayertime() {
   }, []);
   return (
     <div className="pray_div">
-      Imsak:{sunrise}
+      <FontAwesomeIcon style={{ fontSize: "3vw" }} icon={FaMosque} />
+      Sunrise:{sunrise}
       <br />
-      Sunrise:{dhuhr}
+      Fajr:{fajr}
       <br />
-      {fajr}
+      Dhuhr:{dhuhr}
       <br />
-      {asr}
+      Asr:{asr}
       <br />
-      {maghrib}
+      Maghrib:{maghrib}
       <br />
-      {sunset}
+      Sunset:{sunset}
       <br />
-      {isha}
+      Isha:{isha}
       <br />
-      {hijri}
+      hijri:{hijri}
     </div>
   );
 }
 
 export default Prayertime;
+// FaMosque;
