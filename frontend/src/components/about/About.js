@@ -12,7 +12,9 @@ const About=()=>{
      </div>
      <div className="part_2">
          <h2>What Traveleo.com offers</h2>
-     
+         <h3>Incredible choice</h3>
+      
+   
     </div>
     
      </div>
