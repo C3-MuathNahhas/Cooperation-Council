@@ -18,6 +18,7 @@ const About=()=>{
          <h3>Low rates</h3>
          <p>Traveleo.com guarantees to offer you the best available rates. And with our promise to price match, you can rest assured that you’re always getting a great deal.</p>
          <h3>Instant confirmation</h3>
+         <p>At Booking.com, every reservation is instantly confirmed. Once you’ve found your perfect stay, a few clicks are all it takes.</p>
       
     </div>
     
