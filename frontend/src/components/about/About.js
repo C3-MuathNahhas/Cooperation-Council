@@ -17,7 +17,8 @@ const About=()=>{
          <p>Whether you want to stay in a chic city apartment, a luxury beach resort or a cosy B&B in the countryside, Booking.com provides you with amazing diversity and breadth of choice - all in one place. </p>
          <h3>Low rates</h3>
          <p>Traveleo.com guarantees to offer you the best available rates. And with our promise to price match, you can rest assured that you’re always getting a great deal.</p>
-        
+         <h3>Instant confirmation</h3>
+      
     </div>
     
      </div>
