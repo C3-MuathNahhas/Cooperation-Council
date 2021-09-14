@@ -23,7 +23,8 @@ const About=()=>{
          <p>We don’t charge you any booking fees or add any administrative charges. And in many cases, your booking can be cancelled free of charge.</p>
          <h3>Secure booking</h3>
          <p>We facilitate hundreds of thousands of transactions every day through our secure platform, and work to the highest standards to guarantee your privacy. For further details, please check our Privacy Statement.</p>
-         
+         <h3>24/7 support</h3>
+      
     </div>
     
      </div>
