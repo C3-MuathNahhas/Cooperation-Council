@@ -1,24 +1,5 @@
 const newFlightModel = require("../../../db/models/flightSchema");
-const createNewFlight = (req, res) => {
-  const { origin, destination, date } = req.body;
-  const newFlight = new newFlightModel({
-    destination: destination,
-    origin: origin,
-    date: date,
-    capacity: 5,
-  });
-  newFlight
-    .save()
-    .then((result) => {
-      console.log(result);
 
-      res.status(201).json({ success: true, message: "new flight  created" });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json("server error");
-    });
-};
 let flights = [{ destination: 'TIP', origin: 'LCY', date: '2021-5-14T1:30:00.000+00:00', capacity: 20 }
   , { price: 75, destination: 'FlySFO', origin: 'QAIA', date: '2021-6-11T5:30:00.000+00:00', capacity: 14 }
   , { price: 84, destination: 'FlySFO', origin: 'TIP', date: '2021-3-29T20:30:00.000+00:00', capacity: 10 }
@@ -119,70 +100,22 @@ let flights = [{ destination: 'TIP', origin: 'LCY', date: '2021-5-14T1:30:00.000
   , { price: 784, destination: 'FlySFO', origin: 'TUN', date: '2021-6-8T16:30:00.000+00:00', capacity: 12 }
 ]
 
-const getFlights = (req, res) => {
-  const { origin, destination, date } = req.body;
 
-  const result = [];
-
-  try {
-    const first_result = test_data.filter((elem, i) => {
-      return (
-        elem.date === date && elem.to === destination && elem.from === origin
-      );
-    })[0];
-
-    first_result.data.forEach((element, index) => {
-      result.push({
-        flight_name: element.flight_name,
-        price: element.price,
-        stops: element.stops,
-      });
-    });
-    res.status(200).json(result);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-};
-
-const updateFlightCapacity = (req, res, next) => {
-  //get the new capacity wich comming from flightBookingRoute and update the flight with the new vlaue
-
-  const { flightId, capacity } = req.body;
-
-  let newCapacity = { capacity }
-  if (req.method === 'DELETE')
-    newCapacity = {
-      $inc: {
-        capacity
-      }
-    }
+const saveRandomData = () => {
 
 
-  if ((capacity && flightId) || (capacity == 0 && flightId)) {
-    newFlightModel
-      .findOneAndUpdate({ _id: flightId }, newCapacity
-        , { new: true })
+  flights.forEach(element => {
+
+    newFlightModel({ price: element.price, destination: element.destination,
+       origin: element.origin, date: Date.parse(element.date), capacity: element.capacity }).save()
       .then((result) => {
-        if (!result) {
-          return res.status(404).json({
-            success: false,
-            message: `ServerError`,
-          });
-        }
+        console.log(result);
       })
       .catch((err) => {
-        res.status(500).json({
-          success: false,
-          message: `Server Error`,
-        });
+        console.log(err);
       });
+  });
 
-    next();
-  } else {
-    res.status(404).json({
-      success: false,
-      message: `Server Error`,
-    });
-  }
 };
-module.exports = { createNewFlight, getFlights, updateFlightCapacity };
+
+saveRandomData()

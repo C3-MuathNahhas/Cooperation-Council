@@ -26,7 +26,6 @@ const columns = [
 function Table({ value, state }) {
   let { path, url } = useRouteMatch();
   const flight = value;
-  console.log(state.token);
   const [adults, setadults] = React.useState([]);
   const [token, settoken] = React.useState([]);
   const history = useHistory();
@@ -80,6 +79,7 @@ function Table({ value, state }) {
       ) {
         history.push(`${path}/update`)
       }
+      
     };
     return (
       <div className="table">

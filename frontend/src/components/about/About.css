@@ -1,0 +1,21 @@
+.part_1{
+    text-align: center;
+}
+.part_1 p{
+    font-weight: bold;
+}
+.part_2 p{
+    font-weight: bold;  
+}
+.part_2 h3{
+    font-weight: bolder; 
+}
+.part_2{
+    text-align: center;
+}
+.part_2{
+
+    display: grid;
+    grid-template-columns:600px ;
+    justify-content: center;
+    }
