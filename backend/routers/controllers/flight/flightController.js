@@ -1,7 +1,7 @@
-const newFlightModel = require("../../../db/models/flightSchema");
+const flightModel = require("../../../db/models/flightSchema");
 const createNewFlight = (req, res) => {
   const { origin, destination, date } = req.body;
-  const newFlight = new newFlightModel({
+  const newFlight = new flightModel({
     destination: destination,
     origin: origin,
     date: date,
@@ -58,7 +58,7 @@ const updateFlightCapacity = (req, res, next) => {
     };
 
   if ((capacity && flightId) || (capacity == 0 && flightId)) {
-    newFlightModel
+    flightModel
       .findOneAndUpdate({ _id: flightId }, newCapacity, { new: true })
       .then((result) => {
         if (!result) {
@@ -86,8 +86,35 @@ const updateFlightCapacity = (req, res, next) => {
 
 const getAvailableFlights = (req, res, next) => {
   const { origin, destination, adults, dateFrom, dateTo } = req.body;
-  res.status(200).json(origin, destination, adults, dateFrom, dateTo);
+
+  flightModel
+    .find({ destination: "TUN" })
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `ServerError`,
+        });
+      } else {
+        return res.status(404).json({
+          success: true,
+          message: `success get flights`,
+          flights: result,
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+      });
+    });
+
+ // next();
 };
+
+
+
 module.exports = {
   createNewFlight,
   getFlights,
