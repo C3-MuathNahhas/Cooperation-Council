@@ -13,10 +13,15 @@ function Prayertime() {
   const [sunset, setSunset] = useState();
   const [isha, setIsha] = useState();
   const [hijri, sethijri] = useState();
+  const [city, setCity] = useState();
+
+  changeHandler = (e) => {
+    setCity(e.target.value);
+  };
 
   useEffect(() => {
     axios
-      .get(`https://api.pray.zone/v2/times/today.json?city=amman`)
+      .get(`https://api.pray.zone/v2/times/today.json?city=${city}`)
       .then((result) => {
         console.log(result.data.results.datetime[0].times);
         setSunrise(result.data.results.datetime[0].times.Sunrise);
@@ -31,6 +36,14 @@ function Prayertime() {
   }, []);
   return (
     <div className="pray_div">
+      <p>Prayer Times</p>
+      <select className="pray_select" onChange={changeHandler}>
+        <option> -- Change Location --</option>
+
+        {cityNames.map((ui, i) => {
+          return <option key={i}>{ui}</option>;
+        })}
+      </select>
       <FaMosque />
       Sunrise:{sunrise}
       <br />
