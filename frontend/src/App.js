@@ -12,6 +12,7 @@ import Cities from "../src/components/ui/cities";
 import Footer from "../src/components/footer/footer";
 
 import Contact from './components/Contact';
+
 export const userContext=createContext();
 
 const App = () => {
@@ -27,44 +28,16 @@ const App = () => {
 	<Route path={`${path}/signUp`}component={SignUp} />
 	<Route path= {`${path}/login`}component={Login}/>
 	<Route path={`${path}/contact`}component={Contact} />
-
-	</userContext.Provider>
-
-
-	  </div>
-	
-
-
-export const userContext = createContext();
-
-const App = () => {
-  const [values, setvalues] = useState();
-  let { path, url } = useRouteMatch();
-  const [token, setToken] = useState();
-  const state = { token, setToken };
-
-  return (
-
-
-    <div className="App">
-
-      <Switch>
-        <userContext.Provider value={state}>
-          <Navigation />
-          <Route exact path={`${path}/signUp`} component={SignUp} />
-          <Route exact path={`${path}/login`} component={Login} />
-          <Route
+  <Route
             path={`${path}/home`}
             render={() => <Home setvalue={setvalues} />}
           />
-          {console.log(values)}
-
-          <Route
+<Route
             path={`${path}/Table`}
             render={() => <Table value={values} state={state} />}
           />
-        </userContext.Provider>
-      </Switch>
+	</userContext.Provider>
+
       <Route path={`${path}/mainPage`} component={Weather}></Route>
       <Route path={`${path}/mainPage`} component={Cities}></Route>
       <Route path={`${path}/mainPage`} component={Attractions}></Route>
