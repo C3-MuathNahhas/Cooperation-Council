@@ -84,5 +84,10 @@ const updateFlightCapacity = (req, res, next) => {
   }
 };
 
-const getAvailableFlights = (req, res, next) => {};
-module.exports = { createNewFlight, getFlights, updateFlightCapacity };
+const getAvailableFlights = (req, res, next) => {
+
+
+
+
+};
+module.exports = { createNewFlight, getFlights, updateFlightCapacity,getAvailableFlights };
