@@ -13,15 +13,10 @@ function Prayertime() {
   const [sunset, setSunset] = useState();
   const [isha, setIsha] = useState();
   const [hijri, sethijri] = useState();
-  const [city, setCity] = useState();
 
-  changeHandler = (e) => {
-    setCity(e.target.value);
-  };
-
-  useEffect(() => {
+  const changeHandler = (e) => {
     axios
-      .get(`https://api.pray.zone/v2/times/today.json?city=${city}`)
+      .get(`https://api.pray.zone/v2/times/today.json?city=${e.target.value}`)
       .then((result) => {
         console.log(result.data.results.datetime[0].times);
         setSunrise(result.data.results.datetime[0].times.Sunrise);
@@ -33,7 +28,8 @@ function Prayertime() {
         setIsha(result.data.results.datetime[0].times.Isha);
         sethijri(result.data.results.datetime[0].date.hijri);
       });
-  }, []);
+  };
+
   return (
     <div className="pray_div">
       <p>Prayer Times</p>
@@ -44,6 +40,7 @@ function Prayertime() {
           return <option key={i}>{ui}</option>;
         })}
       </select>
+      <br />
       <FaMosque />
       Sunrise:{sunrise}
       <br />
