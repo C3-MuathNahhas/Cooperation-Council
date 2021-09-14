@@ -10,30 +10,34 @@ import Weather from "../src/components/ui/weather";
 import Attractions from "../src/components/ui/attractions";
 import Cities from "../src/components/ui/cities";
 import Footer from "../src/components/footer/footer";
+import { UpdateFlightBooking } from "./components/updateFlightBooking/UpdateFlightBooking";
 
 import Contact from './components/Contact';
 
-export const userContext=createContext();
 
 const App = () => {
-  const [value, setvalue] = useState();
-  let {path,url}=useRouteMatch()
-	const[token,setToken]=useState()
-	const state={token,setToken}
-	return (
-	<div className="App">
-		
-    <userContext.Provider value={state}>
-		<Navigation/>
+	const [values, setvalues] = useState();
+	let { path, url } = useRouteMatch();
+  const [token, setToken] = useState();
+  const state = { token, setToken };
+
+  return (
+    <div className="App">
+		<Route
+            path={`${path}/Update`}
+            render={() => <UpdateFlightBooking value={values} state={state} />}
+          />
+      <Switch>
+        <userContext.Provider value={state}>
+          <Navigation />
+
 	<Route path={`${path}/signUp`}component={SignUp} />
 	<Route path= {`${path}/login`}component={Login}/>
 	<Route path={`${path}/contact`}component={Contact} />
-  <Route
-            path={`${path}/home`}
+  <Route path={`${path}/home`}
             render={() => <Home setvalue={setvalues} />}
           />
-<Route
-            path={`${path}/Table`}
+<Route path={`${path}/Table`}
             render={() => <Table value={values} state={state} />}
           />
 	</userContext.Provider>

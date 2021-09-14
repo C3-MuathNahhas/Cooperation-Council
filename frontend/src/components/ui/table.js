@@ -1,6 +1,6 @@
 import React from "react";
 import DataTable from "react-data-table-component";
-import { useHistory } from "react-router-dom";
+import { useHistory,useRouteMatch } from "react-router-dom";
 import "../ui/Table.css";
 import axios from "axios";
 import swal from "sweetalert";
@@ -24,8 +24,8 @@ const columns = [
 ];
 
 function Table({ value, state }) {
+  let { path, url } = useRouteMatch();
   const flight = value;
-  console.log(state.token);
   const [adults, setadults] = React.useState([]);
   const [token, settoken] = React.useState([]);
   const history = useHistory();
@@ -77,6 +77,7 @@ function Table({ value, state }) {
           }
         })
       ) {
+        history.push(`${path}/update`)
       }
       
     };
