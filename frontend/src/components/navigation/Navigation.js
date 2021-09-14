@@ -1,6 +1,7 @@
-import React,{useContext} from "react";
-import { Link,useRouteMatch } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useRouteMatch } from "react-router-dom";
 import { userContext } from "../../App";
+
 import "../navigation/navigation.css"
 const Navigation=()=>{
     let {path,url}=useRouteMatch()
@@ -18,12 +19,15 @@ const Navigation=()=>{
            
             
           </div>:<div className="nav">
-          
-          <Link to={`${url}/home`}>home</Link>
          
+
+
+          <Link to={`${url}/home`}>home</Link>
+          <Link to={`${url}/Table`}>Table</Link>
+          <Link to={`${url}/Update`}>update</Link>
         </div>
-}
-      </div>
-    )
-}
-export default Navigation
+      )}
+    </div>
+  );
+};
+export default Navigation;
