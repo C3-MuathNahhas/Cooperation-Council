@@ -1,0 +1,9 @@
+.sidebar_div {
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  width: 21.4%;
+  height: 100vh;
+  background-color: coral;
+  /* z-index: 100 !important; */
+}
