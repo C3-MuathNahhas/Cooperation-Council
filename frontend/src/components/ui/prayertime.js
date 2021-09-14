@@ -32,6 +32,11 @@ function Prayertime() {
 
   return (
     <div className="pray_div">
+      <h1 style={{ fontSize: "20px" }}>
+        <span style={{ color: "rgb(19,145,210)" }}>tre</span>
+        <span style={{ color: "rgb(252,158,21)" }}>val</span>
+        <span style={{ color: "rgb(227,64,61)" }}>eo</span>
+      </h1>
       <p>Prayer Times</p>
       <select className="pray_select" onChange={changeHandler}>
         <option> -- Change Location --</option>
@@ -40,6 +45,7 @@ function Prayertime() {
           return <option key={i}>{ui}</option>;
         })}
       </select>
+      <br />
       <br />
       <FaMosque />
       Sunrise:{sunrise}
