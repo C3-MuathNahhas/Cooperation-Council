@@ -12,7 +12,15 @@ const Modal =()=>{
         <div className="modal-wrapper">
         <div className="modal-header">
          <p>Welcome To Our Site</p>
-        
+         <span className="close-modal-btn">x</span>
+        </div>
+
+        <div className="modal-content">
+            <div className="modal-body">
+            <p>We are happy to have you join us</p>
+            </div>
+          
+
         </div>
         </div>
     )
