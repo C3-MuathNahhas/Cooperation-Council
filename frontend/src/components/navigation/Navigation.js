@@ -1,6 +1,7 @@
 import React,{useContext} from "react";
 import { Link,useRouteMatch } from "react-router-dom";
 import { userContext } from "../../App";
+import "../navigation/navigation.css"
 const Navigation=()=>{
     let {path,url}=useRouteMatch()
     const user=useContext(userContext)
@@ -8,10 +9,13 @@ const Navigation=()=>{
       <div>
            {!user.token?  <div className="nav">
              
-             <label class="log"> traveleo</label>
-             <Link to={`${url}/contact`}>Contact</Link>
+
+             <label className="logo"> traveleo</label>
+             <Link to={`${url}/about`} className="about">About</Link>
+             <Link to={`${url}/contact`} className="contac">Contact</Link>
             <Link to={`${url}/signUp`}className="sign" >signUp</Link>
             <Link to={`${url}/login`} className="log">Login</Link>
+           
             
           </div>:<div className="nav">
           

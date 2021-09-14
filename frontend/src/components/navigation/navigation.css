@@ -9,7 +9,7 @@
    display: inline-block;
    text-decoration: none;
    color:#ffffff;
-   float: right;
+  
    padding-right: 20px;
    
  }
@@ -17,17 +17,21 @@
   margin-left: 7px;
   color:#ffffff;
   text-decoration: none;
- 
+  float: right;
+  padding-right: 10px;
 }
 .sign{
   margin-left:7px;
   color:#ffffff;
   text-decoration: none;
+  float: right;
+  padding-right: 10px;
   
 }
 .logo{
-  padding-left: 10px;
+  
   color:#ffffff;
+  padding-right:950px;
  
   
   
@@ -35,12 +39,14 @@
 .about{
   color:#ffffff;
   text-decoration: none;
- 
- 
+  float: right;
+  padding-right: 10px;
 }
-.contact{
+.contac{
   color:#ffffff;
   text-decoration: none;
- 
+  float: right;
+  padding-right: 10px;
+  
 }
 
