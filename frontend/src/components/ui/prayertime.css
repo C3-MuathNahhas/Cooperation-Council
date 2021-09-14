@@ -5,4 +5,7 @@
   top: 40rem;
   width: 21.35%;
   height: 20rem;
+  background-image: url("https://cdn.pixabay.com/photo/2016/03/03/09/58/al-aqsa-1233827_960_720.jpg");
+  background-repeat: no-repeat;
+  color: aliceblue;
 }
