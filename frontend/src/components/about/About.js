@@ -21,7 +21,8 @@ const About=()=>{
          <p>At Booking.com, every reservation is instantly confirmed. Once you’ve found your perfect stay, a few clicks are all it takes.</p>
          <h3>No reservation fees</h3>
          <p>We don’t charge you any booking fees or add any administrative charges. And in many cases, your booking can be cancelled free of charge.</p>
-        
+         <h3>Secure booking</h3>
+         
     </div>
     
      </div>
