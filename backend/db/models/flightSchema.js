@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const flightSchema = new mongoose.Schema({
-  distination: { type: String, required: true },
+  destination: { type: String, required: true },
   origin: { type: String, required: true },
   date: { type: Date, default: Date.now, required: true },
-  capacity: { type: Number },
-  flightId: { type: String },
+  capacity: { type: Number, min: 0 },
+  price: { type: Number }
 });
 
 module.exports = mongoose.model("Flight", flightSchema);
