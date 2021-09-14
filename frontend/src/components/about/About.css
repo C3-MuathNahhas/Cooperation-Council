@@ -13,3 +13,9 @@
 .part_2{
     text-align: center;
 }
+.part_2{
+
+    display: grid;
+    grid-template-columns:600px ;
+    justify-content: center;
+    }
