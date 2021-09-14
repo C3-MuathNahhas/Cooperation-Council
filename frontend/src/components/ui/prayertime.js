@@ -48,36 +48,36 @@ function Prayertime() {
         </select>
         <br />
         <br />
-        <span>
+        <span style={{ color: "rgb(19,145,210)" }}>
           {" "}
           Sunrise <FaMosque style={{ color: "rgb(19,145,210)" }} />
           {sunrise}
         </span>
-        <span>
+        <span style={{ color: "rgb(19,145,210)" }}>
           Fajr <FaMosque style={{ color: "rgb(19,145,210)" }} />
           {fajr}
         </span>
-        <span>
+        <span style={{ color: "rgb(19,145,210)" }}>
           Dhuhr <FaMosque style={{ color: "rgb(19,145,210)" }} />
           {dhuhr}
         </span>
-        <span>
+        <span style={{ color: "rgb(252,154,31)" }}>
           Asr <FaMosque style={{ color: "rgb(252,154,31)" }} />
           {asr}
         </span>
-        <span>
+        <span style={{ color: "rgb(252,154,31)" }}>
           Maghrib <FaMosque style={{ color: "rgb(252,154,31)" }} />
           {maghrib}
         </span>
-        <span>
+        <span style={{ color: "rgb(252,154,31)" }}>
           Sunset <FaMosque style={{ color: "rgb(252,154,31)" }} />
           {sunset}
         </span>
-        <span>
+        <span style={{ color: "rgb(227,64,61)" }}>
           Isha <FaMosque style={{ color: "rgb(227,64,61)" }} />
           {isha}
         </span>
-        <span>
+        <span style={{ color: "rgb(227,64,61)" }}>
           hijri <FaMosque style={{ color: "rgb(227,64,61)" }} />
           {hijri}
         </span>
