@@ -50,35 +50,36 @@ function Prayertime() {
         <br />
         <span>
           {" "}
-          <FaMosque />
-          Sunrise:{sunrise}
+          Sunrise <FaMosque style={{ color: "rgb(19,145,210)" }} />
+          {sunrise}
         </span>
         <span>
-          <FaMosque /> Fajr:{fajr}
+          Fajr <FaMosque style={{ color: "rgb(19,145,210)" }} />
+          {fajr}
         </span>
         <span>
-          <FaMosque /> Dhuhr:{dhuhr}
+          Dhuhr <FaMosque style={{ color: "rgb(19,145,210)" }} />
+          {dhuhr}
         </span>
         <span>
-          <FaMosque />
-          Asr:{asr}
+          Asr <FaMosque style={{ color: "rgb(252,154,31)" }} />
+          {asr}
         </span>
         <span>
-          <FaMosque />
-          Maghrib:{maghrib}
+          Maghrib <FaMosque style={{ color: "rgb(252,154,31)" }} />
+          {maghrib}
         </span>
         <span>
-          <FaMosque />
-          Sunset:{sunset}
+          Sunset <FaMosque style={{ color: "rgb(252,154,31)" }} />
+          {sunset}
         </span>
         <span>
-          <FaMosque />
-          Isha:{isha}
+          Isha <FaMosque style={{ color: "rgb(227,64,61)" }} />
+          {isha}
         </span>
         <span>
-          {" "}
-          <FaMosque />
-          hijri:{hijri}
+          hijri <FaMosque style={{ color: "rgb(227,64,61)" }} />
+          {hijri}
         </span>
       </div>
     </div>
