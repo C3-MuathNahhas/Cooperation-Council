@@ -88,7 +88,12 @@ const getAvailableFlights = (req, res, next) => {
   const { origin, destination, adults, dateFrom, dateTo } = req.body;
 
   flightModel
-    .find({ destination: "TUN" })
+    .find({
+      destination: {
+        $gte: data("2021-01-01T00:00:00.000Z"),
+        $lt: date("2021-10-01T00:00:00.000Z"),
+      },
+    })
     .then((result) => {
       if (!result) {
         return res.status(404).json({
@@ -110,10 +115,8 @@ const getAvailableFlights = (req, res, next) => {
       });
     });
 
- // next();
+  // next();
 };
-
-
 
 module.exports = {
   createNewFlight,
