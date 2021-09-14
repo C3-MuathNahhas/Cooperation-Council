@@ -86,6 +86,7 @@ const updateFlightCapacity = (req, res, next) => {
 
 const getAvailableFlights = (req, res, next) => {
   const { origin, destination, adults, dateFrom, dateTo } = req.body;
+  res.status(200).json(origin, destination, adults, dateFrom, dateTo);
 };
 module.exports = {
   createNewFlight,
