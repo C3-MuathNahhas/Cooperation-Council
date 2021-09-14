@@ -6,12 +6,11 @@ const createNewUser = (req, res) => {
   const newUser = new signModel({
     firstName,
     lastName,
-
     email,
-
     password,
     phone,
-  })
+  });
+  newUser
     .save()
     .then((result) => {
       res.status(201);
@@ -19,7 +18,7 @@ const createNewUser = (req, res) => {
     })
     .catch((err) => {
       res.status(500);
-      res.json("server error");
+      res.json("Email already exist !");
     });
 };
 

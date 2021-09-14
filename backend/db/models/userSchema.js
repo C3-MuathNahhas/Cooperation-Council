@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const users = new mongoose.Schema({
   firstName: { type: String },
@@ -8,7 +8,7 @@ const users = new mongoose.Schema({
   age: { type: Number },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  phone: { type: String }
+  phone: { type: String },
 });
 
 users.pre("save", async function () {
@@ -16,4 +16,3 @@ users.pre("save", async function () {
   this.password = await bcrypt.hash(this.password, 10);
 });
 module.exports = mongoose.model("User", users);
-
