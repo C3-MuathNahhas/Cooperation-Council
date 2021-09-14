@@ -101,8 +101,7 @@ let flights = [{ destination: 'TIP', origin: 'LCY', date: '2021-5-14T1:30:00.000
 ]
 
 
-const saveRandomData = (req, res) => {
-  const { origin, destination, date } = req.body;
+const saveRandomData =() => {
 
 
   flights.forEach(element => {
@@ -120,3 +119,5 @@ const saveRandomData = (req, res) => {
   });
 
 };
+
+saveRandomData()
