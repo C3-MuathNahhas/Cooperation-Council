@@ -85,9 +85,11 @@ const updateFlightCapacity = (req, res, next) => {
 };
 
 const getAvailableFlights = (req, res, next) => {
-
-
-
-
+  const { origin, destination, adults, dateFrom, dateTo } = req.body;
 };
-module.exports = { createNewFlight, getFlights, updateFlightCapacity,getAvailableFlights };
+module.exports = {
+  createNewFlight,
+  getFlights,
+  updateFlightCapacity,
+  getAvailableFlights,
+};
