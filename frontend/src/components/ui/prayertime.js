@@ -38,18 +38,21 @@ function Prayertime() {
         <span style={{ color: "rgb(227,64,61)" }}>eo</span>
       </h1>
       <p>Prayer Times</p>
-      <select className="pray_select" onChange={changeHandler}>
-        <option> -- Change Location --</option>
-
-        {cityNames.map((ui, i) => {
-          return <option key={i}>{ui}</option>;
-        })}
-      </select>
-      <br />
-      <br />
       <div className="pray_times">
-        <FaMosque />
-        Sunrise:{sunrise}
+        <select className="pray_select" onChange={changeHandler}>
+          <option> -- Change Location --</option>
+
+          {cityNames.map((ui, i) => {
+            return <option key={i}>{ui}</option>;
+          })}
+        </select>
+        <br />
+        <br />
+        <span>
+          {" "}
+          <FaMosque />
+          Sunrise:{sunrise}
+        </span>
         <span>
           <FaMosque /> Fajr:{fajr}
         </span>

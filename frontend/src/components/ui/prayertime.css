@@ -4,8 +4,8 @@
   right: 0px;
   top: 40rem;
   width: 21.35%;
-  height: 20rem;
-  background-image: url("https://cdn.pixabay.com/photo/2016/03/03/09/58/al-aqsa-1233827_960_720.jpg");
+  height: 25rem;
+  background-image: url("https://cdn.pixabay.com/photo/2020/05/04/15/45/mosque-5129660_960_720.png");
   background-repeat: no-repeat;
   color: aliceblue;
   opacity: 0.9;
@@ -15,4 +15,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.pray_times select:hover {
+  cursor: pointer;
+}
+
+.pray_times select {
+  position: relative;
+  font-family: Arial;
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(200, 213, 223, 0.534);
+  text-indent: 20px;
 }
