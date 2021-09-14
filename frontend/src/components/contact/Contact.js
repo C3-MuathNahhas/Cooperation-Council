@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../contact/Contact.css"
 const Contact = () => {
   return (
     <div className="mainContact">
@@ -12,7 +12,7 @@ const Contact = () => {
         <h2>Guest services</h2>
 
         <h2>
-          <img src="https://www.flymango.com/upload/contacts/call-center.png" />{" "}
+          <img src="https://www.flymango.com/upload/contacts/call-center.png" />
           traveleo Call Centre:
         </h2>
         <p> Jordan : 786 560 1234 </p>
@@ -26,7 +26,7 @@ const Contact = () => {
         <p> Jordan :786 560 1234 </p>
         <p className="email">Enquiries : guest@traveleo.com</p>
         <h2>
-          <img src="https://www.flymango.com/upload/contacts/group.png" />{" "}
+          <img src="https://www.flymango.com/upload/contacts/group.png" />
           traveleo Group Bookings:
         </h2>
         <p>Jordan :786 560 1234</p>
@@ -91,12 +91,12 @@ const Contact = () => {
       <br />
       <br />
       <br />
-      <div className="contactFooter">
+      {/* <div className="contactFooter">
         <h3>BEE certificate</h3>
         <h3>cookie policy</h3>
         <h3>Travel communities</h3>
         <h3>Unique places to stay</h3>
-      </div>
+      </div> */}
     </div>
   );
 };
