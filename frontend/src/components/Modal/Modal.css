@@ -30,3 +30,13 @@
     margin:1rem 0 2rem 0;
     font-weight: bold;
 }
+.modal-footer button{
+    display:block;
+    font-size: 1rem;
+    margin-left: auto;
+    padding:0.5rem 1.8rem;
+    background-color:#150050 ;
+    color: #fff;
+    border: none;
+    
+}
