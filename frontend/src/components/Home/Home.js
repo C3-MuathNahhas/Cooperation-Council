@@ -132,17 +132,17 @@ export const Home = ({ setvalue }) => {
   //   , { destination: 'LCY', origin: 'FlySFO', date: '2021-11-26T11:30:00.000+00:00', capacity: 20 }
   //   , { destination: 'FlySFO', origin: 'TIP', date: '2021-11-26T5:30:00.000+00:00', capacity: 9 }]
 
-  // let flights2 = [];
-  // let des = [];
-  // for (let i = 0; i < 98; i++) {
-  //   flights2.push({
-  //     destination: des[getRandomNum(0, 4)]
-  //     , origin: des[getRandomNum(0, 4)]
-  //     , date: `2021-${getRandomNum(1, 12)}-${getRandomNum(1, 30)}T${getRandomNum(0, 23)}:30:00.000+00:00`, capacity: getRandomNum(4, 20)
-  //   })
-  // }
+  let flights2 = [];
+  let des = [];
+  for (let i = 0; i < 98; i++) {
+    flights2.push({
+      destination: des[getRandomNum(0, 4)]
+      , origin: des[getRandomNum(0, 4)]
+      , date: `2021-${getRandomNum(1, 12)}-${getRandomNum(1, 30)}T${getRandomNum(0, 23)}:30:00.000+00:00`, capacity: getRandomNum(4, 20)
+    })
+  }
   const getRandomNum=(min,max)=>{
-    return Math.floor( Math.random(0,10)*10)
+    return Math.floor( Math.random(min,max)*10)
     }
 
   /*destination:"DXB"
