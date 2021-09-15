@@ -10,7 +10,7 @@ export const Home = ({ setvalue }) => {
     "Plockton",
     "Carthage",
   ];
-  const origins = ["San Francisco", "Amman", "Tripoli", "Plockton", "Carthage"];
+  const origins = ["San Francisco", "Amman", "Tripoli", "London", "Carthage"];
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState();
   const [destination, setDestination] = useState();
@@ -18,6 +18,13 @@ export const Home = ({ setvalue }) => {
   const [adults, setAdults] = useState();
   const [dateTo, setDateTo] = useState();
   const history = useHistory();
+  const converter = {
+    "San Francisco": "FlySFO",//San Francisco International Airport (FlySFO)
+    Amman: "QAIA",//Queen Alia International Airport (QAIA)
+    Tripoli: "TIP",//Tripoli International Airport  (TIP)
+    London: "LCY",//London City Airport:(LCY)
+    Carthage: "TIPTUN"//Tunis–Carthage International Airport (TIPTUN)
+  };
   const click = () => {
     console.log("hello", { origin, destination, dateFrom, adults, dateTo });
 
