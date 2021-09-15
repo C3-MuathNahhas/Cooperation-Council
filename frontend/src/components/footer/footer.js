@@ -1,5 +1,7 @@
 import React from "react";
 import "./footer.css";
+import { GiPlanePilot } from "react-icons/gi";
+
 import {
   faFacebookF,
   faTwitterSquare,
@@ -21,7 +23,6 @@ const Footer = () => {
       </div>
       <br />
       <br />
-
       <div className="footer_links">
         <ul>
           <li>
@@ -54,7 +55,12 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <h1>trevaleo</h1>
+      <h1 style={{ fontSize: "20px" }}>
+        <span style={{ color: "rgb(19,145,210)" }}>tre</span>
+        <span style={{ color: "rgb(252,158,21)" }}>val</span>
+        <GiPlanePilot style={{ fontSize: "3vw" }} />
+        <span style={{ color: "rgb(227,64,61)" }}>eo</span>
+      </h1>
       <h6>Copyright 2021 trevaleo | All rights reserved.</h6>
     </div>
   );

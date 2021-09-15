@@ -25,6 +25,9 @@ a:link {
   color: aliceblue;
   text-decoration: none;
 }
+a {
+  font-size: 0.8vw;
+}
 .footer_icons {
   display: flex;
   flex-direction: row;
