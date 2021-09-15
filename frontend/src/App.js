@@ -18,8 +18,7 @@ import { UpdateFlightBooking } from "./components/updateFlightBooking/UpdateFlig
 import Contact from "./components/contact/Contact";
 export const userContext = createContext();
 const App = () => {
-  const [value, setvalue] = useState();
-  const [values, setvalues] = useState();
+  const [value, setValue] = useState()
   let { path, url } = useRouteMatch();
   const [token, setToken] = useState();
   const state = { token, setToken };
@@ -28,23 +27,25 @@ const App = () => {
     <div className="App">
       <Route
         path={`${path}/Update`}
-        render={() => <UpdateFlightBooking value={values} state={state} />}
+        render={() => <UpdateFlightBooking value={value} state={state} />}
       />
       <Switch>
         <userContext.Provider value={state}>
           <Navigation />
           <Route path={`${path}/About`} component={About} />
-
           <Route path={`${path}/signUp`} component={SignUp} />
           <Route path={`${path}/login`} component={Login} />
           <Route path={`${path}/contact`} component={Contact} />
-          <Route
-            path={`${path}/home`}
-            render={() => <Home setvalue={setvalues} />}
-          />
+          <Route path={`${path}/contact`} component={Home}/>
+
+        <Route
+          path={`${path}/home`}
+          render={() => <Home setvalue={setValue} />}
+        />
+
           <Route
             path={`${path}/Table`}
-            render={() => <Table value={values} state={state} />}
+            render={() => <Table value={value} state={state} />}
           />
         </userContext.Provider>
       </Switch>

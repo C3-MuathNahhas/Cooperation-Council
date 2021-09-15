@@ -30,7 +30,7 @@ export const Home = ({ setvalue }) => {
         dateTo,
       })
       .then((result) => {
-        console.log(result.data.flights);
+        console.log(result.data);
         setvalue(result.data.flights);
         history.push(`${path} / Table`);
       });
