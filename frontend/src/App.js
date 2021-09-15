@@ -5,7 +5,7 @@ import Table from "./components/ui/table";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import Navigation from "../src/components/navigation/Navigation";
-import About from "./components/about/About";
+import About from "./components/A/About";
 import "./App.css";
 
 import { Route, useRouteMatch, Switch, useHistory } from "react-router-dom";
