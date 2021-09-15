@@ -1,13 +1,14 @@
 const express = require("express");
 const {
   createNewFlight,
-  getFlights,getAvailableFlights
+  getFlights,
+  getAvailableFlights,
 } = require("../../controllers/flight/flightController");
 const flightRouter = express.Router();
 
-//flightRouter.post("/", createNewFlight);
+flightRouter.get("/", getFlights);
 
-flightRouter.post("/search", getFlights);
+flightRouter.post("/search", createNewFlight);
 
 flightRouter.post("/", getAvailableFlights);
 
