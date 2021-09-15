@@ -36,7 +36,11 @@ function Attractions() {
   return (
     <div className="attractions_div">
       <h1>Find More Attractions </h1>
-      <img onClick={clickHandler} src={`${attractionsSrc[imgSrc]}`}></img>
+      <img
+        className="attractions_img"
+        onClick={clickHandler}
+        src={`${attractionsSrc[imgSrc]}`}
+      ></img>
       <Modal hideBack={hideBack} src={modalSrc}></Modal>
     </div>
   );
