@@ -93,7 +93,12 @@ const getAvailableFlights = (req, res, next) => {
       date: {
         $gte: dateFrom,
         $lte: dateTo,
-      },origin,destination
+      },
+      origin,
+      destination,
+      capacity: {
+        $gte: adults,
+      },
     })
 
     .then((result) => {
