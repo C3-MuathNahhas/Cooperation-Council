@@ -1,6 +1,6 @@
 import React from "react";
 import DataTable from "react-data-table-component";
-import { useHistory,useRouteMatch } from "react-router-dom";
+import { useHistory, useRouteMatch } from "react-router-dom";
 import "../ui/Table.css";
 import axios from "axios";
 import swal from "sweetalert";
@@ -8,7 +8,7 @@ import swal from "sweetalert";
 const columns = [
   {
     name: "_id",
-    selector: (row) => row.flight_name,
+    selector: (row) => row._id,
     sortable: true,
   },
   {
@@ -31,12 +31,17 @@ const columns = [
     selector: (row) => row.capacity,
     sortable: true,
   },
+  {
+    name: "price",
+    selector: (row) => row.price,
+    sortable: true,
+  },
 ];
 
 function Table({ value, state }) {
   let { path, url } = useRouteMatch();
   const flight = value;
-  console.log(flight)
+  //console.log(flight)
   const [adults, setadults] = React.useState([]);
   const [token, settoken] = React.useState([]);
   const history = useHistory();
@@ -50,7 +55,7 @@ function Table({ value, state }) {
         swal({
           title: "Are you sure?",
           text: `you want to book on:\r ${selectedRows.map(
-            (r) => r.flight_name
+            (r) => r.destination
           )}?`,
           // eslint-disable-next-line no-dupe-keys
           title: "Enter the Number of Adults",
@@ -66,7 +71,7 @@ function Table({ value, state }) {
               .post(
                 "http://localhost:5000/flightBooking",
                 {
-                  flightId: "613f7bbd7a7d0b4d7448f1b7",
+                  flightId: selectedRows._id,
                   adults: adults,
                   userId: "613a4d4cfd1dd74d24f77969",
                 },
@@ -88,9 +93,8 @@ function Table({ value, state }) {
           }
         })
       ) {
-        history.push(`${path}/update`)
+        history.push(`${path}/update`);
       }
-      
     };
     return (
       <div className="table">
@@ -105,7 +109,7 @@ function Table({ value, state }) {
     );
   }, [selectedRows]);
   return (
-    <div className="rdt_TableHead">
+    <div className="">
       <DataTable
         title="FlightBooking"
         columns={columns}

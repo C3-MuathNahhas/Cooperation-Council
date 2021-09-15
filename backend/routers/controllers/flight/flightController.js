@@ -90,10 +90,12 @@ const getAvailableFlights = (req, res, next) => {
   flightModel
     .find({
       date: {
+
         $gte: Date.parse(dateFrom),
         $lte: Date.parse(dateTo),
       },
     })
+
     .then((result) => {
       if (!result) {
         return res.status(404).json({
