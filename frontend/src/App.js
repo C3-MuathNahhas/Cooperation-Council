@@ -33,6 +33,7 @@ const App = () => {
       <Switch>
         <userContext.Provider value={state}>
           <Navigation />
+          <Route path={`${path}/About`} component={About} />
 
           <Route path={`${path}/signUp`} component={SignUp} />
           <Route path={`${path}/login`} component={Login} />
@@ -51,6 +52,7 @@ const App = () => {
       <Route path={`${path}/mainPage`} component={Cities}></Route>
       <Route path={`${path}/mainPage`} component={Attractions}></Route>
       <Route path={`${path}/mainPage`} component={Footer}></Route>
+      <Route path={`${path}/mainPage`} component={About}></Route>
     </div>
   );
 };
