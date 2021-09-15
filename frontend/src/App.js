@@ -14,8 +14,6 @@ import Footer from "../src/components/footer/footer";
 import { UpdateFlightBooking } from "./components/updateFlightBooking/UpdateFlightBooking";
 import Contact from "./components/contact/Contact";
 
-
-
 export const userContext = createContext();
 const App = () => {
   const [value, setvalue] = useState();
@@ -35,7 +33,7 @@ const App = () => {
           <Route path={`${path}/signUp`} component={SignUp} />
           <Route path={`${path}/login`} component={Login} />
           <Route path={`${path}/contact`} component={Contact} />
-        <Route path={`${path}/About`} component={About} />
+          <Route path={`${path}/About`} component={About} />
           <Route
             path={`${path}/home`}
             render={() => <Home setvalue={setvalues} />}
@@ -54,4 +52,3 @@ const App = () => {
   );
 };
 export default App;
-

@@ -4,35 +4,52 @@ import axios from "axios";
 import "../Home/Home.css";
 export const Home = ({ setvalue }) => {
   const destenations = [
-    "San Francisco",
+    "San_Francisco",
     "Amman",
     "Tripoli",
     "Plockton",
     "Carthage",
   ];
-  const origins = ["San Francisco", "Amman", "Tripoli", "Plockton", "Carthage"];
+
+  const origins = ["Amman", "San_Francisco", "Tripoli", "London", "Carthage"];
   let { path, url } = useRouteMatch();
-  const [origin, setOrigin] = useState();
-  const [destination, setDestination] = useState();
-  const [dateFrom, setDateFrom] = useState();
-  const [adults, setAdults] = useState();
-  const [dateTo, setDateTo] = useState();
+  const [origin, setOrigin] = useState("Amman");
+  const [destination, setDestination] = useState("San_Francisco");
+  const [dateFrom, setDateFrom] = useState("2021");
+  const [adults, setAdults] = useState(1);
+  const [dateTo, setDateTo] = useState("2022");
   const history = useHistory();
+  const converter = {
+    San_Francisco: "FlySFO", //San Francisco International Airport (FlySFO)
+    Amman: "QAIA", //Queen Alia International Airport (QAIA)
+    Tripoli: "TIP", //Tripoli International Airport  (TIP)
+    London: "LCY", //London City Airport:(LCY)
+    Carthage: "TUN", //Tunis–Carthage International Airport (TUN)
+  };
+
   const click = () => {
-    console.log("hello", { origin, destination, dateFrom, adults, dateTo });
+    console.log("hello", {
+      origin: converter[origin],
+      destination: converter[destination],
+      dateFrom,
+      adults,
+      dateTo,
+    });
 
     axios
       .post("http://localhost:5000/flights/search/", {
-        origin,
-        destination,
-        adults,
+        origin: converter[origin],
+        destination: converter[destination],
         dateFrom,
+        adults,
         dateTo,
       })
       .then((result) => {
         console.log(result.data.flights);
         setvalue(result.data.flights);
-        history.push(`${path} / Table`);
+        console.log(path);
+        let p = path.split("/home");
+        history.push(`${p[0]}/table`);
       });
   };
   return (
@@ -50,7 +67,7 @@ export const Home = ({ setvalue }) => {
               }}
               required
             >
-              {destenations.map((item) => {
+              {origins.map((item) => {
                 return <option value={item}>{item}</option>;
               })}
             </select>
@@ -65,7 +82,7 @@ export const Home = ({ setvalue }) => {
               }}
               required
             >
-              {origins.map((item) => {
+              {destenations.map((item) => {
                 return <option value={item}>{item}</option>;
               })}
             </select>
@@ -75,6 +92,7 @@ export const Home = ({ setvalue }) => {
         <input
           className="dateInput"
           type="number"
+          defaultValue={1}
           onChange={(w) => {
             setAdults(w.target.value);
           }}
@@ -84,13 +102,17 @@ export const Home = ({ setvalue }) => {
         <input
           className="dateInput"
           type="date"
+          defaultValue="2021-01-01"
           onChange={(e) => {
+            console.log(e.target.value);
+
             setDateFrom(e.target.value);
           }}
         />
         <label>to</label>
         <input
           className="dateInput"
+          defaultValue="2021-12-31"
           type="date"
           onChange={(e) => {
             setDateTo(e.target.value);
