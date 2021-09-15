@@ -1,6 +1,6 @@
 import React from "react";
 import DataTable from "react-data-table-component";
-import { useHistory,useRouteMatch } from "react-router-dom";
+import { useHistory, useRouteMatch } from "react-router-dom";
 import "../ui/Table.css";
 import axios from "axios";
 import swal from "sweetalert";
@@ -43,7 +43,6 @@ function Table({ value, state }) {
   const [selectedRows, setSelectedRows] = React.useState([]);
   const handleRowSelected = React.useCallback((state) => {
     setSelectedRows(state.selectedRows);
-    
   }, []);
   const contextActions = React.useMemo(() => {
     const bookHandler = async () => {
@@ -89,9 +88,8 @@ function Table({ value, state }) {
           }
         })
       ) {
-        history.push(`${path}/update`)
+        history.push(`${path}/update`);
       }
-      
     };
     return (
       <div className="table">
