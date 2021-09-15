@@ -4,13 +4,13 @@ import axios from "axios";
 import "../Home/Home.css";
 export const Home = ({ setvalue }) => {
   const destenations = [
-    "San Francisco",
+    "San_Francisco",
     "Amman",
     "Tripoli",
     "Plockton",
     "Carthage",
   ];
-  const origins = ["San Francisco", "Amman", "Tripoli", "London", "Carthage"];
+  const origins = ["San_Francisco", "Amman", "Tripoli", "London", "Carthage"];
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState();
   const [destination, setDestination] = useState();
@@ -19,12 +19,15 @@ export const Home = ({ setvalue }) => {
   const [dateTo, setDateTo] = useState();
   const history = useHistory();
   const converter = {
-    "San Francisco": "FlySFO", //San Francisco International Airport (FlySFO)
+    "San_Francisco": "FlySFO", //San Francisco International Airport (FlySFO)
     Amman: "QAIA", //Queen Alia International Airport (QAIA)
     Tripoli: "TIP", //Tripoli International Airport  (TIP)
     London: "LCY", //London City Airport:(LCY)
-    Carthage: "TIPTUN", //Tunis–Carthage International Airport (TIPTUN)
+    Carthage: "TUN", //Tunis–Carthage International Airport (TUN)
   };
+
+
+  
   const click = () => {
     console.log("hello", {
       origin: converter[origin],
