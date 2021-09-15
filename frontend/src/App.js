@@ -5,7 +5,6 @@ import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import Navigation from "../src/components/navigation/Navigation";
 import About from "./components/about/About";
-import About from "./components/about/About";
 import "./App.css";
 import { Route, useRouteMatch, Switch, useHistory } from "react-router-dom";
 import Weather from "../src/components/ui/weather";
