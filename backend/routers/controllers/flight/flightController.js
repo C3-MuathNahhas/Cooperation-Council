@@ -86,12 +86,13 @@ const updateFlightCapacity = (req, res, next) => {
 
 const getAvailableFlights = (req, res, next) => {
   const { origin, destination, dateFrom, adults, dateTo } = req.body;
-  //console.log( { origin, destination, dateFrom, adults, dateTo });
-  
-    flightModel.find({
+  console.log({ origin, destination, dateFrom, adults, dateTo });
+
+  flightModel
+    .find({
       date: {
-        $gte:dateFrom,
-        $lte:dateTo,
+        $gte: dateFrom,
+        $lte: dateTo,
       },
     })
 
@@ -115,7 +116,6 @@ const getAvailableFlights = (req, res, next) => {
         message: `Server Error`,
       });
     });
-
 };
 
 module.exports = {
