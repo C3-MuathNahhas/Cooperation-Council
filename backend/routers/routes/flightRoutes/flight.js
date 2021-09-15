@@ -8,8 +8,8 @@ const flightRouter = express.Router();
 
 flightRouter.get("/", getFlights);
 
-flightRouter.post("/search", createNewFlight);
+flightRouter.post("/search", getAvailableFlights);
 
-flightRouter.post("/", getAvailableFlights);
+flightRouter.post("/", createNewFlight);
 
 module.exports = flightRouter;
