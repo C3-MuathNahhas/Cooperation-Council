@@ -10,6 +10,7 @@ export const Home = ({ setvalue }) => {
     "Plockton",
     "Carthage",
   ];
+
   const origins = ["Amman", "San_Francisco", "Tripoli", "London", "Carthage"];
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState("Amman");
@@ -64,7 +65,7 @@ export const Home = ({ setvalue }) => {
               }}
               required
             >
-              {destenations.map((item) => {
+              {origins.map((item) => {
                 return <option value={item}>{item}</option>;
               })}
             </select>
@@ -79,7 +80,7 @@ export const Home = ({ setvalue }) => {
               }}
               required
             >
-              {origins.map((item) => {
+              {destenations.map((item) => {
                 return <option value={item}>{item}</option>;
               })}
             </select>
@@ -89,6 +90,7 @@ export const Home = ({ setvalue }) => {
         <input
           className="dateInput"
           type="number"
+          defaultValue={1}
           onChange={(w) => {
             setAdults(w.target.value);
           }}
@@ -98,13 +100,17 @@ export const Home = ({ setvalue }) => {
         <input
           className="dateInput"
           type="date"
+          defaultValue="2021-01-01"
           onChange={(e) => {
+            console.log(e.target.value);
+            
             setDateFrom(e.target.value);
           }}
         />
         <label>to</label>
         <input
           className="dateInput"
+          defaultValue="2021-12-31"
           type="date"
           onChange={(e) => {
             setDateTo(e.target.value);
