@@ -31,6 +31,11 @@ const columns = [
     selector: (row) => row.capacity,
     sortable: true,
   },
+  {
+    name: "price",
+    selector: (row) => row.price,
+    sortable: true,
+  },
 ];
 
 function Table({ value, state }) {
