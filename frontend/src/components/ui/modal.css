@@ -2,18 +2,20 @@
   position: fixed;
   top: 10vh;
   left: 50vh;
-  width: 30rem;
+  width: 50rem;
   height: 30rem;
   background-color: white;
   padding: 1rem;
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 30;
+  display: flex;
+  flex-direction: row;
 }
 
-.modal_img {
-  width: 50%;
-  height: 50%;
+.modal_img_div img {
+  width: 20rem !important;
+  height: 30rem !important;
 }
 
 .modal_img_details {
