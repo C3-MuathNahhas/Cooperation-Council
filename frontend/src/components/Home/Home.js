@@ -11,15 +11,13 @@ export const Home = ({ setvalue }) => {
     "Carthage",
   ];
   const origins = ["San Francisco", "Amman", "Tripoli", "Plockton", "Carthage"];
-
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState();
   const [destination, setDestination] = useState();
   const [dateFrom, setDateFrom] = useState();
-  const [adults, setadults] = useState();
+  const [adults, setAdults] = useState();
   const [dateTo, setDateTo] = useState();
   const history = useHistory();
-
   const click = () => {
     axios
       .get("http://localhost:5000/flights/", {
@@ -30,12 +28,11 @@ export const Home = ({ setvalue }) => {
         dateTo,
       })
       .then((result) => {
-        console.log(result.data);
+        console.log(result.data.flights);
         setvalue(result.data.flights);
         history.push(`${path} / Table`);
       });
   };
-
   return (
     <>
       <h1>just pick up your treavel with Travaleo</h1>
@@ -77,7 +74,7 @@ export const Home = ({ setvalue }) => {
           className="dateInput"
           type="number"
           onChange={(w) => {
-            setadults(w.target.value);
+            setAdults(w.target.value);
           }}
         />
         <h1>Date</h1>
@@ -97,7 +94,6 @@ export const Home = ({ setvalue }) => {
             setDateTo(e.target.value);
           }}
         />
-
         <button type="button" onClick={click}>
           Search
         </button>
