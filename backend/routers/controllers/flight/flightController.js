@@ -86,13 +86,12 @@ const updateFlightCapacity = (req, res, next) => {
 
 const getAvailableFlights = (req, res, next) => {
   const { origin, destination, adults, dateFrom, dateTo } = req.body;
-
-  flightModel
-    .find({
+  console.log( origin, destination, adults, dateFrom, dateTo);
+  
+    flightModel.find({
       date: {
-
-        $gte: Date.parse(dateFrom),
-        $lte: Date.parse(dateTo),
+        $gte:dateFrom,
+        $lte:dateTo,
       },
     })
 
