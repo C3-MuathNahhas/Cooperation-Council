@@ -21,13 +21,14 @@ export const Home = ({ setvalue }) => {
   const click = () => {
     console.log("hello", { origin, destination, dateFrom, adults, dateTo });
 
-    axios.post("http://localhost:5000/flights/", {
-      origin,
-      destination,
-      adults,
-      dateFrom,
-      dateTo,
-    })
+    axios
+      .post("http://localhost:5000/flights/", {
+        origin,
+        destination,
+        adults,
+        dateFrom,
+        dateTo,
+      })
       .then((result) => {
         console.log(result.data.flights);
         setvalue(result.data.flights);

@@ -86,7 +86,7 @@ const updateFlightCapacity = (req, res, next) => {
 
 const getAvailableFlights = (req, res, next) => {
   const { origin, destination, dateFrom, adults, dateTo } = req.body;
-  console.log( { origin, destination, dateFrom, adults, dateTo });
+  //console.log( { origin, destination, dateFrom, adults, dateTo });
   
     flightModel.find({
       date: {
@@ -116,7 +116,6 @@ const getAvailableFlights = (req, res, next) => {
       });
     });
 
-  // next();
 };
 
 module.exports = {
