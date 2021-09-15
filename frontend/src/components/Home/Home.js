@@ -47,7 +47,9 @@ export const Home = ({ setvalue }) => {
       .then((result) => {
         console.log(result.data.flights);
         setvalue(result.data.flights);
-        history.push(`${path} / Table`);
+        console.log(path);
+        let p = path.split("/home");
+        history.push(`${p[0]}/table`);
       });
   };
   return (
@@ -103,7 +105,7 @@ export const Home = ({ setvalue }) => {
           defaultValue="2021-01-01"
           onChange={(e) => {
             console.log(e.target.value);
-            
+
             setDateFrom(e.target.value);
           }}
         />
