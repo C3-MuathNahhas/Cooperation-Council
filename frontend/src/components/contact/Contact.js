@@ -91,12 +91,19 @@ const Contact = () => {
       <br />
       <br />
       <br />
-      <div className="contactFooter">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      {/* <div className="contactFooter">
         <h3>BEE certificate</h3>
         <h3>cookie policy</h3>
         <h3>Travel communities</h3>
         <h3>Unique places to stay</h3>
-      </div>
+      </div> */}
     </div>
   );
 };
