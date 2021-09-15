@@ -19,14 +19,15 @@ export const Home = ({ setvalue }) => {
   const [dateTo, setDateTo] = useState();
   const history = useHistory();
   const click = () => {
-    axios
-      .get("http://localhost:5000/flights/", {
-        origin,
-        destination,
-        adults,
-        dateFrom,
-        dateTo,
-      })
+    console.log("hello", { origin, destination, dateFrom, adults, dateTo });
+
+    axios.post("http://localhost:5000/flights/", {
+      origin,
+      destination,
+      adults,
+      dateFrom,
+      dateTo,
+    })
       .then((result) => {
         console.log(result.data.flights);
         setvalue(result.data.flights);

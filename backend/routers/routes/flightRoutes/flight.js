@@ -5,10 +5,10 @@ const {
 } = require("../../controllers/flight/flightController");
 const flightRouter = express.Router();
 
-flightRouter.post("/", createNewFlight);
+//flightRouter.post("/", createNewFlight);
 
 flightRouter.post("/search", getFlights);
 
-flightRouter.get("/", getAvailableFlights);
+flightRouter.post("/", getAvailableFlights);
 
 module.exports = flightRouter;
