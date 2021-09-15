@@ -88,16 +88,12 @@ const getAvailableFlights = (req, res, next) => {
   const { origin, destination, adults, dateFrom, dateTo } = req.body;
 
   flightModel
-    .find(
-      { origin: "TUN" }
-    //  { date: "2021-02-16T17:30:00.000Z" }
-      // {
-      //   date: {
-      //     $gte: "2021-02-16T17:30:00.000Z",
-      //     $lt: "2021-02-16T17:30:00.000Z",
-      //   },
-      // }
-    )
+    .find({
+      date: {
+        $gte: Date.parse(dateFrom),
+        $lte: Date.parse(dateTo),
+      },
+    })
     .then((result) => {
       if (!result) {
         return res.status(404).json({
