@@ -8,9 +8,9 @@ function Modal(props) {
   return (
     <div className="modal_div">
       {props.src && (
-        <div className="img_div">
-          {" "}
-          <img src={props.src}></img>
+        <div className="modal_img_div">
+          <img src={props.src} className="modal_img"></img>
+          <div className="modal_img_details"></div>
         </div>
       )}
       {props.src && <div className="back_div" onClick={hideBack}></div>}
