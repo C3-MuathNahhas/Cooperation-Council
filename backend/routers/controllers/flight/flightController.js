@@ -94,7 +94,7 @@ const getAvailableFlights = (req, res, next) => {
         $lte:  Date.parse(dateTo),
       },
     })
- 
+ //ok
 
     .then((result) => {
       if (!result) {
