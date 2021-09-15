@@ -48,8 +48,8 @@ function Attractions() {
       src: "https://cdn.pixabay.com/photo/2016/01/19/17/51/golden-gate-bridge-1149942_960_720.jpgpg",
     },
   ];
-  const clickHandler = (e) => {
-    setModalsrc(e.target.src);
+  const clickHandler = () => {
+    setModalsrc(attractionsSrc[imgSrc]);
   };
   useEffect(() => {
     const timer = setInterval(() => {
@@ -69,7 +69,7 @@ function Attractions() {
       <img
         className="attractions_img"
         onClick={clickHandler}
-        src={`${attractionsSrc[imgSrc]}`}
+        src={`${attractionsSrc[imgSrc].src}`}
       ></img>
       <Modal hideBack={hideBack} src={modalSrc}></Modal>
     </div>
