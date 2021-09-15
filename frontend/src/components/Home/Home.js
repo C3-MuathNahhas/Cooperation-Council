@@ -19,21 +19,27 @@ export const Home = ({ setvalue }) => {
   const [dateTo, setDateTo] = useState();
   const history = useHistory();
   const converter = {
-    "San Francisco": "FlySFO",//San Francisco International Airport (FlySFO)
-    Amman: "QAIA",//Queen Alia International Airport (QAIA)
-    Tripoli: "TIP",//Tripoli International Airport  (TIP)
-    London: "LCY",//London City Airport:(LCY)
-    Carthage: "TIPTUN"//Tunis–Carthage International Airport (TIPTUN)
+    "San Francisco": "FlySFO", //San Francisco International Airport (FlySFO)
+    Amman: "QAIA", //Queen Alia International Airport (QAIA)
+    Tripoli: "TIP", //Tripoli International Airport  (TIP)
+    London: "LCY", //London City Airport:(LCY)
+    Carthage: "TIPTUN", //Tunis–Carthage International Airport (TIPTUN)
   };
   const click = () => {
-    console.log("hello", { origin, destination, dateFrom, adults, dateTo });
+    console.log("hello", {
+      origin: converter[origin],
+      destination: converter[destination],
+      dateFrom,
+      adults,
+      dateTo,
+    });
 
     axios
       .post("http://localhost:5000/flights/search/", {
-        origin,
-        destination,
-        adults,
+        origin: converter[origin],
+        destination: converter[destination],
         dateFrom,
+        adults,
         dateTo,
       })
       .then((result) => {
