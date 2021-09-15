@@ -10,7 +10,12 @@ function Modal(props) {
       {props.src && (
         <div className="modal_img_div">
           <img src={props.src} className="modal_img"></img>
-          <div className="modal_img_details">hi</div>
+          <iframe
+            className="modal_img_details"
+            src="https://en.wikipedia.org/wiki/Paris"
+          >
+            hi
+          </iframe>
         </div>
       )}
       {props.src && <div className="back_div" onClick={hideBack}></div>}
