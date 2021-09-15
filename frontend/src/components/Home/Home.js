@@ -10,24 +10,22 @@ export const Home = ({ setvalue }) => {
     "Plockton",
     "Carthage",
   ];
-  const origins = ["San_Francisco", "Amman", "Tripoli", "London", "Carthage"];
+  const origins = ["Amman", "San_Francisco", "Tripoli", "London", "Carthage"];
   let { path, url } = useRouteMatch();
-  const [origin, setOrigin] = useState();
-  const [destination, setDestination] = useState();
-  const [dateFrom, setDateFrom] = useState();
-  const [adults, setAdults] = useState();
-  const [dateTo, setDateTo] = useState();
+  const [origin, setOrigin] = useState("Amman");
+  const [destination, setDestination] = useState("San_Francisco");
+  const [dateFrom, setDateFrom] = useState("2021");
+  const [adults, setAdults] = useState(1);
+  const [dateTo, setDateTo] = useState("2022");
   const history = useHistory();
   const converter = {
-    "San_Francisco": "FlySFO", //San Francisco International Airport (FlySFO)
+    San_Francisco: "FlySFO", //San Francisco International Airport (FlySFO)
     Amman: "QAIA", //Queen Alia International Airport (QAIA)
     Tripoli: "TIP", //Tripoli International Airport  (TIP)
     London: "LCY", //London City Airport:(LCY)
     Carthage: "TUN", //Tunis–Carthage International Airport (TUN)
   };
 
-
-  
   const click = () => {
     console.log("hello", {
       origin: converter[origin],
