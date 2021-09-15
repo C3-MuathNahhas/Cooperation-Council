@@ -3,11 +3,14 @@ import "./modal.css";
 
 function Modal(props) {
   return (
-    <div className='modal_div'>
-      <div className="img_div">
-        {props.src && <img src={props.src}></img>}
-          </div>
-          <div className='back_div'></div>
+    <div className="modal_div">
+      {props.src && (
+        <div className="img_div">
+          {" "}
+          <img src={props.src}></img>
+        </div>
+      )}
+      {props.src && <div className="back_div" onClick={hideBack}></div>}
     </div>
   );
 }
