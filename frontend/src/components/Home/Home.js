@@ -22,7 +22,7 @@ export const Home = ({ setvalue }) => {
     console.log("hello", { origin, destination, dateFrom, adults, dateTo });
 
     axios
-      .post("http://localhost:5000/flights/", {
+      .post("http://localhost:5000/flights/search/", {
         origin,
         destination,
         adults,
