@@ -10,7 +10,9 @@
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif !important;
 }
-
+.attractions_div img:hover {
+  cursor: pointer;
+}
 .attractions_div img {
   width: 100%;
   height: 100%;

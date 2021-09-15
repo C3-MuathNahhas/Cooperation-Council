@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./attractions.css";
+import Modal from "./modal";
 
 function Attractions() {
   const [imgSrc, setSrc] = useState(0);
+  const [modalSrc, setModalsrc] = useState("");
+
   const attractionsSrc = [
     "https://cdn.pixabay.com/photo/2019/08/19/15/13/eiffel-tower-4416700_960_720.jpg",
     "https://cdn.pixabay.com/photo/2013/04/08/14/22/stonehenge-101801_960_720.jpg",
@@ -15,7 +18,9 @@ function Attractions() {
     "https://cdn.pixabay.com/photo/2015/11/16/18/56/building-1046188_960_720.jpg",
     "https://cdn.pixabay.com/photo/2019/06/13/11/22/golden-gate-bridge-4271364_960_720.jpg",
   ];
-
+  const clickHandler = (e) => {
+    setModalsrc(e.target.src);
+  };
   useEffect(() => {
     const timer = setInterval(() => {
       setSrc((prevState) => (prevState < 9 ? prevState + 1 : 0));
@@ -25,10 +30,14 @@ function Attractions() {
     };
   }, []);
 
+  const hideBack = (hide) => {
+    setModalsrc(hide);
+  };
   return (
     <div className="attractions_div">
       <h1>Find More Attractions </h1>
-      <img src={`${attractionsSrc[imgSrc]}`}></img>
+      <img onClick={clickHandler} src={`${attractionsSrc[imgSrc]}`}></img>
+      <Modal hideBack={hideBack} src={modalSrc}></Modal>
     </div>
   );
 }
