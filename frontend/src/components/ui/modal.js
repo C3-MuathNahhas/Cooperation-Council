@@ -1,12 +1,14 @@
 import React from 'react'
 import './modal.css'
 
-function modal() {
+
+
+function Modal(props) {
     return (
         <div className='modal_div'>
-            
+           <img className='modal_img' src={props.src}></img> 
         </div>
     )
 }
 
-export default modal
+export default Modal
