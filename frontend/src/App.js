@@ -1,10 +1,5 @@
 import React, { useState, createContext } from "react";
-<<<<<<< HEAD
-import { Route, useRouteMatch, Switch, useHistory } from "react-router-dom";
-// import { Home } from "./components/Home/Home";
-=======
 import { Home } from "./components/home/Home";
->>>>>>> 9b5184667958fb9ea5ea63caa3ae5d0b0b426c61
 import Table from "./components/ui/table";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
@@ -47,15 +42,8 @@ const App = () => {
             path={`${path}/Table`}
             render={() => <Table value={values} state={state} />}
           />
-<<<<<<< HEAD
-	</userContext.Provider>
-      </Switch>
-
-
-=======
         </userContext.Provider>
       </Switch>
->>>>>>> 9b5184667958fb9ea5ea63caa3ae5d0b0b426c61
       <Route path={`${path}/mainPage`} component={Weather}></Route>
       <Route path={`${path}/mainPage`} component={Cities}></Route>
       <Route path={`${path}/mainPage`} component={Attractions}></Route>
