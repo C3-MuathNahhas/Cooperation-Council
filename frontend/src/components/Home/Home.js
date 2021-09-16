@@ -95,7 +95,7 @@ export const Home = ({ setvalue, setadult }) => {
             </select>
           </div>
           <div className="homeDiv" id="container">
-            <h1>destination</h1>
+            <h1>Destination</h1>
             <select
               className="homeSelect"
               id="destination"
@@ -111,7 +111,7 @@ export const Home = ({ setvalue, setadult }) => {
             </select>
           </div>
         </div>
-        <h1>adults</h1>
+        <h1>Adults</h1>
         <input
           className="dateInput"
           type="number"
