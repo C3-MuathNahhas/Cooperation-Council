@@ -82,7 +82,7 @@ function Table({ value, state,adult }) {
               .catch((err) => {
                 console.log(err);
               });
-            console.log("hiiiiiii", selectedRows[0]._id);
+            
 
             swal("thanks! Your book has been saved!", {
               icon: "success",
