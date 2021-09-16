@@ -47,7 +47,8 @@ export const Home = ({ setvalue, setadult }) => {
       .then((result) => {
         console.log(result.data.flights);
         setvalue(result.data.flights);
-        console.log("setadult",setadult);
+        console.log("setadult",adults);
+        setadult(adults)
         let p = path.split("/home");
         history.push(`${p[0]}/table`);
       });
