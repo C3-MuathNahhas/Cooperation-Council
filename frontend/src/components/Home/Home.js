@@ -77,13 +77,13 @@ export const Home = ({ setvalue, setadult }) => {
     <div className="homeBody">
       <div className="smallBody">
         <h1 style={{ fontSize: "20px" }}>
-          <span style={{ color: "rgb(19,145,210)" }}>tre</span>
+        <span style={{ color: "rgb(0,0,0)" }}>just pick up your trip with </span>
+          <span style={{ color: "rgb(19,145,210)" }}>Tra</span>
           <span style={{ color: "rgb(252,158,21)" }}>val</span>
           <GiPlanePilot style={{ fontSize: "3vw" }} />
           <span style={{ color: "rgb(227,64,61)" }}>eo</span>
         </h1>
 
-        <h1>just pick up your trip with Travaleo</h1>
         <div className="homeDiv">
           <div className="homeDiv" className="bigContainer">
             <div className="homeDiv" id="container">
@@ -149,7 +149,7 @@ export const Home = ({ setvalue, setadult }) => {
               setDateTo(e.target.value);
             }}
           />
-          <button className="homeButton" type="button" onClick={click}>
+          <button className="homeButton" onClick={click}>
             Search
           </button>
         </div>
