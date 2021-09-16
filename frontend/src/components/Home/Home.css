@@ -45,6 +45,10 @@ input {
   border: 1px 1px black;
 } */
 
+div h1{
+font-size: 25px;
+}
+
 .description {
   display: flex;
   flex-direction: column;

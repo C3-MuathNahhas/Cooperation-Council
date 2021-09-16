@@ -10,7 +10,8 @@ export const Home = ({ setvalue }) => {
     "Plockton",
     "Carthage",
   ];
-//hello
+
+  
   const origins = ["Amman", "San_Francisco", "Tripoli", "London", "Carthage"];
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState("Amman");
@@ -53,7 +54,7 @@ export const Home = ({ setvalue }) => {
       });
   };
   return (
-    <>
+    <div>
       <h1>just pick up your treavel with Travaleo</h1>
       <div className="home">
         <div className="bigContainer">
@@ -122,6 +123,6 @@ export const Home = ({ setvalue }) => {
           Search
         </button>
       </div>
-    </>
+    </div>
   );
 };
