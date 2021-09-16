@@ -15,7 +15,7 @@ import Contact from "./components/contact/Contact";
 
 export const userContext = createContext();
 const App = () => {
-  const [update, setupdate] = useState();
+  const [updated, setupdate] = useState();
   const [values, setvalues] = useState();
   let { path, url } = useRouteMatch();
   const [token, setToken] = useState();
@@ -24,7 +24,7 @@ const App = () => {
     <div className="App">
       <Route
         path={`${path}/Update`}
-        render={() => <UpdateFlightBooking value={values} state={state} />}
+        render={() => <UpdateFlightBooking value={values} state={state} updated={updated} />}
       />
       <Switch>
         <userContext.Provider value={state}>

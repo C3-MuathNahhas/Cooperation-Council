@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
 
-export const UpdateFlightBooking = ({ state }) => {
+export const UpdateFlightBooking = ({ state,updated }) => {
   const [adults, setadults] = useState();
 
   const history = useHistory();
@@ -15,7 +15,7 @@ export const UpdateFlightBooking = ({ state }) => {
     console.log(state.token);
     axios
       .put(
-        "http://localhost:5000/flightBooking/613fb6546eea016fb8ee6302",
+        `http://localhost:5000/flightBooking/${updated}`,
         {
           adults,
         },
