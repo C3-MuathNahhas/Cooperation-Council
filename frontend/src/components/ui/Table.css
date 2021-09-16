@@ -3,9 +3,7 @@
     margin-top: 100px !important;
 }
 
-.rdt_Table{
-    margin-top: 100px !important;
-}
+
 .rdt_TableBody{
     margin-top: 50px;
 }
@@ -49,3 +47,27 @@
     padding-right: 8px;
     box-sizing: border-box;
 }
+.hHSTiF{
+    position: relative;
+    border: 1px solid;
+    box-shadow:blanchedalmond;
+    width: 100%;
+    border-radius: inherit;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-height: 0;
+}
+.gXlmGk {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+    border-bottom-style: solid;
+    padding-top: 5px;
+}
+
