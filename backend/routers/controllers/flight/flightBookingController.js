@@ -14,31 +14,30 @@ const isBookingExist = (req, res, next) => {
         });
       } else {
         req.body.flightId = result.flightId;
-        if (req.method === 'DELETE') {
+        if (req.method === "DELETE") {
           if (result.userId != req.token.userId) {
             return res.status(403).json({
               success: false,
               message: `The Booking => ${bookingId} is not related for this account you dont have the auth to delete`,
             });
-          } else { //have the auth
-            req.body.capacity = result.adults
+          } else {
+            //have the auth
+            req.body.capacity = result.adults;
             next();
           }
-
-        }
-        else { //PUT
+        } else {
+          //PUT
           if (result.userId != req.token.userId) {
             return res.status(403).json({
               success: false,
               message: `The Booking => ${bookingId} is not related for this account you dont have the auth to change`,
             });
-          } else { //have the auth
+          } else {
+            //have the auth
             req.lastValueOfAdults = result.adults;
             next();
           }
         }
-
-
       }
     })
     .catch((err) => {
@@ -53,7 +52,7 @@ const isFlightFit = (req, res, next) => {
   let flightId = req.body.flightId;
   let { lastValueOfAdults } = req;
   if (req.method === "POST") {
-    lastValueOfAdults = 0
+    lastValueOfAdults = 0;
   }
 
   //1: get flight id and last number of adults at the booking from past middleWare
@@ -75,9 +74,11 @@ const isFlightFit = (req, res, next) => {
               message: `there is no changes to edit`,
             });
           } else if (lastValueOfAdults < adults) {
-            if (result.capacity >= adults - lastValueOfAdults) {   //more people come
+            if (result.capacity >= adults - lastValueOfAdults) {
+              //more people come
               req.body.flightId = flightId;
-              req.body.capacity = result.capacity - adults + parseInt(lastValueOfAdults);
+              req.body.capacity =
+                result.capacity - adults + parseInt(lastValueOfAdults);
               next();
             } else {
               res.status(500).json({
@@ -87,7 +88,8 @@ const isFlightFit = (req, res, next) => {
             }
           } else {
             req.body.flightId = flightId;
-            req.body.capacity = result.capacity - adults + parseInt(lastValueOfAdults);
+            req.body.capacity =
+              result.capacity - adults + parseInt(lastValueOfAdults);
             next(); //less people come
           }
         }
@@ -104,7 +106,7 @@ const isFlightFit = (req, res, next) => {
 };
 
 const getFlightsBookingByUserId = (req, res) => {
-  const {userId} = req.token.userId;//ok
+  const { userId } = req.token.userId; //ok
 
   flightBookingModle
     .find({ userId })
@@ -179,21 +181,22 @@ const updateFlightBooking = async function (req, res) {
 };
 
 const creatFlightBooking = (req, res) => {
-  const userId = req.token.userId
+  const userId = req.token.userId;
   const { flightId, adults } = req.body;
   const newBooking = new flightBookingModle({
-    flightId, userId, adults
+    flightId,
+    userId,
+    adults,
   })
     .save()
     .then((result) => {
       console.log(result.populate("userId", "-_id -password -email -__v"));
       res.status(201);
       res.json({
-        success: true, message: "new booking created", flightsBooking: result
-
+        success: true,
+        message: "new booking created",
+        flightsBooking: result,
       });
-
-
     })
     .catch((err) => {
       res.status(500);
@@ -235,11 +238,11 @@ errorMiddle = (err, req, res, next) => {
 };
 
 module.exports = {
-  getFlightsBookingByUserId
-  , isBookingExist
-  , isFlightFit
-  , creatFlightBooking
-  , getAllFlightsBooking
-  , deleteFlightBooking
-  , updateFlightBooking
-}
+  getFlightsBookingByUserId,
+  isBookingExist,
+  isFlightFit,
+  creatFlightBooking,
+  getAllFlightsBooking,
+  deleteFlightBooking,
+  updateFlightBooking,
+};
