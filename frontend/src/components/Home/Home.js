@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
-export const Home = ({ setvalue }) => {
+export const Home = ({ setvalue,setadult }) => {
   const destenations = [
     "San_Francisco",
     "Amman",
@@ -54,6 +54,7 @@ export const Home = ({ setvalue }) => {
       .then((result) => {
         const flights = result.data.flights;
         console.log(result.data.flights);
+        setadult(adults)
         setvalue({
           destenations: deConverter[flights.destenations],
           origin: deConverter[flights.origin],
