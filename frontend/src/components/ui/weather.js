@@ -6,7 +6,7 @@ import { WiHumidity } from "weather-icons-react";
 import { WiStrongWind } from "weather-icons-react";
 import { WiThermometer } from "weather-icons-react";
 import { FaMapPin } from "react-icons/fa";
-
+//new
 
 function Weather() {
   const [icon, setIcon] = useState();
