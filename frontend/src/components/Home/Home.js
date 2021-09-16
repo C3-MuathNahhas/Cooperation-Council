@@ -74,13 +74,14 @@ export const Home = ({ setvalue, setadult }) => {
       });
   };
   return (
-    <div>
+    <div className="homeBody">
       <h1>just pick up your treavel with Travaleo</h1>
-      <div className={Home.div}>
-        <div className="bigContainer">
-          <div id="container">
+      <div className="homeDiv">
+        <div className="homeDiv" className="bigContainer">
+          <div className="homeDiv" id="container">
             <h1>origin</h1>
             <select
+              className="homeSelect"
               id="origin"
               name="origin"
               onChange={(r) => {
@@ -93,9 +94,10 @@ export const Home = ({ setvalue, setadult }) => {
               })}
             </select>
           </div>
-          <div id="container">
+          <div className="homeDiv" id="container">
             <h1>destination</h1>
             <select
+              className="homeSelect"
               id="destination"
               name="destination"
               onChange={(r) => {

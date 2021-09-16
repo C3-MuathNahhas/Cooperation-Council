@@ -1,4 +1,4 @@
-/* .home {
+.home {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-select {
+.homeSelect {
   font-size: 15px;
   width: 400px;
   height: 30px;
@@ -17,12 +17,12 @@ select {
   text-align: center;
 }
 
-body {
+.homeBody {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-size: inherit;
-  font-family: Impact;
+  font-family: monospace;
 }
 
 .InputsHolder {
@@ -31,22 +31,22 @@ body {
   align-items: center;
   width: fit-content;
 }
-input {
+.homeInput {
   font-family: Impact;
   border: 0.5px 2px black;
   border-radius: 5%;
   margin: 2px;
 }
 
-/* div {
+.homeDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 1px 1px black;
-} */
+}
 
-div h1{
-font-size: 25px;
+div h1 {
+  font-size: 25px;
 }
 
 .description {
@@ -87,5 +87,4 @@ font-size: 25px;
   font-size: 15px;
   border-radius: 5px;
   font-family: Impact;
-  
-} 
+}
