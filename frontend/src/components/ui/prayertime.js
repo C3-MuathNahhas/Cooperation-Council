@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./prayertime.css";
 import { FaMosque } from "react-icons/fa";
-
+//new
 function Prayertime() {
   const cityNames = ["amman", "dubai-ae", "riyadh-sa"];
   const [sunrise, setSunrise] = useState();
