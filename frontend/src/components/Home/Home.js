@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
+import Home from "./Home.mohule.css";
 export const Home = ({ setvalue }) => {
   const destenations = [
     "San_Francisco",
@@ -11,7 +12,6 @@ export const Home = ({ setvalue }) => {
     "Carthage",
   ];
 
-  
   const origins = ["Amman", "San_Francisco", "Tripoli", "London", "Carthage"];
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState("Amman");
@@ -56,7 +56,7 @@ export const Home = ({ setvalue }) => {
   return (
     <div>
       <h1>just pick up your treavel with Travaleo</h1>
-      <div className="home">
+      <div className={Home.div}>
         <div className="bigContainer">
           <div id="container">
             <h1>origin</h1>
