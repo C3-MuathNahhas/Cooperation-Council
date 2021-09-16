@@ -64,6 +64,7 @@ const Login = () => {
               } else {
                 console.log(result);
                 console.log(result.data.token);
+                localStorage.setItem(`info`,result.data.token)
                 newUser.setToken(result.data.token);
                 history.push(`/main/home`);
               }
