@@ -15,8 +15,5 @@
 .attractions_div img {
   width: 100%;
   height: 100%;
-  opacity: 0.8;
   border-radius: 10px;
-  transition: opacity 0.5s;
-  opacity: 1;
 }

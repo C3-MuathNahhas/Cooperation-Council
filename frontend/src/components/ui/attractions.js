@@ -8,11 +8,11 @@ function Attractions() {
 
   const attractionsSrc = [
     {
-      name: "paris",
+      name: "Paris",
       src: "https://cdn.pixabay.com/photo/2019/08/19/15/13/eiffel-tower-4416700_960_720.jpg",
     },
     {
-      name: "norway",
+      name: "Norway",
       src: "https://cdn.pixabay.com/photo/2015/05/18/23/53/backpacker-772991_960_720.jpg",
     },
     {
@@ -28,11 +28,11 @@ function Attractions() {
       src: "https://cdn.pixabay.com/photo/2017/06/19/14/10/thailand-2419443_960_720.jpg",
     },
     {
-      name: "dubai",
+      name: "Dubai",
       src: "https://cdn.pixabay.com/photo/2017/04/08/10/42/burj-khalifa-2212978_960_720.jpg",
     },
     {
-      name: "london",
+      name: "London",
       src: "https://cdn.pixabay.com/photo/2015/09/18/11/47/london-eye-945497_960_720.jpg",
     },
     {
@@ -66,6 +66,7 @@ function Attractions() {
   return (
     <div className="attractions_div">
       <h1>Find More Attractions </h1>
+      <h1>{attractionsSrc[imgSrc].name}</h1>
       <img
         className="attractions_img"
         onClick={clickHandler}
