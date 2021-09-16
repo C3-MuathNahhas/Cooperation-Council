@@ -39,7 +39,7 @@ function Table({ value, state,adult }) {
   const flight = value;
   const userId = jwt.decode(state.token);
   console.log(flight);
-  console.log("adult",adult);
+  
   
   const [adults, setadults] = React.useState([]);
   const [token, settoken] = React.useState([]);
