@@ -12,7 +12,7 @@ export const Home = ({ setvalue, setadult }) => {
   ];
 
   const origins = ["Amman", "San_Francisco", "Tripoli", "London", "Carthage"];
-  let { path, url } = useRouteMatch();
+  let { path } = useRouteMatch();
   const [origin, setOrigin] = useState("Amman");
   const [destination, setDestination] = useState("San_Francisco");
   const [dateFrom, setDateFrom] = useState("2021");
