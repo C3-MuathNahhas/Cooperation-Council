@@ -1,15 +1,15 @@
 const express = require("express");
-// const {
-// //   createNewFlight,
-// //   getFlights,
-// } = require("../controllers/flight/flightController");
-
-const { createNewFlight,getFlights}= require("../../controllers/flight/flightController");
+const {
+  createNewFlight,
+  getFlights,
+  getAvailableFlights,
+} = require("../../controllers/flight/flightController");
 const flightRouter = express.Router();
 
-flightRouter.post("/",createNewFlight)
+flightRouter.get("/", getFlights);
 
- flightRouter.post("/search",getFlights)
+flightRouter.post("/search", getAvailableFlights);
+
+flightRouter.post("/", createNewFlight);
 
 module.exports = flightRouter;
- 
