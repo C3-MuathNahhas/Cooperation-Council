@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "react-carousel-minimal";
+//new
 
 function Cities() {
   const data_1 = [
