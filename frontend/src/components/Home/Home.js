@@ -113,7 +113,7 @@ export const Home = ({ setvalue, setadult }) => {
         </div>
         <h1>adults</h1>
         <input
-          className="dateInput"
+          className="dateInput" 
           type="number"
           defaultValue={1}
           onChange={(w) => {

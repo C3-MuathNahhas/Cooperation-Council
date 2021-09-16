@@ -31,12 +31,7 @@
   align-items: center;
   width: fit-content;
 }
-.homeInput {
-  font-family: Impact;
-  border: 0.5px 2px black;
-  border-radius: 5%;
-  margin: 2px;
-}
+
 
 .homeDiv {
   display: flex;
