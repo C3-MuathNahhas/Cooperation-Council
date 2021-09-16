@@ -113,7 +113,7 @@ export const Home = ({ setvalue, setadult }) => {
         </div>
         <h1>adults</h1>
         <input
-          className="dateInput" 
+          className="dateInput"
           type="number"
           defaultValue={1}
           onChange={(w) => {
@@ -123,6 +123,7 @@ export const Home = ({ setvalue, setadult }) => {
         <h1>Date</h1>
         <label>from</label>
         <input
+          className="homeInput"
           className="dateInput"
           type="date"
           defaultValue="2021-01-01"
@@ -141,7 +142,7 @@ export const Home = ({ setvalue, setadult }) => {
             setDateTo(e.target.value);
           }}
         />
-        <button type="button" onClick={click}>
+        <button className="homeButton" type="button" onClick={click}>
           Search
         </button>
       </div>
