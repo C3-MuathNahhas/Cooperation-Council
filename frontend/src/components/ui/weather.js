@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "../ui/weather.css";
 import cityist from "../cities_list";
 import { WiHumidity } from "weather-icons-react";
 import { WiStrongWind } from "weather-icons-react";
 import { WiThermometer } from "weather-icons-react";
+import { FaMapPin } from "react-icons/fa";
+
 
 function Weather() {
   const [icon, setIcon] = useState();
@@ -20,7 +22,6 @@ function Weather() {
         `http://api.openweathermap.org/data/2.5/weather?q=london&appid=fe5020d8dbf399a7c40ed4cd37fb5c74&lang=en`
       )
       .then((result) => {
-        console.log(result.data);
         setIcon(result.data.weather[0].icon);
         setDescription(result.data.weather[0].description);
         setTemperature(result.data.main.temp);
@@ -43,7 +44,6 @@ function Weather() {
         `http://api.openweathermap.org/data/2.5/weather?q=${e.target.value}&appid=fe5020d8dbf399a7c40ed4cd37fb5c74&lang=en`
       )
       .then((result) => {
-        console.log(result.data);
         setIcon(result.data.weather[0].icon);
         setDescription(result.data.weather[0].description);
         setTemperature(result.data.main.temp);
@@ -67,14 +67,16 @@ function Weather() {
 
       <p>Weather</p>
       <select className="weather_select" onChange={changeHandler}>
-        <option>london</option>
+        <option> -- Change Location --</option>
 
         {cityist.map((ui, i) => {
           return <option key={i}>{ui}</option>;
         })}
       </select>
       <div className="weather_details">
-        <p>{name}</p>
+        <p>
+          {name} <FaMapPin />
+        </p>
         <h1>{description}</h1>
 
         <div className="weather_img">
@@ -85,16 +87,19 @@ function Weather() {
       </div>
 
       <div className="weather_item">
-        <div className="weather_item_sub">
+        <div className="weather_item_sub" style={{ color: "rgb(19,145,210)" }}>
           <WiThermometer size={40} color="ffff" />
 
           <h1 className="weather_temp">{`${temperature} °F`}</h1>
 
-          <div className="weather_item_sub">
+          <div
+            className="weather_item_sub"
+            style={{ color: "rgb(252,154,31)" }}
+          >
             <WiHumidity size={40} color="ffff" />
             <h1>{humidity}%</h1>
           </div>
-          <div className="weather_item_sub">
+          <div className="weather_item_sub" style={{ color: "rgb(227,64,61)" }}>
             <WiStrongWind size={40} color="ffff" />
             <h1>{wind} m/s</h1>
           </div>

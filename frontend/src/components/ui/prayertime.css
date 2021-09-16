@@ -1,0 +1,42 @@
+.pray_div {
+  padding: 10px;
+  background-color: rgb(211, 211, 224);
+  position: absolute;
+  right: 0px;
+  top: 40rem;
+  width: 20%;
+  height: 25rem;
+  background-image: url("https://cdn.pixabay.com/photo/2020/05/04/15/45/mosque-5129660_960_720.png");
+  background-repeat: no-repeat;
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.pray_times {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.555);
+  width: 10vw;
+  border-radius: 10px;
+}
+.pray_times p {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 1rem !important;
+}
+.pray_times select:hover {
+  cursor: pointer;
+}
+
+.pray_times select {
+  position: relative;
+  font-family: Arial;
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(200, 213, 223, 0.534);
+  text-indent: 20px;
+}

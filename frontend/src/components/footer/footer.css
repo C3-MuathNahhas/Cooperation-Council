@@ -1,10 +1,11 @@
-.footer {
+.footer_div {
   font-family: Arial, Helvetica, sans-serif !important;
-
+  margin: 0 !important;
   position: relative;
-  bottom: 0;
+  bottom: 0 !important;
   left: 0;
-  width: 100vw;
+  right: 0;
+  width: 100.5% !important;
   height: 50vh;
   background-color: rgb(17, 27, 51);
   color: white;
@@ -24,6 +25,9 @@ a:link {
   font-family: Arial, Helvetica, sans-serif !important;
   color: aliceblue;
   text-decoration: none;
+}
+a {
+  font-size: 0.8vw;
 }
 .footer_icons {
   display: flex;

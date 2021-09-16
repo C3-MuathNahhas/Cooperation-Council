@@ -1,0 +1,16 @@
+.adds_div {
+  background-color: rgb(211, 211, 224);
+  position: absolute;
+  right: 0px;
+  top: 66rem;
+  width: 21.45%;
+  height: 46rem;
+  background-repeat: no-repeat;
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+.adds_img {
+  width: 100%;
+  height: 100%;
+}
+/* new */
