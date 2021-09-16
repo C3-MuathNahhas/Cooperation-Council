@@ -15,7 +15,7 @@ import Contact from "./components/contact/Contact";
 
 export const userContext = createContext();
 const App = () => {
-  const [adults, setadults] = useState();
+  const [update, setupdate] = useState();
   const [values, setvalues] = useState();
   let { path, url } = useRouteMatch();
   const [token, setToken] = useState();
@@ -39,7 +39,7 @@ const App = () => {
           />
           <Route
             path={`${path}/Table`}
-            render={() => <Table value={values} state={state} />}
+            render={() => <Table value={values} state={state} setupdate={setupdate} />}
           />
         </userContext.Provider>
       </Switch>
