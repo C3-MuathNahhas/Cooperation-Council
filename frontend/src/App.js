@@ -13,7 +13,7 @@ import Cities from "../src/components/ui/cities";
 import Footer from "../src/components/footer/footer";
 import { UpdateFlightBooking } from "./components/updateFlightBooking/UpdateFlightBooking";
 import Contact from "./components/contact/Contact";
-
+import SideBar from "./components/sidebar"
 export const userContext = createContext();
 const App = () => {
   const [value, setvalue] = useState();
@@ -48,6 +48,7 @@ const App = () => {
       <Route path={`${path}/mainPage`} component={Cities}></Route>
       <Route path={`${path}/mainPage`} component={Attractions}></Route>
       <Route path={`${path}/mainPage`} component={Footer}></Route>
+      <Route path={`${path}/mainPage`} component={SideBar}></Route>
     </div>
   );
 };
