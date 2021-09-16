@@ -38,12 +38,12 @@ input {
   margin: 2px;
 }
 
-div {
+/* div {
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 1px 1px black;
-}
+} */
 
 .description {
   display: flex;
