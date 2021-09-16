@@ -1,10 +1,10 @@
 import React, { useState, createContext } from "react";
-import { Home } from "./components/home/Home";
+import { Home } from "./components/Home/Home";
 import Table from "./components/ui/table";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import Navigation from "../src/components/navigation/Navigation";
-import About from "./components/about/About";
+import About from "./components/About/About";
 import "./App.css";
 import { Route, useRouteMatch, Switch, useHistory } from "react-router-dom";
 import Weather from "../src/components/ui/weather";
@@ -18,7 +18,7 @@ import { GiExplosiveMaterials } from "react-icons/gi";
 export const userSign=createContext();
 export const userContext = createContext();
 const App = () => {
-  const [value, setvalue] = useState();
+  const [adult, setadult] = useState();
   const [values, setvalues] = useState();
   let { path, url } = useRouteMatch();
   const [token, setToken] = useState();
@@ -49,11 +49,11 @@ const App = () => {
             <Route path={`${path}/About`} component={About} />
             <Route
               path={`${path}/home`}
-              render={() => <Home setvalue={setvalues} />}
+              render={() => <Home setvalue={setvalues} setadult={setadult} />}
             />
             <Route
               path={`${path}/Table`}
-              render={() => <Table value={values} state={state} />}
+              render={() => <Table value={values} state={state} adult={adult} />}
             />
           </userContext.Provider>
         </Switch>
