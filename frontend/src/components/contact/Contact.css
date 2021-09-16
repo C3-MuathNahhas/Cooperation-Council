@@ -9,10 +9,13 @@
   color: #150050;
 
 }
+.contact p{
+  margin-top: 10px;
+}
 
 .contact h2{
   color: #150050;
-
+  margin-top: 15px;
 
   font-weight: bold;
 }
@@ -29,6 +32,7 @@
      
  }
  .hr{
+   margin-top: 10px;
   background-color:#150050 ; 
   padding:10px;
 }
@@ -41,9 +45,13 @@
  }
  .midlleContact h2{
   color: #150050;
+  margin-top: 15px;
+
 }
 .midlleContact p{
   color: #150050;
+  margin-top: 10px;
+  
 }
 .midlleContact h3{
   color: #150050;
@@ -53,7 +61,7 @@
   height:30px ;
 }
 .img_2{
-  margin-left: 620px;
+ margin-left: 620px;
  width:20px;
  height:10px;
 }
