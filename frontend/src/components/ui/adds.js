@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./adds.css";
-
+//new
 function Adds() {
   const [imgSrc, setSrc] = useState(0);
   const adds = [
