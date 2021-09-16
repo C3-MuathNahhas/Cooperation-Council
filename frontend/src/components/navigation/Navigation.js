@@ -7,7 +7,7 @@ const Navigation=()=>{
     let {path,url}=useRouteMatch()
     const user=useContext(userContext)
     return(
-      <div>
+      <div className = 'nav_div'>
            {!user.token?  <div className="nav">
              
 
