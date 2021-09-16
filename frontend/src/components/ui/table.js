@@ -30,8 +30,8 @@ const columns = [
     sortable: true,
   },
   {
-    name: "price",
-    selector: (row) => row.price,
+    name: "Total Price",
+    selector: (row) => `${row.totalPrice} $`,
     sortable: true,
   },
 ];
@@ -39,6 +39,8 @@ const columns = [
 function Table({ value, state, adult }) {
   let { path } = useRouteMatch();
   const flight = value;
+  console.log("plesae",flight)
+  console.log(adult)
   const userId = jwt.decode(state.token);
   const [token, settoken] = React.useState([]);
   const history = useHistory();

@@ -48,7 +48,7 @@ const App = () => {
             />
             <Route
               path={`${path}/Table`}
-              render={() => <Table value={values} state={state} />}
+              render={() => <Table value={values} state={state} adult={adult} />}
             />
           </userContext.Provider>
         </Switch>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
-export const Home = ({ setvalue,setadult }) => {
+export const Home = ({ setvalue, setadult }) => {
   const destenations = [
     "San_Francisco",
     "Amman",
@@ -53,15 +53,19 @@ export const Home = ({ setvalue,setadult }) => {
       })
       .then((result) => {
         const flights = result.data.flights;
-        console.log(result.data.flights);
-        setadult(adults)
-        setvalue({
-          destenations: deConverter[flights.destenations],
-          origin: deConverter[flights.origin],
-          date: flights.date,
-          capacity: flights.capacity,
-          TotalPrice: flights.price * adults,
+        const handledFlights = flights.map((item) => {
+          return {
+            destination: deConverter[item.destination],
+            origin: deConverter[item.origin],
+            date: item.date,
+            capacity: item.capacity,
+            totalPrice: item.price*adults ,
+          };
         });
+
+        console.log("flight", result.data.flights);
+        setadult(adults);
+        setvalue(handledFlights);
         console.log(path);
         let p = path.split("/home");
         history.push(`${p[0]}/table`);
