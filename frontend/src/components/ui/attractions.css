@@ -5,9 +5,10 @@
   text-align: center;
   position: relative;
   margin: auto;
-  width: 70vw;
+  width: 50vw;
   height: 70vh;
   overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif !important;
 }
 
 .attractions_div img {
