@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
-export const Home = ({ setvalue }) => {
+export const Home = ({ setvalue, setadult }) => {
   const destenations = [
     "San_Francisco",
     "Amman",
@@ -11,7 +11,13 @@ export const Home = ({ setvalue }) => {
     "Carthage",
   ];
 
-  
+  const deConverter = {
+    FlySFO: "San_Francisco  International Airport (FlySFO)",
+    QAIA: "Amman Queen Alia International Airport (QAIA)",
+    TIP: "Tripoli Tripoli International Airport  (TIP)",
+    LCY: "London London City Airport:(LCY)",
+    TUN: "Carthage Tunis–Carthage International Airport (TUN)",
+  };
   const origins = ["Amman", "San_Francisco", "Tripoli", "London", "Carthage"];
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState("Amman");
@@ -46,8 +52,20 @@ export const Home = ({ setvalue }) => {
         dateTo,
       })
       .then((result) => {
-        console.log(result.data.flights);
-        setvalue(result.data.flights);
+        const flights = result.data.flights;
+        const handledFlights = flights.map((item) => {
+          return {
+            destination: deConverter[item.destination],
+            origin: deConverter[item.origin],
+            date: item.date,
+            capacity: item.capacity,
+            totalPrice: item.price*adults ,
+          };
+        });
+
+        console.log("flight", result.data.flights);
+        setadult(adults);
+        setvalue(handledFlights);
         console.log(path);
         let p = path.split("/home");
         history.push(`${p[0]}/table`);

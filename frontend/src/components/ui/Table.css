@@ -1,7 +1,3 @@
-.table {
-  margin-top: 100px !important;
-}
-
 .rdt_TableBody {
   margin-top: 50px;
 }
@@ -16,12 +12,10 @@
 }
 
 .gousUx {
-  margin-top: 4px;
-  position: absolute;
+  margin-top: 60px;
   width: 100%;
   height: 100%;
   box-sizing: inherit;
-  z-index: 1;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -84,6 +78,10 @@
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.hOQcBO{
-    font-family: Arial, Helvetica, sans-serif !important;
+.hOQcBO {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+.navPlus {
+  margin-bottom: 1px !important;
+  padding: 1px !important;
 }
