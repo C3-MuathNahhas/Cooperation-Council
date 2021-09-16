@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
 
-export const UpdateFlightBooking = ({ state,updated }) => {
+export const UpdateFlightBooking = ({ state, updated }) => {
   const [adults, setadults] = useState();
 
   const history = useHistory();
