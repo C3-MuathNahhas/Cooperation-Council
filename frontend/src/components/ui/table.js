@@ -34,7 +34,7 @@ const columns = [
   },
 ];
 
-function Table({ value, state, adult,setupdate }) {
+function Table({ value, state, adult }) {
   let { path } = useRouteMatch();
   const flight = value;
   const userId = jwt.decode(state.token);
@@ -61,7 +61,7 @@ function Table({ value, state, adult,setupdate }) {
         }).then((willtrue) => {
           if (willtrue) {
             settoken(state.token);
-            setupdate(selectedRows[0]._id)
+            //setupdate(selectedRows[0]._id)
             axios
               .post(
                 "http://localhost:5000/flightBooking/",
@@ -101,7 +101,7 @@ function Table({ value, state, adult,setupdate }) {
         </button>
       </div>
     );
-  }, [adult, history, path, selectedRows, setupdate, state.token, token, userId]);
+  }, [adult, history, path, selectedRows, state.token, token, userId]);
   return (
     <div>
       <DataTable
