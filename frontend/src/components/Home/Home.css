@@ -69,7 +69,7 @@ font-size: 25px;
   background-color: rgb(194, 129, 76);
 }
 
-button {
+/* button {
   width: 400px;
   height: 50px;
   border-radius: 5px;
@@ -78,7 +78,7 @@ button {
   border-radius: 5px;
   background-color: #021110;
   font-family: Impact;
-}
+} */
 
 .dateInput {
   width: 400px;
