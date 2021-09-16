@@ -38,7 +38,7 @@ function Table({ value, state,adult }) {
   let { path } = useRouteMatch();
   const flight = value;
   const userId = jwt.decode(state.token);
-  console.log(flight);
+  
   
   
   const [adults, setadults] = React.useState([]);
