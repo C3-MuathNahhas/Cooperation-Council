@@ -13,7 +13,7 @@
   flex-direction: row;
   column-gap: 5%;
 }
-
+/* new */
 .modal_img_div img {
   width: 20rem !important;
   height: 30rem !important;
