@@ -85,3 +85,36 @@
   margin-bottom: 1px !important;
   padding: 1px !important;
 }
+.bhOsij {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  line-height: normal;
+  padding-left: 25px;
+  word-break: break-word;
+}
+.dnakGj {
+  width: 100%;
+   box-sizing: border-box; 
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  background-color: #FFFFFF;
+  min-height: 48px;
+}
+.dnakGj:not(:last-of-type) {
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0,0,0,.12);
+}
+.gzjvyG {
+  max-width: 100% !important;
+  min-width: 0% !important;
+  border-bottom-width: 0px !important;
+}
