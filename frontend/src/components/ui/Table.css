@@ -1,4 +1,51 @@
 .table{
 
-    margin-top: 200px;
+    margin-top: 100px !important;
+}
+
+.rdt_Table{
+    margin-top: 100px !important;
+}
+.rdt_TableBody{
+    margin-top: 50px;
+}
+#root{
+    margin-top: 100px;
+}
+.rdt_TableBody{
+    margin-top: 50px !important;
+}
+.App {
+     text-align:start !important; 
+}
+
+
+.gousUx {
+    margin-top:4px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: inherit;
+    z-index: 1;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #ffffff !important;
+    justify-content: space-between;
+    display: flex;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.87);
+    padding-left: 16px;
+    padding-right: 8px;
+    
+}
+.bnVhWX{
+    position: relative;
+    overflow: hidden !important;
+    min-height: 56px !important;
+    padding-left: 16px;
+    padding-right: 8px;
+    box-sizing: border-box;
 }
