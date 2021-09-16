@@ -34,11 +34,12 @@ const columns = [
   },
 ];
 
-function Table({ value, state }) {
+function Table({ value, state,adult }) {
   let { path } = useRouteMatch();
   const flight = value;
   const userId = jwt.decode(state.token);
   console.log(flight);
+  console.log("adult",adult);
   console.log(userId.userId);
   const [adults, setadults] = React.useState([]);
   const [token, settoken] = React.useState([]);
@@ -56,9 +57,9 @@ function Table({ value, state }) {
             (r) => r.destination
           )}?`,
           // eslint-disable-next-line no-dupe-keys
-          title: "Enter the Number of Adults",
+          
           icon: "warning",
-          content: "input",
+          
           buttons: true,
           dangerMode: false,
         }).then((willtrue) => {
@@ -70,7 +71,7 @@ function Table({ value, state }) {
                 "http://localhost:5000/flightBooking/",
                 {
                   flightId: selectedRows[0]._id,
-                  adults: adults,
+                  adults: adult,
                   userId: userId,
                 },
                 { headers: { Authorization: `Bearer ${token}` } }
@@ -105,7 +106,7 @@ function Table({ value, state }) {
         </button>
       </div>
     );
-  }, [adults, history, path, selectedRows, state.token, token, userId]);
+  }, [adult, history, path, selectedRows, state.token, token, userId]);
   return (
     <div>
       <DataTable

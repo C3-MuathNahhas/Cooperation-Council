@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "../Home/Home.css";
-export const Home = ({ setvalue }) => {
+export const Home = ({ setvalue, setadult }) => {
   const destenations = [
     "San_Francisco",
     "Amman",
@@ -47,7 +47,7 @@ export const Home = ({ setvalue }) => {
       .then((result) => {
         console.log(result.data.flights);
         setvalue(result.data.flights);
-        console.log(path);
+        console.log("setadult",setadult);
         let p = path.split("/home");
         history.push(`${p[0]}/table`);
       });
