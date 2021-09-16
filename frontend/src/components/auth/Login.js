@@ -4,6 +4,8 @@ import axios from "axios";
 import { userContext } from "../../App";
 import "../auth/Login.css"
 import { userSign } from "../../App"
+import { GiPlanePilot } from "react-icons/gi";
+
 
 
 
@@ -18,7 +20,17 @@ const Login = () => {
  
   console.log(newSign)
   return (
+    <div className="main_login">
+    <div className="back_div"></div>
+
     <div className="login">
+    <h1  style={{ fontSize: "20px" ,textAlign:"center"}}>
+        <span style={{ color: "rgb(19,145,210)" }}>Tre</span>
+        <span style={{ color: "rgb(252,158,21)" }}>val</span>
+        <GiPlanePilot style={{ fontSize: "3vw" }} />
+        <span style={{ color: "rgb(227,64,61)" }}>eo</span>
+      </h1>
+
       <h2 className="header-login">login</h2>
       <input
         type="email"
@@ -53,7 +65,7 @@ const Login = () => {
                 console.log(result);
                 console.log(result.data.token);
                 newUser.setToken(result.data.token);
-                history.push(`${path}/home`);
+                history.push(`/main/home`);
               }
             })
             .catch((err) => {
@@ -64,6 +76,7 @@ const Login = () => {
         login
       </button>
       {err}
+    </div>
     </div>
   );
 };
