@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./attractions.css";
 import Modal from "./modal";
+//new
 
 function Attractions() {
   const [imgSrc, setSrc] = useState(0);
