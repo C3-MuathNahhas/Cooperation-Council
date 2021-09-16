@@ -6,7 +6,7 @@ import "./sidebar.css";
 function Sidebar() {
   return (
     <div>
-      <div className="sidebar_div">kjsdkjhas;kjdhk;jashdkj;shd</div>
+      <div className="sidebar_div"></div>
       <Weather></Weather>
     </div>
   );
