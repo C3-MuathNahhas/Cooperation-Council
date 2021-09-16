@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
+
 export const Home = ({ setvalue, setadult }) => {
+
   const destenations = [
     "San_Francisco",
     "Amman",
@@ -18,6 +20,7 @@ export const Home = ({ setvalue, setadult }) => {
     LCY: "London London City Airport:(LCY)",
     TUN: "Carthage Tunis–Carthage International Airport (TUN)",
   };
+
   const origins = ["Amman", "San_Francisco", "Tripoli", "London", "Carthage"];
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState("Amman");
@@ -74,7 +77,7 @@ export const Home = ({ setvalue, setadult }) => {
   return (
     <div>
       <h1>just pick up your treavel with Travaleo</h1>
-      <div className="home">
+      <div className={Home.div}>
         <div className="bigContainer">
           <div id="container">
             <h1>origin</h1>
