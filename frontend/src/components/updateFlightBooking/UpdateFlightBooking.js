@@ -6,8 +6,6 @@ import swal from "sweetalert";
 export const UpdateFlightBooking = ({ state, updated }) => {
   const [adults, setadults] = useState();
 
-  const history = useHistory();
-
   const update = (e) => {
     setadults(e.target.value);
   };
