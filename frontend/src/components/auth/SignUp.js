@@ -1,24 +1,28 @@
-import React, {useState } from "react";
+import React, {useState,useContext } from "react";
 import axios from "axios";
 import "../auth/SignUp.css";
 import Modal from "../Modal/Modal";
-
+import { userSign } from "../../App";
 const SignUp = () => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [phoneNumber, setPhoneNumber] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const {email, setEmail} = useContext(userSign);
+  const {password, setPassword}= useContext(userSign);
   const [status, setStatus] = useState();
   const [show, setShow] = useState(false);
 
   return (
+   
     <>
+
       {!show ? (
         <div className="signUp">
+          <h2 className="header-name">Signup</h2>
           <input
             type="text"
             placeholder="firstName"
+            className="firstName"
             onChange={(e) => {
               setFirstName(e.target.value);
             }}
@@ -26,6 +30,7 @@ const SignUp = () => {
           <input
             type="text"
             placeholder="lastName"
+            className="lastName"
             onChange={(e) => {
               setLastName(e.target.value);
             }}
@@ -33,6 +38,7 @@ const SignUp = () => {
 
           <input
             type="number"
+            className="phoneNumber"
             placeholder="phoneNumber"
             onChange={(e) => {
               setPhoneNumber(e.target.value);
@@ -41,6 +47,7 @@ const SignUp = () => {
           <input
             type="email"
             placeholder="email"
+            className="email"
             onChange={(e) => {
               setEmail(e.target.value);
             }}
@@ -48,11 +55,13 @@ const SignUp = () => {
           <input
             type="password"
             placeholder="password"
+            className="password-sign"
             onChange={(e) => {
               setPassword(e.target.value);
             }}
           />
           <button
+               className="btn-sign"
             onClick={() => {
               axios
                 .post("http://localhost:5000/signUp", {
@@ -86,7 +95,7 @@ const SignUp = () => {
           {status}
         </div>
       ) : (
-        <Modal  state={email,password}/>
+        <Modal />
       )}
     </>
   );
