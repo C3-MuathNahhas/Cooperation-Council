@@ -1,3 +1,4 @@
+// new
 const cityist = [
   "Kozáni",
   "Komotiní",
