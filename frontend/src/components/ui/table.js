@@ -34,14 +34,10 @@ const columns = [
   },
 ];
 
-function Table({ value, state,adult }) {
+function Table({ value, state, adult }) {
   let { path } = useRouteMatch();
   const flight = value;
   const userId = jwt.decode(state.token);
-  
-  
-  
-  const [adults, setadults] = React.useState([]);
   const [token, settoken] = React.useState([]);
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
@@ -57,14 +53,13 @@ function Table({ value, state,adult }) {
             (r) => r.destination
           )}?`,
           // eslint-disable-next-line no-dupe-keys
-          
+
           icon: "warning",
-          
+
           buttons: true,
           dangerMode: false,
         }).then((willtrue) => {
           if (willtrue) {
-            setadults(parseInt(willtrue));
             settoken(state.token);
             axios
               .post(
@@ -82,7 +77,6 @@ function Table({ value, state,adult }) {
               .catch((err) => {
                 console.log(err);
               });
-            
 
             swal("thanks! Your book has been saved!", {
               icon: "success",
