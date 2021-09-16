@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./adds.css";
-//test
 
 function Adds() {
   const [imgSrc, setSrc] = useState(0);
