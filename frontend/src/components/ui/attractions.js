@@ -13,7 +13,7 @@ function Attractions() {
     },
     {
       name: "norway",
-      src: "https://pixabay.com/photos/backpacker-mountains-panorama-772991/",
+      src: "https://cdn.pixabay.com/photo/2015/05/18/23/53/backpacker-772991_960_720.jpg",
     },
     {
       name: "Tokyo",
