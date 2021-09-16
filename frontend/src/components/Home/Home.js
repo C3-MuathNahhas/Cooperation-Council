@@ -4,7 +4,6 @@ import axios from "axios";
 import "./Home.css";
 
 export const Home = ({ setvalue, setadult }) => {
-
   const destenations = [
     "San_Francisco",
     "Amman",
@@ -62,7 +61,7 @@ export const Home = ({ setvalue, setadult }) => {
             origin: deConverter[item.origin],
             date: item.date,
             capacity: item.capacity,
-            totalPrice: item.price*adults ,
+            totalPrice: item.price * adults,
           };
         });
 
