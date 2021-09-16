@@ -1,16 +1,12 @@
 import React from "react";
 import DataTable from "react-data-table-component";
 import { useHistory, useRouteMatch } from "react-router-dom";
-import "../ui/Table.css";
+//import "../ui/Table.css";
 import axios from "axios";
 import swal from "sweetalert";
+import jwt from "jsonwebtoken";
 
 const columns = [
-  {
-    name: "_id",
-    selector: (row) => row._id,
-    sortable: true,
-  },
   {
     name: "destination",
     selector: (row) => row.destination,
@@ -39,9 +35,11 @@ const columns = [
 ];
 
 function Table({ value, state }) {
-  let { path, url } = useRouteMatch();
+  let { path } = useRouteMatch();
   const flight = value;
-  //console.log(flight)
+  const userId = jwt.decode(state.token);
+  console.log(flight);
+  console.log(userId.userId);
   const [adults, setadults] = React.useState([]);
   const [token, settoken] = React.useState([]);
   const history = useHistory();
@@ -69,11 +67,11 @@ function Table({ value, state }) {
             settoken(state.token);
             axios
               .post(
-                "http://localhost:5000/flightBooking",
+                "http://localhost:5000/flightBooking/",
                 {
-                  flightId: selectedRows._id,
+                  flightId: selectedRows[0]._id,
                   adults: adults,
-                  userId: "613a4d4cfd1dd74d24f77969",
+                  userId: userId,
                 },
                 { headers: { Authorization: `Bearer ${token}` } }
               )
@@ -83,7 +81,7 @@ function Table({ value, state }) {
               .catch((err) => {
                 console.log(err);
               });
-            console.log(selectedRows);
+            console.log("hiiiiiii", selectedRows[0]._id);
 
             swal("thanks! Your book has been saved!", {
               icon: "success",
@@ -97,7 +95,7 @@ function Table({ value, state }) {
       }
     };
     return (
-      <div className="table">
+      <div className="">
         <button
           key="book"
           onClick={bookHandler}
@@ -107,14 +105,15 @@ function Table({ value, state }) {
         </button>
       </div>
     );
-  }, [selectedRows]);
+  }, [adults, history, path, selectedRows, state.token, token, userId]);
   return (
-    <div className="">
+    <div>
       <DataTable
         title="FlightBooking"
         columns={columns}
         data={flight}
         selectableRows
+        expandableRows
         pagination
         selectableRowsHighlight
         selectableRowsSingle
