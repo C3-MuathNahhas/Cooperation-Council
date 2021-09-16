@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer_div">
       <div className="footer_icons">
         <FontAwesomeIcon style={{ fontSize: "3vw" }} icon={faFacebookF} />
         <FontAwesomeIcon style={{ fontSize: "3vw" }} icon={faTwitterSquare} />
