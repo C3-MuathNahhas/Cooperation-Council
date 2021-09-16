@@ -11,7 +11,13 @@ export const Home = ({ setvalue }) => {
     "Carthage",
   ];
 
-  
+  const deConverter = {
+    FlySFO: "San_Francisco  International Airport (FlySFO)",
+    QAIA: "Amman Queen Alia International Airport (QAIA)",
+    TIP: "Tripoli Tripoli International Airport  (TIP)",
+    LCY: "London London City Airport:(LCY)",
+    TUN: "Carthage Tunis–Carthage International Airport (TUN)",
+  };
   const origins = ["Amman", "San_Francisco", "Tripoli", "London", "Carthage"];
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState("Amman");
@@ -46,8 +52,15 @@ export const Home = ({ setvalue }) => {
         dateTo,
       })
       .then((result) => {
+        const flights = result.data.flights;
         console.log(result.data.flights);
-        setvalue(result.data.flights);
+        setvalue({
+          destenations: deConverter[flights.destenations],
+          origin: deConverter[flights.origin],
+          date: flights.date,
+          capacity: flights.capacity,
+          TotalPrice: flights.price * adults,
+        });
         console.log(path);
         let p = path.split("/home");
         history.push(`${p[0]}/table`);

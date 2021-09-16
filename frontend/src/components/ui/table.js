@@ -1,16 +1,14 @@
 import React from "react";
 import DataTable from "react-data-table-component";
 import { useHistory, useRouteMatch } from "react-router-dom";
-import "../ui/Table.css";
 import axios from "axios";
 import swal from "sweetalert";
+import jwt from "jsonwebtoken";
+import "./Table.css"
+
+
 
 const columns = [
-  {
-    name: "_id",
-    selector: (row) => row._id,
-    sortable: true,
-  },
   {
     name: "destination",
     selector: (row) => row.destination,
@@ -38,11 +36,10 @@ const columns = [
   },
 ];
 
-function Table({ value, state }) {
-  let { path, url } = useRouteMatch();
+function Table({ value, state, adult }) {
+  let { path } = useRouteMatch();
   const flight = value;
-  //console.log(flight)
-  const [adults, setadults] = React.useState([]);
+  const userId = jwt.decode(state.token);
   const [token, settoken] = React.useState([]);
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
@@ -58,22 +55,22 @@ function Table({ value, state }) {
             (r) => r.destination
           )}?`,
           // eslint-disable-next-line no-dupe-keys
-          title: "Enter the Number of Adults",
+
           icon: "warning",
-          content: "input",
+
           buttons: true,
           dangerMode: false,
         }).then((willtrue) => {
           if (willtrue) {
-            setadults(parseInt(willtrue));
             settoken(state.token);
+            //setupdate(selectedRows[0]._id)
             axios
               .post(
-                "http://localhost:5000/flightBooking",
+                "http://localhost:5000/flightBooking/",
                 {
-                  flightId: selectedRows._id,
-                  adults: adults,
-                  userId: "613a4d4cfd1dd74d24f77969",
+                  flightId: selectedRows[0]._id,
+                  adults: adult,
+                  userId: userId,
                 },
                 { headers: { Authorization: `Bearer ${token}` } }
               )
@@ -83,7 +80,6 @@ function Table({ value, state }) {
               .catch((err) => {
                 console.log(err);
               });
-            console.log(selectedRows);
 
             swal("thanks! Your book has been saved!", {
               icon: "success",
@@ -97,24 +93,25 @@ function Table({ value, state }) {
       }
     };
     return (
-      <div className="table">
+      <div>
         <button
           key="book"
           onClick={bookHandler}
-          style={{ backgroundColor: "rgb(227,242,253)" }}
+          
         >
           BOOK
         </button>
       </div>
     );
-  }, [selectedRows]);
+  }, [adult, history, path, selectedRows, state.token, token, userId]);
   return (
-    <div className="">
+    <div>
       <DataTable
         title="FlightBooking"
         columns={columns}
         data={flight}
         selectableRows
+        
         pagination
         selectableRowsHighlight
         selectableRowsSingle
