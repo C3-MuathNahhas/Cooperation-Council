@@ -2,19 +2,22 @@ import React, { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "./MyBooking.css";
-import jwt from "jsonwebtoken";
 
-export const MyBooking = ({ book,state}) => {
-  const userId = jwt.decode(state.token);
+export const MyBooking = ({ book, state }) => {
   const [value, setvalue] = useState();
   const [myBook, setMyBook] = useState();
   const click = () => {};
   console.log("myBook", myBook);
-  axios.get(`http://localhost:5000/${userId}`).then((result)=>{
-    setMyBook(result)
-  }).catch((err)=>{
-    console.log(err);
-  })
+  axios
+    .get("http://localhost:5000/flightBooking/allBooking", {
+      headers: { Authorization: `Bearer ${state.token}` },
+    })
+    .then((result) => {
+      setMyBook(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   return (
     <div>
       {myBook &&
@@ -34,7 +37,7 @@ export const MyBooking = ({ book,state}) => {
                 <div className="status">
                   <div className="stat">
                     <div className="value">Capacity</div>
-                    <div className="type">{element.capacity-adult}</div>
+                    <div className="type">{element.capacity - adult}</div>
                   </div>
                   <div className="stat">
                     <div className="value">TotalPrice</div>
