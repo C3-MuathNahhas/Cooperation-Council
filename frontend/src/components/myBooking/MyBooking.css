@@ -2,7 +2,7 @@
     width: 37.5vw;
   display: grid;
   grid-template-columns: 80vh;
-  grid-template-rows: 25vw 250px 80px;
+  grid-template-rows: 25vw 15vw 5vw;
   grid-template-areas: "image" "text" "stats";
   border-radius: 15px;
   background: white;
@@ -67,10 +67,6 @@
   cursor: pointer;
   margin: 30px;
 }
-/*
-.App {
-    text-align: center;
-    display: flex;
-    /* flex-direction:row !important;  
+.type{
+    font-size: 30px;
 }
-*/
