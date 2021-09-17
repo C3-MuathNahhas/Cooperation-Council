@@ -3,8 +3,9 @@ import DataTable from "react-data-table-component";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
-import jwt from "jsonwebtoken";
-import "./Table.css";
+import "./Table.css"
+
+
 
 const columns = [
   {
@@ -34,14 +35,12 @@ const columns = [
   },
 ];
 
-function Table({ value, state, adult, setbook }) {
+
+function Table({ value, state, adult, setBook }) {
   let { path } = useRouteMatch();
   const flight = value;
 
-  console.log(state.token)
 
-  const userId = jwt.decode(state.token);
-  const [token, settoken] = React.useState([]);
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
   const handleRowSelected = React.useCallback((state) => {
@@ -63,29 +62,20 @@ function Table({ value, state, adult, setbook }) {
 
           buttons: true,
           dangerMode: false,
-        }).then((willtrue) => {
-          if (willtrue) {
+        }).then((result) => {
+          if (result) {
+            setBook(selectedRows)
 
-            settoken(state.token);
-            setbook(selectedRows)
-            console.log("selectedRows",selectedRows)
 
-            //setupdate(selectedRows[0]._id)
             axios
               .post(
                 "http://localhost:5000/flightBooking/",
                 {
-
-                  flightId: selectedRows[0]._id,
-                  // flightId:"6140df936f8dab49301f7aec",
+                  flightId: selectedRows[0].bookingId,
                   adults: adult,
-
                 },
-                {
-                  headers: {
-                    Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTNkOTBiZDFiNTU2NTQ2ZDg0YWVjYjUiLCJlbWFpbCI6Im1vaCIsImlhdCI6MTYzMTkxMjcwNywiZXhwIjoxNjMxOTE2MzA3fQ.dc-dgFypkYWUU0zWM3qPIYyJG9JkIdO26Vm_oDAIxZQ"}`,
-                  },
-                }
+                { headers: { Authorization: `Bearer ${state.token}` } }
+
               )
               .then((reslut) => {
                 console.log(reslut.data);
@@ -112,7 +102,7 @@ function Table({ value, state, adult, setbook }) {
         </button>
       </div>
     );
-  }, [adult, history, path, selectedRows, state.token, token, userId]);
+  }, [adult, history, path, selectedRows]);
   return (
     <div>
       <DataTable
