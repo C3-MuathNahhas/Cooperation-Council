@@ -1,9 +1,9 @@
 .sidebar_div {
   position: absolute;
-  top: 100px;
-  right: 0px;
-  width: 21.4%;
-  height: 100vh;
-  background-color: rgb(240, 139, 102);
+  top: 155vh;
+  right: 10px;
+  width: 30vw;
+  height: 140vh;
+  background-color:#EBEAF6;
+  border-radius:10px;
 }
-/* new */

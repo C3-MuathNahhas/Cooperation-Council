@@ -10,7 +10,7 @@ function Sidebar() {
       <div className="sidebar_div"></div>
       <Weather></Weather>
       <Prayertime></Prayertime>
-      <Adds></Adds>
+      {/* <Adds></Adds> */}
     </div>
   );
 }
