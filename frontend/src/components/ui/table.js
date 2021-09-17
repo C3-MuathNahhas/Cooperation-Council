@@ -41,6 +41,7 @@ function Table({ value, state, adult,setbook }) {
   const flight = value;
   console.log("plesae",flight)
   console.log(adult)
+  console.log(state.token)
   const userId = jwt.decode(state.token);
   const [token, settoken] = React.useState([]);
   const history = useHistory();
@@ -66,14 +67,17 @@ function Table({ value, state, adult,setbook }) {
           if (willtrue) {
             settoken(state.token);
             setbook(selectedRows)
+            console.log("selectedRows",selectedRows)
+            
+
             //setupdate(selectedRows[0]._id)
             axios
               .post(
                 "http://localhost:5000/flightBooking/",
                 {
-                  flightId: selectedRows[0]._id,
+                  flightId: selectedRows[0].id,
                   adults: adult,
-                  userId: userId,
+                  
                 },
                 { headers: { Authorization: `Bearer ${token}` } }
               )

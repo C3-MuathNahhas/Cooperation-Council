@@ -108,8 +108,8 @@ const getFlightsBookingByUserId = (req, res) => {
 
   flightBookingModle
     .find({ userId })
-    .populate("User")
-    .populate("Flight")
+    .populate("flightId")
+    .populate("userId")
     .exec()
     .then((result) => {
       if (!result) {
