@@ -2,15 +2,23 @@ import React, { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "./MyBooking.css";
+import jwt from "jsonwebtoken";
 
-export const MyBooking = ({ book, adult }) => {
+export const MyBooking = ({ book,state}) => {
+  const userId = jwt.decode(state.token);
   const [value, setvalue] = useState();
+  const [myBook, setMyBook] = useState();
   const click = () => {};
-  console.log("book", book);
+  console.log("myBook", myBook);
+  axios.get(`http://localhost:5000/${userId}`).then((result)=>{
+    setMyBook(result)
+  }).catch((err)=>{
+    console.log(err);
+  })
   return (
     <div>
-      {book &&
-        book.map((element) => {
+      {myBook &&
+        myBook.map((element) => {
           return (
             <div>
               <div className="card">
@@ -26,7 +34,7 @@ export const MyBooking = ({ book, adult }) => {
                 <div className="status">
                   <div className="stat">
                     <div className="value">Capacity</div>
-                    <div className="type">{element.capacity}</div>
+                    <div className="type">{element.capacity-adult}</div>
                   </div>
                   <div className="stat">
                     <div className="value">TotalPrice</div>
