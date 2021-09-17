@@ -4,9 +4,7 @@ import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
 import jwt from "jsonwebtoken";
-import "./Table.css"
-
-
+import "./Table.css";
 
 const columns = [
   {
@@ -36,11 +34,11 @@ const columns = [
   },
 ];
 
-function Table({ value, state, adult,setbook }) {
+function Table({ value, state, adult, setbook }) {
   let { path } = useRouteMatch();
   const flight = value;
-  console.log("plesae",flight)
-  console.log(adult)
+  console.log("plesae", flight);
+  console.log(adult);
   const userId = jwt.decode(state.token);
   const [token, settoken] = React.useState([]);
   const history = useHistory();
@@ -48,8 +46,7 @@ function Table({ value, state, adult,setbook }) {
   const handleRowSelected = React.useCallback((state) => {
     setSelectedRows(state.selectedRows);
     settoken(state.token);
-    console.log('token  froooont',token);
-
+    console.log("token  froooont", token);
   }, []);
   const contextActions = React.useMemo(() => {
     const bookHandler = async () => {
@@ -67,19 +64,21 @@ function Table({ value, state, adult,setbook }) {
           dangerMode: false,
         }).then((willtrue) => {
           if (willtrue) {
-      
-
-            setbook(selectedRows)
+            setbook(selectedRows);
             //setupdate(selectedRows[0]._id)
             axios
               .post(
                 "http://localhost:5000/flightBooking/",
                 {
-                //  flightId: selectedRows[0]._id,
-                  flightId:"6140df936f8dab49301f7aec",
+                  flightId: selectedRows[0]._id,
+                  // flightId:"6140df936f8dab49301f7aec",
                   adults: adult,
                 },
-                { headers: { Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTNkOTBiZDFiNTU2NTQ2ZDg0YWVjYjUiLCJlbWFpbCI6Im1vaCIsImlhdCI6MTYzMTkxMjcwNywiZXhwIjoxNjMxOTE2MzA3fQ.dc-dgFypkYWUU0zWM3qPIYyJG9JkIdO26Vm_oDAIxZQ"}` } }
+                {
+                  headers: {
+                    Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTNkOTBiZDFiNTU2NTQ2ZDg0YWVjYjUiLCJlbWFpbCI6Im1vaCIsImlhdCI6MTYzMTkxMjcwNywiZXhwIjoxNjMxOTE2MzA3fQ.dc-dgFypkYWUU0zWM3qPIYyJG9JkIdO26Vm_oDAIxZQ"}`,
+                  },
+                }
               )
               .then((reslut) => {
                 console.log(reslut.data);
@@ -101,11 +100,7 @@ function Table({ value, state, adult,setbook }) {
     };
     return (
       <div>
-        <button
-          key="book"
-          onClick={bookHandler}
-          
-        >
+        <button key="book" onClick={bookHandler}>
           BOOK
         </button>
       </div>
@@ -118,7 +113,6 @@ function Table({ value, state, adult,setbook }) {
         columns={columns}
         data={flight}
         selectableRows
-        
         pagination
         selectableRowsHighlight
         selectableRowsSingle

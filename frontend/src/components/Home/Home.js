@@ -24,9 +24,9 @@ export const Home = ({ setvalue, setadult }) => {
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState("Amman");
   const [destination, setDestination] = useState("San_Francisco");
-  const [dateFrom, setDateFrom] = useState("2021");
+  const [dateFrom, setDateFrom] = useState("2021-1-1");
   const [adults, setAdults] = useState(1);
-  const [dateTo, setDateTo] = useState("2022");
+  const [dateTo, setDateTo] = useState("2022-1-1");
   const history = useHistory();
   const converter = {
     San_Francisco: "FlySFO", //San Francisco International Airport (FlySFO)
