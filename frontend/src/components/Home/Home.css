@@ -5,12 +5,27 @@
   row-gap: 10px;
   text-align: center;
 }
-
+.smallBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.backImg {
+  border-radius: 10px;
+  height: 65vh;
+  opacity: 0.6;
+}
 .homeSelect {
   font-size: 15px;
-  width: 400px;
-  height: 30px;
   border-radius: 5px;
+  text-align: center;
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .bigContainer {
@@ -18,21 +33,29 @@
 }
 
 .homeBody {
+  width: 80%;
+
+  margin: auto;
   display: flex;
-  flex-direction: column;
+
+  flex-direction: row;
   align-items: center;
   background-size: inherit;
-  font-family: monospace;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(96, 159, 221, 0.699);
+  height: 50%;
+  padding-bottom: 50px;
+  border: 2px 2px 2px black;
+  border-radius: 5px;
+  background-image: url("https://cdn.pixabay.com/photo/2018/09/25/17/14/airplane-3702676_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 90%;
+  height: 100% 100%;
 }
 
-.InputsHolder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
-}
 .homeInput {
-  border: 0.5px 2px black;
+  border: 0.5px 2px;
   border-radius: 5%;
   margin: 2px;
   text-align: center;
@@ -46,27 +69,16 @@
 }
 
 div h1 {
-  font-size: 25px;
+  font-size: 15px;
 }
 
 .description {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 0.5px 2px black;
+  border: 0.5px 2px rgb(68, 39, 173);
   width: 300px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.delete {
-  background-color: red;
-}
-
-.confirm {
-  background-color: rgb(106, 218, 106);
-}
-.cancel {
-  background-color: rgb(194, 129, 76);
+  font-family: Arial;
 }
 
 .homeButton {
@@ -76,15 +88,26 @@ div h1 {
   color: #ffffff;
   font-size: 15px;
   border-radius: 5px;
-  background-color: #021110;
-  font-family: Impact;
+  background-color: rgb(19, 145, 210);
+  font-family: Arial;
+  margin: 20px;
 }
-
+.homeInput {
+  text-align: center;
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+  font-family: Arial;
+  border: 1px 1px black;
+}
 .dateInput {
   width: 400px;
   height: 50px;
   border-radius: 5px;
   font-size: 15px;
   border-radius: 5px;
-  font-family: Impact;
+  font-family: Arial;
+  border: 1px 1px black;
 }

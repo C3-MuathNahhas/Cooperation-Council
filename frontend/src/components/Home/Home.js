@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
-
+import { GiPlanePilot, GiWhiteBook } from "react-icons/gi";
 export const Home = ({ setvalue, setadult }) => {
   const destenations = [
     "San_Francisco",
@@ -75,77 +75,90 @@ export const Home = ({ setvalue, setadult }) => {
   };
   return (
     <div className="homeBody">
-      <h1>just pick up your treavel with Travaleo</h1>
-      <div className="homeDiv">
-        <div className="homeDiv" className="bigContainer">
-          <div className="homeDiv" id="container">
-            <h1>origin</h1>
-            <select
-              className="homeSelect"
-              id="origin"
-              name="origin"
-              onChange={(r) => {
-                setOrigin(r.target.value);
-              }}
-              required
-            >
-              {origins.map((item) => {
-                return <option value={item}>{item}</option>;
-              })}
-            </select>
-          </div>
-          <div className="homeDiv" id="container">
-            <h1>Destination</h1>
-            <select
-              className="homeSelect"
-              id="destination"
-              name="destination"
-              onChange={(r) => {
-                setDestination(r.target.value);
-              }}
-              required
-            >
-              {destenations.map((item) => {
-                return <option value={item}>{item}</option>;
-              })}
-            </select>
-          </div>
-        </div>
-        <h1>Adults</h1>
-        <input
-          className="dateInput"
-          type="number"
-          defaultValue={1}
-          onChange={(w) => {
-            setAdults(w.target.value);
-          }}
-        />
-        <h1>Date</h1>
-        <label>from</label>
-        <input
-          className="homeInput"
-          className="dateInput"
-          type="date"
-          defaultValue="2021-01-01"
-          onChange={(e) => {
-            console.log(e.target.value);
+      <div className="smallBody">
+        <h1 style={{ fontSize: "20px" }}>
+          <span style={{ color: "rgb(19,145,210)" }}>tre</span>
+          <span style={{ color: "rgb(252,158,21)" }}>val</span>
+          <GiPlanePilot style={{ fontSize: "3vw" }} />
+          <span style={{ color: "rgb(227,64,61)" }}>eo</span>
+        </h1>
 
-            setDateFrom(e.target.value);
-          }}
-        />
-        <label>to</label>
-        <input
-          className="dateInput"
-          defaultValue="2021-12-31"
-          type="date"
-          onChange={(e) => {
-            setDateTo(e.target.value);
-          }}
-        />
-        <button className="homeButton" type="button" onClick={click}>
-          Search
-        </button>
+        <h1>just pick up your trip with Travaleo</h1>
+        <div className="homeDiv">
+          <div className="homeDiv" className="bigContainer">
+            <div className="homeDiv" id="container">
+              <h1>origin</h1>
+              <select
+                className="homeSelect"
+                id="origin"
+                name="origin"
+                onChange={(r) => {
+                  setOrigin(r.target.value);
+                }}
+                required
+              >
+                {origins.map((item) => {
+                  return <option value={item}>{item}</option>;
+                })}
+              </select>
+            </div>
+            <div className="homeDiv" id="container">
+              <h1>Destination</h1>
+              <select
+                className="homeSelect"
+                id="destination"
+                name="destination"
+                onChange={(r) => {
+                  setDestination(r.target.value);
+                }}
+                required
+              >
+                {destenations.map((item) => {
+                  return <option value={item}>{item}</option>;
+                })}
+              </select>
+            </div>
+          </div>
+          <h1>Adults</h1>
+          <input
+            className="homeInput"
+            type="number"
+            defaultValue={1}
+            onChange={(w) => {
+              setAdults(w.target.value);
+            }}
+          />
+          <h1>from</h1>
+          <input
+            className="homeInput"
+            className="dateInput"
+            type="date"
+            defaultValue="2021-01-01"
+            onChange={(e) => {
+              console.log(e.target.value);
+
+              setDateFrom(e.target.value);
+            }}
+          />
+          <h1>to</h1>
+          <input
+            className="dateInput"
+            defaultValue="2021-12-31"
+            type="date"
+            onChange={(e) => {
+              setDateTo(e.target.value);
+            }}
+          />
+          <button className="homeButton" type="button" onClick={click}>
+            Search
+          </button>
+        </div>
       </div>
+
+      {/* <img
+        className="backImg"
+        src="https://cdn.pixabay.com/photo/2018/09/25/17/14/airplane-3702676_960_720.jpg"
+      ></img> */}
     </div>
   );
 };
