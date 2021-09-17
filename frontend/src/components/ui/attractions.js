@@ -69,12 +69,14 @@ function Attractions() {
   };
   return (
     <div className="attractions_div">
+    <div className='attractions_title_div'> 
        <p style={{ fontSize: "3rem" }}><span style={{fontSize:'50px'}}>More attractions with        </span>  
-        <span style={{ color: "rgb(19,145,210)" }}>   tre</span>
+        <span style={{ color: "rgb(19,145,210)" }}>   Tre</span>
         <span style={{ color: "rgb(252,158,21)" }}>val</span>
         <GiPlanePilot style={{ fontSize: "3vw" }} />
         <span style={{ color: "rgb(227,64,61)" }}>eo</span>
       </p>
+      </div>
       <br/>
       <br/>
 
@@ -83,7 +85,7 @@ function Attractions() {
         onClick={clickHandler}
         src={`${attractionsSrc[imgSrc].src}`}
       ></img>
-      <h1 style={{ color:"rgb(252,158,21)"}}> Explore more  <GiClick style={{ fontSize: "3vw" ,color:"rgb(19,145,210)"}}/> in  {attractionsSrc[imgSrc].name} !!</h1>
+      <h1 style={{ color:"rgb(252,158,21)"}}> Explore more  <GiClick onClick={clickHandler} style={{ fontSize: "3vw" ,color:"rgb(19,145,210)"}}/> in  {attractionsSrc[imgSrc].name} !!</h1>
 
       <Modal hideBack={hideBack} src={modalSrc}></Modal>
     </div>

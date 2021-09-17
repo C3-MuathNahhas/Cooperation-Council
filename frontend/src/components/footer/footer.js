@@ -1,6 +1,7 @@
 import React from "react";
 import "./footer.css";
 import { GiPlanePilot } from "react-icons/gi";
+import { Link, useRouteMatch } from "react-router-dom";
 
 import {
   faFacebookF,
@@ -12,6 +13,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
+  let { path, url } = useRouteMatch();
+
   return (
     <div className="footer_div">
       <div className="footer_icons">
@@ -26,7 +29,9 @@ const Footer = () => {
       <div className="footer_links">
         <ul>
           <li>
-            <a href="#">Contact Us</a>
+             <Link to={`${url}/contact`} >
+            Contact Us
+          </Link>
           </li>
           <li>
             <a href="#">Jobs</a>
@@ -56,7 +61,7 @@ const Footer = () => {
         </ul>
       </div>
       <h1 style={{ fontSize: "20px" }}>
-        <span style={{ color: "rgb(19,145,210)" }}>tre</span>
+        <span style={{ color: "rgb(19,145,210)" }}>Tre</span>
         <span style={{ color: "rgb(252,158,21)" }}>val</span>
         <GiPlanePilot style={{ fontSize: "3vw" }} />
         <span style={{ color: "rgb(227,64,61)" }}>eo</span>
