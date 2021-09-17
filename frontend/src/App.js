@@ -28,8 +28,8 @@ const App = () => {
   const [password, setPassword] = useState("");
   return (
     <div className="App-s">
-      <MyBooking/>
       <div className="App">
+      <MyBooking/>
         <Switch>
           <userContext.Provider value={state}>
             <Navigation />

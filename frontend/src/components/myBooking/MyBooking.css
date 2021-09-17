@@ -55,3 +55,8 @@
   cursor: pointer;
   margin: 30px;
 }
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction:row !important; 
+}
