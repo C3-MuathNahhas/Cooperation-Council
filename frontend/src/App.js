@@ -14,6 +14,7 @@ import Footer from "../src/components/footer/footer";
 import { UpdateFlightBooking } from "./components/updateFlightBooking/UpdateFlightBooking";
 import Contact from "./components/contact/Contact";
 import SideBar from "./components/sidebar";
+import { MyBooking } from "./components/myBooking/MyBooking";
 import { GiExplosiveMaterials } from "react-icons/gi";
 export const userSign=createContext();
 export const userContext = createContext();
@@ -27,6 +28,7 @@ const App = () => {
   const [password, setPassword] = useState("");
   return (
     <div className="App-s">
+      <MyBooking/>
       <div className="App">
         <Switch>
           <userContext.Provider value={state}>

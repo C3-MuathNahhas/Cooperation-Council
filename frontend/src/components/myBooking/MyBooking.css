@@ -1,0 +1,70 @@
+.for_login{
+
+    width: 380px;
+    height:450px;
+    position: relative;
+    margin: 7% auto;
+    padding: 10px;
+    background: rgb(201, 199, 199);
+    z-index: 1;
+    border-radius: 5px;
+  }
+  .button_log{
+  
+    width: 220px;
+    margin:  35px auto;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 9px #2D100C;
+  }
+  .btn_log{
+  
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0px;
+    outline: none;
+    position: relative;
+    color: #ffffff;
+  }
+  #bunt{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 115px;
+    height: 100%;
+    background: linear-gradient(to right,#2D100C,#19210E);
+    border-radius: 25px;
+    transition: .5s;
+  }
+  .inputs{
+  
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    
+  }
+  .inside_input{
+    width: 100%;
+    padding: 10px 0;
+    margin:  5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom:  1px solid #1A2310;
+    outline: none;
+    background:none;
+    background-color: none;
+  }
+  
+  .sub_btn{
+    width: 250px;
+    padding: 10px 30px;
+    display: block;
+    margin: auto;
+    background-color: #1E110D;
+    border: 0;
+    outline: none;
+    border-radius: 20px;
+    color: white;
+}
