@@ -48,6 +48,8 @@
   opacity: 90%;
   height: 100% 100%;
   box-shadow: 7px 13px 22px rgb(105, 94, 94);
+  background-size: 130%;
+
 }
 .smallBody {
   display: flex;
