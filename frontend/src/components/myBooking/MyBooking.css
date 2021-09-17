@@ -1,8 +1,8 @@
 .card {
-    width: 39.90%;
+    width: 37.5vw;
   display: grid;
-  grid-template-columns: 600px;
-  grid-template-rows: 400px 250px 80px;
+  grid-template-columns: 80vh;
+  grid-template-rows: 25vw 250px 80px;
   grid-template-areas: "image" "text" "stats";
   border-radius: 15px;
   background: white;
