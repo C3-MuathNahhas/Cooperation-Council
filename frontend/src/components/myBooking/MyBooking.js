@@ -23,6 +23,10 @@ export const MyBooking = () => {
             <div className="value"></div>
             <div class="type">views</div>
           </div>
+          <div className="stat">
+          <div className="value">32</div>
+            <div class="type">comment</div>
+          </div>
         </div>
       </div>
     </div>
