@@ -19,6 +19,10 @@ export const MyBooking = () => {
             <div className="value">capacity</div>
             <div className="type">Capacity</div>
           </div>
+          <div className="statborder">
+            <div className="value"></div>
+            <div class="type">views</div>
+          </div>
         </div>
       </div>
     </div>
