@@ -36,11 +36,12 @@ const columns = [
   },
 ];
 
-function Table({ value, state, adult }) {
+function Table({ value, state, adult,setbook }) {
   let { path } = useRouteMatch();
   const flight = value;
   console.log("plesae",flight)
   console.log(adult)
+  console.log(state.token)
   const userId = jwt.decode(state.token);
   const [token, settoken] = React.useState([]);
   const history = useHistory();
@@ -65,14 +66,18 @@ function Table({ value, state, adult }) {
         }).then((willtrue) => {
           if (willtrue) {
             settoken(state.token);
+            setbook(selectedRows)
+            console.log("selectedRows",selectedRows)
+            
+
             //setupdate(selectedRows[0]._id)
             axios
               .post(
                 "http://localhost:5000/flightBooking/",
                 {
-                  flightId: selectedRows[0]._id,
+                  flightId: selectedRows[0].id,
                   adults: adult,
-                  userId: userId,
+                  
                 },
                 { headers: { Authorization: `Bearer ${token}` } }
               )

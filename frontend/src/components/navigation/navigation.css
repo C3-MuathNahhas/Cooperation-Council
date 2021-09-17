@@ -10,41 +10,149 @@
   position: absolute;
   font-size: 20px;
 }
-
-.link {
-  display: inline-block;
-  text-decoration: none;
-  color: #ffffff;
-
-  padding-right: 20px;
+.nav{
+  padding-right: 25px;
+ 
 }
+
+
 .log {
-  margin-left: 7px;
   color: #ffffff;
   text-decoration: none;
   float: right;
-  padding-right: 10px;
+  padding-right: 12px;
+  font-size: 14px;
+  text-align: center;
+  justify-content: center;
+  line-height:50px;
+ 
+
+}
+.log:hover{
+font-weight: bold;
+  color:#FF8882;
 }
 .sign {
-  margin-left: 7px;
   color: #ffffff;
   text-decoration: none;
   float: right;
-  padding-right: 10px;
+  padding-right: 12px;
+  font-size: 14px;
+  text-align: center;
+  justify-content: center;
+  line-height:50px;
+ 
 }
-.logo {
-  color: #ffffff;
-  padding-right: 950px;
+.sign:hover{
+  font-weight: bold;
+  color:#FF8882;
 }
+
 .about {
   color: #ffffff;
   text-decoration: none;
   float: right;
-  padding-right: 10px;
+  padding-right: 12px;
+  font-size: 14px;
+  text-align: center;
+  justify-content: center;
+  line-height:50px;
+ 
+ 
+}
+.about:hover{
+  font-weight: bold;
+  color:#FF8882;
 }
 .contac {
   color: #ffffff;
   text-decoration: none;
   float: right;
-  padding-right: 10px;
+  padding-right: 12px;
+  font-size: 14px;
+  text-align: center;
+  justify-content: center;
+  line-height:50px;
+ 
+  
+}
+.contac:hover{
+  font-weight: bold;
+  color:#FF8882;
+}
+.logout_nav{
+  color: #ffffff;
+  text-decoration: none;
+  float: right;
+  padding-right: 12px;
+  font-size: 14px;
+  text-align: center;
+  justify-content: center;
+  line-height:50px;
+ 
+}
+.logout_nav:hover{
+  font-weight: bold;
+  color:#FF8882;
+}
+.table_nav{
+  color: #ffffff;
+  text-decoration: none;
+  float: right;
+  padding-right: 12px;
+  font-size: 14px;
+  text-align: center;
+  justify-content: center;
+  line-height:50px;
+ 
+}
+.table_nav:hover{
+  font-weight: bold;
+  color:#FF8882;
+}
+.myBooking_nav{
+  color: #ffffff;
+  text-decoration: none;
+  float: right;
+  padding-right: 12px;
+  font-size: 14px;
+  text-align: center;
+  justify-content: center;
+  line-height:50px;
+ 
+}
+.myBooking_nav:hover{
+  font-weight: bold;
+  color:#FF8882;
+}
+.home_nav{
+  color: #ffffff;
+  text-decoration: none;
+  float: right;
+  padding-right: 12px;
+  font-size: 14px;
+  text-align: center;
+  justify-content: center;
+  line-height:50px;
+ 
+}
+.home_nav:hover{
+  font-weight: bold;
+  color:#FF8882;
+}
+.main-nav{
+  color: #ffffff;
+  text-decoration: none;
+  float: right;
+  padding-right: 12px;
+  font-size: 14px;
+  text-align: center;
+  justify-content: center;
+  line-height:50px;
+ 
+
+}
+.main-nav:hover{
+  font-weight: bold;
+  color:#FF8882;
 }

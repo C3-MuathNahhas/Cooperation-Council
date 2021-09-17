@@ -5,7 +5,7 @@ import { userContext } from "../../App";
 import "../auth/Login.css"
 import { userSign } from "../../App"
 import { GiPlanePilot } from "react-icons/gi";
-
+import {CgCloseR}from "react-icons/cg";
 
 
 
@@ -24,7 +24,10 @@ const Login = () => {
     <div className="back_div"></div>
 
     <div className="login">
-    <h1  style={{ fontSize: "20px" ,textAlign:"center"}}>
+    <span className="close_x_login" onClick={()=>{
+        history.push("/main")
+        }}><CgCloseR style={{backgroundColor:"rgb(227,64,61)",color:"#fff",borderRadius:"4px"}}/></span>
+       <h1 style={{ fontSize: "20px" ,textAlign:"center",paddingTop:"0px",marginTop:"-20px"}}>
         <span style={{ color: "rgb(19,145,210)" }}>Tre</span>
         <span style={{ color: "rgb(252,158,21)" }}>val</span>
         <GiPlanePilot style={{ fontSize: "3vw" }} />

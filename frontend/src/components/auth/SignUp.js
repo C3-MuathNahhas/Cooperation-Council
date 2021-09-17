@@ -4,7 +4,10 @@ import "../auth/SignUp.css";
 import Modal from "../Modal/Modal";
 import { userSign } from "../../App";
 import { GiPlanePilot } from "react-icons/gi";
+import { useHistory } from "react-router-dom";
+import {CgCloseR}from "react-icons/cg"
 const SignUp = () => {
+  const history = useHistory();
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [phoneNumber, setPhoneNumber] = useState();
@@ -21,7 +24,10 @@ const SignUp = () => {
         <div className="main_sign">
         <div className="bck_dv"> </div>
         <div className="signUp">
-        <h1  style={{ fontSize: "20px" ,textAlign:"center"}}>
+        <span className="close_x" onClick={()=>{
+        history.push("/main")
+        }}><CgCloseR  style={{backgroundColor:"rgb(227,64,61)",color:"#fff",borderRadius:"4px"}}/></span>
+        <h1  style={{ fontSize: "20px" ,textAlign:"center",paddingTop:"0px",marginTop:"-20px"}}>
         <span style={{ color: "rgb(19,145,210)" }}>Tre</span>
         <span style={{ color: "rgb(252,158,21)" }}>val</span>
         <GiPlanePilot style={{ fontSize: "3vw" }} />
