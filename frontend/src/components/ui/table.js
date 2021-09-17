@@ -47,6 +47,9 @@ function Table({ value, state, adult,setbook }) {
   const [selectedRows, setSelectedRows] = React.useState([]);
   const handleRowSelected = React.useCallback((state) => {
     setSelectedRows(state.selectedRows);
+    settoken(state.token);
+    console.log('token  froooont',token);
+
   }, []);
   const contextActions = React.useMemo(() => {
     const bookHandler = async () => {
@@ -64,18 +67,19 @@ function Table({ value, state, adult,setbook }) {
           dangerMode: false,
         }).then((willtrue) => {
           if (willtrue) {
-            settoken(state.token);
+      
+
             setbook(selectedRows)
             //setupdate(selectedRows[0]._id)
             axios
               .post(
                 "http://localhost:5000/flightBooking/",
                 {
-                  flightId: selectedRows[0]._id,
+                //  flightId: selectedRows[0]._id,
+                  flightId:"6140df936f8dab49301f7aec",
                   adults: adult,
-                  userId: userId,
                 },
-                { headers: { Authorization: `Bearer ${token}` } }
+                { headers: { Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTNkOTBiZDFiNTU2NTQ2ZDg0YWVjYjUiLCJlbWFpbCI6Im1vaCIsImlhdCI6MTYzMTkxMjcwNywiZXhwIjoxNjMxOTE2MzA3fQ.dc-dgFypkYWUU0zWM3qPIYyJG9JkIdO26Vm_oDAIxZQ"}` } }
               )
               .then((reslut) => {
                 console.log(reslut.data);
