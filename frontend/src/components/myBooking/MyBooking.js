@@ -3,7 +3,7 @@ import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "./MyBooking.css";
 
-export const MyBooking = ({book}) => {
+export const MyBooking = ({book,adult}) => {
   const [value, setvalue] = useState();
   const click = () => {};
   console.log("book",book)
@@ -16,6 +16,8 @@ export const MyBooking = ({book}) => {
         <div className="image"></div>
         <div className="text">
           <span className="date">Your Book</span>
+          <p className="date">{element.date}</p>
+      
           <h2>{element.destination}</h2>
           <button className="btn1">Update</button>
           <button className="btn1">Delete</button>
@@ -25,13 +27,13 @@ export const MyBooking = ({book}) => {
             <div className="value">Capacity</div>
             <div className="type">{element.capacity}</div>
           </div>
-          <div className="statborder">
+          <div className="stat">
             <div className="value">TotalPrice</div>
-            <div class="type">{element.totalPrice}</div>
+            <div class="type">{element.totalPrice}$</div>
           </div>
           <div className="stat">
-            <div className="value">32</div>
-            <div class="type">comment</div>
+            <div className="value">Adults</div>
+            <div class="type">{adult}</div>
           </div>
         </div>
       </div>

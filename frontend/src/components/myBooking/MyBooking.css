@@ -1,13 +1,15 @@
 .card {
+    width: 39.90%;
   display: grid;
-  grid-template-columns: 300px;
-  grid-template-rows: 210px 210px 80px;
+  grid-template-columns: 600px;
+  grid-template-rows: 400px 250px 80px;
   grid-template-areas: "image" "text" "stats";
   border-radius: 15px;
   background: white;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  margin: auto !important;
 }
 .image {
   grid-area: image;
@@ -23,7 +25,7 @@
 }
 .text .date {
   color: rgb(2, 0, 1);
-  font-size: 30px;
+  font-size: 15px;
   font-family:Arial, Helvetica, sans-serif;
 }
 .text h2 {
@@ -65,8 +67,10 @@
   cursor: pointer;
   margin: 30px;
 }
+/*
 .App {
     text-align: center;
     display: flex;
-    flex-direction:row !important; 
+    /* flex-direction:row !important;  
 }
+*/

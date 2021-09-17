@@ -32,7 +32,7 @@ const App = () => {
       <div className="App">
       <Route
                 path={`${path}/myBooking`}
-                render={() => <MyBooking values={values} state={state} book={book} />}///
+                render={() => <MyBooking values={values} state={state} book={book} adult={adult} />}///
               />
         <Switch>
           <userContext.Provider value={state}>
