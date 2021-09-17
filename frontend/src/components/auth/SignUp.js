@@ -3,6 +3,7 @@ import axios from "axios";
 import "../auth/SignUp.css";
 import Modal from "../Modal/Modal";
 import { userSign } from "../../App";
+import { GiPlanePilot } from "react-icons/gi";
 const SignUp = () => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
@@ -17,8 +18,16 @@ const SignUp = () => {
     <>
 
       {!show ? (
+        <div className="main_sign">
+        <div className="bck_dv"> </div>
         <div className="signUp">
-          <h2 className="header-name">Signup</h2>
+        <h1  style={{ fontSize: "20px" ,textAlign:"center"}}>
+        <span style={{ color: "rgb(19,145,210)" }}>Tre</span>
+        <span style={{ color: "rgb(252,158,21)" }}>val</span>
+        <GiPlanePilot style={{ fontSize: "3vw" }} />
+        <span style={{ color: "rgb(227,64,61)" }}>eo</span>
+      </h1>
+          <h2 className="header-name">SignUp</h2>
           <input
             type="text"
             placeholder="firstName"
@@ -93,6 +102,7 @@ const SignUp = () => {
             signUp
           </button>
           {status}
+        </div>
         </div>
       ) : (
         <Modal />

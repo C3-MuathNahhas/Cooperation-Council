@@ -41,7 +41,7 @@ const App = () => {
            
 
             <userSign.Provider value={{email, password,setEmail,setPassword}}>
-            <Route path={`${path}/signUp`} component={SignUp} />
+              <Route path={`${path}/signUp`} component={SignUp} />
               <Route path={`${path}/login`} component={Login} />
             </userSign.Provider>
 
