@@ -1,7 +1,10 @@
 import React from "react";
 import { Carousel } from "react-carousel-minimal";
-//new
+import './cities.css'
+import { FaSearchLocation } from "react-icons/fa";
 
+//new
+// FaSearchLocation
 function Cities() {
   const data_1 = [
     {
@@ -10,7 +13,6 @@ function Cities() {
       caption: `<div>
                   San Francisco
                   <br/>
-                  Next line
                 </div>`,
     },
     {
@@ -107,7 +109,7 @@ function Cities() {
   return (
     <div className="App1">
       <div style={{ textAlign: "center" }}>
-        <h1>Explore The World !</h1>
+        <p style={{fontSize:'3rem'}}>Expl <FaSearchLocation style={{fontSize:'3rem',color:'rgb(19,145,210)'}}/> re The World ! </p>
         <div
           style={{
             padding: "0 20px",
@@ -130,16 +132,17 @@ function Cities() {
             slideBackgroundColor="darkgrey"
             slideImageFit="cover"
             thumbnails={true}
-            thumbnailWidth="100px"
+            thumbnailWidth="200px"
             style={{
               textAlign: "center",
-              maxWidth: "50vw",
+              // maxWidth: "10 0vw",
               maxHeight: "500px",
               margin: "40px auto",
             }}
           />
         </div>
       </div>
+      <div className='cities_line'></div>
     </div>
   );
 }
