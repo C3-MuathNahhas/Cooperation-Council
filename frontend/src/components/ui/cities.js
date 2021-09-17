@@ -113,12 +113,12 @@ function Cities() {
       <div style={{padding:'40px'}}>
 <div class="polaroid rotate_right">
   <img src="https://www.azdo.ly/wp-content/uploads/2020/04/tripoli-libya.jpg" alt="Pulpit rock" width="284" height="213"/>
-  <p class="caption">The pulpit rock in Lysefjorden, Norway.</p>
+  <p class="caption">More Destinations</p>
 </div>
 
 <div class="polaroid rotate_left">
   <img src="https://www.azdo.ly/wp-content/uploads/2020/04/tripoli-libya.jpg" alt="Monterosso al Mare" width="284" height="213"/>
-  <p class="caption">Monterosso al Mare. One of the five villages in Cinque Terre, Italy.</p>
+  <p class="caption">More Memories</p>
 </div></div>
       
         <p style={{fontSize:'3rem',fontFamily: 'Arial'}}>Expl <FaSearchLocation style={{fontSize:'3rem',color:'rgb(19,145,210)'}}/> re Memories With  </p>
