@@ -21,13 +21,13 @@ import logOut from "./components/logout/logOut"
 export const userSign=createContext();
 export const userContext = createContext();
 const App = () => {
-  const [adult, setadult] = useState();
-  const [values, setvalues] = useState();
+  const [adult, setAdult] = useState();
+  const [values, setValues] = useState();
   let { path, url } = useRouteMatch();
   const [token, setToken] = useState();
   const state = { token, setToken };
   const [email, setEmail] = useState("");
-  const[book,setbook]=useState();
+  const[book,setBook]=useState();
   const [password, setPassword] = useState("");
   return (
     <div className="App-s">
@@ -64,12 +64,12 @@ const App = () => {
             <Route path={`${path}/About`} component={About} />
             <Route
               path={`${path}/home`}
-              render={() => <Home setvalue={setvalues} setadult={setadult} />}
+              render={() => <Home setvalue={setValues} setadult={setAdult} />}
             />
             <Route
               path={`${path}/Table`}
               render={() => (
-                <Table token={token}  value={values} state={state} adult={adult} setbook={setbook} />//
+                <Table value={values} state={state} adult={adult} setBook={setBook} />//
               )}
             />
           </userContext.Provider>

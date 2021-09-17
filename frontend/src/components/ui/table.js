@@ -39,9 +39,6 @@ const columns = [
 function Table({ value, state, adult,setbook: setBook }) {
   let { path } = useRouteMatch();
   const flight = value;
-  console.log("plesae",flight)
-  console.log("state.token",state.token)
-
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
   const handleRowSelected = React.useCallback((state) => {
@@ -64,9 +61,7 @@ function Table({ value, state, adult,setbook: setBook }) {
         }).then((willtrue) => {
           if (willtrue) {
             setBook(selectedRows)
-            console.log("selectedRows", selectedRows);
-            
-            //setupdate(selectedRows[0]._id)
+
             axios
               .post(
                 "http://localhost:5000/flightBooking/",
