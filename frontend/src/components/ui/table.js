@@ -63,8 +63,8 @@ function Table({ value, state, adult,setbook }) {
 
           buttons: true,
           dangerMode: false,
-        }).then((willtrue) => {
-          if (willtrue) {
+        }).then((willtrue) =>{
+          if (willtrue)  {
             settoken(state.token);
             setbook(selectedRows)
             console.log("selectedRows",selectedRows)
