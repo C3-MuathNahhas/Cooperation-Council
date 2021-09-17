@@ -42,6 +42,9 @@ function Table({ value, state, adult,setbook }) {
   console.log("plesae",flight)
   console.log(adult)
   const userId = jwt.decode(state.token);
+
+  console.log('userId',userId);
+  
   const [token, settoken] = React.useState([]);
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);

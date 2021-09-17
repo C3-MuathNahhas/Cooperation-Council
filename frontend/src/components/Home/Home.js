@@ -37,13 +37,13 @@ export const Home = ({ setvalue, setadult }) => {
   };
 
   const click = () => {
-    console.log("hello", {
-      origin: converter[origin],
-      destination: converter[destination],
-      dateFrom,
-      adults,
-      dateTo,
-    });
+    // console.log("hello", {
+    //   origin: converter[origin],
+    //   destination: converter[destination],
+    //   dateFrom,
+    //   adults,
+    //   dateTo,
+    // });
 
     axios
       .post("http://localhost:5000/flights/search/", {
@@ -77,7 +77,9 @@ export const Home = ({ setvalue, setadult }) => {
     <div className="homeBody">
       <div className="smallBody">
         <h1 style={{ fontSize: "20px" }}>
-        <span style={{ color: "rgb(0,0,0)" }}>Just pick up your trip with </span>
+          <span style={{ color: "rgb(0,0,0)" }}>
+            Just pick up your trip with{" "}
+          </span>
           <span style={{ color: "rgb(19,145,210)" }}>Tra</span>
           <span style={{ color: "rgb(252,158,21)" }}>val</span>
           <GiPlanePilot style={{ fontSize: "3vw" }} />

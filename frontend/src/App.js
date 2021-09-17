@@ -69,7 +69,7 @@ const App = () => {
             <Route
               path={`${path}/Table`}
               render={() => (
-                <Table value={values} state={state} adult={adult} setbook={setbook} />//
+                <Table token={token}  value={values} state={state} adult={adult} setbook={setbook} />//
               )}
             />
           </userContext.Provider>
