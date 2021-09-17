@@ -3,7 +3,6 @@ import Home from "./components/Home/Home";
 import Table from "./components/ui/table";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
-import logOut from "./components/logout/logOut";
 
 import Navigation from "../src/components/navigation/Navigation";
 import About from "./components/about/About";
@@ -79,9 +78,9 @@ const App = () => {
               )}
             />
             {/* <Route exact path={path} component={Weather}></Route> */}
-        <Route exact path={path} component={Cities}></Route>
-        <Route exact path={path} component={Attractions}></Route>
-        <Route exact path={path} component={SideBar}></Route>
+        <Route exact path={'/main'} component={Cities}></Route>
+        <Route exact path={'/main'} component={Attractions}></Route>
+        <Route exact path={'/main'} component={SideBar}></Route>
           </userContext.Provider>
         </Switch>
         
