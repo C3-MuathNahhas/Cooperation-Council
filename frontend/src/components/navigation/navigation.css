@@ -10,41 +10,80 @@
   position: absolute;
   font-size: 20px;
 }
-
-.link {
-  display: inline-block;
-  text-decoration: none;
-  color: #ffffff;
-
-  padding-right: 20px;
+.nav{
+  padding-right: 25px;
+ 
 }
+
+
 .log {
   margin-left: 7px;
   color: #ffffff;
   text-decoration: none;
   float: right;
-  padding-right: 10px;
+  padding-right: 12px;
+  font-size: 14px;
+  padding-top: 17px;
+
 }
 .sign {
   margin-left: 7px;
   color: #ffffff;
   text-decoration: none;
   float: right;
-  padding-right: 10px;
+  padding-right: 12px;
+  font-size: 14px;
+  padding-top: 17px;
+ 
 }
-.logo {
-  color: #ffffff;
-  padding-right: 950px;
-}
+
 .about {
   color: #ffffff;
   text-decoration: none;
   float: right;
-  padding-right: 10px;
+  padding-right: 12px;
+  font-size: 14px;
+  padding-top: 17px;
+ 
 }
 .contac {
   color: #ffffff;
   text-decoration: none;
   float: right;
-  padding-right: 10px;
+  padding-right: 12px;
+  font-size: 14px;
+  padding-top: 17px;
+  
+}
+.logout_nav{
+  color: #ffffff;
+  text-decoration: none;
+  float: right;
+  padding-right: 12px;
+  font-size: 14px;
+  padding-top: 17px;
+}
+.table_nav{
+  color: #ffffff;
+  text-decoration: none;
+  float: right;
+  padding-right: 12px;
+  font-size: 14px;
+  padding-top: 17px;
+}
+.update_nav{
+  color: #ffffff;
+  text-decoration: none;
+  float: right;
+  padding-right: 12px;
+  font-size: 14px;
+  padding-top: 17px;
+}
+.home_nav{
+  color: #ffffff;
+  text-decoration: none;
+  float: right;
+  padding-right: 12px;
+  font-size: 14px;
+  padding-top: 17px;
 }
