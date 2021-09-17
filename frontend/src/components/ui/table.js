@@ -40,12 +40,8 @@ function Table({ value, state, adult,setbook: setBook }) {
   let { path } = useRouteMatch();
   const flight = value;
   console.log("plesae",flight)
-  console.log(adult)
-  const userId = jwt.decode(state.token.userId);
+  console.log("state.token",state.token)
 
-  console.log('userId',userId);
-  
-  const [token, setToken] = React.useState([]);
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
   const handleRowSelected = React.useCallback((state) => {
@@ -67,18 +63,18 @@ function Table({ value, state, adult,setbook: setBook }) {
           dangerMode: false,
         }).then((willtrue) => {
           if (willtrue) {
-            setToken(state.token);
             setBook(selectedRows)
+            console.log("selectedRows", selectedRows);
+            
             //setupdate(selectedRows[0]._id)
             axios
               .post(
                 "http://localhost:5000/flightBooking/",
                 {
-                  flightId: selectedRows[0]._id,
+                  flightId: selectedRows[0].bookingId,
                   adults: adult,
-                  userId: userId,
                 },
-                { headers: { Authorization: `Bearer ${token}` } }
+                { headers: { Authorization: `Bearer ${state.token}` } }
               )
               .then((reslut) => {
                 console.log(reslut.data);
@@ -109,7 +105,7 @@ function Table({ value, state, adult,setbook: setBook }) {
         </button>
       </div>
     );
-  }, [adult, history, path, selectedRows, state.token, token, userId]);
+  }, [adult, history, path, selectedRows]);
   return (
     <div>
       <DataTable

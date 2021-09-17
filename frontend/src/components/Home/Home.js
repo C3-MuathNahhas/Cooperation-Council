@@ -57,11 +57,13 @@ export const Home = ({ setvalue, setadult }) => {
         const flights = result.data.flights;
         const handledFlights = flights.map((item) => {
           return {
+            bookingId:item._id,
             destination: deConverter[item.destination],
             origin: deConverter[item.origin],
             date: item.date,
             capacity: item.capacity,
             totalPrice: item.price * adults,
+  
           };
         });
 
