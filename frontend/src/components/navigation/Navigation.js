@@ -43,12 +43,12 @@ const Navigation = () => {
       ) : (
         <div className="nav">
           <label style={{ fontSize: "20px", textAlign: "center" }}>
-            <span style={{ color: "rgb(19,145,210)" }}>Tre</span>
+            <span style={{ color: "rgb(19,145,210)" }}>Tra</span>
             <span style={{ color: "rgb(252,158,21)" }}>val</span>
-            <GiPlanePilot style={{ fontSize: "3vw" }} />
+            <GiPlanePilot style={{ fontSize: "3vw", color: "white" }} />
             <span style={{ color: "rgb(227,64,61)" }}>eo</span>
           </label>
-          <Link to={`${url}/logout`} >LogOut</Link>
+          <Link to={`${url}/logout`}>LogOut</Link>
           <Link to={`${url}/home`} className="hme">
             Home
           </Link>
