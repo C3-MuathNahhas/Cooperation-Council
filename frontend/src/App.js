@@ -22,7 +22,7 @@ export const userSign=createContext();
 export const userContext = createContext();
 const App = () => {
   const [adult, setAdult] = useState();
-  const [values, setValues] = useState();
+  const [flights, setflights] = useState();
   let { path, url } = useRouteMatch();
   const [token, setToken] = useState();
   const state = { token, setToken };
@@ -34,7 +34,7 @@ const App = () => {
       <div className="App">
       <Route
                 path={`${path}/myBooking`}
-                render={() => <MyBooking values={values} state={state} book={book} adult={adult} />}///
+                render={() => <MyBooking flights={flights} state={state} book={book} adult={adult} />}///
               />
         <Switch>
           <userContext.Provider value={state}>
@@ -43,7 +43,7 @@ const App = () => {
             <Route
               path={`${path}/Update`}
               render={() => (
-                <UpdateFlightBooking value={values} state={state} />
+                <UpdateFlightBooking value={flights} state={state} />
               )}
             />
 
@@ -64,12 +64,12 @@ const App = () => {
             <Route path={`${path}/About`} component={About} />
             <Route
               path={`${path}/home`}
-              render={() => <Home setvalue={setValues} setadult={setAdult} />}
+              render={() => <Home setvalue={setflights} setadult={setAdult} />}
             />
             <Route
               path={`${path}/Table`}
               render={() => (
-                <Table value={values} state={state} adult={adult} setBook={setBook} />//
+                <Table value={flights} state={state} adult={adult} setBook={setBook} />//
               )}
             />
           </userContext.Provider>

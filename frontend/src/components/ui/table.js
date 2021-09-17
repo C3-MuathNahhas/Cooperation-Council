@@ -36,9 +36,10 @@ const columns = [
   },
 ];
 
-function Table({ value, state, adult,setbook: setBook }) {
+function Table({ value, state, adult, setBook }) {
   let { path } = useRouteMatch();
   const flight = value;
+
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
   const handleRowSelected = React.useCallback((state) => {
@@ -58,8 +59,8 @@ function Table({ value, state, adult,setbook: setBook }) {
 
           buttons: true,
           dangerMode: false,
-        }).then((willtrue) => {
-          if (willtrue) {
+        }).then((result) => {
+          if (result) {
             setBook(selectedRows)
 
             axios
