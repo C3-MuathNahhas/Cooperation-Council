@@ -36,7 +36,7 @@ const columns = [
   },
 ];
 
-function Table({ value, state, adult }) {
+function Table({ value, state, adult,setbook }) {
   let { path } = useRouteMatch();
   const flight = value;
   console.log("plesae",flight)
@@ -65,6 +65,7 @@ function Table({ value, state, adult }) {
         }).then((willtrue) => {
           if (willtrue) {
             settoken(state.token);
+            setbook(selectedRows)
             //setupdate(selectedRows[0]._id)
             axios
               .post(

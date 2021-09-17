@@ -16,6 +16,7 @@ import Contact from "./components/contact/Contact";
 import SideBar from "./components/sidebar";
 import { MyBooking } from "./components/myBooking/MyBooking";
 import { GiExplosiveMaterials } from "react-icons/gi";
+
 import logOut from "./components/logout/logOut"
 export const userSign=createContext();
 export const userContext = createContext();
@@ -26,11 +27,15 @@ const App = () => {
   const [token, setToken] = useState();
   const state = { token, setToken };
   const [email, setEmail] = useState("");
+  const[book,setbook]=useState();
   const [password, setPassword] = useState("");
   return (
     <div className="App-s">
-      <MyBooking/>
       <div className="App">
+      <Route
+                path={`${path}/myBooking`}
+                render={() => <MyBooking values={values} state={state} book={book} adult={adult} />}///
+              />
         <Switch>
           <userContext.Provider value={state}>
             <Navigation />
@@ -41,12 +46,18 @@ const App = () => {
                 <UpdateFlightBooking value={values} state={state} />
               )}
             />
+
+
             <Route path={`${path}/logout` }component={logOut}/>
            
 
-            <userSign.Provider value={{email, password,setEmail,setPassword}}>
+
+            <userSign.Provider
+              value={{ email, password, setEmail, setPassword }}
+            >
               <Route path={`${path}/signUp`} component={SignUp} />
               <Route path={`${path}/login`} component={Login} />
+              
             </userSign.Provider>
 
             <Route path={`${path}/contact`} component={Contact} />
@@ -57,7 +68,9 @@ const App = () => {
             />
             <Route
               path={`${path}/Table`}
-              render={() => <Table value={values} state={state} adult={adult} />}
+              render={() => (
+                <Table value={values} state={state} adult={adult} setbook={setbook} />//
+              )}
             />
           </userContext.Provider>
         </Switch>

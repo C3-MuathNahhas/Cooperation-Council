@@ -71,6 +71,8 @@ const Navigation = () => {
             <MdUpdate style={{ fontSize: "1.1vw", verticalAlign: "middle" }}/>
             Update
           </Link>
+          <Link to={`${url}/myBooking`} >Mybooking
+          </Link>
         </div>
       )}
     </div>
