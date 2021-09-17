@@ -45,8 +45,7 @@ function Table({ value, state, adult, setBook }) {
   const [selectedRows, setSelectedRows] = React.useState([]);
   const handleRowSelected = React.useCallback((state) => {
     setSelectedRows(state.selectedRows);
-    settoken(state.token);
-    console.log("token  froooont", token);
+
   }, []);
   const contextActions = React.useMemo(() => {
     const bookHandler = async () => {
