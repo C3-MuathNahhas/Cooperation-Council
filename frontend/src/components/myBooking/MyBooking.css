@@ -19,15 +19,25 @@
 .text {
   grid-area: text;
   margin: 25px;
+  
 }
 .text .date {
-  color: rgb(255, 7, 110);
-  font-size: 13px;
+  color: rgb(2, 0, 1);
+  font-size: 30px;
+  font-family:Arial, Helvetica, sans-serif;
 }
 .text h2 {
   color: grey;
   font-size: 15px;
   font-weight: 300;
+}
+.btn1{
+    margin-top:35px;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(2, 36, 59);
+    border-radius: 5px;
+    color: #f7f7f7;
 }
 .status {
   grid-area: stats;
@@ -36,7 +46,7 @@
   grid-template-rows: 1fr;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  background: rgb(255, 7, 110);
+  background:#F57941;
 }
 .status .stat {
   display: flex;

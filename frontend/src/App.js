@@ -16,7 +16,7 @@ import Contact from "./components/contact/Contact";
 import SideBar from "./components/sidebar";
 import { MyBooking } from "./components/myBooking/MyBooking";
 import { GiExplosiveMaterials } from "react-icons/gi";
-export const userSign=createContext();
+export const userSign = createContext();
 export const userContext = createContext();
 const App = () => {
   const [adult, setadult] = useState();
@@ -25,11 +25,15 @@ const App = () => {
   const [token, setToken] = useState();
   const state = { token, setToken };
   const [email, setEmail] = useState("");
+  const[book,setbook]=useState();
   const [password, setPassword] = useState("");
   return (
     <div className="App-s">
       <div className="App">
-      <MyBooking/>
+      <Route
+                path={`${path}/myBooking`}
+                render={() => <MyBooking values={values} state={state} book={book} />}///
+              />
         <Switch>
           <userContext.Provider value={state}>
             <Navigation />
@@ -40,11 +44,13 @@ const App = () => {
                 <UpdateFlightBooking value={values} state={state} />
               )}
             />
-           
 
-            <userSign.Provider value={{email, password,setEmail,setPassword}}>
+            <userSign.Provider
+              value={{ email, password, setEmail, setPassword }}
+            >
               <Route path={`${path}/signUp`} component={SignUp} />
               <Route path={`${path}/login`} component={Login} />
+              
             </userSign.Provider>
 
             <Route path={`${path}/contact`} component={Contact} />
@@ -55,7 +61,9 @@ const App = () => {
             />
             <Route
               path={`${path}/Table`}
-              render={() => <Table value={values} state={state} adult={adult} />}
+              render={() => (
+                <Table value={values} state={state} adult={adult} setbook={setbook} />//
+              )}
             />
           </userContext.Provider>
         </Switch>

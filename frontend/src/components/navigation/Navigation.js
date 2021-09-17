@@ -58,6 +58,8 @@ const Navigation = () => {
           <Link to={`${url}/Update`} className="updat">
             Update
           </Link>
+          <Link to={`${url}/myBooking`} >Mybooking
+          </Link>
         </div>
       )}
     </div>
