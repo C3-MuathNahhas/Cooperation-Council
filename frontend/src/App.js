@@ -6,7 +6,7 @@ import SignUp from "./components/auth/SignUp";
 import Navigation from "../src/components/navigation/Navigation";
 import About from "./components/about/About";
 import "./App.css";
-import { Route, useRouteMatch, Switch, useHistory } from "react-router-dom";
+import { Route, useRouteMatch, Switch } from "react-router-dom";
 import Weather from "../src/components/ui/weather";
 import Attractions from "../src/components/ui/attractions";
 import Cities from "../src/components/ui/cities";
@@ -15,10 +15,8 @@ import { UpdateFlightBooking } from "./components/updateFlightBooking/UpdateFlig
 import Contact from "./components/contact/Contact";
 import SideBar from "./components/sidebar";
 import { MyBooking } from "./components/myBooking/MyBooking";
-import { GiExplosiveMaterials } from "react-icons/gi";
-
-import logOut from "./components/logout/logOut"
-export const userSign=createContext();
+import logOut from "./components/logout/logOut";
+export const userSign = createContext();
 export const userContext = createContext();
 const App = () => {
   const [adult, setAdult] = useState();
@@ -27,15 +25,22 @@ const App = () => {
   const [token, setToken] = useState();
   const state = { token, setToken };
   const [email, setEmail] = useState("");
-  const[book,setBook]=useState();
+  const [book, setBook] = useState();
   const [password, setPassword] = useState("");
   return (
     <div className="App-s">
       <div className="App">
-      <Route
-                path={`${path}/myBooking`}
-                render={() => <MyBooking flights={flights} state={state} book={book} adult={adult} />}///
-              />
+        <Route
+          path={`${path}/myBooking`}
+          render={() => (
+            <MyBooking
+              flights={flights}
+              state={state}
+              book={book}
+              adult={adult}
+            />
+          )} ///
+        />
         <Switch>
           <userContext.Provider value={state}>
             <Navigation />
@@ -47,17 +52,13 @@ const App = () => {
               )}
             />
 
-
-            <Route path={`${path}/logout` }component={logOut}/>
-           
-
+            <Route path={`${path}/logout`} component={logOut} />
 
             <userSign.Provider
               value={{ email, password, setEmail, setPassword }}
             >
               <Route path={`${path}/signUp`} component={SignUp} />
               <Route path={`${path}/login`} component={Login} />
-              
             </userSign.Provider>
 
             <Route path={`${path}/contact`} component={Contact} />
@@ -69,7 +70,12 @@ const App = () => {
             <Route
               path={`${path}/Table`}
               render={() => (
-                <Table value={flights} state={state} adult={adult} setBook={setBook} />//
+                <Table
+                  value={flights}
+                  state={state}
+                  adult={adult}
+                  setBook={setBook}
+                /> //
               )}
             />
           </userContext.Provider>

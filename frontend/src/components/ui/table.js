@@ -109,7 +109,7 @@ function Table({ value, state, adult, setBook }) {
         columns={columns}
         data={flight}
         selectableRows
-        
+      
         pagination
         selectableRowsHighlight
         selectableRowsSingle
