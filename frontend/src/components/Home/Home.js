@@ -3,7 +3,8 @@ import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
 import { GiPlanePilot, GiWhiteBook } from "react-icons/gi";
-export const Home = ({ setvalue, setadult }) => {
+
+const Home = ({ setvalue, setadult }) => {
   const destenations = [
     "San_Francisco",
     "Amman",
@@ -24,9 +25,9 @@ export const Home = ({ setvalue, setadult }) => {
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState("Amman");
   const [destination, setDestination] = useState("San_Francisco");
-  const [dateFrom, setDateFrom] = useState("2021");
+  const [dateFrom, setDateFrom] = useState("2021-1-1");
   const [adults, setAdults] = useState(1);
-  const [dateTo, setDateTo] = useState("2022");
+  const [dateTo, setDateTo] = useState("2022-1-1");
   const history = useHistory();
   const converter = {
     San_Francisco: "FlySFO", //San Francisco International Airport (FlySFO)
@@ -57,7 +58,9 @@ export const Home = ({ setvalue, setadult }) => {
         const flights = result.data.flights;
         const handledFlights = flights.map((item) => {
           return {
+
             bookingId:item._id,
+
             destination: deConverter[item.destination],
             origin: deConverter[item.origin],
             date: item.date,
@@ -166,3 +169,5 @@ export const Home = ({ setvalue, setadult }) => {
     </div>
   );
 };
+
+export default Home;

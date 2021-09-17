@@ -1,8 +1,9 @@
 import React, { useState, createContext } from "react";
-import { Home } from "./components/home/Home";
+import Home from "./components/home/Home";
 import Table from "./components/ui/table";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
+
 import Navigation from "../src/components/navigation/Navigation";
 import About from "./components/about/About";
 import "./App.css";
@@ -15,8 +16,10 @@ import { UpdateFlightBooking } from "./components/updateFlightBooking/UpdateFlig
 import Contact from "./components/contact/Contact";
 import SideBar from "./components/sidebar";
 import { MyBooking } from "./components/myBooking/MyBooking";
+
 import logOut from "./components/logout/logOut";
 export const userSign = createContext();
+
 export const userContext = createContext();
 const App = () => {
   const [adult, setAdult] = useState();
@@ -44,6 +47,7 @@ const App = () => {
         <Switch>
           <userContext.Provider value={state}>
             <Navigation />
+
             <div className="navPlus" />
             <Route
               path={`${path}/Update`}
@@ -52,13 +56,16 @@ const App = () => {
               )}
             />
 
-            <Route path={`${path}/logout`} component={logOut} />
 
             <userSign.Provider
               value={{ email, password, setEmail, setPassword }}
             >
               <Route path={`${path}/signUp`} component={SignUp} />
               <Route path={`${path}/login`} component={Login} />
+
+
+              <Route path={`${path}/logout` }component={logOut}/>
+
             </userSign.Provider>
 
             <Route path={`${path}/contact`} component={Contact} />
@@ -78,13 +85,15 @@ const App = () => {
                 /> //
               )}
             />
+            {/* <Route exact path={path} component={Weather}></Route> */}
+        <Route exact path={'/main'} component={Cities}></Route>
+        <Route exact path={'/main'} component={Attractions}></Route>
+        <Route exact path={'/main'} component={SideBar}></Route>
           </userContext.Provider>
         </Switch>
-        <Route path={`${path}/mainPage`} component={Weather}></Route>
-        <Route path={`${path}/mainPage`} component={Cities}></Route>
-        <Route path={`${path}/mainPage`} component={Attractions}></Route>
-        <Route path={`${path}/mainPage`} component={Footer}></Route>
-        <Route path={`${path}/mainPage`} component={SideBar}></Route>
+        
+        <Footer/>
+
       </div>
     </div>
   );

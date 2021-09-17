@@ -35,14 +35,18 @@ const columns = [
   },
 ];
 
+
 function Table({ value, state, adult, setBook }) {
   let { path } = useRouteMatch();
   const flight = value;
+
 
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
   const handleRowSelected = React.useCallback((state) => {
     setSelectedRows(state.selectedRows);
+    settoken(state.token);
+    console.log("token  froooont", token);
   }, []);
   const contextActions = React.useMemo(() => {
     const bookHandler = async () => {
@@ -62,6 +66,7 @@ function Table({ value, state, adult, setBook }) {
           if (result) {
             setBook(selectedRows)
 
+
             axios
               .post(
                 "http://localhost:5000/flightBooking/",
@@ -70,6 +75,7 @@ function Table({ value, state, adult, setBook }) {
                   adults: adult,
                 },
                 { headers: { Authorization: `Bearer ${state.token}` } }
+
               )
               .then((reslut) => {
                 console.log(reslut.data);
@@ -91,11 +97,7 @@ function Table({ value, state, adult, setBook }) {
     };
     return (
       <div>
-        <button
-          key="book"
-          onClick={bookHandler}
-          
-        >
+        <button key="book" onClick={bookHandler}>
           BOOK
         </button>
       </div>
