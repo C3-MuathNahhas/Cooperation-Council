@@ -16,7 +16,8 @@ export const MyBooking = () => {
         </div>
         <div className="status">
           <div className="stat">
-            
+            <div className="value">capacity</div>
+            <div className="type">Capacity</div>
           </div>
         </div>
       </div>
