@@ -1,7 +1,11 @@
 import React from "react";
 import { Carousel } from "react-carousel-minimal";
-//new
+import './cities.css'
+import { FaSearchLocation } from "react-icons/fa";
+import { GiPlanePilot } from "react-icons/gi";
 
+//new
+// FaSearchLocation
 function Cities() {
   const data_1 = [
     {
@@ -10,7 +14,6 @@ function Cities() {
       caption: `<div>
                   San Francisco
                   <br/>
-                  Next line
                 </div>`,
     },
     {
@@ -105,9 +108,27 @@ function Cities() {
     fontWeight: "bold",
   };
   return (
-    <div className="App1">
+    <div className="cities_div">
       <div style={{ textAlign: "center" }}>
-        <h1>Explore The World !</h1>
+      <div style={{padding:'40px'}}>
+<div class="polaroid rotate_right">
+  <img src="https://www.azdo.ly/wp-content/uploads/2020/04/tripoli-libya.jpg" alt="Pulpit rock" width="284" height="213"/>
+  <p class="caption">More Destinations</p>
+</div>
+
+<div class="polaroid rotate_left">
+  <img src="https://www.azdo.ly/wp-content/uploads/2020/04/tripoli-libya.jpg" alt="Monterosso al Mare" width="284" height="213"/>
+  <p class="caption">More Memories</p>
+</div></div>
+      
+        <p style={{fontSize:'3rem',fontFamily: 'Arial'}}>Expl <FaSearchLocation style={{fontSize:'3rem',color:'rgb(19,145,210)'}}/> re Memories With  </p>
+        <div className='cities_log'>
+       <p style={{ fontSize: "6rem" }}>
+        <span style={{ color: "rgb(19,145,210)" }}>   tre</span>
+        <span style={{ color: "rgb(252,158,21)" }}>val</span>
+        <GiPlanePilot style={{ fontSize: "8rem",color:'white' }} />
+        <span style={{ color: "rgb(227,64,61)" }}>eo</span>
+      </p></div>
         <div
           style={{
             padding: "0 20px",
@@ -127,19 +148,20 @@ function Cities() {
             dots={true}
             pauseIconColor="white"
             pauseIconSize="40px"
-            slideBackgroundColor="darkgrey"
+            // slideBackgroundColor="darkgrey"
             slideImageFit="cover"
             thumbnails={true}
-            thumbnailWidth="100px"
+            thumbnailWidth="200px"
             style={{
               textAlign: "center",
-              maxWidth: "50vw",
+              // maxWidth: "10 0vw",
               maxHeight: "500px",
               margin: "40px auto",
             }}
           />
         </div>
       </div>
+      <div className='cities_line'></div>
     </div>
   );
 }

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./attractions.css";
 import Modal from "./modal";
-//new
+import { GiPlanePilot } from "react-icons/gi";
+import { GiClick } from "react-icons/gi";
+
+
 
 function Attractions() {
   const [imgSrc, setSrc] = useState(0);
@@ -25,7 +28,7 @@ function Attractions() {
       src: "https://cdn.pixabay.com/photo/2014/06/06/09/36/sydney-opera-house-363244_960_720.jpg",
     },
     {
-      name: "Phuket_Province",
+      name: "Phuket",
       src: "https://cdn.pixabay.com/photo/2017/06/19/14/10/thailand-2419443_960_720.jpg",
     },
     {
@@ -45,7 +48,7 @@ function Attractions() {
       src: "https://cdn.pixabay.com/photo/2020/01/22/18/23/istanbul-4785964_960_720.jpg",
     },
     {
-      name: "San_Francisco",
+      name: "San Francisco",
       src: "https://cdn.pixabay.com/photo/2016/01/19/17/51/golden-gate-bridge-1149942_960_720.jpgpg",
     },
   ];
@@ -66,13 +69,22 @@ function Attractions() {
   };
   return (
     <div className="attractions_div">
-      <h1>Find More Attractions </h1>
-      <h1>{attractionsSrc[imgSrc].name}</h1>
+       <p style={{ fontSize: "3rem" }}><span style={{fontSize:'50px'}}>More attractions with        </span>  
+        <span style={{ color: "rgb(19,145,210)" }}>   tre</span>
+        <span style={{ color: "rgb(252,158,21)" }}>val</span>
+        <GiPlanePilot style={{ fontSize: "3vw" }} />
+        <span style={{ color: "rgb(227,64,61)" }}>eo</span>
+      </p>
+      <br/>
+      <br/>
+
       <img
         className="attractions_img"
         onClick={clickHandler}
         src={`${attractionsSrc[imgSrc].src}`}
       ></img>
+      <h1 style={{ color:"rgb(252,158,21)"}}> Explore more  <GiClick style={{ fontSize: "3vw" ,color:"rgb(19,145,210)"}}/> in  {attractionsSrc[imgSrc].name} !!</h1>
+
       <Modal hideBack={hideBack} src={modalSrc}></Modal>
     </div>
   );

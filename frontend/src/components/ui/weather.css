@@ -2,17 +2,18 @@
   padding: 10px;
 
   position: absolute;
-  top: 100px;
+  top: 262vh;
   right: 0px;
   overflow: hidden;
-  height: 40rem;
+  height: 65vh;
   font-size: 40%;
   font: bold !important;
   color: aliceblue;
-  margin: auto;
+  /* margin: auto; */
   width: 20%;
-  padding: 10px;
-  border-radius: 2vh;
+  /* padding: 10px; */
+  margin:0 80px 0 0;
+  border-radius: 10px;
   font-family: Arial, Helvetica, sans-serif !important;
   background-image: url("https://cdn.pixabay.com/photo/2015/03/26/09/47/sky-690293_960_720.jpg");
   background-repeat: no-repeat;
@@ -28,13 +29,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height:40vh;
 }
 
-p {
+.weather_details p {
   font-size: 2rem;
   font-size: xx-large;
 }
-
+.weather_div p{
+  font-size: 1rem;
+}
 .weather_select {
   position: relative;
   font-family: Arial;
