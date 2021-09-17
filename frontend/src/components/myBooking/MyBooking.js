@@ -11,7 +11,7 @@ export const MyBooking = () => {
 
   return (
     <div>
-        
+<div className="card"></div>
     </div>
   )
 }
