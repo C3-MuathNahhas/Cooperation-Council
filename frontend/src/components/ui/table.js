@@ -36,16 +36,16 @@ const columns = [
   },
 ];
 
-function Table({ value, state, adult,setbook }) {
+function Table({ value, state, adult,setbook: setBook }) {
   let { path } = useRouteMatch();
   const flight = value;
   console.log("plesae",flight)
   console.log(adult)
-  const userId = jwt.decode(state.token);
+  const userId = jwt.decode(state.token.userId);
 
   console.log('userId',userId);
   
-  const [token, settoken] = React.useState([]);
+  const [token, setToken] = React.useState([]);
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
   const handleRowSelected = React.useCallback((state) => {
@@ -67,8 +67,8 @@ function Table({ value, state, adult,setbook }) {
           dangerMode: false,
         }).then((willtrue) => {
           if (willtrue) {
-            settoken(state.token);
-            setbook(selectedRows)
+            setToken(state.token);
+            setBook(selectedRows)
             //setupdate(selectedRows[0]._id)
             axios
               .post(
