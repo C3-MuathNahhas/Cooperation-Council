@@ -3,7 +3,6 @@ import DataTable from "react-data-table-component";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
-import jwt from "jsonwebtoken";
 import "./Table.css"
 
 
@@ -109,7 +108,6 @@ function Table({ value, state, adult, setBook }) {
         columns={columns}
         data={flight}
         selectableRows
-      
         pagination
         selectableRowsHighlight
         selectableRowsSingle
