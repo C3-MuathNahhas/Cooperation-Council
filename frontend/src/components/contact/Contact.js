@@ -76,14 +76,14 @@ const Contact = () => {
           Physical Address
         </h3>
         <p>
-          Mezzanine LevelDomestic Departure TerminalOR alia International
+          Mezzanine LevelDomestic Departure <br/>TerminalOR alia International
           Airport1627
         </p>
         <h3>
           <img src="https://www.flymango.com/upload/contacts/postal.png" />
           Postal Address:
         </h3>
-        <p> P.O. Box 5553 OR AliaInternational Airport 1627 </p>
+        <p> P.O. Box 5553 OR AliaInternational Airport <br/>1627 </p>
       </div>
       <br />
       <br />

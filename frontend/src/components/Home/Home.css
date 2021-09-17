@@ -1,4 +1,4 @@
-/* .home {
+.home {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -6,82 +6,124 @@
   text-align: center;
 }
 
-select {
+.backImg {
+  border-radius: 10px;
+  height: 65vh;
+  opacity: 0.6;
+}
+.homeSelect {
   font-size: 15px;
-  width: 400px;
-  height: 30px;
   border-radius: 5px;
+  text-align: center;
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .bigContainer {
+  width: 100% 100%;
+  height: 100% 100%;
   text-align: center;
 }
 
-body {
+.homeBody {
+  width: 80%;
+  margin: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   background-size: inherit;
-  font-family: Impact;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(96, 159, 221, 0.699);
+  height: 50%;
+  padding-bottom: 50px;
+  border: 2px 2px 2px black;
+  border-radius: 5px;
+  background-image: url("https://cdn.pixabay.com/photo/2018/09/25/17/14/airplane-3702676_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 90%;
+  height: 100% 100%;
+  box-shadow: 7px 13px 22px rgb(105, 94, 94);
 }
-
-.InputsHolder {
+.smallBody {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: fit-content;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px !important;
+    padding: 20px !important; 
+    margin-left: 50px;
+    margin-top: 50px;
+
 }
-input {
-  font-family: Impact;
-  border: 0.5px 2px black;
+.homeInput {
+  border: 0.5px 2px;
   border-radius: 5%;
   margin: 2px;
+  text-align: center;
 }
 
-div {
+.homeDiv {
+  width: 100% 100%;
+  height: 100% 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 1px 1px black;
+
+}
+
+div h1 {
+  font-size: 15px;
 }
 
 .description {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 0.5px 2px black;
+  border: 0.5px 2px rgb(68, 39, 173);
   width: 300px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial;
 }
 
-.delete {
-  background-color: red;
-}
-
-.confirm {
-  background-color: rgb(106, 218, 106);
-}
-.cancel {
-  background-color: rgb(194, 129, 76);
-}
-
-button {
+.homeButton {
   width: 400px;
   height: 50px;
   border-radius: 5px;
   color: #ffffff;
   font-size: 15px;
   border-radius: 5px;
-  background-color: #021110;
-  font-family: Impact;
+  background-color: rgb(19, 145, 210);
+  font-family: Arial;
+  margin: 20px;
 }
+.homeButton:hover {
+  cursor: pointer;
+  color: black;
 
+  background-color: rgb(140, 187, 212);
+}
+.homeInput {
+  text-align: center;
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+  font-family: Arial;
+  border: 1px 1px black;
+}
 .dateInput {
   width: 400px;
   height: 50px;
   border-radius: 5px;
   font-size: 15px;
   border-radius: 5px;
-  font-family: Impact;
-  
-} */
+  font-family: Arial;
+  border: 1px 1px black;
+}

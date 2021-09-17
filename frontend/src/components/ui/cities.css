@@ -1,0 +1,33 @@
+.App1 p {
+     font-family: Arial, Helvetica, sans-serif !important;
+
+}
+.carousel-container{
+width:93rem !important;
+max-width:none !important;
+font-family:Arial !important;
+}
+
+.carousel-item{
+width:93rem !important;
+max-width:none !important;
+
+}
+
+.thumbnails{
+
+max-width:none !important;
+width:91rem !important;
+
+}
+
+.cities_line{
+    position:relative;
+    top:32vh;
+width:90%;
+height:5%;  
+margin:auto;
+box-shadow: 10px 10px 5px #aaaaaa;
+border:0.001px solid #DCD9D9;
+/* margin-top:250px */
+}

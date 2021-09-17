@@ -6,6 +6,8 @@ import { WiHumidity } from "weather-icons-react";
 import { WiStrongWind } from "weather-icons-react";
 import { WiThermometer } from "weather-icons-react";
 import { FaMapPin } from "react-icons/fa";
+import { GiPlanePilot } from "react-icons/gi";
+
 //new
 
 function Weather() {
@@ -62,6 +64,7 @@ function Weather() {
       <h1 style={{ fontSize: "20px" }}>
         <span style={{ color: "rgb(19,145,210)" }}>tre</span>
         <span style={{ color: "rgb(252,158,21)" }}>val</span>
+        <GiPlanePilot style={{ fontSize: "3vw" }} />
         <span style={{ color: "rgb(227,64,61)" }}>eo</span>
       </h1>
 

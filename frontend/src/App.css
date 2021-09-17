@@ -1,6 +1,15 @@
 .App {
   text-align: center;
-  
+  display: flex;
+  flex-direction: column;
+}
+.App-s {
+  display: flex;
+  flex-direction: column;
+}
+.navPlus {
+  margin-bottom: 30px;
+  padding: 14px;
 }
 
 .App-logo {
@@ -37,5 +46,3 @@
     transform: rotate(360deg);
   }
 }
-
-
