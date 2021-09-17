@@ -10,8 +10,8 @@ import {BiLogOut}from "react-icons/bi";
 import {FaHome} from "react-icons/fa";
 import {MdUpdate}from "react-icons/md";
 import {ImTable2} from "react-icons/im";
-import {FcAbout}from "react-icons/fc";
 
+import {HiOutlineUserGroup}from "react-icons/hi"
 const Navigation = () => {
   let { path, url } = useRouteMatch();
   const user = useContext(userContext);
@@ -22,11 +22,11 @@ const Navigation = () => {
           <label style={{ fontSize: "20px", textAlign: "center" ,paddingLeft:"12px"}}>
             <span style={{ color: "rgb(19,145,210)"}}>Tre</span>
             <span style={{ color: "rgb(252,158,21)" }}>val</span>
-            <GiPlanePilot style={{ fontSize: "3vw" }} />
+            <GiPlanePilot style={{ fontSize: "3vw", color: "white" }} />
             <span style={{ color: "rgb(227,64,61)" }}>eo</span>
           </label>
           <Link to={`${url}/about`} className="about">
-            <FcAbout  style={{ fontSize: "1.1vw", verticalAlign: "middle" }}/>
+            <HiOutlineUserGroup style={{ fontSize: "1.1vw", verticalAlign: "middle" }}/>
             About
           </Link>
           <Link to={`${url}/contact`} className="contac">
@@ -48,7 +48,7 @@ const Navigation = () => {
         </div>
       ) : (
         <div className="nav">
- nav
+ 
           <label style={{ fontSize: "20px", textAlign: "center" ,paddingBottom:"6px",paddingLeft:"12px"}}>
             <span style={{ color: "rgb(19,145,210)" }}>Tre</span>
 
