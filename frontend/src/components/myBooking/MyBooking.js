@@ -37,7 +37,7 @@ export const MyBooking = ({ book, state }) => {
                 <div className="status">
                   <div className="stat">
                     <div className="value">Capacity</div>
-                    <div className="type">{element.capacity - adult}</div>
+                    <div className="type">{element.capacity}</div>
                   </div>
                   <div className="stat">
                     <div className="value">TotalPrice</div>
@@ -45,7 +45,7 @@ export const MyBooking = ({ book, state }) => {
                   </div>
                   <div className="stat">
                     <div className="value">Adults</div>
-                    <div class="type">{adult}</div>
+                    <div class="type">?</div>
                   </div>
                 </div>
               </div>
