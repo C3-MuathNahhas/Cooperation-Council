@@ -8,8 +8,9 @@ import "../navigation/navigation.css";
 import { GiPlanePilot } from "react-icons/gi";
 import {BiLogOut}from "react-icons/bi";
 import {FaHome} from "react-icons/fa";
-import {MdUpdate}from "react-icons/md";
+import {ImAddressBook}from "react-icons/im";
 import {ImTable2} from "react-icons/im";
+import {AiOutlineHome} from "react-icons/ai"
 
 import {HiOutlineUserGroup}from "react-icons/hi"
 const Navigation = () => {
@@ -33,7 +34,7 @@ const Navigation = () => {
             <MdContactPhone
               style={{ fontSize: "1.1vw", verticalAlign: "middle" }}
             />
-            Contact
+            Contact us
           </Link>
           <Link to={`${url}/signUp`} className="sign">
             <BiUserPlus
@@ -44,6 +45,11 @@ const Navigation = () => {
           <Link to={`${url}/login`} className="log">
             <CgLogIn style={{ fontSize: "1.1vw", verticalAlign: "middle" }} />
             Login
+          </Link>
+          <Link to={`/main`} className="main-nav">
+            
+            <AiOutlineHome style={{ fontSize: "1.1vw"}} />
+            Main
           </Link>
         </div>
       ) : (
@@ -67,12 +73,11 @@ const Navigation = () => {
             <ImTable2 style={{ fontSize: "1.1vw", verticalAlign: "middle" }}/>
             Table
           </Link>
-          <Link to={`${url}/Update`} className="update_nav">
-            <MdUpdate style={{ fontSize: "1.1vw", verticalAlign: "middle" }}/>
-            Update
+          <Link to={`${url}/myBooking`} className="myBooking_nav">
+            <ImAddressBook style={{ fontSize: "1.1vw", verticalAlign: "middle" }}/>
+            Mybooking
           </Link>
-          <Link to={`${url}/myBooking`} >Mybooking
-          </Link>
+          
         </div>
       )}
     </div>

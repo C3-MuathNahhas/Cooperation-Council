@@ -62,7 +62,7 @@ function Weather() {
   return (
     <div className="weather_div">
       <h1 style={{ fontSize: "20px" }}>
-        <span style={{ color: "rgb(19,145,210)" }}>tre</span>
+        <span style={{ color: "rgb(19,145,210)" }}>Tre</span>
         <span style={{ color: "rgb(252,158,21)" }}>val</span>
         <GiPlanePilot style={{ fontSize: "3vw" }} />
         <span style={{ color: "rgb(227,64,61)" }}>eo</span>
