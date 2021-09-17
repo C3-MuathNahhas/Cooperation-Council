@@ -111,14 +111,14 @@ function Cities() {
     <div className="cities_div">
       <div style={{ textAlign: "center" }}>
       <div style={{padding:'40px'}}>
-<div class="polaroid rotate_right">
-  <img src="https://www.azdo.ly/wp-content/uploads/2020/04/tripoli-libya.jpg" alt="Pulpit rock" width="284" height="213"/>
-  <p class="caption">More Destinations</p>
+<div className="rot_div right_rot">
+  <img src="https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_960_720.jpg" alt="Pulpit rock" width="284" height="213"/>
+  <p className="caption" style={{color:'#143B6B'}}>More Destinations</p>
 </div>
 
-<div class="polaroid rotate_left">
-  <img src="https://www.azdo.ly/wp-content/uploads/2020/04/tripoli-libya.jpg" alt="Monterosso al Mare" width="284" height="213"/>
-  <p class="caption">More Memories</p>
+<div className="rot_div left_rot">
+  <img src="https://cdn.pixabay.com/photo/2016/02/19/11/48/box-1209969_960_720.jpg" alt="Monterosso al Mare" width="284" height="213"/>
+  <p className="caption" style={{color:'#143B6B'}}>More Memories</p>
 </div></div>
       
         <p style={{fontSize:'3rem',fontFamily: 'Arial'}}>Expl <FaSearchLocation style={{fontSize:'3rem',color:'rgb(19,145,210)'}}/> re Memories With  </p>
@@ -151,7 +151,7 @@ function Cities() {
             // slideBackgroundColor="darkgrey"
             slideImageFit="cover"
             thumbnails={true}
-            thumbnailWidth="200px"
+            thumbnailWidth="140px"
             style={{
               textAlign: "center",
               // maxWidth: "10 0vw",
