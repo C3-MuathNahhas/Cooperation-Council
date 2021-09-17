@@ -16,6 +16,7 @@ import Contact from "./components/contact/Contact";
 import SideBar from "./components/sidebar";
 import { MyBooking } from "./components/myBooking/MyBooking";
 import { GiExplosiveMaterials } from "react-icons/gi";
+import logOut from "./components/logout/logOut"
 export const userSign=createContext();
 export const userContext = createContext();
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
                 <UpdateFlightBooking value={values} state={state} />
               )}
             />
+            <Route path={`${path}/logout` }component={logOut}/>
            
 
             <userSign.Provider value={{email, password,setEmail,setPassword}}>
