@@ -9,3 +9,22 @@
     font-family:Arial, Helvetica, sans-serif;
     text-align: center;
 }
+.image{
+    grid-area: image;
+    background: url("https://c8.alamy.com/comp/M1AT1E/a-woman-booking-flight-online-using-laptop-M1AT1E.jpg");
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+}
+.text{
+    grid-area: text;
+    margin: 25px;
+}
+.text .date{
+    color: rgb(255, 7, 110);
+    font-size:13px;
+}
+.status{
+    grid-area: stats; 
+}
+
