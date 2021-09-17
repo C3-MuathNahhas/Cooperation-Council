@@ -149,7 +149,7 @@ export const Home = ({ setvalue, setadult }) => {
               setDateTo(e.target.value);
             }}
           />
-          <button className="homeButton" type="button" onClick={click}>
+          <button className="homeButton" onClick={click}>
             Search
           </button>
         </div>
