@@ -109,6 +109,7 @@ const SignUp = () => {
           </button>
           {status}
         </div>
+        <br/>
         </div>
       ) : (
         <Modal />
