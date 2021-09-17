@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./prayertime.css";
 import { FaMosque } from "react-icons/fa";
+import { GiPlanePilot } from "react-icons/gi";
+
 //new
 function Prayertime() {
   const cityNames = ["amman", "dubai-ae", "riyadh-sa"];
@@ -35,6 +37,7 @@ function Prayertime() {
       <h1 style={{ fontSize: "20px" }}>
         <span style={{ color: "rgb(19,145,210)" }}>tre</span>
         <span style={{ color: "rgb(252,158,21)" }}>val</span>
+        <GiPlanePilot style={{ fontSize: "3vw" }} />
         <span style={{ color: "rgb(227,64,61)" }}>eo</span>
       </h1>
       <p>Prayer Times</p>

@@ -1,0 +1,67 @@
+.cities_div{
+    display:flex;
+    flex-direction:column;
+    gap:100px;
+}
+
+.carousel-container{
+width:91rem !important;
+max-width:none !important;
+font-family:Arial !important;
+margin-top:100px !important;
+}
+
+.carousel-item{
+width:91rem !important;
+max-width:none !important;
+
+}
+
+.thumbnails{
+
+max-width:none !important;
+width:91rem !important;
+
+}
+
+.cities_line{
+position:relative;
+top:32vh;
+width:90%;
+height:5%;  
+margin:auto;
+box-shadow: 10px 10px 5px #aaaaaa;
+border:0.001px solid #DCD9D9;
+}
+.cities_log{
+background-color:rgb(17, 27, 51);
+width:40vw;
+height:50vh;
+ box-shadow: 10px 10px 5px #aaaaaa;
+margin:auto;
+display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius:50%;
+}
+
+
+
+div.polaroid {
+  width: 284px;
+  padding: 10px 10px 10px 10px;
+  border: 1px solid #BFBFBF;
+  background-color: white;
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+div.rotate_right {
+  float: left;
+  -ms-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+div.rotate_left {
+  float: left;
+  -ms-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
