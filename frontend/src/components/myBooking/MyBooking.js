@@ -14,7 +14,11 @@ export const MyBooking = () => {
         <div className="text">
           <span className="date">??</span>
         </div>
-        <div className="status"></div>
+        <div className="status">
+          <div className="stat">
+            
+          </div>
+        </div>
       </div>
     </div>
   );
