@@ -13,6 +13,7 @@ export const MyBooking = () => {
         <div className="image"></div>
         <div className="text">
           <span className="date">??</span>
+          <h2>Welcome</h2>
         </div>
         <div className="status">
           <div className="stat">

@@ -24,7 +24,18 @@
     color: rgb(255, 7, 110);
     font-size:13px;
 }
+.text h2{
+    color: grey;
+    font-size:15px;
+    font-weight: 300;
+}
 .status{
     grid-area: stats; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: rgb(255, 7, 110);
 }
 
