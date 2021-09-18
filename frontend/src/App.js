@@ -1,5 +1,5 @@
 import React, { useState, createContext } from "react";
-import Home from "./components/home/Home";
+import Home from "./components/Home/Home";
 import Table from "./components/ui/table";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
@@ -17,7 +17,6 @@ import Contact from "./components/contact/Contact";
 import SideBar from "./components/sidebar";
 import { MyBooking } from "./components/myBooking/MyBooking";
 
-import logOut from "./components/logout/logOut";
 export const userSign = createContext();
 
 export const userContext = createContext();
