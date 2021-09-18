@@ -61,9 +61,13 @@ function Table({ value, state, adult, setBook }) {
 
           buttons: true,
           dangerMode: false,
+
+            
+
         }).then((result) => {
           if (result) {
             setBook(selectedRows)
+
 
 
             axios
