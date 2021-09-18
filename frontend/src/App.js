@@ -8,7 +8,6 @@ import Navigation from "../src/components/navigation/Navigation";
 import About from "./components/about/About";
 import "./App.css";
 import { Route, useRouteMatch, Switch } from "react-router-dom";
-import Weather from "../src/components/ui/weather";
 import Attractions from "../src/components/ui/attractions";
 import Cities from "../src/components/ui/cities";
 import Footer from "../src/components/footer/footer";
@@ -51,7 +50,7 @@ const App = () => {
             <Route
               path={`${path}/Update`}
               render={() => (
-                <UpdateFlightBooking value={flights} state={state} />
+                <UpdateFlightBooking value={flights} state={token} />
               )}
             />
 
