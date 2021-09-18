@@ -87,10 +87,6 @@ const Navigation = () => {
             <FaHome style={{ fontSize: "1.1vw", verticalAlign: "middle" }} />
             Home
           </Link>
-          <Link to={`/Table`} className="table_nav">
-            <ImTable2 style={{ fontSize: "1.1vw", verticalAlign: "middle" }} />
-            Table
-          </Link>
           <Link to={`/myBooking`} className="myBooking_nav">
             <ImAddressBook
               style={{ fontSize: "1.1vw", verticalAlign: "middle" }}
