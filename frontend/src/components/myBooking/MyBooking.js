@@ -7,12 +7,15 @@ export const MyBooking = ({ book, state }) => {
   const [results, setresults] = useState();
   const [myBook, setMyBook] = useState();
   const click = () => {
+    console.log(state.token);
+    
     axios
       .get("http://localhost:5000/flightBooking/allBooking/", {
         headers: { Authorization: `Bearer ${state.token}` },
       })
       .then((result) => {
         setMyBook(result.data);
+        console.log("myBook",myBook);
       })
       .catch((err) => {
         console.log(err);
@@ -51,7 +54,9 @@ export const MyBooking = ({ book, state }) => {
 
   return (
     <div>
-      <button className="btn2" onClick={click}>MyBooking</button>
+      <button className="btn2" onClick={click}>
+        MyBooking
+      </button>
       {myBook &&
         myBook.flightsBookings.map((element) => {
           return (
