@@ -7,7 +7,7 @@ export const MyBooking = ({ book, state }) => {
   const [results, setresults] = useState();
   const [myBook, setMyBook] = useState();
   const click = () => {
-    console.log(state.token);
+    console.log(state);
     
     axios
       .get("http://localhost:5000/flightBooking/allBooking/", {
@@ -58,7 +58,7 @@ export const MyBooking = ({ book, state }) => {
         MyBooking
       </button>
       {myBook &&
-        myBook.flightsBookings.map((element) => {
+        myBook.flights.map((element) => {
           return (
             <div>
               <div className="card">

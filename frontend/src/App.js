@@ -49,7 +49,7 @@ const App = () => {
             <Route
               path={`${path}/Update`}
               render={() => (
-                <UpdateFlightBooking value={flights} state={state} />
+                <UpdateFlightBooking value={flights} state={token} />
               )}
             />
 
