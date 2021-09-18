@@ -22,7 +22,7 @@ export const userContext = createContext();
 const App = () => {
   const [adult, setAdult] = useState();
   const [flights, setflights] = useState();
-  let { path, url } = useRouteMatch();
+  let { path } = useRouteMatch();
   const [token, setToken] = useState();
   const state = { token, setToken };
   const [email, setEmail] = useState("");

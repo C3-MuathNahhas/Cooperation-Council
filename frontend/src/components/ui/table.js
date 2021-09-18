@@ -105,7 +105,7 @@ function Table({ value, state, adult, setBook }) {
         </button>
       </div>
     );
-  }, [adult, history, path, selectedRows]);
+  }, [adult, history, path, selectedRows, setBook, state.token]);
   return (
     <div>
       <DataTable
