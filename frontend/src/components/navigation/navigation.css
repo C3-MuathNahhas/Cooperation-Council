@@ -1,11 +1,15 @@
 
 .nav_div {
-  background-color: #150050;
+  /* background-color: #150050; */
+  background-color: rgb(17, 27, 51);
+
   padding: 14px;
   top: 0;
   left: 0;
 
-
+-webkit-box-shadow: 0 0px 20px  black;
+-moz-box-shadow: 0 0px 20px black;
+ box-shadow: 0 0px 20px  black;
   width: 100%;
   position: absolute;
   font-size: 20px;
