@@ -9,14 +9,15 @@
   font-size: 40%;
   font: bold !important;
   color: aliceblue;
-  /* margin: auto; */
   width: 20%;
-  /* padding: 10px; */
   margin:0 80px 0 0;
   border-radius: 10px;
   font-family: Arial, Helvetica, sans-serif !important;
   background-image: url("https://cdn.pixabay.com/photo/2015/03/26/09/47/sky-690293_960_720.jpg");
   background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
+  
 }
 /* new */
 .weather_select:hover {
@@ -24,7 +25,6 @@
 }
 .weather_details {
   position: relative;
-  bottom: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,16 +32,14 @@
   height:40vh;
 }
 
-.weather_details p {
-  font-size: 2rem;
-  font-size: xx-large;
-}
+
 .weather_div p{
   font-size: 1rem;
 }
 .weather_select {
   position: relative;
   font-family: Arial;
+
   width: 90%;
   border: none;
   border-radius: 5px;
@@ -61,7 +59,7 @@
   flex-direction: row;
   justify-content: center;
 
-  border-radius: 1rem;
+  border-radius: 10px;
   border: 1px solid black;
   border-style: dashed;
 }

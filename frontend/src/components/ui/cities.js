@@ -121,12 +121,12 @@ function Cities() {
   <p className="caption" style={{color:'#143B6B'}}>More Memories</p>
 </div></div>
       
-        <p style={{fontSize:'3rem',fontFamily: 'Arial'}}>Expl <FaSearchLocation style={{fontSize:'3rem',color:'rgb(19,145,210)'}}/> re Memories With  </p>
+        <p style={{fontSize:'5vw',fontFamily: 'Arial'}}>Expl <FaSearchLocation style={{fontSize:'7vw',color:'rgb(19,145,210)'}}/> re Memories With  </p>
         <div className='cities_log'>
-       <p style={{ fontSize: "6rem" }}>
+       <p style={{ fontSize: "5vw" }}>
         <span style={{ color: "rgb(19,145,210)" }}>   tre</span>
         <span style={{ color: "rgb(252,158,21)" }}>val</span>
-        <GiPlanePilot style={{ fontSize: "8rem",color:'white' }} />
+        <GiPlanePilot style={{ fontSize: "200%",color:'white' }} />
         <span style={{ color: "rgb(227,64,61)" }}>eo</span>
       </p></div>
         <div
