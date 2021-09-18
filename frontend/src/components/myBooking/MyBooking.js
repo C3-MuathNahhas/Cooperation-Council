@@ -8,14 +8,14 @@ export const MyBooking = ({ book, state }) => {
   const [myBook, setMyBook] = useState();
   const click = () => {
     console.log(state);
-    
+
     axios
       .get("http://localhost:5000/flightBooking/allBooking/", {
         headers: { Authorization: `Bearer ${state.token}` },
       })
       .then((result) => {
         setMyBook(result.data);
-        console.log("myBook",myBook);
+        console.log("myBook", myBook);
       })
       .catch((err) => {
         console.log(err);
@@ -24,9 +24,11 @@ export const MyBooking = ({ book, state }) => {
   const deleted = (e) => {
     console.log(e);
     axios
-      .delete(`http://localhost:5000/flightBooking/${e}`)
+      .delete(`http://localhost:5000/flightBooking/${e}`, {
+        headers: { Authorization: `Bearer ${state.token}` },
+      })
       .then((result) => {
-        console.log("good");
+        console.log("success delete the booking");
       })
       .catch((err) => {
         console.log(err);
