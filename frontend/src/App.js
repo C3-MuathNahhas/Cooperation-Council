@@ -3,7 +3,7 @@ import Home from "./components/home/Home";
 import Table from "./components/ui/table";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
-
+import logOut from "./components/logout/logOut"
 import Navigation from "../src/components/navigation/Navigation";
 import About from "./components/about/About";
 import "./App.css";
