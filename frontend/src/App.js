@@ -8,7 +8,6 @@ import Navigation from "../src/components/navigation/Navigation";
 import About from "./components/about/About";
 import "./App.css";
 import { Route, useRouteMatch, Switch } from "react-router-dom";
-import Weather from "../src/components/ui/weather";
 import Attractions from "../src/components/ui/attractions";
 import Cities from "../src/components/ui/cities";
 import Footer from "../src/components/footer/footer";
@@ -16,8 +15,6 @@ import { UpdateFlightBooking } from "./components/updateFlightBooking/UpdateFlig
 import Contact from "./components/contact/Contact";
 import SideBar from "./components/sidebar";
 import { MyBooking } from "./components/myBooking/MyBooking";
-
-import logOut from "./components/logout/logOut";
 export const userSign = createContext();
 
 export const userContext = createContext();
