@@ -32,7 +32,7 @@ const App = () => {
     <div className="App-s">
       <div className="App">
         <Route
-          path={`${path}/myBooking`}
+          path={`/myBooking`}
           render={() => (
             <MyBooking
               flights={flights}
@@ -48,7 +48,7 @@ const App = () => {
 
             <div className="navPlus" />
             <Route
-              path={`${path}/Update`}
+              path={`/Update`}
               render={() => (
                 <UpdateFlightBooking value={flights} state={token} />
               )}
@@ -57,14 +57,14 @@ const App = () => {
             <userSign.Provider
               value={{ email, password, setEmail, setPassword }}
             >
-              <Route path={`${path}/signUp`} component={SignUp} />
-              <Route path={`${path}/login`} component={Login} />
+              <Route path={`/signUp`} component={SignUp} />
+              <Route path={`/login`} component={Login} />
 
-              <Route path={`${path}/logout`} component={logOut} />
+              <Route path={`/logout`} component={logOut} />
             </userSign.Provider>
 
-            <Route path={`${path}/contact`} component={Contact} />
-            <Route path={`${path}/About`} component={About} />
+            <Route path={`/contact`} component={Contact} />
+            <Route path={`/about`} component={About} />
             <Route
               path={`${path}/home`}
               render={() => <Home setvalue={setflights} setadult={setAdult} />}
@@ -81,9 +81,9 @@ const App = () => {
               )}
             />
             {/* <Route exact path={path} component={Weather}></Route> */}
-            <Route exact path={"/main"} component={Cities}></Route>
-            <Route exact path={"/main"} component={Attractions}></Route>
-            <Route exact path={"/main"} component={SideBar}></Route>
+            <Route exact path={"/"} component={Cities}></Route>
+            <Route exact path={"/"} component={Attractions}></Route>
+            <Route exact path={"/"} component={SideBar}></Route>
           </userContext.Provider>
         </Switch>
 
