@@ -3,7 +3,7 @@ import axios from "axios";
 import "./MyBooking.css";
 
 export const MyBooking = ({ book, state }) => {
-  const [value, setvalue] = useState();
+  const [adults, setAdults] = useState();
   const [results, setresults] = useState();
   const [myBook, setMyBook] = useState();
   const click = () => {
@@ -30,14 +30,14 @@ export const MyBooking = ({ book, state }) => {
       });
   };
   const updateAduluts = (z) => {
-    setvalue(z.target.value);
+    setAdults(z.target.value);
   };
   const updated = (e) => {
     console.log(e);
     axios
       .put(
         `http://localhost:5000/flightBooking/${e}`,
-        { adults: value },
+        { adults: adults },
         { headers: { Authorization: `Bearer ${state.token}` } }
       )
       .then((result) => {
