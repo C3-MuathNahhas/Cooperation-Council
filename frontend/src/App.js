@@ -1,9 +1,9 @@
 import React, { useState, createContext } from "react";
-import Home from "./components/home/Home";
+import Home from "./components/Home/Home";
 import Table from "./components/ui/table";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
-import logOut from "./components/logout/logOut"
+import logOut from "./components/logout/logOut";
 import Navigation from "../src/components/navigation/Navigation";
 import About from "./components/about/About";
 import "./App.css";
@@ -54,16 +54,13 @@ const App = () => {
               )}
             />
 
-
             <userSign.Provider
               value={{ email, password, setEmail, setPassword }}
             >
               <Route path={`${path}/signUp`} component={SignUp} />
               <Route path={`${path}/login`} component={Login} />
 
-
-              <Route path={`${path}/logout` }component={logOut}/>
-
+              <Route path={`${path}/logout`} component={logOut} />
             </userSign.Provider>
 
             <Route path={`${path}/contact`} component={Contact} />
@@ -84,14 +81,13 @@ const App = () => {
               )}
             />
             {/* <Route exact path={path} component={Weather}></Route> */}
-        <Route exact path={'/main'} component={Cities}></Route>
-        <Route exact path={'/main'} component={Attractions}></Route>
-        <Route exact path={'/main'} component={SideBar}></Route>
+            <Route exact path={"/main"} component={Cities}></Route>
+            <Route exact path={"/main"} component={Attractions}></Route>
+            <Route exact path={"/main"} component={SideBar}></Route>
           </userContext.Provider>
         </Switch>
-        
-        <Footer/>
 
+        <Footer />
       </div>
     </div>
   );
