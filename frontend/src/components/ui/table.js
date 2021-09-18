@@ -3,7 +3,6 @@ import DataTable from "react-data-table-component";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
-import jwt from "jsonwebtoken";
 import "./Table.css"
 
 
@@ -36,18 +35,17 @@ const columns = [
   },
 ];
 
-function Table({ value, state, adult,setbook }) {
+
+function Table({ value, state, adult, setBook }) {
   let { path } = useRouteMatch();
   const flight = value;
-  console.log("plesae",flight)
-  console.log(adult)
-  console.log(state.token)
-  const userId = jwt.decode(state.token);
-  const [token, settoken] = React.useState([]);
+
+
   const history = useHistory();
   const [selectedRows, setSelectedRows] = React.useState([]);
   const handleRowSelected = React.useCallback((state) => {
     setSelectedRows(state.selectedRows);
+
   }, []);
   const contextActions = React.useMemo(() => {
     const bookHandler = async () => {
@@ -63,23 +61,24 @@ function Table({ value, state, adult,setbook }) {
 
           buttons: true,
           dangerMode: false,
-        }).then((willtrue) =>{
-          if (willtrue)  {
-            settoken(state.token);
-            setbook(selectedRows)
-            console.log("selectedRows",selectedRows)
+
             
 
-            //setupdate(selectedRows[0]._id)
+        }).then((result) => {
+          if (result) {
+            setBook(selectedRows)
+
+
+
             axios
               .post(
                 "http://localhost:5000/flightBooking/",
                 {
-                  flightId: selectedRows[0].id,
+                  flightId: selectedRows[0].bookingId,
                   adults: adult,
-                  
                 },
-                { headers: { Authorization: `Bearer ${token}` } }
+                { headers: { Authorization: `Bearer ${state.token}` } }
+
               )
               .then((reslut) => {
                 console.log(reslut.data);
@@ -101,16 +100,12 @@ function Table({ value, state, adult,setbook }) {
     };
     return (
       <div>
-        <button
-          key="book"
-          onClick={bookHandler}
-          
-        >
+        <button key="book" onClick={bookHandler}>
           BOOK
         </button>
       </div>
     );
-  }, [adult, history, path, selectedRows, state.token, token, userId]);
+  }, [adult, history, path, selectedRows]);
   return (
     <div>
       <DataTable
@@ -118,7 +113,6 @@ function Table({ value, state, adult,setbook }) {
         columns={columns}
         data={flight}
         selectableRows
-        
         pagination
         selectableRowsHighlight
         selectableRowsSingle

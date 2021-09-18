@@ -6,11 +6,11 @@ const isBookingExist = (req, res, next) => {
 
   flightBookingModle
     .findOne({ _id: bookingId })
-    .then((result) => {
+    .then((result ,err) => {
       if (!result) {
         return res.status(404).json({
           success: false,
-          message: `there is No flight booking with this id`,
+          message: `there is No flight booking with this id ${bookingId}`,
         });
       } else {
         req.body.flightId = result.flightId;
@@ -44,7 +44,7 @@ const isBookingExist = (req, res, next) => {
     .catch((err) => {
       res.status(404).json({
         success: false,
-        message: `there is No flight booking with this id`,
+        message: err.message,
       });
     });
 };
@@ -108,8 +108,10 @@ const getFlightsBookingByUserId = (req, res) => {
 
   flightBookingModle
     .find({ userId })
-    .populate("flightId")
-    .populate("userId")
+
+    .populate("UserId")
+    .populate("FlightId")
+
     .exec()
     .then((result) => {
       if (!result) {

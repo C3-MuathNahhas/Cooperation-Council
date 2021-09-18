@@ -46,7 +46,7 @@ const Navigation = () => {
             <CgLogIn style={{ fontSize: "1.1vw", verticalAlign: "middle" }} />
             Login
           </Link>
-          <Link to={`main`} className="main-nav">
+          <Link to={`/main`} className="main-nav">
             
             <AiOutlineHome style={{ fontSize: "1.1vw"}} />
             Main

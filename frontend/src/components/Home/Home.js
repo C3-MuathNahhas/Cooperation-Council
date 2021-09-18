@@ -3,7 +3,8 @@ import { useHistory, useRouteMatch } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
 import { GiPlanePilot, GiWhiteBook } from "react-icons/gi";
-export const Home = ({ setvalue, setadult }) => {
+
+const Home = ({ setvalue, setadult }) => {
   const destenations = [
     "San_Francisco",
     "Amman",
@@ -24,9 +25,9 @@ export const Home = ({ setvalue, setadult }) => {
   let { path, url } = useRouteMatch();
   const [origin, setOrigin] = useState("Amman");
   const [destination, setDestination] = useState("San_Francisco");
-  const [dateFrom, setDateFrom] = useState("2021");
+  const [dateFrom, setDateFrom] = useState("2021-1-1");
   const [adults, setAdults] = useState(1);
-  const [dateTo, setDateTo] = useState("2022");
+  const [dateTo, setDateTo] = useState("2022-1-1");
   const history = useHistory();
   const converter = {
     San_Francisco: "FlySFO", //San Francisco International Airport (FlySFO)
@@ -37,13 +38,13 @@ export const Home = ({ setvalue, setadult }) => {
   };
 
   const click = () => {
-    console.log("hello", {
-      origin: converter[origin],
-      destination: converter[destination],
-      dateFrom,
-      adults,
-      dateTo,
-    });
+    // console.log("hello", {
+    //   origin: converter[origin],
+    //   destination: converter[destination],
+    //   dateFrom,
+    //   adults,
+    //   dateTo,
+    // });
 
     axios
       .post("http://localhost:5000/flights/search/", {
@@ -57,12 +58,15 @@ export const Home = ({ setvalue, setadult }) => {
         const flights = result.data.flights;
         const handledFlights = flights.map((item) => {
           return {
-            id:item._id,
+
+            bookingId:item._id,
+
             destination: deConverter[item.destination],
             origin: deConverter[item.origin],
             date: item.date,
             capacity: item.capacity,
             totalPrice: item.price * adults,
+  
           };
         });
 
@@ -78,7 +82,9 @@ export const Home = ({ setvalue, setadult }) => {
     <div className="homeBody">
       <div className="smallBody">
         <h1 style={{ fontSize: "20px" }}>
-        <span style={{ color: "rgb(0,0,0)" }}>Just pick up your trip with </span>
+          <span style={{ color: "rgb(0,0,0)" }}>
+            Just pick up your trip with{" "}
+          </span>
           <span style={{ color: "rgb(19,145,210)" }}>Tra</span>
           <span style={{ color: "rgb(252,158,21)" }}>val</span>
           <GiPlanePilot style={{ fontSize: "3vw" }} />
@@ -163,3 +169,5 @@ export const Home = ({ setvalue, setadult }) => {
     </div>
   );
 };
+
+export default Home;

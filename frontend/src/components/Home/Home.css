@@ -10,6 +10,8 @@
   border-radius: 10px;
   height: 65vh;
   opacity: 0.6;
+  background-size:100% 100%;
+
 }
 .homeSelect {
   font-size: 15px;
@@ -27,6 +29,7 @@
   width: 100% 100%;
   height: 100% 100%;
   text-align: center;
+
 }
 
 .homeBody {
@@ -44,12 +47,10 @@
   border-radius: 5px;
   background-image: url("https://cdn.pixabay.com/photo/2018/09/25/17/14/airplane-3702676_960_720.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
   opacity: 90%;
-  height: 100% 100%;
   box-shadow: 7px 13px 22px rgb(105, 94, 94);
-  background-size: 130%;
-
+  background-size:100% 100%;
+  margin-bottom: 100px;
 }
 .smallBody {
   display: flex;
@@ -58,11 +59,12 @@
   text-align: center;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px !important;
-    padding: 20px !important; 
-    margin-left: 50px;
-    margin-top: 50px;
+  padding: 20px !important;
+  margin-left: 50px;
+  margin-top: 50px;
 
 }
+
 .homeInput {
   border: 0.5px 2px;
   border-radius: 5%;
