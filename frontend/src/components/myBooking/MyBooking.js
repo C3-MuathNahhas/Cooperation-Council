@@ -67,11 +67,11 @@ export const MyBooking = ({ book, state }) => {
               <div className="card">
                 <div className="image"></div>
                 <div className="text">
-                  <span className="date">Your Book</span>
-                  <h2 className="date">Date:{element.flightId.date}</h2>
+                  <span className="date">Your Book</span><br/><br/>
+                  <h2 className="date">Date:{element.flightId.date}</h2><br/>
 
-                  <h2>Destination: {element.flightId.destination}</h2>
-                  <p>Enter The Number Of New Adults</p>
+                  <h2>Destination: {element.flightId.destination}</h2><br/>
+                  <p>Enter The Number Of New Adults</p><br/>
                   <input type="number" onChange={updateAduluts} />
                   <br></br>
                   {results && <p>{results}</p>}
@@ -97,6 +97,7 @@ export const MyBooking = ({ book, state }) => {
                   </div>
                 </div>
               </div>
+              <br/><br/><br/><br/>
             </div>
           );
         })}
