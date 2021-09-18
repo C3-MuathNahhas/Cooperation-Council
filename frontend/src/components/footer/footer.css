@@ -1,22 +1,20 @@
-
 .footer_div {
   font-family: Arial, Helvetica, sans-serif !important;
   margin: auto !important;
   position: relative !important;
   bottom: 0 !important;
   /* width: 100% !important; */
-  margin:0px auto;
-        min-width:1370px;
-        max-width:1370px;
+  margin: 0px auto;
+  min-width: 90%;
+  max-width: 90%;
   height: 50vh;
   background-color: rgb(17, 27, 51);
   color: white;
   text-align: center !important;
-  padding:5%;
--webkit-box-shadow: 0 0px 20px  black;
--moz-box-shadow: 0 0px 20px black;
- box-shadow: 0 0px 20px  black;  
-  
+  padding: 5%;
+  -webkit-box-shadow: 0 0px 20px black;
+  -moz-box-shadow: 0 0px 20px black;
+  box-shadow: 0 0px 20px black;
 }
 .footer_links {
   display: flex;
@@ -44,4 +42,3 @@ a {
   justify-content: center;
   padding-top: 5%;
 }
-
