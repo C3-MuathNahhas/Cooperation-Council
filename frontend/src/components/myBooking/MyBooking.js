@@ -29,6 +29,7 @@ export const MyBooking = ({ book, state }) => {
       })
       .then((result) => {
         console.log("success delete the booking");
+        setresults("Your Book Was Deleted");
       })
       .catch((err) => {
         console.log(err);
@@ -67,9 +68,9 @@ export const MyBooking = ({ book, state }) => {
                 <div className="image"></div>
                 <div className="text">
                   <span className="date">Your Book</span>
-                  <h2 className="date">Date:{element.capacity}</h2>
+                  <h2 className="date">Date:{element.flightId.date}</h2>
 
-                  <h2>Destination: distination</h2>
+                  <h2>Destination: {element.flightId.destination}</h2>
                   <p>Enter The Number Of New Adults</p>
                   <input type="number" onChange={updateAduluts} />
                   <br></br>
@@ -83,16 +84,16 @@ export const MyBooking = ({ book, state }) => {
                 </div>
                 <div className="status">
                   <div className="stat">
-                    <div className="value">Capacity</div>
-                    <div className="type">capacity</div>
+                    <div className="value">First Name</div>
+                    <div className="type">{element.userId.firstName}</div>
                   </div>
                   <div className="stat">
                     <div className="value">TotalPrice</div>
-                    <div class="type">price$</div>
+                    <div class="type">{element.flightId.price*element.adults}$</div>
                   </div>
                   <div className="stat">
                     <div className="value">Adults</div>
-                    <div class="type">?</div>
+                    <div class="type">{element.adults}</div>
                   </div>
                 </div>
               </div>

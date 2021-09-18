@@ -14,7 +14,7 @@ import { AiOutlineHome } from "react-icons/ai";
 
 import { HiOutlineUserGroup } from "react-icons/hi";
 const Navigation = () => {
-  let { path, url } = useRouteMatch();
+  let {  url } = useRouteMatch();
   const user = useContext(userContext);
   return (
     <div className="nav_div">
