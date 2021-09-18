@@ -6,7 +6,7 @@
   border-radius:10px;
     
     width:95vw;
-    height:230vh;
+    height:200vh;
     margin:auto;
 
 }
@@ -41,17 +41,17 @@ margin:auto;
 box-shadow: 1px 10px 5px #aaaaaa;
 /* border-bottom:0.001px solid #DCD9D9; */
 }
-.cities_log{
+.cities_logo{
 background-color:rgb(17, 27, 51);
-width:40%;
+width:50%;
 height:30%;
  box-shadow: 10px 10px 5px #aaaaaa;
 margin:auto;
 display: flex;
-  flex-direction: row;
-  justify-content: center;
-  border-radius:50%;
-  vertical-align: middle;
+flex-direction: column;
+justify-content: center;
+border-radius:50%;
+vertical-align: middle;
 }
 
 
@@ -80,4 +80,17 @@ div.left_rot {
 .caption{
     column:#C2DAEC !important;
 font-family: Arial, Helvetica, sans-serif !important;
+}
+.cities_book_logo{
+    color:rgb(19,145,210);
+    animation-name:book_logo;
+    animation-duration:6s;
+    animation-iteration-count: infinite;
+    cursor:pointer;
+}
+@keyframes book_logo{
+    0% {color:rgb(19,145,210)}
+    50% {color:rgb(252,158,21)}
+    100% {color:rgb(227,64,61)}
+
 }

@@ -3,10 +3,16 @@ import { Carousel } from "react-carousel-minimal";
 import './cities.css'
 import { FaSearchLocation } from "react-icons/fa";
 import { GiPlanePilot } from "react-icons/gi";
+import { FaPlaneDeparture } from "react-icons/fa";
+
+
+import { Link, useRouteMatch } from "react-router-dom";
+
 
 //new
 // FaSearchLocation
 function Cities() {
+  const {path,url}=useRouteMatch();
   const data_1 = [
     {
       image:
@@ -122,13 +128,15 @@ function Cities() {
 </div></div>
       
         <p style={{fontSize:'5vw',fontFamily: 'Arial'}}>Expl <FaSearchLocation style={{fontSize:'7vw',color:'rgb(19,145,210)'}}/> re Memories With  </p>
-        <div className='cities_log'>
+        <div className='cities_logo'>
        <p style={{ fontSize: "5vw" }}>
         <span style={{ color: "rgb(19,145,210)" }}>   tre</span>
         <span style={{ color: "rgb(252,158,21)" }}>val</span>
         <GiPlanePilot style={{ fontSize: "200%",color:'white' }} />
         <span style={{ color: "rgb(227,64,61)" }}>eo</span>
-      </p></div>
+      </p>
+      <Link  style={{ fontSize: "150%",color:'white'}} to={`${url}/login`}> BOOK HERE ! <FaPlaneDeparture className='cities_book_logo'  style={{fontSize:'5vw',color:'rgb(19,145,210)'}}/>  </Link> 
+      </div>
         <div
           style={{
             padding: "0 20px",
