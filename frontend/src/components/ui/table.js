@@ -100,14 +100,16 @@ function Table({ value, state, adult, setBook }) {
     };
     return (
       <div>
-        <button key="book" onClick={bookHandler}>
+        <button className="clickBook" key="book" onClick={bookHandler}>
           BOOK
         </button>
+        
       </div>
+      
     );
   }, [adult, history, path, selectedRows, setBook, state.token]);
   return (
-    <div>
+    <div className="table_div">
       <DataTable
         title="FlightBooking"
         columns={columns}

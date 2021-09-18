@@ -66,11 +66,11 @@ const App = () => {
             <Route path={`/contact`} component={Contact} />
             <Route path={`/about`} component={About} />
             <Route
-              path={`${path}/home`}
+              path={`/home`}
               render={() => <Home setvalue={setflights} setadult={setAdult} />}
             />
             <Route
-              path={`${path}/Table`}
+              path={`/Table`}
               render={() => (
                 <Table
                   value={flights}
